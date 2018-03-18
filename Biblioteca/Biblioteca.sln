@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsuarioBiblioteca", "src\UsuarioBiblioteca\UsuarioBiblioteca.csproj", "{739EA4C4-0FE9-41AC-9D6E-96BBD9B4D839}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsuarioBiblioteca.Domain", "src\UsuarioBiblioteca\UsuarioBiblioteca.Domain.csproj", "{739EA4C4-0FE9-41AC-9D6E-96BBD9B4D839}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{E76F1209-DD02-4495-85ED-8E3D4A2E808E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{873BDEE6-BA4C-4AEC-90C2-E67B2C1D6D77}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{650EC47F-7648-44A6-B6C0-FCDCCA469FC1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
