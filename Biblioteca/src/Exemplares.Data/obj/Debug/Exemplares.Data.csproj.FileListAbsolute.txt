@@ -1,0 +1,4 @@
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Exemplares.Data\bin\Debug\Exemplares.Data.dll
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Exemplares.Data\bin\Debug\Exemplares.Data.pdb
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Exemplares.Data\obj\Debug\Exemplares.Data.dll
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Exemplares.Data\obj\Debug\Exemplares.Data.pdb

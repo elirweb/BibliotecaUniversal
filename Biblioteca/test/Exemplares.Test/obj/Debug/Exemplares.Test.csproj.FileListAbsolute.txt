@@ -1,0 +1,6 @@
+D:\projetos\BibliotecaUniversal\Biblioteca\test\Exemplares.Test\bin\Debug\Exemplares.Test.dll
+D:\projetos\BibliotecaUniversal\Biblioteca\test\Exemplares.Test\bin\Debug\Exemplares.Test.pdb
+D:\projetos\BibliotecaUniversal\Biblioteca\test\Exemplares.Test\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+D:\projetos\BibliotecaUniversal\Biblioteca\test\Exemplares.Test\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
+D:\projetos\BibliotecaUniversal\Biblioteca\test\Exemplares.Test\obj\Debug\Exemplares.Test.dll
+D:\projetos\BibliotecaUniversal\Biblioteca\test\Exemplares.Test\obj\Debug\Exemplares.Test.pdb

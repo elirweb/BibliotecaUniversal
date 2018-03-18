@@ -1,0 +1,5 @@
+D:\projetos\BibliotecaUniversal\Biblioteca\src\UsuarioBiblioteca.Data\bin\Debug\UsuarioBiblioteca.Data.dll
+D:\projetos\BibliotecaUniversal\Biblioteca\src\UsuarioBiblioteca.Data\bin\Debug\UsuarioBiblioteca.Data.pdb
+D:\projetos\BibliotecaUniversal\Biblioteca\src\UsuarioBiblioteca.Data\obj\Debug\UsuarioBiblioteca.Data.csprojResolveAssemblyReference.cache
+D:\projetos\BibliotecaUniversal\Biblioteca\src\UsuarioBiblioteca.Data\obj\Debug\UsuarioBiblioteca.Data.dll
+D:\projetos\BibliotecaUniversal\Biblioteca\src\UsuarioBiblioteca.Data\obj\Debug\UsuarioBiblioteca.Data.pdb
