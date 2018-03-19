@@ -8,7 +8,7 @@ namespace Log.Domain.Entidade
         public DateTime DtRegistro { get; private set; }
         public TimeSpan Hora { get; private set; }
         public string Descricao { get; private set; }
-        public string Usuario { get; set; }
+        public string Usuario { get; private set; }
 
         public Registro(Registro reg)
         {

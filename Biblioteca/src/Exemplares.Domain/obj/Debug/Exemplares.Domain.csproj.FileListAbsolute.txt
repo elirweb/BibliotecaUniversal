@@ -7,3 +7,5 @@ D:\projetos\BibliotecaUniversal\Biblioteca\src\Exemplares.Domain\bin\Debug\Usuar
 D:\projetos\BibliotecaUniversal\Biblioteca\src\Exemplares.Domain\bin\Debug\Biblioteca.Core.Domain.pdb
 D:\projetos\BibliotecaUniversal\Biblioteca\src\Exemplares.Domain\obj\Debug\Exemplares.Domain.dll
 D:\projetos\BibliotecaUniversal\Biblioteca\src\Exemplares.Domain\obj\Debug\Exemplares.Domain.pdb
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Exemplares.Domain\bin\Debug\EntityFramework.dll
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Exemplares.Domain\bin\Debug\EntityFramework.xml

@@ -30,7 +30,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -40,12 +49,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Interfaces\IRepositorios\" />
     <Folder Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base\BasePrincipal.cs" />
     <Compile Include="Entidades\Bibliotecaria.cs" />
     <Compile Include="Entidades\Endereco.cs" />
+    <Compile Include="Mapping\Bibliotecaria.cs" />
+    <Compile Include="Mapping\Endereco.cs" />
     <Compile Include="ValueObjects\CNPJ.cs" />
     <Compile Include="ValueObjects\Contato.cs" />
     <Compile Include="ValueObjects\Email.cs" />
@@ -56,6 +68,10 @@
       <Project>{3919576b-982a-4770-827f-48d1840fdee8}</Project>
       <Name>Biblioteca.Core.Domain</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

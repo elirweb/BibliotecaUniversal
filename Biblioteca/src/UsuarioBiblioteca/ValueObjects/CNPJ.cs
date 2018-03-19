@@ -13,7 +13,7 @@ namespace UsuarioBiblioteca.ValueObjects
         public CNPJ(string n)
         {
             if(validarCNPJ(n))
-            Numero = Convert.ToInt32(n);
+                Numero = Convert.ToInt32(n);
         }
 
 

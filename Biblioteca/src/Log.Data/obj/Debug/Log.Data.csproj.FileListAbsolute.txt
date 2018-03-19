@@ -1,0 +1,4 @@
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Log.Data\bin\Debug\Log.Data.dll
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Log.Data\bin\Debug\Log.Data.pdb
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Log.Data\obj\Debug\Log.Data.dll
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Log.Data\obj\Debug\Log.Data.pdb
