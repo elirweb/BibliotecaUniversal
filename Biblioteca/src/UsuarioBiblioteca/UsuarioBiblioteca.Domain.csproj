@@ -49,13 +49,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Interfaces\IRepositorios\" />
     <Folder Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base\BasePrincipal.cs" />
     <Compile Include="Entidades\Bibliotecaria.cs" />
     <Compile Include="Entidades\Endereco.cs" />
+    <Compile Include="Interfaces\IRepositorios\IBibliotecaria.cs" />
+    <Compile Include="Interfaces\IRepositorios\IEndereco.cs" />
     <Compile Include="Mapping\Bibliotecaria.cs" />
     <Compile Include="Mapping\Endereco.cs" />
     <Compile Include="ValueObjects\CNPJ.cs" />
