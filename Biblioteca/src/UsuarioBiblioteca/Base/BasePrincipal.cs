@@ -8,7 +8,7 @@ namespace UsuarioBiblioteca.Base
 {
     public class BasePrincipal
     {
-        public Guid Id { get; private set; }
+        public Guid Id { get;  set; }
         public DateTime DtCadastro { get; private set; }
         public DateTime? DtUltmaAlteracao { get; private set; }
         public TimeSpan HoraCadastro { get; private set; }

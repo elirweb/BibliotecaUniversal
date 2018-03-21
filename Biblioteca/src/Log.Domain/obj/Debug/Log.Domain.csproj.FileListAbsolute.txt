@@ -3,3 +3,8 @@ D:\projetos\BibliotecaUniversal\Biblioteca\src\Log.Domain\bin\Debug\Log.Domain.p
 D:\projetos\BibliotecaUniversal\Biblioteca\src\Log.Domain\obj\Debug\Log.Domain.csprojResolveAssemblyReference.cache
 D:\projetos\BibliotecaUniversal\Biblioteca\src\Log.Domain\obj\Debug\Log.Domain.dll
 D:\projetos\BibliotecaUniversal\Biblioteca\src\Log.Domain\obj\Debug\Log.Domain.pdb
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Log.Domain\bin\Debug\Log.Domain.dll.config
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Log.Domain\bin\Debug\EntityFramework.dll
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Log.Domain\bin\Debug\EntityFramework.SqlServer.dll
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Log.Domain\bin\Debug\EntityFramework.xml
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Log.Domain\bin\Debug\EntityFramework.SqlServer.xml

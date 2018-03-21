@@ -26,7 +26,6 @@ namespace UsuarioBiblioteca.Entidades
         public string tipo  { get;private set; }
         public Endereco(Endereco end)
         {
-            Id = new Guid();
             Bairro = end.Bairro;
             Numero = end.Numero;
             Complemento = end.Complemento;

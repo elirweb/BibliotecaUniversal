@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Log.Data
+namespace Usuario.Domain.Interfaces.Repositorios
 {
-    public class Class1
+    public interface IUsuario
     {
+        void Adicionar(Entidades.Usuario usuario);
     }
 }

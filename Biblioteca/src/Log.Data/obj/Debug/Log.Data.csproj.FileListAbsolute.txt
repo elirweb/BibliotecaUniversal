@@ -2,3 +2,11 @@ D:\projetos\BibliotecaUniversal\Biblioteca\src\Log.Data\bin\Debug\Log.Data.dll
 D:\projetos\BibliotecaUniversal\Biblioteca\src\Log.Data\bin\Debug\Log.Data.pdb
 D:\projetos\BibliotecaUniversal\Biblioteca\src\Log.Data\obj\Debug\Log.Data.dll
 D:\projetos\BibliotecaUniversal\Biblioteca\src\Log.Data\obj\Debug\Log.Data.pdb
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Log.Data\bin\Debug\Log.Data.dll.config
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Log.Data\bin\Debug\EntityFramework.dll
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Log.Data\bin\Debug\EntityFramework.SqlServer.dll
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Log.Data\bin\Debug\Log.Domain.dll
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Log.Data\bin\Debug\Log.Domain.pdb
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Log.Data\bin\Debug\EntityFramework.xml
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Log.Data\bin\Debug\EntityFramework.SqlServer.xml
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Log.Data\obj\Debug\Log.Data.csprojResolveAssemblyReference.cache

@@ -10,6 +10,11 @@ namespace UsuarioBiblioteca.Data.Repositorios
 {
     public class RepositorioEndereco : Interfaces.IRepositorios.IEndereco
     {
+        private readonly Contexto.Contexto _contexto;
+        public RepositorioEndereco(Contexto.Contexto context)
+        {
+            _contexto = context;
+        }
         public void Adicionar(Endereco endereco)
         {
             throw new NotImplementedException();

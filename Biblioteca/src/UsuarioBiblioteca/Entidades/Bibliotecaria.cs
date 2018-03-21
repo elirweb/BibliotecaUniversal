@@ -25,6 +25,7 @@ namespace UsuarioBiblioteca.Entidades
 
         public Bibliotecaria(Bibliotecaria bib,Endereco endereco)
         {
+           Id = Guid.NewGuid();
            RazaoSocial = bib.RazaoSocial;
            Cnpj = new ValueObjects.CNPJ(Convert.ToString(bib.Cnpj));
            Usuario = bib.Usuario;

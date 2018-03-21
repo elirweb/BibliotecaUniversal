@@ -14,3 +14,4 @@ D:\projetos\BibliotecaUniversal\Biblioteca\src\UsuarioBiblioteca.Data\bin\Debug\
 D:\projetos\BibliotecaUniversal\Biblioteca\src\UsuarioBiblioteca.Data\bin\Debug\EntityFramework.SqlServer.xml
 D:\projetos\BibliotecaUniversal\Biblioteca\src\UsuarioBiblioteca.Data\obj\Debug\UsuarioBiblioteca.Data.Migrations.v1.resources
 D:\projetos\BibliotecaUniversal\Biblioteca\src\UsuarioBiblioteca.Data\obj\Debug\UsuarioBiblioteca.Data.csproj.GenerateResource.Cache
+D:\projetos\BibliotecaUniversal\Biblioteca\src\UsuarioBiblioteca.Data\obj\Debug\UsuarioBiblioteca.Data.Migrations.v3.resources

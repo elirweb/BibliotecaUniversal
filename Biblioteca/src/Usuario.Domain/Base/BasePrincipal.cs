@@ -5,6 +5,6 @@ namespace Usuario.Domain.Base
 {
     public class BasePrincipal
     {
-        public Guid Id { get; private set; }
+        public Guid Id { get; set; }
     }
 }

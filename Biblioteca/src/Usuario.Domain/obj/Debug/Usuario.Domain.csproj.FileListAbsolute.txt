@@ -3,3 +3,10 @@ D:\projetos\BibliotecaUniversal\Biblioteca\src\Usuario.Domain\bin\Debug\Usuario.
 D:\projetos\BibliotecaUniversal\Biblioteca\src\Usuario.Domain\obj\Debug\Usuario.Domain.dll
 D:\projetos\BibliotecaUniversal\Biblioteca\src\Usuario.Domain\obj\Debug\Usuario.Domain.pdb
 D:\projetos\BibliotecaUniversal\Biblioteca\src\Usuario.Domain\obj\Debug\Usuario.Domain.csprojResolveAssemblyReference.cache
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Usuario.Domain\bin\Debug\Usuario.Domain.dll.config
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Usuario.Domain\bin\Debug\Biblioteca.Core.Domain.dll
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Usuario.Domain\bin\Debug\EntityFramework.dll
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Usuario.Domain\bin\Debug\EntityFramework.SqlServer.dll
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Usuario.Domain\bin\Debug\Biblioteca.Core.Domain.pdb
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Usuario.Domain\bin\Debug\EntityFramework.xml
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Usuario.Domain\bin\Debug\EntityFramework.SqlServer.xml

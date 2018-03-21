@@ -9,8 +9,7 @@ namespace UsuarioBiblioteca.Mapping
         {
             ToTable("Bibliotecaria");
             HasKey(c => c.Id);
-            Property(c => c.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity)
-                .HasColumnName("IdBiblioteca");
+            Property(c => c.Id).HasColumnName("IdBiblioteca");
             Property(c => c.RazaoSocial).HasColumnType("varchar").HasMaxLength(50);
             Property(c => c.Cnpj.Numero).HasColumnType("int").HasColumnName("Cnpj");
             Property(c => c.Usuario).HasColumnType("varchar");
