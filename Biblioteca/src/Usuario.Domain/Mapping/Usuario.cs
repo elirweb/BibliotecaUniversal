@@ -3,7 +3,7 @@ using System.Data.Entity.ModelConfiguration;
 
 namespace Usuario.Domain.Mapping
 {
-    public class Usuario: EntityTypeConfiguration<Entidades.Usuario>
+    public class Usuario: EntityTypeConfiguration<Entidade.Usuario>
     {
         public Usuario()
         {

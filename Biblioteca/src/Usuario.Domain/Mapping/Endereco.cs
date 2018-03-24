@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace Usuario.Domain.Mapping
 {
-    public class Endereco: EntityTypeConfiguration<Entidades.Endereco>
+    public class Endereco: EntityTypeConfiguration<Entidade.EnderecoUsuario>
     {
         public Endereco()
         {
-            ToTable("Endereco");
+            ToTable("EnderecoUsuario");
             HasKey(c=>c.Id);
             Property(c => c.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity)
               .HasColumnName("IdEndereco");

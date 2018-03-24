@@ -1,0 +1,7 @@
+D:\projetos\BibliotecaUniversal\Biblioteca\test\Usuario.Test\bin\Debug\Usuario.Test.dll
+D:\projetos\BibliotecaUniversal\Biblioteca\test\Usuario.Test\bin\Debug\Usuario.Test.pdb
+D:\projetos\BibliotecaUniversal\Biblioteca\test\Usuario.Test\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+D:\projetos\BibliotecaUniversal\Biblioteca\test\Usuario.Test\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
+D:\projetos\BibliotecaUniversal\Biblioteca\test\Usuario.Test\obj\Debug\Usuario.Test.csprojResolveAssemblyReference.cache
+D:\projetos\BibliotecaUniversal\Biblioteca\test\Usuario.Test\obj\Debug\Usuario.Test.dll
+D:\projetos\BibliotecaUniversal\Biblioteca\test\Usuario.Test\obj\Debug\Usuario.Test.pdb

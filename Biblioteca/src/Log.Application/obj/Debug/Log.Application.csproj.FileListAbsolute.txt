@@ -2,3 +2,4 @@ D:\projetos\BibliotecaUniversal\Biblioteca\src\Log.Application\bin\Debug\Log.App
 D:\projetos\BibliotecaUniversal\Biblioteca\src\Log.Application\bin\Debug\Log.Application.pdb
 D:\projetos\BibliotecaUniversal\Biblioteca\src\Log.Application\obj\Debug\Log.Application.dll
 D:\projetos\BibliotecaUniversal\Biblioteca\src\Log.Application\obj\Debug\Log.Application.pdb
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Log.Application\obj\Debug\Log.Application.csprojResolveAssemblyReference.cache

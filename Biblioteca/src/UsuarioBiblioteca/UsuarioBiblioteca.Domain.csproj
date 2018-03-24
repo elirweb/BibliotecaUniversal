@@ -53,12 +53,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base\BasePrincipal.cs" />
+    <Compile Include="Entidades\Administradores.cs" />
     <Compile Include="Entidades\Bibliotecaria.cs" />
     <Compile Include="Entidades\Endereco.cs" />
-    <Compile Include="Interfaces\IRepositorios\IBibliotecaria.cs" />
-    <Compile Include="Interfaces\IRepositorios\IEndereco.cs" />
+    <Compile Include="Entidades\Grupos.cs" />
+    <Compile Include="Entidades\Livro.cs" />
+    <Compile Include="Interfaces\IRepositorios\IRepositorioAdministrador.cs" />
+    <Compile Include="Interfaces\IRepositorios\IRepositorioBibliotecaria.cs" />
+    <Compile Include="Interfaces\IRepositorios\IRepositorioEndereco.cs" />
+    <Compile Include="Interfaces\IRepositorios\IRepositorioLivro.cs" />
+    <Compile Include="Mapping\Administrador.cs" />
     <Compile Include="Mapping\Bibliotecaria.cs" />
     <Compile Include="Mapping\Endereco.cs" />
+    <Compile Include="Mapping\Grupos.cs" />
+    <Compile Include="Mapping\Livro.cs" />
     <Compile Include="ValueObjects\CNPJ.cs" />
     <Compile Include="ValueObjects\Contato.cs" />
     <Compile Include="ValueObjects\Email.cs" />

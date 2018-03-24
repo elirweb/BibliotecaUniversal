@@ -1,15 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Usuario.Domain.Entidades;
 
 namespace Usuario.Data.Repositorio
 {
-    public class RepositorioUsuario : Domain.Interfaces.Repositorios.IUsuario
+    public class RepositorioUsuario : Domain.Interfaces.Repositorios.IRepositorioUsuario
     {
-        public void Adicionar(Domain.Entidades.Usuario usuario)
+       
+
+        public void Adicionar(Domain.Entidade.Usuario usuario)
         {
             throw new NotImplementedException();
         }

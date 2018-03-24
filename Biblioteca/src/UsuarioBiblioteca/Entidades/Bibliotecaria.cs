@@ -1,5 +1,6 @@
 ﻿using Biblioteca.Core.Domain.Validation;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace UsuarioBiblioteca.Entidades
@@ -15,15 +16,14 @@ namespace UsuarioBiblioteca.Entidades
         public string ConfirmaSenha { get; private set; }
         public ValueObjects.Email Email { get; private set; }
 
-        [NotMapped]
-        public Endereco Endereco { get; private set; }
         public bool Situacao { get; private set; }
         public string Imagem { get; private set; }
 
         [NotMapped]
         public ValidationResult ValidationResult { get; set; }
 
-        public Bibliotecaria(Bibliotecaria bib,Endereco endereco)
+        public ICollection<Livro> Livro { get; set; }
+        public Bibliotecaria(Bibliotecaria bib)
         {
            Id = Guid.NewGuid();
            RazaoSocial = bib.RazaoSocial;
@@ -32,7 +32,6 @@ namespace UsuarioBiblioteca.Entidades
            Senha = new ValueObjects.Senha(bib.Senha.CodigoSenha, bib.ConfirmaSenha);
            Email = new ValueObjects.Email(bib.Email.Endereco);
            MomentoCadastro(bib.Situacao); // no momento de eu criar o cadastro posso definir se deixo ativo ou não
-           Endereco = new Endereco(endereco);
            Imagem = bib.Imagem;
         }
 

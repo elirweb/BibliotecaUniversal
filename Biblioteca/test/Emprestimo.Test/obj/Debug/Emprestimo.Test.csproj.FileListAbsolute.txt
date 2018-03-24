@@ -1,0 +1,7 @@
+D:\projetos\BibliotecaUniversal\Biblioteca\test\Emprestimo.Test\bin\Debug\Emprestimo.Test.dll
+D:\projetos\BibliotecaUniversal\Biblioteca\test\Emprestimo.Test\bin\Debug\Emprestimo.Test.pdb
+D:\projetos\BibliotecaUniversal\Biblioteca\test\Emprestimo.Test\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+D:\projetos\BibliotecaUniversal\Biblioteca\test\Emprestimo.Test\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
+D:\projetos\BibliotecaUniversal\Biblioteca\test\Emprestimo.Test\obj\Debug\Emprestimo.Test.csprojResolveAssemblyReference.cache
+D:\projetos\BibliotecaUniversal\Biblioteca\test\Emprestimo.Test\obj\Debug\Emprestimo.Test.dll
+D:\projetos\BibliotecaUniversal\Biblioteca\test\Emprestimo.Test\obj\Debug\Emprestimo.Test.pdb

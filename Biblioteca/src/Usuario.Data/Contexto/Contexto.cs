@@ -18,8 +18,8 @@ namespace Usuario.Data.Contexto
 
         }
 
-        public DbSet<Domain.Entidades.Usuario> Usuario { get; set; }
-        public DbSet<Domain.Entidades.Endereco> Endereco { get; set; }
+        public DbSet<Domain.Entidade.Usuario> Usuario { get; set; }
+        public DbSet<Domain.Entidade.EnderecoUsuario> EnderecoUsuario { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -31,11 +31,11 @@ namespace Usuario.Data.Contexto
             modelBuilder.Conventions.Remove<ManyToManyCascadeDeleteConvention>();
 
             modelBuilder.Configurations.Add(new Domain.Mapping.Usuario());
-            modelBuilder.Entity<Domain.Entidades.Usuario>().Ignore(c => c.ConfirmaSenha);
-            modelBuilder.Entity<Domain.Entidades.Usuario>().Ignore(c => c.ValidationResult);
+            modelBuilder.Entity<Domain.Entidade.Usuario>().Ignore(c => c.ConfirmaSenha);
+            modelBuilder.Entity<Domain.Entidade.Usuario>().Ignore(c => c.ValidationResult);
 
             modelBuilder.Configurations.Add(new Domain.Mapping.Endereco());
-            modelBuilder.Entity<Domain.Entidades.Endereco>().Ignore(c => c.ValidationResult);
+            modelBuilder.Entity<Domain.Entidade.EnderecoUsuario>().Ignore(c => c.ValidationResult);
             
         }
     }

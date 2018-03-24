@@ -51,7 +51,6 @@
   <ItemGroup>
     <Compile Include="Entidade\Registro.cs" />
     <Compile Include="Interfaces\Repositorio\IRegistro.cs" />
-    <Compile Include="Mapping\Registro.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

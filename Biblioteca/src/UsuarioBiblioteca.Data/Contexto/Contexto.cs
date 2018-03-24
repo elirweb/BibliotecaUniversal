@@ -15,7 +15,9 @@ namespace UsuarioBiblioteca.Data.Contexto
 
         public DbSet<Entidades.Bibliotecaria> Biblioteca { get; set; }
         public DbSet<Entidades.Endereco> Endereco { get; set; }
-
+        public DbSet<Entidades.Administradores> Administradores { get; set; }
+        public DbSet<Entidades.Grupos> Grupos { get; set; }
+        public DbSet<Entidades.Livro> Livro { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -30,12 +32,20 @@ namespace UsuarioBiblioteca.Data.Contexto
 
             modelBuilder.Configurations.Add(new Mapping.Bibliotecaria());
             modelBuilder.Entity<Entidades.Bibliotecaria>().Ignore(c => c.ConfirmaSenha);
-            modelBuilder.Entity<Entidades.Bibliotecaria>().Ignore(c => c.Endereco);
             modelBuilder.Entity<Entidades.Bibliotecaria>().Ignore(c=>c.ValidationResult);
-
             modelBuilder.Configurations.Add(new Mapping.Endereco());
             modelBuilder.Entity<Entidades.Endereco>().Ignore(c => c.ValidationResult);
             modelBuilder.Entity<Entidades.Endereco>().Ignore(c => c.tipo);
+
+            modelBuilder.Configurations.Add(new Mapping.Administrador());
+            modelBuilder.Entity<Entidades.Administradores>().Ignore(c => c.ValidationResult);
+            modelBuilder.Entity<Entidades.Administradores>().Ignore(c => c.ConfirmaSenha);
+
+            modelBuilder.Configurations.Add(new Mapping.Grupos());
+            modelBuilder.Configurations.Add(new Mapping.Livro());
+            modelBuilder.Entity<Entidades.Livro>().Ignore(c => c.ValidationResult);
+
+
 
         }
 

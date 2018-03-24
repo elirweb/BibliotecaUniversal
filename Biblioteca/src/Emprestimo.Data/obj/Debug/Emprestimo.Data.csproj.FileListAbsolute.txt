@@ -1,0 +1,12 @@
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Emprestimo.Data\obj\Debug\Emprestimo.Data.csprojResolveAssemblyReference.cache
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Emprestimo.Data\bin\Debug\Emprestimo.Data.dll.config
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Emprestimo.Data\bin\Debug\Emprestimo.Data.dll
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Emprestimo.Data\bin\Debug\Emprestimo.Data.pdb
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Emprestimo.Data\bin\Debug\Emprestimo.Domain.dll
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Emprestimo.Data\bin\Debug\EntityFramework.dll
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Emprestimo.Data\bin\Debug\EntityFramework.SqlServer.dll
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Emprestimo.Data\bin\Debug\Emprestimo.Domain.pdb
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Emprestimo.Data\bin\Debug\EntityFramework.xml
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Emprestimo.Data\bin\Debug\EntityFramework.SqlServer.xml
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Emprestimo.Data\obj\Debug\Emprestimo.Data.dll
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Emprestimo.Data\obj\Debug\Emprestimo.Data.pdb

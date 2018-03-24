@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F58271FB-833D-43B4-8C89-F6603C19F015}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Biblioteca.Core.Infra.IoC</RootNamespace>
+    <AssemblyName>Biblioteca.Core.Infra.IoC</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="SimpleInjector, Version=4.1.0.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SimpleInjector.4.1.0\lib\net45\SimpleInjector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Bootstrap.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Emprestimo.Application\Emprestimo.Application.csproj">
+      <Project>{532bd025-7b33-4fe9-81e8-3b9d32e3d6c5}</Project>
+      <Name>Emprestimo.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Emprestimo.Data\Emprestimo.Data.csproj">
+      <Project>{9e004173-5d6d-4fdd-a5fd-731c1c939ae3}</Project>
+      <Name>Emprestimo.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Emprestimo.Domain\Emprestimo.Domain.csproj">
+      <Project>{992dc7ca-5b16-4362-a004-917df01e6463}</Project>
+      <Name>Emprestimo.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Log.Application\Log.Application.csproj">
+      <Project>{d137be2c-043c-49ad-b583-cce6fd514db7}</Project>
+      <Name>Log.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Log.Data\Log.Data.csproj">
+      <Project>{3ac113c4-f143-4ca2-8d3c-6a50d5b95132}</Project>
+      <Name>Log.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Log.Domain\Log.Domain.csproj">
+      <Project>{70e7dcdb-f4f8-4ac2-ae79-235eb48e8ebb}</Project>
+      <Name>Log.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Usuario.Application\Usuario.Application.csproj">
+      <Project>{4100f9a2-f65f-4b54-89d6-6f4ad865190c}</Project>
+      <Name>Usuario.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Usuario.Data\Usuario.Data.csproj">
+      <Project>{5cefa7cc-02a8-4622-9af4-e3602762b0d5}</Project>
+      <Name>Usuario.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Usuario.Domain\Usuario.Domain.csproj">
+      <Project>{8aa29222-f191-4807-a370-86304dc875f6}</Project>
+      <Name>Usuario.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UsuarioBiblioteca.Application\UsuarioBiblioteca.Application.csproj">
+      <Project>{1f0fa24e-ce2c-4ddf-bcd7-09e022c42169}</Project>
+      <Name>UsuarioBiblioteca.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UsuarioBiblioteca.Data\UsuarioBiblioteca.Data.csproj">
+      <Project>{77ba261c-28b9-419c-b004-707c6d21680e}</Project>
+      <Name>UsuarioBiblioteca.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UsuarioBiblioteca\UsuarioBiblioteca.Domain.csproj">
+      <Project>{739ea4c4-0fe9-41ac-9d6e-96bbd9b4d839}</Project>
+      <Name>UsuarioBiblioteca.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,15 +1,16 @@
 ﻿using System;
-using Usuario.Domain.Entidades;
+using Usuario.Domain.Entidade;
 
 namespace Usuario.Data.Repositorio
 {
-    public class RepositorioEndereco : Domain.Interfaces.Repositorios.IEndereco
+    public class RepositorioEndereco : Domain.Interfaces.Repositorios.IRepositorioEndereco
     {
-        public void Adicionar(Endereco endereco)
+        public void Adicionar(EnderecoUsuario endereco)
         {
             throw new NotImplementedException();
         }
 
+     
         
     }
 }

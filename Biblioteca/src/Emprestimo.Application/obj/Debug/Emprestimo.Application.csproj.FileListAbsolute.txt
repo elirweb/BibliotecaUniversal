@@ -1,0 +1,9 @@
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Emprestimo.Application\bin\Debug\Emprestimo.Application.dll
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Emprestimo.Application\bin\Debug\Emprestimo.Application.pdb
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Emprestimo.Application\bin\Debug\Emprestimo.Domain.dll
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Emprestimo.Application\bin\Debug\EntityFramework.dll
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Emprestimo.Application\bin\Debug\Emprestimo.Domain.pdb
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Emprestimo.Application\bin\Debug\EntityFramework.xml
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Emprestimo.Application\obj\Debug\Emprestimo.Application.csprojResolveAssemblyReference.cache
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Emprestimo.Application\obj\Debug\Emprestimo.Application.dll
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Emprestimo.Application\obj\Debug\Emprestimo.Application.pdb

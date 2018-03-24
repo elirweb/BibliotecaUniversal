@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity.ModelConfiguration;
 
 namespace UsuarioBiblioteca.Mapping
@@ -21,7 +22,7 @@ namespace UsuarioBiblioteca.Mapping
             Property(c => c.HoraCadastro).HasColumnType("time");
             Property(c => c.HoraVisualizacao).HasColumnType("time");
 
-
+            
         }
     }
 }

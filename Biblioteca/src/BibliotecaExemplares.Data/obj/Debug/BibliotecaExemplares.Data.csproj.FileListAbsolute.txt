@@ -1,0 +1,16 @@
+D:\projetos\BibliotecaUniversal\Biblioteca\src\BibliotecaExemplares.Data\bin\Debug\BibliotecaExemplares.Data.dll.config
+D:\projetos\BibliotecaUniversal\Biblioteca\src\BibliotecaExemplares.Data\bin\Debug\BibliotecaExemplares.Data.dll
+D:\projetos\BibliotecaUniversal\Biblioteca\src\BibliotecaExemplares.Data\bin\Debug\BibliotecaExemplares.Data.pdb
+D:\projetos\BibliotecaUniversal\Biblioteca\src\BibliotecaExemplares.Data\bin\Debug\EntityFramework.dll
+D:\projetos\BibliotecaUniversal\Biblioteca\src\BibliotecaExemplares.Data\bin\Debug\EntityFramework.SqlServer.dll
+D:\projetos\BibliotecaUniversal\Biblioteca\src\BibliotecaExemplares.Data\bin\Debug\Exemplares.Domain.dll
+D:\projetos\BibliotecaUniversal\Biblioteca\src\BibliotecaExemplares.Data\bin\Debug\UsuarioBiblioteca.dll
+D:\projetos\BibliotecaUniversal\Biblioteca\src\BibliotecaExemplares.Data\bin\Debug\Biblioteca.Core.Domain.dll
+D:\projetos\BibliotecaUniversal\Biblioteca\src\BibliotecaExemplares.Data\bin\Debug\Exemplares.Domain.pdb
+D:\projetos\BibliotecaUniversal\Biblioteca\src\BibliotecaExemplares.Data\bin\Debug\UsuarioBiblioteca.pdb
+D:\projetos\BibliotecaUniversal\Biblioteca\src\BibliotecaExemplares.Data\bin\Debug\EntityFramework.xml
+D:\projetos\BibliotecaUniversal\Biblioteca\src\BibliotecaExemplares.Data\bin\Debug\EntityFramework.SqlServer.xml
+D:\projetos\BibliotecaUniversal\Biblioteca\src\BibliotecaExemplares.Data\bin\Debug\Biblioteca.Core.Domain.pdb
+D:\projetos\BibliotecaUniversal\Biblioteca\src\BibliotecaExemplares.Data\obj\Debug\BibliotecaExemplares.Data.csprojResolveAssemblyReference.cache
+D:\projetos\BibliotecaUniversal\Biblioteca\src\BibliotecaExemplares.Data\obj\Debug\BibliotecaExemplares.Data.dll
+D:\projetos\BibliotecaUniversal\Biblioteca\src\BibliotecaExemplares.Data\obj\Debug\BibliotecaExemplares.Data.pdb
