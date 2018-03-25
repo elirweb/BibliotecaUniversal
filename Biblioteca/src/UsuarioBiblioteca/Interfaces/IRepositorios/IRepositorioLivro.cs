@@ -9,5 +9,7 @@ namespace UsuarioBiblioteca.Interfaces.IRepositorios
     public interface IRepositorioLivro
     {
         void Adicionar(Entidades.Livro lv);
+
+        bool EhLivroCadastrado(Entidades.Livro lv);
     }
 }

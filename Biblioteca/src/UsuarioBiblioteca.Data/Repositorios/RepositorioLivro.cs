@@ -13,5 +13,10 @@ namespace UsuarioBiblioteca.Data.Repositorios
         {
             throw new NotImplementedException();
         }
+
+        public bool EhLivroCadastrado(Livro lv)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

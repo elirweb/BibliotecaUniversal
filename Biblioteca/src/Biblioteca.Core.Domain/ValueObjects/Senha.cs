@@ -1,8 +1,7 @@
-﻿
-using System;
+﻿using System;
 using System.Text;
 
-namespace Usuario.Domain.ValueObjects
+namespace Biblioteca.Core.Domain.ValueObjects
 {
     public class Senha
     {
@@ -31,3 +30,4 @@ namespace Usuario.Domain.ValueObjects
         }
     }
 }
+

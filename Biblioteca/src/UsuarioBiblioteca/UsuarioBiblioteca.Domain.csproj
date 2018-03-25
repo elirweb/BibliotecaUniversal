@@ -58,6 +58,7 @@
     <Compile Include="Entidades\Endereco.cs" />
     <Compile Include="Entidades\Grupos.cs" />
     <Compile Include="Entidades\Livro.cs" />
+    <Compile Include="Enum\Categoria.cs" />
     <Compile Include="Especificacao\BibliotecaDevePossuiCNPJUnico.cs" />
     <Compile Include="Especificacao\BibliotecaDevePossuirUnicoEmail.cs" />
     <Compile Include="Events\BibliotecaCadastroEvent.cs" />
@@ -74,8 +75,6 @@
     <Compile Include="Validacao\BibliotecaAptoParaCadastro.cs" />
     <Compile Include="ValueObjects\CNPJ.cs" />
     <Compile Include="ValueObjects\Contato.cs" />
-    <Compile Include="ValueObjects\Email.cs" />
-    <Compile Include="ValueObjects\Senha.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Biblioteca.Core.Domain\Biblioteca.Core.Domain.csproj">

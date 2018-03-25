@@ -12,23 +12,24 @@ namespace UsuarioBiblioteca.Entidades
     {
         public Guid Id { get; private set; }
         public string Nome { get; private set; }
-        public ValueObjects.Email Email { get; private set; }
+        public Biblioteca.Core.Domain.ValueObjects.Email Email { get; private set; }
         public string Login { get; private set; }
-        public ValueObjects.Senha Senha { get; private set; }
+        public Biblioteca.Core.Domain.ValueObjects.Senha Senha { get; private set; }
+        public string Grupo { get; private set; } // role de usuario
+
         [NotMapped]
         public string ConfirmaSenha { get; private set; }
 
-        public string Grupo { get; private set; } // role de usuario
         [NotMapped]
         public ValidationResult ValidationResult { get; set; }
 
-        public Administradores(Administradores ad)
+        public Administradores(string nome, string email, string login, string senha, string confirma)
         {
             Id = new Guid();
-            Nome = ad.Nome;
-            Email = new ValueObjects.Email(ad.Email.Endereco);
-            Login = ad.Login;
-            Senha = new ValueObjects.Senha(ad.Senha.CodigoSenha,ad.ConfirmaSenha);
+            Nome = nome;
+            Email = new Biblioteca.Core.Domain.ValueObjects.Email(email);
+            Login = login;
+            Senha = new Biblioteca.Core.Domain.ValueObjects.Senha(senha,confirma);
             Grupo = "Biblioteca";
         }
 

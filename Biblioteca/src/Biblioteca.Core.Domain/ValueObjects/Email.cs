@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace UsuarioBiblioteca.ValueObjects
+﻿
+namespace Biblioteca.Core.Domain.ValueObjects
 {
     public class Email
     {
@@ -12,11 +7,12 @@ namespace UsuarioBiblioteca.ValueObjects
 
         public Email(string end)
         {
-            if(IsValid(end))
+            if (IsValid(end))
                 Endereco = end;
         }
 
-        public bool IsValid(string end) {
+        public bool IsValid(string end)
+        {
             if (end.Contains("@"))
                 return true;
             return false;
@@ -25,3 +21,4 @@ namespace UsuarioBiblioteca.ValueObjects
 
     }
 }
+

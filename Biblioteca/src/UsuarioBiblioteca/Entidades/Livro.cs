@@ -15,18 +15,21 @@ namespace UsuarioBiblioteca.Entidades
         public Guid IdBiblioteca { get;  set; }
         public virtual Bibliotecaria Biblioteca { get; set; }
 
+        public Enum.Categoria Categoria { get; private set; } 
+
         [NotMapped]
         public ValidationResult ValidationResult { get; set; }
 
-        public Livro(Livro lv)
+        public Livro(string titulo, int qtd,string editora, bool ativ, string descricao, Guid id, Enum.Categoria cat)
         {
             Id = new Guid();
-            Titulo = lv.Titulo;
-            QtdPg = lv.QtdPg;
-            Editora = lv.Editora;
-            Ativo = lv.Ativo;
-            Descricao = lv.Descricao;
-            IdBiblioteca = lv.IdBiblioteca;
+            Titulo = titulo;
+            QtdPg = qtd;
+            Editora = editora;
+            Ativo = ativ;
+            Descricao = descricao;
+            IdBiblioteca = id;
+            Categoria = cat;
         }
     }
 }

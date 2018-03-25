@@ -9,9 +9,9 @@ namespace UsuarioBiblioteca.Base
     public class BasePrincipal
     {
         public Guid Id { get;  set; }
-        public DateTime DtCadastro { get; private set; }
+        public DateTime DtCadastro { get; set; }
         public DateTime? DtUltmaAlteracao { get; private set; }
-        public TimeSpan HoraCadastro { get; private set; }
+        public TimeSpan HoraCadastro { get;  set; }
         public TimeSpan? HoraVisualizacao { get; private set; }
 
     }

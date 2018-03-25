@@ -11,5 +11,5 @@ namespace UsuarioBiblioteca.Interfaces.IRepositorios
         void Adicionar(Entidades.Bibliotecaria bibliotecaria);
         bool CNPJUnico(Entidades.Bibliotecaria bibliotecaria);
         bool EmailUnico(Entidades.Bibliotecaria bibliotecaria);
-    }
+  }
 }

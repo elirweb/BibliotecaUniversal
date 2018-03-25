@@ -24,17 +24,18 @@ namespace UsuarioBiblioteca.Entidades
 
         [NotMapped]
         public string tipo  { get;private set; }
-        public Endereco(Endereco end)
+        public Endereco(string bairro, int numero, string complemento, string localidade, string uf,int telefone, string tipo,int ddd, Guid id)
         {
-            Bairro = end.Bairro;
-            Numero = end.Numero;
-            Complemento = end.Complemento;
-            Localidade = end.Localidade;
-            Uf = end.Uf;
-            Telefone = new ValueObjects.Contato(Convert.ToInt32(end.Telefone), tipo);
+            Id = Guid.NewGuid();
+            Bairro = bairro;
+            Numero = numero;
+            Complemento = complemento;
+            Localidade = localidade;
+            Uf = uf;
+            Telefone = new ValueObjects.Contato(telefone, tipo);
             TipoContat = tipo;
-            DDD = end.DDD;
-            IdBlioteca = end.Biblioteca.Id;
+            DDD = ddd;
+            IdBlioteca = id;
         }
 
     }

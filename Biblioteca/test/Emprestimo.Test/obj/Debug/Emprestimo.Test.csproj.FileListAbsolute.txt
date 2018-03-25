@@ -5,3 +5,13 @@ D:\projetos\BibliotecaUniversal\Biblioteca\test\Emprestimo.Test\bin\Debug\Micros
 D:\projetos\BibliotecaUniversal\Biblioteca\test\Emprestimo.Test\obj\Debug\Emprestimo.Test.csprojResolveAssemblyReference.cache
 D:\projetos\BibliotecaUniversal\Biblioteca\test\Emprestimo.Test\obj\Debug\Emprestimo.Test.dll
 D:\projetos\BibliotecaUniversal\Biblioteca\test\Emprestimo.Test\obj\Debug\Emprestimo.Test.pdb
+D:\projetos\BibliotecaUniversal\Biblioteca\test\Emprestimo.Test\bin\Debug\xunit.abstractions.dll
+D:\projetos\BibliotecaUniversal\Biblioteca\test\Emprestimo.Test\bin\Debug\xunit.runner.visualstudio.testadapter.dll
+D:\projetos\BibliotecaUniversal\Biblioteca\test\Emprestimo.Test\bin\Debug\xunit.runner.reporters.net452.dll
+D:\projetos\BibliotecaUniversal\Biblioteca\test\Emprestimo.Test\bin\Debug\xunit.runner.utility.net452.dll
+D:\projetos\BibliotecaUniversal\Biblioteca\test\Emprestimo.Test\bin\Debug\xunit.assert.dll
+D:\projetos\BibliotecaUniversal\Biblioteca\test\Emprestimo.Test\bin\Debug\xunit.core.dll
+D:\projetos\BibliotecaUniversal\Biblioteca\test\Emprestimo.Test\bin\Debug\xunit.execution.desktop.dll
+D:\projetos\BibliotecaUniversal\Biblioteca\test\Emprestimo.Test\bin\Debug\xunit.assert.xml
+D:\projetos\BibliotecaUniversal\Biblioteca\test\Emprestimo.Test\bin\Debug\xunit.core.xml
+D:\projetos\BibliotecaUniversal\Biblioteca\test\Emprestimo.Test\bin\Debug\xunit.execution.desktop.xml
