@@ -21,5 +21,15 @@ namespace UsuarioBiblioteca.Data.Repositorios
             
             throw new NotImplementedException();
         }
+
+        public bool CNPJUnico(Bibliotecaria bibliotecaria)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool EmailUnico(Bibliotecaria bibliotecaria)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

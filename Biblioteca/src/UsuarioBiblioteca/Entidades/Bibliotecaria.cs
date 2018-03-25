@@ -7,6 +7,11 @@ namespace UsuarioBiblioteca.Entidades
 {
     public class Bibliotecaria:Base.BasePrincipal
     {
+        private string cnpj;
+        private string senha;
+        private string email;
+        private bool v;
+
         public string RazaoSocial { get; private set; }
         public ValueObjects.CNPJ Cnpj { get; private set; }
         public string Usuario { get; private set; }
@@ -23,16 +28,18 @@ namespace UsuarioBiblioteca.Entidades
         public ValidationResult ValidationResult { get; set; }
 
         public ICollection<Livro> Livro { get; set; }
-        public Bibliotecaria(Bibliotecaria bib)
+        
+
+        public Bibliotecaria(string razaoSocial, string cnpj, string usuario, string senha, string confirmasenha, string email, bool situacao, string imagem)
         {
-           Id = Guid.NewGuid();
-           RazaoSocial = bib.RazaoSocial;
-           Cnpj = new ValueObjects.CNPJ(Convert.ToString(bib.Cnpj));
-           Usuario = bib.Usuario;
-           Senha = new ValueObjects.Senha(bib.Senha.CodigoSenha, bib.ConfirmaSenha);
-           Email = new ValueObjects.Email(bib.Email.Endereco);
-           MomentoCadastro(bib.Situacao); // no momento de eu criar o cadastro posso definir se deixo ativo ou não
-           Imagem = bib.Imagem;
+            Id = Guid.NewGuid();
+            RazaoSocial = razaoSocial;
+            Cnpj = new ValueObjects.CNPJ(Convert.ToString(cnpj));
+            Usuario = usuario;
+            Senha = new ValueObjects.Senha(senha, confirmasenha);
+            Email = new ValueObjects.Email(email);
+            MomentoCadastro(situacao); // no momento de eu criar o cadastro posso definir se deixo ativo ou não
+            Imagem = imagem;
         }
 
         public void MomentoCadastro(bool situacao) {

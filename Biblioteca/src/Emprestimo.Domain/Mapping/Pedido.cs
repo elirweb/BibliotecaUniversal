@@ -14,7 +14,7 @@ namespace Emprestimo.Domain.Mapping
             ToTable("Pedido");
             HasKey(c=>c.Id);
             Property(c=>c.DtPedido).HasColumnType("Datetime");
-            Property(c => c.HoraPedido).HasColumnType("times");
+            Property(c => c.HoraPedido).HasColumnType("time");
             Property(c => c.LivroId);
             Property(c => c.UsuarioId);
             Property(c => c.BibliotecaId);

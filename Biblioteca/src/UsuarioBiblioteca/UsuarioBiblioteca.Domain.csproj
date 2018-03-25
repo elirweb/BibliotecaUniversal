@@ -58,6 +58,10 @@
     <Compile Include="Entidades\Endereco.cs" />
     <Compile Include="Entidades\Grupos.cs" />
     <Compile Include="Entidades\Livro.cs" />
+    <Compile Include="Especificacao\BibliotecaDevePossuiCNPJUnico.cs" />
+    <Compile Include="Especificacao\BibliotecaDevePossuirUnicoEmail.cs" />
+    <Compile Include="Events\BibliotecaCadastroEvent.cs" />
+    <Compile Include="Handler\BibliotecaCadastroHandler.cs" />
     <Compile Include="Interfaces\IRepositorios\IRepositorioAdministrador.cs" />
     <Compile Include="Interfaces\IRepositorios\IRepositorioBibliotecaria.cs" />
     <Compile Include="Interfaces\IRepositorios\IRepositorioEndereco.cs" />
@@ -67,6 +71,7 @@
     <Compile Include="Mapping\Endereco.cs" />
     <Compile Include="Mapping\Grupos.cs" />
     <Compile Include="Mapping\Livro.cs" />
+    <Compile Include="Validacao\BibliotecaAptoParaCadastro.cs" />
     <Compile Include="ValueObjects\CNPJ.cs" />
     <Compile Include="ValueObjects\Contato.cs" />
     <Compile Include="ValueObjects\Email.cs" />

@@ -50,6 +50,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contexto\Contexto.cs" />
+    <Compile Include="Migrations\201803250108474_v1.cs" />
+    <Compile Include="Migrations\201803250108474_v1.Designer.cs">
+      <DependentUpon>201803250108474_v1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803250115596_v2.cs" />
+    <Compile Include="Migrations\201803250115596_v2.Designer.cs">
+      <DependentUpon>201803250115596_v2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositorio\RepositorioEndereco.cs" />
     <Compile Include="Repositorio\RepositorioUsuario.cs" />
@@ -69,6 +78,14 @@
       <Project>{8aa29222-f191-4807-a370-86304dc875f6}</Project>
       <Name>Usuario.Domain</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201803250108474_v1.resx">
+      <DependentUpon>201803250108474_v1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803250115596_v2.resx">
+      <DependentUpon>201803250115596_v2.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

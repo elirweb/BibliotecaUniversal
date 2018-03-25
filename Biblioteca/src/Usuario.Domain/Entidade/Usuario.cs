@@ -15,6 +15,8 @@ namespace Usuario.Domain.Entidade
         public ValueObjects.Email Email { get; private set; }
         public ValueObjects.CPF Cpf { get; private set; }
 
+        public string Grupo { get; private set; }
+
         [NotMapped]
         public ValidationResult ValidationResult { get; set; }
         public Usuario(Usuario usu)
@@ -25,6 +27,7 @@ namespace Usuario.Domain.Entidade
             Senha = new ValueObjects.Senha(usu.Senha.CodigoSenha,usu.ConfirmaSenha);
             Email = new ValueObjects.Email(usu.Email.Endereco);
             Cpf = new ValueObjects.CPF(usu.Cpf.Codigo);
+            Grupo = "Usuario";
         }         
     }
 }

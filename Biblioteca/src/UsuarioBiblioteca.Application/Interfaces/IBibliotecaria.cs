@@ -8,6 +8,6 @@ namespace UsuarioBiblioteca.Application.Interfaces
 {
     public interface IBibliotecaria
     {
-        void Adcionar(ViewModel.Bibliotecaria biblio);
+        ViewModel.Bibliotecaria Adicionar(ViewModel.Bibliotecaria biblio);
     }
 }

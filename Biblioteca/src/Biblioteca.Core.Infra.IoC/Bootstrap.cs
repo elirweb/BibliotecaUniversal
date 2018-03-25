@@ -36,10 +36,13 @@ namespace Biblioteca.Core.Infra.IoC
             //contexto
             container.Register<UsuarioBiblioteca.Data.Contexto.Contexto>(Lifestyle.Singleton);
            container.Register<Usuario.Data.Contexto.Contexto>(Lifestyle.Singleton);
- 
+            container.Register<Emprestimo.Data.Contexto.Contexto>(Lifestyle.Singleton);
+
             //Unit Of Work
             container.Register<UsuarioBiblioteca.Data.UnitOfWork.IUnitOfWork, UsuarioBiblioteca.Data.UnitOfWork.UnitOfWork>(Lifestyle.Singleton);
             container.Register<Usuario.Data.UnitOfWork.IUnitOfWork, Usuario.Data.UnitOfWork.UnitOfWork>(Lifestyle.Singleton);
+            container.Register<Emprestimo.Data.UnitOfWork.IUnitOfWork, Emprestimo.Data.UnitOfWork.UnitOfWork>(Lifestyle.Singleton);
+
         }
     }
 }

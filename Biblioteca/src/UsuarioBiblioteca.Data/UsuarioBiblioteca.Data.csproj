@@ -50,6 +50,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contexto\Contexto.cs" />
+    <Compile Include="Migrations\201803250056230_v1.cs" />
+    <Compile Include="Migrations\201803250056230_v1.Designer.cs">
+      <DependentUpon>201803250056230_v1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositorios\RepositorioAdministrador.cs" />
     <Compile Include="Repositorios\RepositorioBibliotecaria.cs" />
@@ -71,6 +76,11 @@
       <Project>{739ea4c4-0fe9-41ac-9d6e-96bbd9b4d839}</Project>
       <Name>UsuarioBiblioteca.Domain</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201803250056230_v1.resx">
+      <DependentUpon>201803250056230_v1.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

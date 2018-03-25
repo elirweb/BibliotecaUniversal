@@ -48,12 +48,26 @@
     <Compile Include="Interfaces\IBibliotecaria.cs" />
     <Compile Include="Interfaces\IEndereco.cs" />
     <Compile Include="Interfaces\ILivro.cs" />
+    <Compile Include="Mapper\ViewModelToDomain.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\ApplicationService.cs" />
     <Compile Include="ViewModel\Bibliotecaria.cs" />
     <Compile Include="ViewModel\Endereco.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Mapper\" />
+    <ProjectReference Include="..\Biblioteca.Core.Domain\Biblioteca.Core.Domain.csproj">
+      <Project>{3919576B-982A-4770-827F-48D1840FDEE8}</Project>
+      <Name>Biblioteca.Core.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UsuarioBiblioteca.Data\UsuarioBiblioteca.Data.csproj">
+      <Project>{77BA261C-28B9-419C-B004-707C6D21680E}</Project>
+      <Name>UsuarioBiblioteca.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UsuarioBiblioteca\UsuarioBiblioteca.Domain.csproj">
+      <Project>{739ea4c4-0fe9-41ac-9d6e-96bbd9b4d839}</Project>
+      <Name>UsuarioBiblioteca.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

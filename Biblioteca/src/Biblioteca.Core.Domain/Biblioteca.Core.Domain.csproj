@@ -46,10 +46,15 @@
     <Compile Include="Handlers\DomainNotificationHandler.cs" />
     <Compile Include="Interfaces\IContainer.cs" />
     <Compile Include="Interfaces\IDomainEvent.cs" />
+    <Compile Include="Interfaces\IEspecificacao.cs" />
     <Compile Include="Interfaces\IHandler.cs" />
+    <Compile Include="Interfaces\IRule.cs" />
+    <Compile Include="Interfaces\IValidator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validation\Rule.cs" />
     <Compile Include="Validation\ValidationErros.cs" />
     <Compile Include="Validation\ValidationResult.cs" />
+    <Compile Include="Validation\Validator.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
