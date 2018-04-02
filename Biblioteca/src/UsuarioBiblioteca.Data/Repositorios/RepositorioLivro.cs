@@ -9,6 +9,11 @@ namespace UsuarioBiblioteca.Data.Repositorios
 {
     public class RepositorioLivro : Interfaces.IRepositorios.IRepositorioLivro
     {
+        private Contexto.Contexto contexto;
+        public RepositorioLivro(Contexto.Contexto coc)
+        {
+            contexto = coc;
+        }
         public void Adicionar(Livro lv)
         {
             throw new NotImplementedException();

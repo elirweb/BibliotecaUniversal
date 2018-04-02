@@ -1,4 +1,6 @@
-﻿using System.Web.Http;
+﻿using SimpleInjector;
+using SimpleInjector.Integration.WebApi;
+using System.Web.Http;
 using System.Web.Http.Cors;
 
 namespace Api
@@ -10,7 +12,7 @@ namespace Api
             // Web API configuration and services
             // Configure Web API to use only bearer token authentication.
             config.EnableCors(new EnableCorsAttribute("*", "*", "GET")); // configurando os enablecors
-
+            
             // Web API routes
             config.MapHttpAttributeRoutes();
 

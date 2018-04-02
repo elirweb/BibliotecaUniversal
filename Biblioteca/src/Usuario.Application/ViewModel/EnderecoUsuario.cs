@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,11 +9,18 @@ namespace Usuario.Application.ViewModel
 {
     public class EnderecoUsuario
     {
-        public string Localidade { get; private set; }
-        public string Bairro { get; private set; }
-        public int Numero { get; private set; }
-        public string Cidade { get; private set; }
-        public string Uf { get; private set; }
+        [Required(ErrorMessage ="Favor informar a localidade")]
+        public string Localidade { get;  set; }
+        [Required(ErrorMessage = "Favor informar o bairro")]
+        public string Bairro { get;  set; }
+        [Required(ErrorMessage = "Favor informar o Numero")]
+        public int Numero { get;  set; }
+        [Required(ErrorMessage = "Favor informar a Cidade")]
+        public string Cidade { get;  set; }
+        [Required(ErrorMessage = "Favor informar o Uf")]
+        public string Uf { get;  set; }
+
+        public ViewModel.Usuario IdUsuario { get; set; } 
 
     }
 }

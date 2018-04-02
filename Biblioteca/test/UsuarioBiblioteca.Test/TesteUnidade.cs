@@ -8,7 +8,9 @@ namespace UsuarioBiblioteca.Test
     {
         /*
          *Especificação de Teste
-            
+            1 - validar o email administrador
+        Dominios: Livro, Administrador, Bibliotecaria 
+
         */
 
         [Fact]
@@ -24,16 +26,34 @@ namespace UsuarioBiblioteca.Test
         }
 
         [Fact]
-        public void Cadastrar_3_Livros_True() {
+        public void Verificar_Se_CNPJ_EhNulo() {
             //Arrange
-            var list = new List<Entidades.Livro>();
-            list.Add(new Entidades.Livro() { Ativo = true, Descricao = "Livro muito bom", Editora = "Erica", QtdPg = 200, Titulo = "elirweb"  });
-
+            var bibli = new Entidades.Bibliotecaria();
             //Act
-            var count = list.Count;
+            bibli.Email = "";
 
             //Assert 
-            Assert.Equal("3", count.ToString());
+            Assert.Empty(bibli.Email);
         }
+
+
+        [Fact]
+        public void Verificar_Qtds_LivrosCadastrado() {
+            //Arrange
+            var list = new List<Entidades.Livro>();
+
+            //Act
+            list.Add(new Entidades.Livro() { Ativo = true, Descricao = "Livro de teste", Editora = "Erica", IdBiblioteca = new System.Guid(), Id = new System.Guid(), QtdPg = 10, Titulo = "Teste 2"   });
+            list.Add(new Entidades.Livro() { Ativo = true, Descricao = "Livro de teste", Editora = "Erica", IdBiblioteca = new System.Guid(), Id = new System.Guid(), QtdPg = 10, Titulo = "Teste 2" });
+            list.Add(new Entidades.Livro() { Ativo = true, Descricao = "Livro de teste", Editora = "Erica", IdBiblioteca = new System.Guid(), Id = new System.Guid(), QtdPg = 10, Titulo = "Teste 2" });
+            list.Add(new Entidades.Livro() { Ativo = true, Descricao = "Livro de teste", Editora = "Erica", IdBiblioteca = new System.Guid(), Id = new System.Guid(), QtdPg = 10, Titulo = "Teste 2" });
+            list.Add(new Entidades.Livro() { Ativo = true, Descricao = "Livro de teste", Editora = "Erica", IdBiblioteca = new System.Guid(), Id = new System.Guid(), QtdPg = 10, Titulo = "Teste 2" });
+            list.Add(new Entidades.Livro() { Ativo = true, Descricao = "Livro de teste", Editora = "Erica", IdBiblioteca = new System.Guid(), Id = new System.Guid(), QtdPg = 10, Titulo = "Teste 2" });
+       
+            //Assert
+            Assert.Equal(5, list.Count);
+        }
+
+        // falta implementar o mock
     }
 }

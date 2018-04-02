@@ -1,5 +1,13 @@
 D:\projetos\BibliotecaUniversal\Biblioteca\src\UsuarioBiblioteca.Application\bin\Debug\UsuarioBiblioteca.Application.dll
 D:\projetos\BibliotecaUniversal\Biblioteca\src\UsuarioBiblioteca.Application\bin\Debug\UsuarioBiblioteca.Application.pdb
+D:\projetos\BibliotecaUniversal\Biblioteca\src\UsuarioBiblioteca.Application\bin\Debug\Biblioteca.Core.Domain.dll
+D:\projetos\BibliotecaUniversal\Biblioteca\src\UsuarioBiblioteca.Application\bin\Debug\UsuarioBiblioteca.Data.dll
+D:\projetos\BibliotecaUniversal\Biblioteca\src\UsuarioBiblioteca.Application\bin\Debug\UsuarioBiblioteca.dll
+D:\projetos\BibliotecaUniversal\Biblioteca\src\UsuarioBiblioteca.Application\bin\Debug\EntityFramework.dll
+D:\projetos\BibliotecaUniversal\Biblioteca\src\UsuarioBiblioteca.Application\bin\Debug\Biblioteca.Core.Domain.pdb
+D:\projetos\BibliotecaUniversal\Biblioteca\src\UsuarioBiblioteca.Application\bin\Debug\UsuarioBiblioteca.Data.pdb
+D:\projetos\BibliotecaUniversal\Biblioteca\src\UsuarioBiblioteca.Application\bin\Debug\UsuarioBiblioteca.pdb
+D:\projetos\BibliotecaUniversal\Biblioteca\src\UsuarioBiblioteca.Application\bin\Debug\EntityFramework.xml
 D:\projetos\BibliotecaUniversal\Biblioteca\src\UsuarioBiblioteca.Application\obj\Debug\UsuarioBiblioteca.Application.csprojResolveAssemblyReference.cache
 D:\projetos\BibliotecaUniversal\Biblioteca\src\UsuarioBiblioteca.Application\obj\Debug\UsuarioBiblioteca.Application.dll
 D:\projetos\BibliotecaUniversal\Biblioteca\src\UsuarioBiblioteca.Application\obj\Debug\UsuarioBiblioteca.Application.pdb

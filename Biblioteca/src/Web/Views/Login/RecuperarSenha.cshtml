@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "RecuperarSenha";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+
+@model Usuario.Application.ViewModel.Usuario
+
+<div class="container">
+    <div class="card card-login mx-auto mt-5">
+        <div class="card-header">Recuperar Senha</div>
+        <div class="card-body">
+
+            @using (Html.BeginForm("RecuperarSenha", "Login", FormMethod.Post, new { @id = "FormRecuperar", @ng_controller = "authctrl" }))
+            {
+              
+                @Html.AntiForgeryToken()
+               
+                <div class="form-group">
+                    @Html.Label("Email")
+                    @Html.TextBoxFor(c => c.Email, new { @type = "email", @class = "form-control", @placeholder = "Sua Email", @ng_model= "FormRecuperar.Email" })
+                </div>
+                 <div class="form-group">
+                    <input type="button" value="Registra-se" class="btn-dark" ng-click="RecuperarSenha()" />
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+
+

@@ -9,6 +9,11 @@ namespace UsuarioBiblioteca.Data.Repositorios
 {
     public class RepositorioAdministrador : Interfaces.IRepositorios.IRepositorioAdministrador
     {
+        private readonly Contexto.Contexto contexto;
+        public RepositorioAdministrador(Contexto.Contexto coc)
+        {
+            contexto = coc;
+        }
         public void Adicionar(Administradores ad)
         {
             throw new NotImplementedException();

@@ -1,0 +1,2 @@
+D:\projetos\BibliotecaUniversal\Biblioteca\src\UsuarioBiblioteca.Data\obj\Release\UsuarioBiblioteca.Data.Migrations.v1.resources
+D:\projetos\BibliotecaUniversal\Biblioteca\src\UsuarioBiblioteca.Data\obj\Release\UsuarioBiblioteca.Data.csproj.GenerateResource.Cache

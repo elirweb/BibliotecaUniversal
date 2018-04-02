@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "RedefinirSenha";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+
+@model Usuario.Application.ViewModel.Usuario
+
+<div class="container">
+    <div class="card card-login mx-auto mt-5">
+        <div class="card-header">Se cadastre-se</div>
+        <div class="card-body">
+
+            @using (Html.BeginForm("RedefinirSenha", "Login", FormMethod.Post, new { @id = "FormCadastro", @ng_controller = "authctrl" }))
+            {
+                <span style="text-align: center">@Html.ValidationSummary(false, "", new { @class = "text-danger" })</span>
+
+                @Html.AntiForgeryToken()
+                <div class="form-group">
+                    @Html.Label("Email")
+                    @Html.TextBoxFor(c => c.Email, new { @type = "email", @class = "form-control", @placeholder = "Sua Email" })
+                </div>
+
+                 <div class="form-group">
+                    @Html.Label("Senha")
+                    @Html.TextBoxFor(c => c.Senha, new { @type = "password", @class = "form-control", @placeholder = "Sua senha" })
+                </div>
+                <div class="form-group">
+                    @Html.Label("Confirma Senha")
+                    @Html.TextBoxFor(c => c.ConfirmaSenha, new { @type = "password", @class = "form-control", @placeholder = "Confirma senha" })
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="Redefinir" class="btn-dark" />
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+

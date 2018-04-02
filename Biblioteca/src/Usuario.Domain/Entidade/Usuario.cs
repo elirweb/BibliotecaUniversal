@@ -1,5 +1,6 @@
 ﻿
 using Biblioteca.Core.Domain.Validation;
+using System;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Usuario.Domain.Entidade
@@ -19,9 +20,9 @@ namespace Usuario.Domain.Entidade
 
         [NotMapped]
         public ValidationResult ValidationResult { get; set; }
-        public Usuario(string nome,string login,string senha, string confirma,string email,string cpf)
+        public Usuario(Guid id, string nome,string login,string senha, string confirma,string email,string cpf)
         {
-            Id = new System.Guid();
+            Id = id;
             Nome = nome;
             Login = login;
             Senha = new Biblioteca.Core.Domain.ValueObjects.Senha(senha,confirma);

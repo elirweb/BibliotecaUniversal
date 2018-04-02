@@ -1,0 +1,2 @@
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Emprestimo.Data\obj\Release\Emprestimo.Data.Migrations.v1.resources
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Emprestimo.Data\obj\Release\Emprestimo.Data.csproj.GenerateResource.Cache

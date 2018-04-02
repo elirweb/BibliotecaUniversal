@@ -8,7 +8,7 @@ namespace UsuarioBiblioteca.Test.Entidades
 {
     public class Livro
     {
-        public Guid Id { get; private set; }
+        public Guid Id { get;  set; }
         public string Titulo { get;  set; }
         public int QtdPg { get;  set; }
         public string Editora { get;  set; }

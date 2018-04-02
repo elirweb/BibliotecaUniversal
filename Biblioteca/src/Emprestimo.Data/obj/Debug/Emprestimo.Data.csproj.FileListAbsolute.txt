@@ -1,4 +1,5 @@
-D:\projetos\BibliotecaUniversal\Biblioteca\src\Emprestimo.Data\obj\Debug\Emprestimo.Data.csprojResolveAssemblyReference.cache
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Emprestimo.Data\obj\Debug\Emprestimo.Data.Migrations.v1.resources
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Emprestimo.Data\obj\Debug\Emprestimo.Data.csproj.GenerateResource.Cache
 D:\projetos\BibliotecaUniversal\Biblioteca\src\Emprestimo.Data\bin\Debug\Emprestimo.Data.dll.config
 D:\projetos\BibliotecaUniversal\Biblioteca\src\Emprestimo.Data\bin\Debug\Emprestimo.Data.dll
 D:\projetos\BibliotecaUniversal\Biblioteca\src\Emprestimo.Data\bin\Debug\Emprestimo.Data.pdb
@@ -8,7 +9,6 @@ D:\projetos\BibliotecaUniversal\Biblioteca\src\Emprestimo.Data\bin\Debug\EntityF
 D:\projetos\BibliotecaUniversal\Biblioteca\src\Emprestimo.Data\bin\Debug\Emprestimo.Domain.pdb
 D:\projetos\BibliotecaUniversal\Biblioteca\src\Emprestimo.Data\bin\Debug\EntityFramework.xml
 D:\projetos\BibliotecaUniversal\Biblioteca\src\Emprestimo.Data\bin\Debug\EntityFramework.SqlServer.xml
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Emprestimo.Data\obj\Debug\Emprestimo.Data.csprojResolveAssemblyReference.cache
 D:\projetos\BibliotecaUniversal\Biblioteca\src\Emprestimo.Data\obj\Debug\Emprestimo.Data.dll
 D:\projetos\BibliotecaUniversal\Biblioteca\src\Emprestimo.Data\obj\Debug\Emprestimo.Data.pdb
-D:\projetos\BibliotecaUniversal\Biblioteca\src\Emprestimo.Data\obj\Debug\Emprestimo.Data.Migrations.v1.resources
-D:\projetos\BibliotecaUniversal\Biblioteca\src\Emprestimo.Data\obj\Debug\Emprestimo.Data.csproj.GenerateResource.Cache

@@ -50,7 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entidade\Pedido.cs" />
-    <Compile Include="Interfaces\IRepositorioPedido.cs" />
+    <Compile Include="Interfaces\Repositorio\IRepositorioPedido.cs" />
     <Compile Include="Mapping\Pedido.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

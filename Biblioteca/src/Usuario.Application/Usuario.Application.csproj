@@ -31,6 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -44,12 +45,18 @@
     <Compile Include="AppActions\UsuarioApp.cs" />
     <Compile Include="Interfaces\IEndereco.cs" />
     <Compile Include="Interfaces\IUsuario.cs" />
+    <Compile Include="Mapper\DomainToViewModel.cs" />
+    <Compile Include="Mapper\VewModelToDomain.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel\EnderecoUsuario.cs" />
     <Compile Include="ViewModel\Usuario.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Mapper\" />
+    <ProjectReference Include="..\Usuario.Domain\Usuario.Domain.csproj">
+      <Project>{8AA29222-F191-4807-A370-86304DC875F6}</Project>
+      <Name>Usuario.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

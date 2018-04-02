@@ -57,7 +57,7 @@
   <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Biblioteca.Core.Domain\Biblioteca.Core.Domain.csproj">
-      <Project>{3919576B-982A-4770-827F-48D1840FDEE8}</Project>
+      <Project>{3919576b-982a-4770-827f-48d1840fdee8}</Project>
       <Name>Biblioteca.Core.Domain</Name>
     </ProjectReference>
     <ProjectReference Include="..\UsuarioBiblioteca.Data\UsuarioBiblioteca.Data.csproj">

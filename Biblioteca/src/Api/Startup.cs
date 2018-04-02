@@ -1,6 +1,8 @@
 ﻿using Api.Seguranca;
 using Microsoft.Owin.Security.OAuth;
 using Owin;
+using SimpleInjector;
+using SimpleInjector.Integration.WebApi;
 using System;
 using System.Web.Http;
 
@@ -9,7 +11,13 @@ namespace Api
     public class Startup
     {
         public void Configuration(IAppBuilder app) {
-            HttpConfiguration config = new HttpConfiguration();
+            var container = new Container();
+            Biblioteca.Core.Infra.IoC.Bootstrap.Register(container);
+            container.RegisterWebApiControllers(GlobalConfiguration.Configuration);
+            HttpConfiguration config = new HttpConfiguration() {
+                DependencyResolver = new SimpleInjectorWebApiDependencyResolver(container)
+        };
+            container.Verify();
 
             WebApiConfig.Register(config);
             ConfigureOAuth(app);

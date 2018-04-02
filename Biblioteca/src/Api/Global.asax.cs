@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json.Serialization;
 using SimpleInjector;
 using SimpleInjector.Integration.WebApi;
+using SimpleInjector.Lifestyles;
 using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Routing;
@@ -11,6 +12,8 @@ namespace Api
     {
         protected void Application_Start()
         {
+            //Bootstrapper.Inicializar();
+
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
@@ -23,13 +26,6 @@ namespace Api
             GlobalConfiguration.Configuration.Formatters.Remove(GlobalConfiguration.Configuration.Formatters.XmlFormatter);
 
 
-            // Simple injector na api 
-            var container = new Container();
-            Biblioteca.Core.Infra.IoC.Bootstrap.Register(container);
-
-            container.Verify();
-            
-            GlobalConfiguration.Configuration.DependencyResolver = new SimpleInjectorWebApiDependencyResolver(container); //web api
             
 
         }

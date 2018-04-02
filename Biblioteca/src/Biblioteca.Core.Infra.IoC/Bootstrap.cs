@@ -1,4 +1,7 @@
-﻿using SimpleInjector;
+﻿using Biblioteca.Core.Domain.Events;
+using Biblioteca.Core.Domain.Handlers;
+using Biblioteca.Core.Domain.Interfaces;
+using SimpleInjector;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,7 +24,7 @@ namespace Biblioteca.Core.Infra.IoC
             container.Register<Usuario.Application.Interfaces.IUsuario, Usuario.Application.AppActions.UsuarioApp>(Lifestyle.Singleton);
             container.Register<Usuario.Application.Interfaces.IEndereco, Usuario.Application.AppActions.EnderecoApp>(Lifestyle.Singleton);
             container.Register <Emprestimo.Application.Interfaces.IPedido, Emprestimo.Application.AppAction.Pedido>(Lifestyle.Singleton);
-            container.Register<Log.Application.Interfaces.IRegistro, Log.Application.AppAction.RegistroApp>(Lifestyle.Singleton);
+            //container.Register<Log.Application.Interfaces.IRegistro, Log.Application.AppAction.RegistroApp>(Lifestyle.Singleton);
 
             //data
             container.Register<UsuarioBiblioteca.Interfaces.IRepositorios.IRepositorioBibliotecaria, UsuarioBiblioteca.Data.Repositorios.RepositorioBibliotecaria>(Lifestyle.Singleton);
@@ -30,8 +33,12 @@ namespace Biblioteca.Core.Infra.IoC
             container.Register<UsuarioBiblioteca.Interfaces.IRepositorios.IRepositorioLivro, UsuarioBiblioteca.Data.Repositorios.RepositorioLivro>(Lifestyle.Singleton);
             container.Register<Usuario.Domain.Interfaces.Repositorios.IRepositorioUsuario, Usuario.Data.Repositorio.RepositorioUsuario>(Lifestyle.Singleton);
             container.Register<Usuario.Domain.Interfaces.Repositorios.IRepositorioEndereco, Usuario.Data.Repositorio.RepositorioEndereco>(Lifestyle.Singleton);
-            container.Register<Emprestimo.Domain.Interfaces.IRepositorioPedido, Emprestimo.Data.Repositorio.RepositorioPedido>(Lifestyle.Singleton);
-            container.Register<Log.Domain.Interfaces.Repositorio.IRegistro<Log.Domain.Entidade.Registro>, Log.Data.Repositorio.RepositorioRegistro>(Lifestyle.Singleton);
+            container.Register<Emprestimo.Domain.Interfaces.Repositorio.IRepositorioPedido, Emprestimo.Data.Repositorio.RepositorioPedido>(Lifestyle.Singleton);
+            //container.Register<Log.Domain.Interfaces.Repositorio.IRegistro<Log.Domain.Entidade.Registro>, Log.Data.Repositorio.RepositorioRegistro>(Lifestyle.Singleton);
+
+            // handler
+            container.Register<IHandler<DomainNotification>, DomainNotificationHandler>(Lifestyle.Singleton);
+
 
             //contexto
             container.Register<UsuarioBiblioteca.Data.Contexto.Contexto>(Lifestyle.Singleton);
@@ -42,7 +49,7 @@ namespace Biblioteca.Core.Infra.IoC
             container.Register<UsuarioBiblioteca.Data.UnitOfWork.IUnitOfWork, UsuarioBiblioteca.Data.UnitOfWork.UnitOfWork>(Lifestyle.Singleton);
             container.Register<Usuario.Data.UnitOfWork.IUnitOfWork, Usuario.Data.UnitOfWork.UnitOfWork>(Lifestyle.Singleton);
             container.Register<Emprestimo.Data.UnitOfWork.IUnitOfWork, Emprestimo.Data.UnitOfWork.UnitOfWork>(Lifestyle.Singleton);
-
+            
         }
     }
 }

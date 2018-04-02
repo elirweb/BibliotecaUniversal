@@ -222,6 +222,8 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Bootstrapper.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -267,6 +269,10 @@
     <ProjectReference Include="..\Biblioteca.Core.Infra.IoC\Biblioteca.Core.Infra.IoC.csproj">
       <Project>{f58271fb-833d-43b4-8c89-f6603c19f015}</Project>
       <Name>Biblioteca.Core.Infra.IoC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Usuario.Application\Usuario.Application.csproj">
+      <Project>{4100F9A2-F65F-4B54-89D6-6F4AD865190C}</Project>
+      <Name>Usuario.Application</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

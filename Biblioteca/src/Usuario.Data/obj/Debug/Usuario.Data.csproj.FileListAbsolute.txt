@@ -1,9 +1,9 @@
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Usuario.Data\obj\Debug\Usuario.Data.Migrations.v1.resources
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Usuario.Data\obj\Debug\Usuario.Data.Migrations.v2.resources
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Usuario.Data\obj\Debug\Usuario.Data.csproj.GenerateResource.Cache
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Usuario.Data\bin\Debug\Usuario.Data.dll.config
 D:\projetos\BibliotecaUniversal\Biblioteca\src\Usuario.Data\bin\Debug\Usuario.Data.dll
 D:\projetos\BibliotecaUniversal\Biblioteca\src\Usuario.Data\bin\Debug\Usuario.Data.pdb
-D:\projetos\BibliotecaUniversal\Biblioteca\src\Usuario.Data\obj\Debug\Usuario.Data.csprojResolveAssemblyReference.cache
-D:\projetos\BibliotecaUniversal\Biblioteca\src\Usuario.Data\obj\Debug\Usuario.Data.dll
-D:\projetos\BibliotecaUniversal\Biblioteca\src\Usuario.Data\obj\Debug\Usuario.Data.pdb
-D:\projetos\BibliotecaUniversal\Biblioteca\src\Usuario.Data\bin\Debug\Usuario.Data.dll.config
 D:\projetos\BibliotecaUniversal\Biblioteca\src\Usuario.Data\bin\Debug\Biblioteca.Core.Domain.dll
 D:\projetos\BibliotecaUniversal\Biblioteca\src\Usuario.Data\bin\Debug\EntityFramework.dll
 D:\projetos\BibliotecaUniversal\Biblioteca\src\Usuario.Data\bin\Debug\EntityFramework.SqlServer.dll
@@ -12,6 +12,6 @@ D:\projetos\BibliotecaUniversal\Biblioteca\src\Usuario.Data\bin\Debug\Biblioteca
 D:\projetos\BibliotecaUniversal\Biblioteca\src\Usuario.Data\bin\Debug\Usuario.Domain.pdb
 D:\projetos\BibliotecaUniversal\Biblioteca\src\Usuario.Data\bin\Debug\EntityFramework.xml
 D:\projetos\BibliotecaUniversal\Biblioteca\src\Usuario.Data\bin\Debug\EntityFramework.SqlServer.xml
-D:\projetos\BibliotecaUniversal\Biblioteca\src\Usuario.Data\obj\Debug\Usuario.Data.Migrations.v1.resources
-D:\projetos\BibliotecaUniversal\Biblioteca\src\Usuario.Data\obj\Debug\Usuario.Data.csproj.GenerateResource.Cache
-D:\projetos\BibliotecaUniversal\Biblioteca\src\Usuario.Data\obj\Debug\Usuario.Data.Migrations.v2.resources
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Usuario.Data\obj\Debug\Usuario.Data.csprojResolveAssemblyReference.cache
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Usuario.Data\obj\Debug\Usuario.Data.dll
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Usuario.Data\obj\Debug\Usuario.Data.pdb

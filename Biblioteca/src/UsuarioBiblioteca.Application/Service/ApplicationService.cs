@@ -19,8 +19,8 @@ namespace UsuarioBiblioteca.Application.Service
         public ApplicationService(IUnitOfWork unitOfWork)
         {
             this._unitOfWork = unitOfWork;
-            this.Notifications = DomainEvent.Container.GetInstance<IHandler<DomainNotification>>();
-            Biblioteca = DomainEvent.Container.GetInstance<Handler.BibliotecaCadastroHandler>();
+            //this.Notifications = DomainEvent.Container.GetInstance<IHandler<DomainNotification>>();
+            //Biblioteca = DomainEvent.Container.GetInstance<Handler.BibliotecaCadastroHandler>();
         }
 
         public bool Commit()

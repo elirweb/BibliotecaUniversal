@@ -8,6 +8,9 @@ namespace Usuario.Application.Interfaces
 {
     public interface IUsuario
     {
-        void Adicionar(ViewModel.Usuario usuario);
+        ViewModel.Usuario Adicionar(ViewModel.Usuario usuario);
+        bool RecuperarSenha(ViewModel.Usuario usuario);
+
+        void Redefirsenha(ViewModel.Usuario usuario);
     }
 }
