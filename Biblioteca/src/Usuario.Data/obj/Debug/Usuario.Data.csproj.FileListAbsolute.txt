@@ -15,3 +15,5 @@ D:\projetos\BibliotecaUniversal\Biblioteca\src\Usuario.Data\bin\Debug\EntityFram
 D:\projetos\BibliotecaUniversal\Biblioteca\src\Usuario.Data\obj\Debug\Usuario.Data.csprojResolveAssemblyReference.cache
 D:\projetos\BibliotecaUniversal\Biblioteca\src\Usuario.Data\obj\Debug\Usuario.Data.dll
 D:\projetos\BibliotecaUniversal\Biblioteca\src\Usuario.Data\obj\Debug\Usuario.Data.pdb
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Usuario.Data\bin\Debug\Dapper.dll
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Usuario.Data\bin\Debug\Dapper.xml

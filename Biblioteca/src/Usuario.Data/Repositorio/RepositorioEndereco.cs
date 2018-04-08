@@ -12,7 +12,7 @@ namespace Usuario.Data.Repositorio
         }
         public void Adicionar(EnderecoUsuario endereco)
         {
-            throw new NotImplementedException();
+            contexto.EnderecoUsuario.Add(endereco);
         }
 
      

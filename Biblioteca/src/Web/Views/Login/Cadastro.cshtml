@@ -12,10 +12,8 @@
           
             @using (Html.BeginForm("Cadastro", "Login", FormMethod.Post, new { @id = "FormCadastro", @ng_controller = "authctrl" }))
             {
-              
-                    <span style="text-align: center">@Html.ValidationSummary(false, "", new { @class = "text-danger" })</span>
-            
-                @Html.AntiForgeryToken()
+                <span style="text-align: center">@Html.ValidationSummary(false, "", new { @class = "text-danger" })</span>
+                  @Html.AntiForgeryToken()
                   <div class="form-group">
                     @Html.Label("Nome")
                     @Html.TextBoxFor(c => c.Nome, new { @type = "text", @class = "form-control", @placeholder = "Seu Nome" })

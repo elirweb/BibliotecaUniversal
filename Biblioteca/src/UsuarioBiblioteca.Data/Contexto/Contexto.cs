@@ -32,7 +32,7 @@ namespace UsuarioBiblioteca.Data.Contexto
 
             modelBuilder.Configurations.Add(new Mapping.Bibliotecaria());
             modelBuilder.Entity<Entidades.Bibliotecaria>().Ignore(c => c.ConfirmaSenha);
-            modelBuilder.Entity<Entidades.Bibliotecaria>().Ignore(c=>c.ValidationResult);
+            modelBuilder.Entity<Entidades.Bibliotecaria>().Ignore(c=>c.ValidacaoResultado);
             modelBuilder.Configurations.Add(new Mapping.Endereco());
             modelBuilder.Entity<Entidades.Endereco>().Ignore(c => c.ValidationResult);
             modelBuilder.Entity<Entidades.Endereco>().Ignore(c => c.tipo);

@@ -12,5 +12,14 @@ namespace Biblioteca.Core.Infra.Email.Domain
         public string Endereco { get; private set; }
         public string Assunto { get; private set; }
         public string Mensagem { get; private set; }
+
+        public Email(string endereco, string nome, string assunto,string mensagem)
+        {
+            Endereco = endereco;
+            Nome = nome;
+            Assunto = assunto;
+            Mensagem = mensagem;
+        }
+
     }
 }

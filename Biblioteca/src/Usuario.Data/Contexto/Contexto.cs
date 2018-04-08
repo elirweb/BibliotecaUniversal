@@ -32,7 +32,7 @@ namespace Usuario.Data.Contexto
 
             modelBuilder.Configurations.Add(new Domain.Mapping.Usuario());
             modelBuilder.Entity<Domain.Entidade.Usuario>().Ignore(c => c.ConfirmaSenha);
-            modelBuilder.Entity<Domain.Entidade.Usuario>().Ignore(c => c.ValidationResult);
+            modelBuilder.Entity<Domain.Entidade.Usuario>().Ignore(c => c.ValidacaoResultado);
 
             modelBuilder.Configurations.Add(new Domain.Mapping.Endereco());
             modelBuilder.Entity<Domain.Entidade.EnderecoUsuario>().Ignore(c => c.ValidationResult);

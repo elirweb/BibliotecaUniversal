@@ -7,7 +7,7 @@ namespace Usuario.Domain.ValueObjects
 
         public CPF(string codigo)
         {
-            if(Valida(codigo))
+            if (Valida(codigo))
                 Codigo = codigo;
         }
 

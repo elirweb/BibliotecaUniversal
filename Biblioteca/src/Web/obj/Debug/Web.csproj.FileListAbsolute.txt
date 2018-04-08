@@ -83,3 +83,7 @@ D:\projetos\BibliotecaUniversal\Biblioteca\src\Web\bin\Emprestimo.Data.pdb
 D:\projetos\BibliotecaUniversal\Biblioteca\src\Web\bin\Biblioteca.Core.Domain.pdb
 D:\projetos\BibliotecaUniversal\Biblioteca\src\Web\obj\Debug\Web.dll
 D:\projetos\BibliotecaUniversal\Biblioteca\src\Web\obj\Debug\Web.pdb
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Web\bin\Dapper.dll
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Web\bin\Dapper.xml
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Web\bin\Biblioteca.Core.Infra.dll
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Web\bin\Biblioteca.Core.Infra.pdb

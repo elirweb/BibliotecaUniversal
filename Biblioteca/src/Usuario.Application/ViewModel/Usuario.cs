@@ -30,5 +30,10 @@ namespace Usuario.Application.ViewModel
 
         public Guid Id { get; set; }
 
+        public List<string> ListaErros { get; set; }
+        public Usuario(){
+            ListaErros = new List<string>();
+        }
+
     }
 }

@@ -1,4 +1,4 @@
-﻿using Biblioteca.Core.Domain.Validation;
+﻿using Biblioteca.Core.Domain.Validador;
 using System;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -18,7 +18,7 @@ namespace UsuarioBiblioteca.Entidades
         public virtual Bibliotecaria Biblioteca { get; private set; }
 
         [NotMapped]
-        public ValidationResult ValidationResult { get; set; }
+        public ValidacaoResultado ValidationResult { get; set; }
 
         public string TipoContat  { get;private set; }
 

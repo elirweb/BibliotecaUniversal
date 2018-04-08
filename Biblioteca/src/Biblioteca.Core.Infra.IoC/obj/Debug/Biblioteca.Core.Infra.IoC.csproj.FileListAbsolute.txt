@@ -43,3 +43,7 @@ D:\projetos\BibliotecaUniversal\Biblioteca\src\Biblioteca.Core.Infra.IoC\bin\Deb
 D:\projetos\BibliotecaUniversal\Biblioteca\src\Biblioteca.Core.Infra.IoC\bin\Debug\DnsClient.xml
 D:\projetos\BibliotecaUniversal\Biblioteca\src\Biblioteca.Core.Infra.IoC\obj\Debug\Biblioteca.Core.Infra.IoC.dll
 D:\projetos\BibliotecaUniversal\Biblioteca\src\Biblioteca.Core.Infra.IoC\obj\Debug\Biblioteca.Core.Infra.IoC.pdb
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Biblioteca.Core.Infra.IoC\bin\Debug\Dapper.dll
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Biblioteca.Core.Infra.IoC\bin\Debug\Dapper.xml
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Biblioteca.Core.Infra.IoC\bin\Debug\Biblioteca.Core.Infra.dll
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Biblioteca.Core.Infra.IoC\bin\Debug\Biblioteca.Core.Infra.pdb

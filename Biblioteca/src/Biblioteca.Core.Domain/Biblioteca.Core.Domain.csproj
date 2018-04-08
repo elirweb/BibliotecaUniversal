@@ -41,15 +41,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Events\DomainEvent.cs" />
-    <Compile Include="Events\DomainNotification.cs" />
-    <Compile Include="Handlers\DomainNotificationHandler.cs" />
-    <Compile Include="Interfaces\IContainer.cs" />
-    <Compile Include="Interfaces\IDomainEvent.cs" />
-    <Compile Include="Interfaces\IEspecificacao.cs" />
-    <Compile Include="Interfaces\IHandler.cs" />
-    <Compile Include="Interfaces\IRule.cs" />
-    <Compile Include="Interfaces\IValidator.cs" />
+    <Compile Include="Erros\Critico.cs" />
+    <Compile Include="Erros\ErroDescricao.cs" />
+    <Compile Include="Erros\Erros.cs" />
+    <Compile Include="Erros\ErroValidacao.cs" />
+    <Compile Include="Interfaces\Erros\INivel.cs" />
+    <Compile Include="Interfaces\Especificacao\IEspecificacao.cs" />
+    <Compile Include="Interfaces\Notificacao\IDescricao.cs" />
+    <Compile Include="Interfaces\Notificacao\INotificacao.cs" />
+    <Compile Include="Notificacao\Descricao.cs" />
+    <Compile Include="Notificacao\ListaNotificacao.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
@@ -57,10 +58,9 @@
     <Compile Include="obj\Release\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
     <Compile Include="obj\Release\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Validation\Rule.cs" />
-    <Compile Include="Validation\ValidationErros.cs" />
-    <Compile Include="Validation\ValidationResult.cs" />
-    <Compile Include="Validation\Validator.cs" />
+    <Compile Include="Validador\Interfaces\IHandler.cs" />
+    <Compile Include="Validador\Validacao.cs" />
+    <Compile Include="Validador\ValidacaoResultado.cs" />
     <Compile Include="ValueObjects\Email.cs" />
     <Compile Include="ValueObjects\Senha.cs" />
   </ItemGroup>

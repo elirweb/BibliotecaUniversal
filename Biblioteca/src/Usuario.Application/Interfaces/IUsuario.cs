@@ -12,5 +12,6 @@ namespace Usuario.Application.Interfaces
         bool RecuperarSenha(ViewModel.Usuario usuario);
 
         void Redefirsenha(ViewModel.Usuario usuario);
+        
     }
 }

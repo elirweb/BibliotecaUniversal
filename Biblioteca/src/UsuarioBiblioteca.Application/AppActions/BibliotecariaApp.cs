@@ -1,5 +1,4 @@
-﻿using Biblioteca.Core.Domain.Events;
-using Biblioteca.Core.Domain.Validation;
+﻿using Biblioteca.Core.Domain.Validador;
 using System;
 using System.Linq;
 using UsuarioBiblioteca.Application.ViewModel;
@@ -17,19 +16,21 @@ namespace UsuarioBiblioteca.Application.AppActions
         }
         public Bibliotecaria Adicionar(Bibliotecaria biblio)
         {
-            if (PossuiConformidade(new 
-                Validacao.BibliotecaAptoParaCadastro(reposi).Validate(Mapper.ViewModelToDomain.Biblioteca(biblio))));
+            //if (PossuiConformidade(new 
+              //  Validacao.BibliotecaAptoParaCadastro(reposi).Validate(Mapper.ViewModelToDomain.Biblioteca(biblio))));
             reposi.Adicionar(Mapper.ViewModelToDomain.Biblioteca(biblio));
             
             return biblio;
         }
 
-        public bool PossuiConformidade(ValidationResult validacao) {
+        public bool PossuiConformidade(ValidacaoResultado validacao) {
             if (validacao == null) return true;
+            /*
             var notifications = validacao.Erros.Select(validationError => new DomainNotification(validationError.ToString(), validationError.Message)).ToList();
             if (!notifications.Any()) return true;
             notifications.ToList().ForEach(DomainEvent.Raise);
-            return false;
+            */        
+    return false;
         }
     }
 }

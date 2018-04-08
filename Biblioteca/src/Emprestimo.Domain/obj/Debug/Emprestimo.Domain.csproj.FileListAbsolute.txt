@@ -7,3 +7,4 @@ D:\projetos\BibliotecaUniversal\Biblioteca\src\Emprestimo.Domain\bin\Debug\Entit
 D:\projetos\BibliotecaUniversal\Biblioteca\src\Emprestimo.Domain\bin\Debug\EntityFramework.SqlServer.xml
 D:\projetos\BibliotecaUniversal\Biblioteca\src\Emprestimo.Domain\obj\Debug\Emprestimo.Domain.dll
 D:\projetos\BibliotecaUniversal\Biblioteca\src\Emprestimo.Domain\obj\Debug\Emprestimo.Domain.pdb
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Emprestimo.Domain\obj\Debug\Emprestimo.Domain.csprojResolveAssemblyReference.cache

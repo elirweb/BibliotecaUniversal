@@ -1,4 +1,4 @@
-﻿using Biblioteca.Core.Domain.Validation;
+﻿using Biblioteca.Core.Domain.Validador;
 using System;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -16,14 +16,21 @@ namespace Usuario.Domain.Entidade
         public virtual Usuario Usuario { get; private set; }
 
         [NotMapped]
-        public ValidationResult ValidationResult { get; set; }
-        public EnderecoUsuario(EnderecoUsuario end)
+        public ValidacaoResultado ValidationResult { get; set; }
+        public EnderecoUsuario(string bairro, int numero, string localidade,string uf,Guid idusuario,string cidade)
         {
-            Bairro = end.Bairro;
-            Numero = end.Numero;
-            Localidade = end.Localidade;
-            Uf = end.Uf;
-            IdUsuario = end.IdUsuario;
+            Id = Guid.NewGuid();
+            Bairro = bairro;
+            Numero = numero;
+            Localidade = localidade;
+            Uf = uf;
+            IdUsuario = idusuario;
+            Cidade = cidade;
+        }
+
+        public EnderecoUsuario()
+        {
+            IdUsuario = new Usuario().Id;
         }
     }
 }

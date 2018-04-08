@@ -20,7 +20,12 @@ namespace Usuario.Application.ViewModel
         [Required(ErrorMessage = "Favor informar o Uf")]
         public string Uf { get;  set; }
 
-        public ViewModel.Usuario IdUsuario { get; set; } 
+        public Usuario IdUsuario { get; set; }
+
+        public EnderecoUsuario()
+        {
+            IdUsuario = new Usuario();
+        }
 
     }
 }

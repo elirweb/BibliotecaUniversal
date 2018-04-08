@@ -1,5 +1,5 @@
 ﻿
-using Biblioteca.Core.Domain.Validation;
+using Biblioteca.Core.Domain.Validador;
 using System;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -19,7 +19,7 @@ namespace Usuario.Domain.Entidade
         public string Grupo { get; private set; }
 
         [NotMapped]
-        public ValidationResult ValidationResult { get; set; }
+        public ValidacaoResultado ValidacaoResultado { get; set; }
         public Usuario(Guid id, string nome,string login,string senha, string confirma,string email,string cpf)
         {
             Id = id;
@@ -29,6 +29,10 @@ namespace Usuario.Domain.Entidade
             Email = new Biblioteca.Core.Domain.ValueObjects.Email(email);
             Cpf = new ValueObjects.CPF(cpf);
             Grupo = "Usuario";
-        }         
+        }
+
+        public Usuario(){
+  
+        }   
     }
 }

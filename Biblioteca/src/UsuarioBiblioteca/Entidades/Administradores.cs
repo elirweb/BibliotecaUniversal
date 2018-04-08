@@ -1,10 +1,7 @@
-﻿using Biblioteca.Core.Domain.Validation;
+﻿using Biblioteca.Core.Domain.Validador;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace UsuarioBiblioteca.Entidades
 {
@@ -21,7 +18,7 @@ namespace UsuarioBiblioteca.Entidades
         public string ConfirmaSenha { get; private set; }
 
         [NotMapped]
-        public ValidationResult ValidationResult { get; set; }
+        public ValidacaoResultado ValidationResult { get; set; }
 
         public Administradores(string nome, string email, string login, string senha, string confirma)
         {

@@ -1,4 +1,4 @@
-﻿using Biblioteca.Core.Domain.Validation;
+﻿using Biblioteca.Core.Domain.Validador;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -22,7 +22,7 @@ namespace UsuarioBiblioteca.Entidades
         public string Imagem { get; private set; }
 
         [NotMapped]
-        public ValidationResult ValidationResult { get; set; }
+        public ValidacaoResultado ValidacaoResultado { get; set; }
 
         public ICollection<Livro> Livro { get { return _lista.ToArray(); }   }
 

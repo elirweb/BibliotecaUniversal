@@ -1,4 +1,4 @@
-﻿using System;
+﻿using Dapper;
 
 namespace Usuario.Data.Repositorio
 {
@@ -12,7 +12,18 @@ namespace Usuario.Data.Repositorio
         }
         public void Adicionar(Domain.Entidade.Usuario usuario)
         {
-            //throw new NotImplementedException();
+            contexto.Usuario.Add(usuario);
+           
+        }
+
+        public bool cpfunico(Domain.Entidade.Usuario usuario)
+        {
+           var cn = contexto.Database.Connection;
+           var query = $"SELECT Cpf FROM Usuario WHERE Cpf = '{usuario.Cpf.Codigo}' ";
+            var obj = cn.ExecuteScalar(query);
+            if (obj != null)
+                return true;
+            return false;
         }
     }
 }

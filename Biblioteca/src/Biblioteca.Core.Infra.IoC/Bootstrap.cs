@@ -1,12 +1,4 @@
-﻿using Biblioteca.Core.Domain.Events;
-using Biblioteca.Core.Domain.Handlers;
-using Biblioteca.Core.Domain.Interfaces;
-using SimpleInjector;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using SimpleInjector;
 
 namespace Biblioteca.Core.Infra.IoC
 {
@@ -16,6 +8,7 @@ namespace Biblioteca.Core.Infra.IoC
 
         public static void Register(Container container)
         {
+            
             //app
             container.Register<UsuarioBiblioteca.Application.Interfaces.IBibliotecaria, UsuarioBiblioteca.Application.AppActions.BibliotecariaApp>(Lifestyle.Singleton);
             container.Register<UsuarioBiblioteca.Application.Interfaces.IEndereco, UsuarioBiblioteca.Application.AppActions.EnderecoApp>(Lifestyle.Singleton);
@@ -35,10 +28,7 @@ namespace Biblioteca.Core.Infra.IoC
             container.Register<Usuario.Domain.Interfaces.Repositorios.IRepositorioEndereco, Usuario.Data.Repositorio.RepositorioEndereco>(Lifestyle.Singleton);
             container.Register<Emprestimo.Domain.Interfaces.Repositorio.IRepositorioPedido, Emprestimo.Data.Repositorio.RepositorioPedido>(Lifestyle.Singleton);
             //container.Register<Log.Domain.Interfaces.Repositorio.IRegistro<Log.Domain.Entidade.Registro>, Log.Data.Repositorio.RepositorioRegistro>(Lifestyle.Singleton);
-
-            // handler
-            container.Register<IHandler<DomainNotification>, DomainNotificationHandler>(Lifestyle.Singleton);
-
+            
 
             //contexto
             container.Register<UsuarioBiblioteca.Data.Contexto.Contexto>(Lifestyle.Singleton);
@@ -49,7 +39,10 @@ namespace Biblioteca.Core.Infra.IoC
             container.Register<UsuarioBiblioteca.Data.UnitOfWork.IUnitOfWork, UsuarioBiblioteca.Data.UnitOfWork.UnitOfWork>(Lifestyle.Singleton);
             container.Register<Usuario.Data.UnitOfWork.IUnitOfWork, Usuario.Data.UnitOfWork.UnitOfWork>(Lifestyle.Singleton);
             container.Register<Emprestimo.Data.UnitOfWork.IUnitOfWork, Emprestimo.Data.UnitOfWork.UnitOfWork>(Lifestyle.Singleton);
-            
+
+            //handler
+            container.Register<Domain.Validador.Interfaces.IHandler<Usuario.Domain.Especificacao.UsuarioDevePossuirUnicoCPF>, Biblioteca.Core.Domain.Validador.Validacao<Usuario.Domain.Especificacao.UsuarioDevePossuirUnicoCPF>>(Lifestyle.Singleton);
+            container.Register<Email.Interfaces.IEnvioEmail, Email.EnvioEmail>(Lifestyle.Singleton);
         }
     }
 }

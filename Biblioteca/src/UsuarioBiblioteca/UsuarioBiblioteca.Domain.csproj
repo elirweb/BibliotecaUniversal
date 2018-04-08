@@ -61,8 +61,6 @@
     <Compile Include="Enum\Categoria.cs" />
     <Compile Include="Especificacao\BibliotecaDevePossuiCNPJUnico.cs" />
     <Compile Include="Especificacao\BibliotecaDevePossuirUnicoEmail.cs" />
-    <Compile Include="Events\BibliotecaCadastroEvent.cs" />
-    <Compile Include="Handler\BibliotecaCadastroHandler.cs" />
     <Compile Include="Interfaces\IRepositorios\IRepositorioAdministrador.cs" />
     <Compile Include="Interfaces\IRepositorios\IRepositorioBibliotecaria.cs" />
     <Compile Include="Interfaces\IRepositorios\IRepositorioEndereco.cs" />

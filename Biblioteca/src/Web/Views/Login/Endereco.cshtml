@@ -16,11 +16,7 @@
                 <span style="text-align: center">@Html.ValidationSummary(false, "", new { @class = "text-danger" })</span>
                 
                 @Html.AntiForgeryToken()
-                if (TempData["idsuario"] != null)
-                {
-                    @Html.HiddenFor(c => c.IdUsuario, new { Value = @TempData["idsuario"] });
-                }
-
+          
                 <div class="form-group">
                     @Html.Label("Localidade")
                     @Html.TextBoxFor(c => c.Localidade, new { @type = "text", @class = "form-control", @placeholder = "Sua Localidade" })
@@ -40,8 +36,13 @@
                 </div>
                 <div class="form-group">
                     @Html.Label("Uf")
-                    @Html.TextBoxFor(c => c.Uf, new { @type = "text", @class = "form-control", @placeholder = "Seu Estado" })
-                </div>
+                    <select  id="uf" name="uf" class="form-control" >
+                        @foreach (var s in Enum.GetValues(typeof(Usuario.Application.Enum.Ufs)))
+                        {
+                            <option value="@s">@s</option>
+                        }
+                    </select>
+                      </div>
                 <div class="form-group">
                     <input type="submit" value="Registra-se" class="btn-dark" />
                 </div>

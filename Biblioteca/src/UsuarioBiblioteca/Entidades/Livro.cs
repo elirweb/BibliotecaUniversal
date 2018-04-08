@@ -1,4 +1,4 @@
-﻿using Biblioteca.Core.Domain.Validation;
+﻿using Biblioteca.Core.Domain.Validador;
 using System;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -18,7 +18,7 @@ namespace UsuarioBiblioteca.Entidades
         public Enum.Categoria Categoria { get; private set; } 
 
         [NotMapped]
-        public ValidationResult ValidationResult { get; set; }
+        public ValidacaoResultado ValidationResult { get; set; }
 
         public Livro(string titulo, int qtd,string editora, bool ativ, string descricao, Guid id, Enum.Categoria cat)
         {

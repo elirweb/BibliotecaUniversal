@@ -7,17 +7,15 @@ using UsuarioBiblioteca.Entidades;
 
 namespace UsuarioBiblioteca.Especificacao
 {
-    public class BibliotecaDevePossuiCNPJUnico : Biblioteca.Core.Domain.Interfaces.IEspecificacao<Entidades.Bibliotecaria>
+    public class BibliotecaDevePossuiCNPJUnico
     {
         private readonly Interfaces.IRepositorios.IRepositorioBibliotecaria _repositorio;
 
         public BibliotecaDevePossuiCNPJUnico(Interfaces.IRepositorios.IRepositorioBibliotecaria repo_)
         {
             _repositorio = repo_;
+
         } 
-        public bool Satisfeito(Bibliotecaria model)
-        {
-            return _repositorio.CNPJUnico(model);
-        }
+    
     }
 }

@@ -111,3 +111,7 @@ D:\projetos\BibliotecaUniversal\Biblioteca\src\Api\bin\Emprestimo.Data.pdb
 D:\projetos\BibliotecaUniversal\Biblioteca\src\Api\bin\Biblioteca.Core.Domain.pdb
 D:\projetos\BibliotecaUniversal\Biblioteca\src\Api\obj\Debug\Api.dll
 D:\projetos\BibliotecaUniversal\Biblioteca\src\Api\obj\Debug\Api.pdb
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Api\bin\Dapper.dll
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Api\bin\Dapper.xml
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Api\bin\Biblioteca.Core.Infra.dll
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Api\bin\Biblioteca.Core.Infra.pdb

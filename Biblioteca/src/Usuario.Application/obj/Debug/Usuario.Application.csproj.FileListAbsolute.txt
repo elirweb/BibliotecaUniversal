@@ -9,3 +9,9 @@ D:\projetos\BibliotecaUniversal\Biblioteca\src\Usuario.Application\bin\Debug\Bib
 D:\projetos\BibliotecaUniversal\Biblioteca\src\Usuario.Application\obj\Debug\Usuario.Application.csprojResolveAssemblyReference.cache
 D:\projetos\BibliotecaUniversal\Biblioteca\src\Usuario.Application\obj\Debug\Usuario.Application.dll
 D:\projetos\BibliotecaUniversal\Biblioteca\src\Usuario.Application\obj\Debug\Usuario.Application.pdb
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Usuario.Application\bin\Debug\Usuario.Data.dll
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Usuario.Application\bin\Debug\Usuario.Data.pdb
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Usuario.Application\bin\Debug\Dapper.dll
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Usuario.Application\bin\Debug\Dapper.xml
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Usuario.Application\bin\Debug\Biblioteca.Core.Infra.dll
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Usuario.Application\bin\Debug\Biblioteca.Core.Infra.pdb
