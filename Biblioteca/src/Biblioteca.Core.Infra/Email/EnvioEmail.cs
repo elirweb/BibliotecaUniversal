@@ -22,7 +22,7 @@ namespace Biblioteca.Core.Infra.Email
                 client.Timeout = 10000;
                 client.DeliveryMethod = SmtpDeliveryMethod.Network;
                 client.UseDefaultCredentials = false;
-                client.Credentials = new NetworkCredential("elirweb@gmail.com", "738529el");
+                client.Credentials = new NetworkCredential("seuemail@gmail.com", "*********");
 
                 var mm = new MailMessage("donotreply@domain.com", email.Endereco, email.Assunto, email.Mensagem)
                 {
