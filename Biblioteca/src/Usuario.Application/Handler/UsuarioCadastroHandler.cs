@@ -20,6 +20,13 @@ namespace Usuario.Application.Handler
 
             var email = new Biblioteca.Core.Infra.Email.Domain.Email(endereco, nome, assunto, mensagem);
             envioemail.EnviarAsync(email);
-        } 
+        }
+
+        public void RecuperSenha(string endereco, string nome, string assunto, string mensagem) {
+
+            var email = new Biblioteca.Core.Infra.Email.Domain.Email(endereco, nome, assunto, mensagem);
+            envioemail.EnviarAsync(email);
+
+        }
     }
 }

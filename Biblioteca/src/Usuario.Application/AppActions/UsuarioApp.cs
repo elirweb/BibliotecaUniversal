@@ -6,6 +6,7 @@ using Usuario.Domain.Interfaces.Repositorios;
 using Usuario.Domain.Entidade;
 using System.Collections.Generic;
 using Usuario.Application.Handler;
+using Usuario.Application.ViewModel;
 
 namespace Usuario.Application.AppActions
 {
@@ -20,13 +21,15 @@ namespace Usuario.Application.AppActions
         {
             repousuario = repo;
         }
-
+        
         public ViewModel.Usuario Adicionar(ViewModel.Usuario usuario)
         {
             if (PossuiConformidade(new Domain.Validacao.UsuarioAptoParaCadastro(repousuario)
                 .Validar(Mapper.VewModelToDomain.Usuario(usuario)))) {
                     repousuario.Adicionar(Mapper.VewModelToDomain.Usuario(usuario));
                     Commit();
+                usuariohandler.SejaBemVindo("elirweb@gmail.com", "elir", "Portal Biblioteca Universal", "Sejá bem vindo ao maior portal da américa latina");
+
             }
 
             if (Notificacao != null) {
@@ -38,16 +41,31 @@ namespace Usuario.Application.AppActions
             return usuario;
         }
 
-       
-
-        public bool RecuperarSenha(ViewModel.Usuario usuario)
+        public bool Authenticar(ViewModel.Usuario usuario)
         {
-            throw new NotImplementedException();
+            return repousuario.Authenticar(Mapper.VewModelToDomain.Authentica(usuario));
         }
 
-        public void Redefirsenha(ViewModel.Usuario usuario)
+        public bool RecuperarSenha(string email)
         {
-            throw new NotImplementedException();
+            if (repousuario.RecuperarSenha(email))
+            {
+                usuariohandler.RecuperSenha("elirweb@gmail.com", "elir", "Recuperação de Senha -Portal Biblioteca Universal", "<html><head><title></title></head><body>Olá acesse <a href=\"http://localhost:4372/Login/RedefinirSenha\">aqui</a> para redefir sua senha de acesso.</body></html>");
+                return true;
+            }
+            else
+                return false;
+
+        }
+
+        public bool Redefirsenha(string email, string senha)
+        {
+            var retorno = false;
+            if (repousuario.AlteracaoSenha(email, senha))
+                retorno = true;
+            
+            return retorno;
+
         }
     }
 }

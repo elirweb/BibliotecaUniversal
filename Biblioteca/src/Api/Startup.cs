@@ -5,6 +5,7 @@ using SimpleInjector;
 using SimpleInjector.Integration.WebApi;
 using System;
 using System.Web.Http;
+using Usuario.Application.Interfaces;
 
 namespace Api
 {
@@ -46,6 +47,7 @@ namespace Api
                 TokenEndpointPath = new Microsoft.Owin.PathString("/api/security/token"),
                 AccessTokenExpireTimeSpan = TimeSpan.FromHours(2),
                 Provider = new AuthAuthorizationServerProvider()
+                
             };
 
             app.UseOAuthAuthorizationServer(oAuthServer);

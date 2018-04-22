@@ -74,15 +74,31 @@ namespace Web.Controllers
             return View();
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult RecuperarSenha(Usuario.Application.ViewModel.Usuario usu)
+        {
+            if (usu.Email != string.Empty) {
+                if (usuarioapp.RecuperarSenha(usu.Email))
+                    TempData["msgSucesso"] = "Olá foi enviado e-mail para redefir sua senha!";
+                else
+                    ModelState.AddModelError("Error", "E-mail não cadastrado em nosso banco de dados");
+            }
+            return View();
+        }
+
         public ActionResult RedefinirSenha() {
-            // vai ser disparado para o e-mail do cliente uma pagina onde vai poder redefinir sua senha de acesso
             return View();
         }
 
         [ValidateAntiForgeryToken]
         [HttpPost]
         public ActionResult RedefinirSenha(Usuario.Application.ViewModel.Usuario usu) {
-            
+
+            if (usuarioapp.Redefirsenha(usu.Email, usu.Senha)) 
+                TempData["msgSucesso"] = "Olá Senha alterada com sucesso";
+            else
+                ModelState.AddModelError("Error", "Erro na alteração de Senha");
             return View();
         }
     }

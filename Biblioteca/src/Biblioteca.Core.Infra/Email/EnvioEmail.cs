@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Text;
 using System.Threading.Tasks;
-using Biblioteca.Core.Infra.Email.Domain;
 using System.Net.Mail;
 using System.Net;
+using System.Net.Mime;
 
 namespace Biblioteca.Core.Infra.Email
 {
@@ -20,15 +17,17 @@ namespace Biblioteca.Core.Infra.Email
                 client.Host = "smtp.gmail.com";
                 client.EnableSsl = true;
                 client.Timeout = 10000;
-                client.DeliveryMethod = SmtpDeliveryMethod.Network;
-                client.UseDefaultCredentials = false;
                 client.Credentials = new NetworkCredential("elirweb@gmail.com", "738529el");
 
-                var mm = new MailMessage("donotreply@domain.com", email.Endereco, email.Assunto, email.Mensagem)
+                var mm = new MailMessage("elirweb@gmail.com", email.Endereco, email.Assunto, email.Mensagem)
                 {
-                    BodyEncoding = Encoding.UTF8,
+                    Priority = MailPriority.Normal,
+                    IsBodyHtml = true,
                     DeliveryNotificationOptions = DeliveryNotificationOptions.OnFailure
                 };
+                client.Send(mm);
+                AlternateView av1 = AlternateView.CreateAlternateViewFromString(email.Mensagem, null, MediaTypeNames.Text.Html);
+                mm.AlternateViews.Add(av1);
 
                 await Task.FromResult(0);
             }

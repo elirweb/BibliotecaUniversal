@@ -31,8 +31,12 @@ namespace Usuario.Domain.Entidade
             Grupo = "Usuario";
         }
 
-        public Usuario(){
-  
-        }   
+        public Usuario(){ }
+        // para authenticação de usuário, foi por este motivo que foi criado este construtor
+        public Usuario(string login,string senha) {
+            Senha = new Biblioteca.Core.Domain.ValueObjects.Senha(senha);
+            Login = login;
+        }
+   
     }
 }

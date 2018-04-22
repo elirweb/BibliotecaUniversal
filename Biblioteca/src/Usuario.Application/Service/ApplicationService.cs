@@ -11,14 +11,15 @@ namespace Usuario.Application.Service
         private readonly IUnitOfWork _unitOfWork;
         private readonly IHandler<Domain.Especificacao.UsuarioDevePossuirUnicoCPF> especificaousuario;
         public static IEnumerable<string> Notificacao;
-        protected UsuarioCadastroHandler usuariohandler;
+        public UsuarioCadastroHandler usuariohandler;
          
         public ApplicationService(IUnitOfWork unitOfWork,
-            IHandler<Domain.Especificacao.UsuarioDevePossuirUnicoCPF> cpf, UsuarioCadastroHandler usuhadler)
+            IHandler<Domain.Especificacao.UsuarioDevePossuirUnicoCPF> cpf, UsuarioCadastroHandler emailuse)
         {
             _unitOfWork = unitOfWork;
             especificaousuario = cpf;
-            usuariohandler = usuhadler;
+            usuariohandler = emailuse;
+            
         }
 
         public bool Commit()
@@ -26,7 +27,6 @@ namespace Usuario.Application.Service
             if (especificaousuario.EhValido())
             {
                 _unitOfWork.Commit();
-                usuariohandler.SejaBemVindo("elirweb@gmail.com", "elir", "Portal Biblioteca Universal", "Sejá bem vindo ao maior portal da américa latina");
                 return true;
             }
             return false;

@@ -13,15 +13,16 @@
 
             @using (Html.BeginForm("RecuperarSenha", "Login", FormMethod.Post, new { @id = "FormRecuperar", @ng_controller = "authctrl" }))
             {
-              
                 @Html.AntiForgeryToken()
-               
+                if (TempData["msgSucesso"] != null)
+                {  <span style="text-align: center" class="text-danger">@TempData["msgSucesso"]</span>}
+
                 <div class="form-group">
                     @Html.Label("Email")
                     @Html.TextBoxFor(c => c.Email, new { @type = "email", @class = "form-control", @placeholder = "Sua Email", @ng_model= "FormRecuperar.Email" })
                 </div>
                  <div class="form-group">
-                    <input type="button" value="Registra-se" class="btn-dark" ng-click="RecuperarSenha()" />
+                     <input type="submit" value="Recuperar" class="btn-dark" />
                 </div>
             }
         </div>

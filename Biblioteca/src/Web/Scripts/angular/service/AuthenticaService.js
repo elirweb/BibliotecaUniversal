@@ -1,10 +1,9 @@
-﻿var url = "localhost:10078/api/security/token";
+﻿var url = "http://localhost:10078/biblioteca/Login/authenticar/";
 
 biblioteca.service("authService", function ($http) {
-    var data = "grant_type=password&username=elir&password=1234";
+    this.Authenticar = function (login, senha) {
+        return $http.get(url+login+"/"+senha);
 
-    this.Authenticar = function () {
-        return $http.post(url, data,
-            { headers: { 'Content-Type': 'application/x-www-form-urlenconded' } });
     }
+    
 })

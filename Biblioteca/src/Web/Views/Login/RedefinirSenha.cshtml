@@ -8,15 +8,17 @@
 
 <div class="container">
     <div class="card card-login mx-auto mt-5">
-        <div class="card-header">Se cadastre-se</div>
+        <div class="card-header">Redefinição de Senha de Acesso</div>
         <div class="card-body">
 
             @using (Html.BeginForm("RedefinirSenha", "Login", FormMethod.Post, new { @id = "FormCadastro", @ng_controller = "authctrl" }))
             {
-                <span style="text-align: center">@Html.ValidationSummary(false, "", new { @class = "text-danger" })</span>
-
+                <span style="text-align: center">@Html.ValidationMessageFor(m => m.Error)</span>
                 @Html.AntiForgeryToken()
-                <div class="form-group">
+                if (TempData["msgSucesso"] != null)
+                {  <span style="text-align: center" class="text-danger">@TempData["msgSucesso"]</span>}
+
+                   <div class="form-group">
                     @Html.Label("Email")
                     @Html.TextBoxFor(c => c.Email, new { @type = "email", @class = "form-control", @placeholder = "Sua Email" })
                 </div>
@@ -29,7 +31,6 @@
                     @Html.Label("Confirma Senha")
                     @Html.TextBoxFor(c => c.ConfirmaSenha, new { @type = "password", @class = "form-control", @placeholder = "Confirma senha" })
                 </div>
-
                 <div class="form-group">
                     <input type="submit" value="Redefinir" class="btn-dark" />
                 </div>

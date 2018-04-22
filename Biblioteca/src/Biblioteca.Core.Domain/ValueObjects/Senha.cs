@@ -14,6 +14,10 @@ namespace Biblioteca.Core.Domain.ValueObjects
 
         }
 
+        public Senha(string codigo) {
+            CodigoSenha = CalculateSHA1(codigo, Encoding.UTF32);
+        }
+
         public static string CalculateSHA1(string text, Encoding enc)
         {
             try

@@ -43,6 +43,7 @@ namespace Biblioteca.Core.Infra.IoC
             //handler
             container.Register<Domain.Validador.Interfaces.IHandler<Usuario.Domain.Especificacao.UsuarioDevePossuirUnicoCPF>, Biblioteca.Core.Domain.Validador.Validacao<Usuario.Domain.Especificacao.UsuarioDevePossuirUnicoCPF>>(Lifestyle.Singleton);
             container.Register<Email.Interfaces.IEnvioEmail, Email.EnvioEmail>(Lifestyle.Singleton);
+            container.Register<Usuario.Application.Handler.UsuarioCadastroHandler>(Lifestyle.Singleton);
         }
     }
 }

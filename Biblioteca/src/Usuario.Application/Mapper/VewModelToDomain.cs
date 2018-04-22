@@ -17,7 +17,19 @@ namespace Usuario.Application.Mapper
                 return usuario;
             }
         }
-            public static Domain.Entidade.EnderecoUsuario Endereco(ViewModel.EnderecoUsuario end) {
+
+        public static Domain.Entidade.Usuario Authentica(ViewModel.Usuario usu) {
+            if (usu == null)
+                throw new Exception();
+            else
+            {
+                var usuario =
+                    new Domain.Entidade.Usuario(usu.Login, usu.Senha);
+                return usuario;
+            }
+
+        }
+        public static Domain.Entidade.EnderecoUsuario Endereco(ViewModel.EnderecoUsuario end) {
             if (end == null)
                 throw new Exception();
             else {

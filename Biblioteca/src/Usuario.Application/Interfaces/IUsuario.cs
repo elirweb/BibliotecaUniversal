@@ -9,9 +9,10 @@ namespace Usuario.Application.Interfaces
     public interface IUsuario
     {
         ViewModel.Usuario Adicionar(ViewModel.Usuario usuario);
-        bool RecuperarSenha(ViewModel.Usuario usuario);
+        bool RecuperarSenha(string email);
 
-        void Redefirsenha(ViewModel.Usuario usuario);
+        bool Redefirsenha(string email, string senha);
+        bool Authenticar(ViewModel.Usuario usuario);
         
     }
 }
