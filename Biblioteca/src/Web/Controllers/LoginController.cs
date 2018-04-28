@@ -5,7 +5,7 @@ using Usuario.Application.Interfaces;
 namespace Web.Controllers
 {
     public class LoginController : Controller
-    {
+    { //
         private readonly IUsuario usuarioapp;
         private readonly IEndereco enderecoapp;
         public LoginController(IUsuario usu, IEndereco end)
