@@ -23,6 +23,10 @@ namespace Usuario.Application.ViewModel
         [EmailAddress(ErrorMessage ="Email invalido")]
         public string Email { get;  set; }
 
+        [Required(ErrorMessage ="Favor confirmar o Email")]
+        [EmailAddress(ErrorMessage ="Email invalido")]
+        [Compare("Email",ErrorMessage ="Email não está de acordo ao anterior")]
+        public string ConfEmail { get; set; }
         [Required(ErrorMessage ="Favor informar o CPF")]
         public string Cpf { get;  set; }
 

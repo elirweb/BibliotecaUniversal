@@ -28,7 +28,6 @@ namespace Biblioteca.Core.Infra.Email
                 client.Send(mm);
                 AlternateView av1 = AlternateView.CreateAlternateViewFromString(email.Mensagem, null, MediaTypeNames.Text.Html);
                 mm.AlternateViews.Add(av1);
-
                 await Task.FromResult(0);
             }
         }

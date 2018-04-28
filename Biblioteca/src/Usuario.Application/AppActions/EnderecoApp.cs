@@ -22,6 +22,8 @@ namespace Usuario.Application.AppActions
         {
             repositorio.Adicionar(Mapper.VewModelToDomain.Endereco(endereco));
             Commit();
+            usuariohandler.SejaBemVindo("elirweb@gmail.com", endereco.IdUsuario.Nome, "Portal Biblioteca Universal", "Olá "+ endereco.IdUsuario.Nome + " Sejá bem vindo ao maior portal da américa latina");
+
         }
     }
 }

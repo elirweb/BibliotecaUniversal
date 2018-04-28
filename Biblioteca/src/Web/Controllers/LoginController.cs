@@ -1,11 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Web.Mvc;
 using Usuario.Application.Interfaces;
 
 namespace Web.Controllers
 {
     public class LoginController : Controller
-    { //
+    { 
         private readonly IUsuario usuarioapp;
         private readonly IEndereco enderecoapp;
         public LoginController(IUsuario usu, IEndereco end)
@@ -29,17 +30,17 @@ namespace Web.Controllers
         public ActionResult Cadastro(Usuario.Application.ViewModel.Usuario usu) {
             if (ModelState.IsValid)
             {
-                usu.Id = Guid.NewGuid();
                 usu = usuarioapp.Adicionar(usu);
+                TempData["DadosUsuario"] = usu;
+             
                 if (usu.ListaErros.Count > 0)
                 {
                     foreach (var erro in usu.ListaErros)
                         ModelState.AddModelError("Error", erro);
                 }
-                else {
-                    TempData["idusuario"] = usu.Id;
+                else 
                     return RedirectToAction("Endereco");
-                }
+                
             }
             else
                 ModelState.AddModelError("Error", "Erro no cadastro de dados do cliente");
@@ -56,13 +57,27 @@ namespace Web.Controllers
         public ActionResult Endereco(Usuario.Application.ViewModel.EnderecoUsuario endereco) {
             Guid ids = Guid.NewGuid();
 
-            if (Guid.TryParse(TempData["idusuario"].ToString(), out ids))
-                endereco.IdUsuario.Id = ids;
-
             if (ModelState.IsValid)
             {
+                TempData.Keep("DadosUsuario");
+                var DadosUsuario = (List<Usuario.Application.ViewModel.Usuario>)TempData["DadosUsuario"];
+                foreach (var _usuario in DadosUsuario) {
+                    var u = new Usuario.Application.ViewModel.Usuario()
+                    {
+                        Id = Guid.NewGuid(),
+                        Cpf = _usuario.Cpf,
+                        Nome = _usuario.Nome,
+                        Login = _usuario.Login,
+                        Senha = _usuario.Senha,
+                        Email = _usuario.Email
+                        
+                    };
+                    usuarioapp.Adicionar(u);
+                    endereco.IdUsuario.Id = u.Id;
+                }
+                
                 enderecoapp.Adicionar(endereco);
-                TempData.Remove("idusuario");
+                TempData.Remove("DadosUsuario");
                 TempData["msgSucesso"] = "Dados Gravado com sucesso";
                 return RedirectToAction("index");
             }

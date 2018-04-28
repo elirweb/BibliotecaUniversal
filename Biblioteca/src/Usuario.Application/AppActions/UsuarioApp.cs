@@ -26,10 +26,11 @@ namespace Usuario.Application.AppActions
         {
             if (PossuiConformidade(new Domain.Validacao.UsuarioAptoParaCadastro(repousuario)
                 .Validar(Mapper.VewModelToDomain.Usuario(usuario)))) {
+                if (usuario.Id != null)
+                {
                     repousuario.Adicionar(Mapper.VewModelToDomain.Usuario(usuario));
                     Commit();
-                usuariohandler.SejaBemVindo("elirweb@gmail.com", "elir", "Portal Biblioteca Universal", "Sejá bem vindo ao maior portal da américa latina");
-
+                }
             }
 
             if (Notificacao != null) {
