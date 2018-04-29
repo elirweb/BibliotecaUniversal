@@ -9,10 +9,10 @@ namespace Biblioteca.Core.Domain.Validador.Interfaces
 {
     public interface IHandler<T>
     {
-        void Falhou(bool condicao, ErroDescricao erro);
+        void Falhou(bool condicao, ErroDescricao erro,string _usuario);
 
         bool EhValido();
 
-
+       
     }
 }

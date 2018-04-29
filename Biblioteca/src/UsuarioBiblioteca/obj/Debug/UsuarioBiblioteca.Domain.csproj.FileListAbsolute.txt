@@ -10,3 +10,7 @@ D:\projetos\BibliotecaUniversal\Biblioteca\src\UsuarioBiblioteca\bin\Debug\Entit
 D:\projetos\BibliotecaUniversal\Biblioteca\src\UsuarioBiblioteca\bin\Debug\EntityFramework.SqlServer.xml
 D:\projetos\BibliotecaUniversal\Biblioteca\src\UsuarioBiblioteca\obj\Debug\UsuarioBiblioteca.dll
 D:\projetos\BibliotecaUniversal\Biblioteca\src\UsuarioBiblioteca\obj\Debug\UsuarioBiblioteca.pdb
+D:\projetos\BibliotecaUniversal\Biblioteca\src\UsuarioBiblioteca\bin\Debug\Log.Application.dll
+D:\projetos\BibliotecaUniversal\Biblioteca\src\UsuarioBiblioteca\bin\Debug\Log.Domain.dll
+D:\projetos\BibliotecaUniversal\Biblioteca\src\UsuarioBiblioteca\bin\Debug\Log.Application.pdb
+D:\projetos\BibliotecaUniversal\Biblioteca\src\UsuarioBiblioteca\bin\Debug\Log.Domain.pdb

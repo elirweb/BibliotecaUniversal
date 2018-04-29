@@ -30,9 +30,10 @@ namespace Web.Controllers
         public ActionResult Cadastro(Usuario.Application.ViewModel.Usuario usu) {
             if (ModelState.IsValid)
             {
+                var ListUser = new List<Usuario.Application.ViewModel.Usuario>();
+                ListUser.Add(usu);
+                TempData["DadosUsuario"] = ListUser;
                 usu = usuarioapp.Adicionar(usu);
-                TempData["DadosUsuario"] = usu;
-             
                 if (usu.ListaErros.Count > 0)
                 {
                     foreach (var erro in usu.ListaErros)
@@ -40,7 +41,6 @@ namespace Web.Controllers
                 }
                 else 
                     return RedirectToAction("Endereco");
-                
             }
             else
                 ModelState.AddModelError("Error", "Erro no cadastro de dados do cliente");
@@ -55,8 +55,7 @@ namespace Web.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Endereco(Usuario.Application.ViewModel.EnderecoUsuario endereco) {
-            Guid ids = Guid.NewGuid();
-
+          
             if (ModelState.IsValid)
             {
                 TempData.Keep("DadosUsuario");
@@ -69,6 +68,7 @@ namespace Web.Controllers
                         Nome = _usuario.Nome,
                         Login = _usuario.Login,
                         Senha = _usuario.Senha,
+                        ConfirmaSenha = _usuario.ConfirmaSenha,
                         Email = _usuario.Email
                         
                     };

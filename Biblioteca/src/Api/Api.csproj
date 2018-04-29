@@ -267,6 +267,10 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Biblioteca.Core.Domain\Biblioteca.Core.Domain.csproj">
+      <Project>{3919576B-982A-4770-827F-48D1840FDEE8}</Project>
+      <Name>Biblioteca.Core.Domain</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Biblioteca.Core.Infra.IoC\Biblioteca.Core.Infra.IoC.csproj">
       <Project>{f58271fb-833d-43b4-8c89-f6603c19f015}</Project>
       <Name>Biblioteca.Core.Infra.IoC</Name>

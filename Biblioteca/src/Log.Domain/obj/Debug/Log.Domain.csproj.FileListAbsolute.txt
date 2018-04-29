@@ -7,4 +7,3 @@ D:\projetos\BibliotecaUniversal\Biblioteca\src\Log.Domain\bin\Debug\EntityFramew
 D:\projetos\BibliotecaUniversal\Biblioteca\src\Log.Domain\bin\Debug\EntityFramework.SqlServer.xml
 D:\projetos\BibliotecaUniversal\Biblioteca\src\Log.Domain\obj\Debug\Log.Domain.dll
 D:\projetos\BibliotecaUniversal\Biblioteca\src\Log.Domain\obj\Debug\Log.Domain.pdb
-D:\projetos\BibliotecaUniversal\Biblioteca\src\Log.Domain\obj\Debug\Log.Domain.csprojResolveAssemblyReference.cache

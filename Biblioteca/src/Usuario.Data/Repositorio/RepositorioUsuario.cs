@@ -57,6 +57,16 @@ namespace Usuario.Data.Repositorio
             return false;
         }
 
+        public bool loginunico(Domain.Entidade.Usuario usuario)
+        {
+            var cn = contexto.Database.Connection;
+            var query = $"SELECT Login FROM Usuario WHERE Login = '{usuario.Login}' ";
+            var obj = cn.ExecuteScalar(query);
+            if (obj != null)
+                return true;
+            return false;
+        }
+
         public bool RecuperarSenha(string email)
         {
             var cn = contexto.Database.Connection;

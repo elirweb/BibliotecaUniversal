@@ -8,5 +8,7 @@ namespace Usuario.Domain.Interfaces.Repositorios
         bool Authenticar(Entidade.Usuario usuario);
         bool RecuperarSenha(string email);
         bool AlteracaoSenha(string senha,string email);
+
+        bool loginunico(Entidade.Usuario usuario);
     }
 }

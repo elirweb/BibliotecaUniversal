@@ -17,3 +17,7 @@ D:\projetos\BibliotecaUniversal\Biblioteca\src\Usuario.Data\obj\Debug\Usuario.Da
 D:\projetos\BibliotecaUniversal\Biblioteca\src\Usuario.Data\obj\Debug\Usuario.Data.pdb
 D:\projetos\BibliotecaUniversal\Biblioteca\src\Usuario.Data\bin\Debug\Dapper.dll
 D:\projetos\BibliotecaUniversal\Biblioteca\src\Usuario.Data\bin\Debug\Dapper.xml
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Usuario.Data\bin\Debug\Log.Application.dll
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Usuario.Data\bin\Debug\Log.Domain.dll
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Usuario.Data\bin\Debug\Log.Application.pdb
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Usuario.Data\bin\Debug\Log.Domain.pdb

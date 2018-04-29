@@ -8,8 +8,8 @@ namespace Log.Data.Repositorio
 {
     public class RepositorioRegistro : Domain.Interfaces.Repositorio.IRegistro<Domain.Entidade.Registro>
     {
-        private string _basedados = string.Empty;
-        private string _collection = string.Empty;
+        private string _basedados = "BibliotecaLog";
+        private string _collection = "LogRegistro";
         public Config.Banco bd = new Config.Banco(System.Configuration.ConfigurationManager.AppSettings["enderecomongodb"]);
 
 

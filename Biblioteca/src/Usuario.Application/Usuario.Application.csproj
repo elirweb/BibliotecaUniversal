@@ -64,6 +64,10 @@
       <Project>{e865fcf8-ada1-4708-bfd2-5d00a5eb41a9}</Project>
       <Name>Biblioteca.Core.Infra</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Log.Application\Log.Application.csproj">
+      <Project>{d137be2c-043c-49ad-b583-cce6fd514db7}</Project>
+      <Name>Log.Application</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Usuario.Data\Usuario.Data.csproj">
       <Project>{5CEFA7CC-02A8-4622-9AF4-E3602762B0D5}</Project>
       <Name>Usuario.Data</Name>

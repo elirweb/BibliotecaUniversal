@@ -10,11 +10,15 @@ namespace Log.Application.AppAction
 {
     public class RegistroApp : Interfaces.IRegistro
     {
+        private readonly IRegistro<Domain.Entidade.Registro> repositorio;
 
-        
+        public RegistroApp(IRegistro<Domain.Entidade.Registro> repo)
+        {
+            repositorio = repo;
+        }
         public void Adicionar(RegistroViewModel reg)
         {
-            throw new NotImplementedException();
+            repositorio.Adicionar(Mapper.VewModelToDomain.Registro(reg));
         }
     }
 }

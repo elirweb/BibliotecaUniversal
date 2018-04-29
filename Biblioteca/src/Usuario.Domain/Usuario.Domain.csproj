@@ -53,6 +53,7 @@
     <Compile Include="Entidade\EnderecoUsuario.cs" />
     <Compile Include="Entidade\Usuario.cs" />
     <Compile Include="Especificacao\UsuarioDevePossuirUnicoCPF.cs" />
+    <Compile Include="Especificacao\UsuarioDevePossuirUnicoLogin.cs" />
     <Compile Include="Interfaces\Repositorios\IRepositorioEndereco.cs" />
     <Compile Include="Interfaces\Repositorios\IRepositorioUsuario.cs" />
     <Compile Include="Mapping\Endereco.cs" />
@@ -69,6 +70,10 @@
     <ProjectReference Include="..\Biblioteca.Core.Domain\Biblioteca.Core.Domain.csproj">
       <Project>{3919576b-982a-4770-827f-48d1840fdee8}</Project>
       <Name>Biblioteca.Core.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Log.Application\Log.Application.csproj">
+      <Project>{d137be2c-043c-49ad-b583-cce6fd514db7}</Project>
+      <Name>Log.Application</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

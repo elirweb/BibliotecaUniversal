@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using Biblioteca.Core.Domain.Util;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -51,7 +52,10 @@ namespace Api.Controllers
                     {
                         JArray token = JArray.Parse("[" + retorno + "]");
                         foreach (JObject obj in token.Children<JObject>())
-                            _accesstoken.Add(new Authenticacao { access_token = obj.SelectToken("access_token").ToString(), expires_in = obj.SelectToken("expires_in").ToString(), token_type = obj.SelectToken("token_type").ToString() });
+                            _accesstoken.Add(new Authenticacao { access_token = obj.SelectToken("access_token").ToString(),
+                                expires_in = obj.SelectToken("expires_in").ToString(),
+                                token_type = obj.SelectToken("token_type").ToString(),
+                                Login = login });
                     }
                     
                 }
@@ -63,12 +67,7 @@ namespace Api.Controllers
 
         }
 
-       public class Authenticacao{
-        public string access_token { get; set; }
-        public string expires_in { get; set; }
-        public string token_type { get; set; }
-
-        }
+      
 
         [AcceptVerbs("GET")]
         [Route("recuperarsenha")]

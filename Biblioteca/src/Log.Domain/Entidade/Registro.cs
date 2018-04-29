@@ -11,13 +11,13 @@ namespace Log.Domain.Entidade
         public string Descricao { get; private set; }
         public string Usuario { get; private set; }
 
-        public Registro(Registro reg)
+        public Registro(Guid idregistro, DateTime dtregistro,TimeSpan hora,string descricao,string usuario)
         {
-            IdRegistro = new Guid();
-            DtRegistro = reg.DtRegistro;
-            Hora = reg.Hora;
-            Descricao = reg.Descricao;
-            Usuario = reg.Usuario;
+            IdRegistro = idregistro;
+            DtRegistro = dtregistro;
+            Hora = hora;
+            Descricao = descricao;
+            Usuario = usuario;
         }
          
     }

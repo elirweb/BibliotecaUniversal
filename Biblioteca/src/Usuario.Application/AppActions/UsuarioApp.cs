@@ -13,20 +13,23 @@ namespace Usuario.Application.AppActions
     public class UsuarioApp : Service.ApplicationService ,Interfaces.IUsuario
     {
         private readonly IRepositorioUsuario repousuario;
-
+        private readonly Log.Application.Interfaces.IRegistro reg; 
         public UsuarioApp(IRepositorioUsuario repo, 
             IUnitOfWork unitOfWork, 
-            IHandler<Domain.Especificacao.UsuarioDevePossuirUnicoCPF> especificaousuario, UsuarioCadastroHandler usuhandler) 
+            IHandler<Domain.Especificacao.UsuarioDevePossuirUnicoCPF> especificaousuario, UsuarioCadastroHandler usuhandler,
+            Log.Application.Interfaces.IRegistro regis) 
             :base(unitOfWork, especificaousuario, usuhandler)
         {
             repousuario = repo;
+            reg = regis;
         }
         
         public ViewModel.Usuario Adicionar(ViewModel.Usuario usuario)
         {
-            if (PossuiConformidade(new Domain.Validacao.UsuarioAptoParaCadastro(repousuario)
+            
+            if (PossuiConformidade(new Domain.Validacao.UsuarioAptoParaCadastro(repousuario, reg)
                 .Validar(Mapper.VewModelToDomain.Usuario(usuario)))) {
-                if (usuario.Id != null)
+                if (usuario.Id != Guid.Parse("00000000-0000-0000-0000-000000000000"))
                 {
                     repousuario.Adicionar(Mapper.VewModelToDomain.Usuario(usuario));
                     Commit();

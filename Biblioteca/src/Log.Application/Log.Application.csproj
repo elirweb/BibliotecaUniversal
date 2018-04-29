@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="AppAction\RegistroApp.cs" />
     <Compile Include="Interfaces\IRegistro.cs" />
+    <Compile Include="Mapper\VewModelToDomain.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel\RegistroViewModel.cs" />
   </ItemGroup>
