@@ -12,3 +12,9 @@ D:\projetos\BibliotecaUniversal\Biblioteca\src\Emprestimo.Data\bin\Debug\EntityF
 D:\projetos\BibliotecaUniversal\Biblioteca\src\Emprestimo.Data\obj\Debug\Emprestimo.Data.csprojResolveAssemblyReference.cache
 D:\projetos\BibliotecaUniversal\Biblioteca\src\Emprestimo.Data\obj\Debug\Emprestimo.Data.dll
 D:\projetos\BibliotecaUniversal\Biblioteca\src\Emprestimo.Data\obj\Debug\Emprestimo.Data.pdb
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Emprestimo.Data\bin\Debug\Biblioteca.Core.Domain.dll
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Emprestimo.Data\bin\Debug\Log.Application.dll
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Emprestimo.Data\bin\Debug\Log.Domain.dll
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Emprestimo.Data\bin\Debug\Biblioteca.Core.Domain.pdb
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Emprestimo.Data\bin\Debug\Log.Application.pdb
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Emprestimo.Data\bin\Debug\Log.Domain.pdb

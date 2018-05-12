@@ -6,7 +6,7 @@ using System.Data.Entity;
 
 namespace Usuario.Data.Repositorio
 {
-    public class RepositorioUsuario : Domain.Interfaces.Repositorios.IRepositorioUsuario
+    public class RepositorioUsuario : Biblioteca.Core.Domain.Util.Dispose, Domain.Interfaces.Repositorios.IRepositorioUsuario
     {
 
         private readonly Contexto.Contexto contexto;

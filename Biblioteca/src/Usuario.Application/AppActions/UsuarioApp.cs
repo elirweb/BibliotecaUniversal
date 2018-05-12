@@ -1,12 +1,8 @@
-﻿using Biblioteca.Core.Domain.Erros;
-using Biblioteca.Core.Domain.Validador.Interfaces;
+﻿using Biblioteca.Core.Domain.Validador.Interfaces;
 using System;
 using Usuario.Data.UnitOfWork;
 using Usuario.Domain.Interfaces.Repositorios;
-using Usuario.Domain.Entidade;
-using System.Collections.Generic;
 using Usuario.Application.Handler;
-using Usuario.Application.ViewModel;
 
 namespace Usuario.Application.AppActions
 {

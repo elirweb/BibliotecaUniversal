@@ -167,7 +167,9 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Bootstrapper.cs" />
+    <Compile Include="Controllers\BibliotecaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginBibliotecaController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -225,10 +227,12 @@
     <Content Include="Content\scss\navbar\_navbar_static.scss" />
     <Content Include="Content\scss\navbar\_navbar_toggle.scss" />
     <Content Include="Scripts\angular\angular.min.js" />
+    <Content Include="Scripts\angular\config\servicos.js" />
     <Content Include="Scripts\angular\controller\AuthCtrl.js" />
     <Content Include="Scripts\angular\module\modulo.js" />
     <Content Include="Scripts\angular\service\AuthenticaService.js" />
     <Content Include="Scripts\jquery\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery\jquery-mask.js" />
     <Content Include="Scripts\jquery\jquery.validate.js" />
     <Content Include="Scripts\jquery\jquery.validate.min.js" />
     <Content Include="Scripts\jquery\jquery.validate.unobtrusive.js" />
@@ -311,8 +315,15 @@
     <Content Include="Views\Login\RecuperarSenha.cshtml" />
     <Content Include="Views\Login\RedefinirSenha.cshtml" />
     <Content Include="Views\Login\Endereco.cshtml" />
+    <Content Include="Views\Biblioteca\Index.cshtml" />
+    <Content Include="Views\Shared\biblioteca\_Biblioteca.cshtml" />
+    <Content Include="Views\LoginBiblioteca\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Biblioteca.Core.Domain\Biblioteca.Core.Domain.csproj">
+      <Project>{3919576b-982a-4770-827f-48d1840fdee8}</Project>
+      <Name>Biblioteca.Core.Domain</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Biblioteca.Core.Infra.IoC\Biblioteca.Core.Infra.IoC.csproj">
       <Project>{f58271fb-833d-43b4-8c89-f6603c19f015}</Project>
       <Name>Biblioteca.Core.Infra.IoC</Name>

@@ -4,7 +4,16 @@
     Layout = "~/Views/Shared/_LayoutLogin.cshtml";
 }
 @model Usuario.Application.ViewModel.Usuario
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery/jquery-mask.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
 
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#Cpf").mask("999.999.999-99")
+    });
+</script>
 <div class="container">
     <div class="card card-login mx-auto mt-5">
         <div class="card-header">Se cadastre-se</div>
@@ -42,7 +51,7 @@
                 </div>
                 <div class="form-group">
                     @Html.Label("CPF")
-                    @Html.TextBoxFor(c => c.Cpf, new { @type = "text", @class = "form-control", @placeholder = "Sua CPF" })
+                    @Html.TextBoxFor(c => c.Cpf, new { @type = "text", @id= "Cpf", @class = "form-control", @placeholder = "Seu CPF" })
                 </div>
                 <div class="form-group">
                     <input type="submit" value="Registra-se" class="btn-dark" />
@@ -52,6 +61,3 @@
     </div>
 </div>
 
-<script src="~/Scripts/jquery-1.10.2.min.js"></script>
-<script src="~/Scripts/jquery.validate.min.js"></script>
-<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

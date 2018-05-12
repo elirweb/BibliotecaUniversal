@@ -7,7 +7,7 @@ using UsuarioBiblioteca.Entidades;
 
 namespace UsuarioBiblioteca.Data.Repositorios
 {
-    public class RepositorioLivro : Interfaces.IRepositorios.IRepositorioLivro
+    public class RepositorioLivro : Biblioteca.Core.Domain.Util.Dispose, Interfaces.IRepositorios.IRepositorioLivro
     {
         private Contexto.Contexto contexto;
         public RepositorioLivro(Contexto.Contexto coc)

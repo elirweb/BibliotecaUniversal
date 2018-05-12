@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
@@ -10,7 +11,7 @@ namespace Usuario.Data.Contexto
 {
     public class Contexto: DbContext
     {
-        public Contexto():base ("Contexto")
+        public Contexto():base (Biblioteca.Core.Domain.Util.Descriptografar.Descript(ConfigurationManager.ConnectionStrings["Contexto"].ConnectionString.ToString())) // Contexto
         {
             Database.Log = obj => System.Diagnostics.Debug.Write(obj);
             Configuration.LazyLoadingEnabled = false;

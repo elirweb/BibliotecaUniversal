@@ -41,9 +41,11 @@ namespace Web
                 "~/Scripts/js/sb-admin-datatables.min.js",
                 "~/Scripts/js/sb-admin-charts.min.js"));
 
+            
             bundles.Add(new ScriptBundle("~/Scripts/angular")
                 .Include("~/Scripts/angular/angular.min.js"
-                , "~/Scripts/angular/module/modulo.js", 
+                , "~/Scripts/angular/module/modulo.js",
+                 "~/Scripts/angular/config/servicos.js",
                 "~/Scripts/angular/service/AuthenticaService.js",
                 "~/Scripts/angular/controller/AuthCtrl.js"));
 

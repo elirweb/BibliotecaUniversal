@@ -11,8 +11,6 @@ namespace Log.Data.Repositorio
         private string _basedados = "BibliotecaLog";
         private string _collection = "LogRegistro";
         public Config.Banco bd = new Config.Banco(System.Configuration.ConfigurationManager.AppSettings["enderecomongodb"]);
-
-
         public RepositorioRegistro()
         {
 
@@ -23,10 +21,7 @@ namespace Log.Data.Repositorio
             var db = client.GetDatabase(_basedados);
             var collection = db.GetCollection<Registro>(_collection);
             collection.InsertOne(T);
-
-
         }
-
         public IEnumerable<Registro> ObterRegistro()
         {
             throw new NotImplementedException();

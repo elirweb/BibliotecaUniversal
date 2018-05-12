@@ -7,7 +7,7 @@ using Emprestimo.Domain.Entidade;
 
 namespace Emprestimo.Data.Repositorio
 {
-    public class RepositorioPedido : Domain.Interfaces.Repositorio.IRepositorioPedido
+    public class RepositorioPedido : Biblioteca.Core.Domain.Util.Dispose, Domain.Interfaces.Repositorio.IRepositorioPedido
     {
         private Contexto.Contexto contexto;
         public RepositorioPedido(Contexto.Contexto coc)

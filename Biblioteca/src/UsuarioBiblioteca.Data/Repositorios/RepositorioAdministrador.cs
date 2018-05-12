@@ -7,7 +7,7 @@ using UsuarioBiblioteca.Entidades;
 
 namespace UsuarioBiblioteca.Data.Repositorios
 {
-    public class RepositorioAdministrador : Interfaces.IRepositorios.IRepositorioAdministrador
+    public class RepositorioAdministrador : Biblioteca.Core.Domain.Util.Dispose, Interfaces.IRepositorios.IRepositorioAdministrador
     {
         private readonly Contexto.Contexto contexto;
         public RepositorioAdministrador(Contexto.Contexto coc)

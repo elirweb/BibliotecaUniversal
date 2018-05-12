@@ -40,6 +40,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -65,6 +66,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Biblioteca.Core.Domain\Biblioteca.Core.Domain.csproj">
+      <Project>{3919576b-982a-4770-827f-48d1840fdee8}</Project>
+      <Name>Biblioteca.Core.Domain</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Emprestimo.Domain\Emprestimo.Domain.csproj">
       <Project>{992dc7ca-5b16-4362-a004-917df01e6463}</Project>
       <Name>Emprestimo.Domain</Name>

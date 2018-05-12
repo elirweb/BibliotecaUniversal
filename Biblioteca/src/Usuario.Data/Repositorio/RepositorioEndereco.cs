@@ -3,7 +3,7 @@ using Usuario.Domain.Entidade;
 
 namespace Usuario.Data.Repositorio
 {
-    public class RepositorioEndereco : Domain.Interfaces.Repositorios.IRepositorioEndereco
+    public class RepositorioEndereco : Biblioteca.Core.Domain.Util.Dispose, Domain.Interfaces.Repositorios.IRepositorioEndereco
     {
         private Contexto.Contexto contexto;
         public RepositorioEndereco(Contexto.Contexto coc)

@@ -8,6 +8,9 @@
 <div class="container">
     <div class="card card-login mx-auto mt-5">
         <div class="card-header">Acesso ao Portal Biblioteca Universal</div>
+        <ul class="abas">
+            <li><a href="/LoginBiblioteca/Index">Biblioteca</a></li>
+        </ul>
         <div class="card-body">
           @using (Html.BeginForm("Index", "Login", FormMethod.Post, new { @id = "FormLogin", ng_controller = "authctrl" }))
           {

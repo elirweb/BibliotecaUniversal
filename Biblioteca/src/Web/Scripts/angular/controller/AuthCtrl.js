@@ -1,6 +1,7 @@
 ﻿
 biblioteca.controller('authctrl', ['$scope', 'authService', function ($scope, authService) {
     $scope.Logar = function () {
+        
         authService.Authenticar($scope.Login, $scope.Senha)
             .then(function (response) {
                 angular.forEach(response.data, function (value, key) {
@@ -10,12 +11,7 @@ biblioteca.controller('authctrl', ['$scope', 'authService', function ($scope, au
                 document.getElementById("btnbotao").innerHTML = "Acessar";
             })
     }
-    $scope.RecuperarSenha = function () {
-        authService.Recuperar()
-        .then(function (response) {
-            alert(response);
-        })
-    }
+    
 
     $scope.ProcessarBotao = function (idbotao, texto) {
         document.getElementById(idbotao).innerHTML = texto;

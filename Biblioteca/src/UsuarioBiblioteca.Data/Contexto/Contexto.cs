@@ -1,4 +1,5 @@
 ﻿
+using System.Configuration;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 
@@ -6,14 +7,14 @@ namespace UsuarioBiblioteca.Data.Contexto
 {
     public class Contexto: DbContext
     {
-        public Contexto():base("Contexto")
+        public Contexto() : base(Biblioteca.Core.Domain.Util.Descriptografar.Descript(ConfigurationManager.ConnectionStrings["Contexto"].ConnectionString.ToString())) // Contexto
         {
             Database.Log = obj => System.Diagnostics.Debug.Write(obj);
             Configuration.LazyLoadingEnabled = false;
             Configuration.ProxyCreationEnabled = false;
         }
 
-        public DbSet<Entidades.Bibliotecaria> Biblioteca { get; set; }
+        public DbSet<Entidades.Bibliotecaria> Bibliotecaria { get; set; }
         public DbSet<Entidades.Endereco> Endereco { get; set; }
         public DbSet<Entidades.Administradores> Administradores { get; set; }
         public DbSet<Entidades.Grupos> Grupos { get; set; }
