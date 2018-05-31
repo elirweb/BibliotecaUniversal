@@ -8,6 +8,6 @@ namespace UsuarioBiblioteca.Application.Interfaces
 {
     public interface IAdministrador
     {
-
+        ViewModel.Administrador Adicionar(ViewModel.Administrador adm);
     }
 }

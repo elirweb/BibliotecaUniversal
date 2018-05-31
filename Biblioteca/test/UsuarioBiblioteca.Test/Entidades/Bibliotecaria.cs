@@ -8,6 +8,7 @@ namespace UsuarioBiblioteca.Test.Entidades
 {
     public class Bibliotecaria
     {
+        public Guid Id { get; set; } 
         public string RazaoSocial { get;  set; }
         public string Cnpj { get;  set; }
         public string Usuario { get;  set; }

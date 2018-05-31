@@ -4,20 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UsuarioBiblioteca.Data.UnitOfWork;
-using UsuarioBiblioteca.Entidades;
 
 namespace UsuarioBiblioteca.Data.Repositorios
 {
-    public class RepositorioEndereco : Biblioteca.Core.Domain.Util.Dispose, Interfaces.IRepositorios.IRepositorioEndereco
+    public class RepositorioEndereco : Biblioteca.Core.Domain.Util.Dispose, Domain.Interfaces.IRepositorios.IRepositorioEndereco
     {
         private readonly Contexto.Contexto _contexto;
         public RepositorioEndereco(Contexto.Contexto context)
         {
             _contexto = context;
         }
-        public void Adicionar(Endereco endereco)
+        public void Adicionar(Domain.Entidades.Endereco endereco)
         {
-            throw new NotImplementedException();
+            _contexto.Endereco.Add(endereco);
         }
     }
 }

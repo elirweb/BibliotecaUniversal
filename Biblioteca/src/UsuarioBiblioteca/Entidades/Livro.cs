@@ -1,8 +1,9 @@
 ﻿using Biblioteca.Core.Domain.Validador;
 using System;
 using System.ComponentModel.DataAnnotations.Schema;
+using UsuarioBiblioteca.Domain.Entidades;
 
-namespace UsuarioBiblioteca.Entidades
+namespace UsuarioBiblioteca.Domain.Entidades
 {
     public class Livro
     {
@@ -15,10 +16,10 @@ namespace UsuarioBiblioteca.Entidades
         public Guid IdBiblioteca { get;  set; }
         public virtual Bibliotecaria Biblioteca { get; set; }
 
-        public Enum.Categoria Categoria { get; private set; } 
+        public Enum.Categoria Categoria { get; private set; }
 
         [NotMapped]
-        public ValidacaoResultado ValidationResult { get; set; }
+        public ValidacaoResultado ValidacaoResultado { get; set; }
 
         public Livro(string titulo, int qtd,string editora, bool ativ, string descricao, Guid id, Enum.Categoria cat)
         {

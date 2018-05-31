@@ -25,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -318,6 +319,12 @@
     <Content Include="Views\Biblioteca\Index.cshtml" />
     <Content Include="Views\Shared\biblioteca\_Biblioteca.cshtml" />
     <Content Include="Views\LoginBiblioteca\Index.cshtml" />
+    <Content Include="Views\LoginBiblioteca\CadAdministrador.cshtml" />
+    <Content Include="Views\Biblioteca\Cadastro.cshtml" />
+    <Content Include="Views\LoginBiblioteca\RecuperarSenha.cshtml" />
+    <Content Include="Views\LoginBiblioteca\RedefinirSenha.cshtml" />
+    <Content Include="Views\Biblioteca\Endereco.cshtml" />
+    <Content Include="Views\Biblioteca\Livro.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Biblioteca.Core.Domain\Biblioteca.Core.Domain.csproj">
@@ -331,6 +338,10 @@
     <ProjectReference Include="..\Usuario.Application\Usuario.Application.csproj">
       <Project>{4100f9a2-f65f-4b54-89d6-6f4ad865190c}</Project>
       <Name>Usuario.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UsuarioBiblioteca.Application\UsuarioBiblioteca.Application.csproj">
+      <Project>{1f0fa24e-ce2c-4ddf-bcd7-09e022c42169}</Project>
+      <Name>UsuarioBiblioteca.Application</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

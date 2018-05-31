@@ -1,37 +1,48 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Remoting.Contexts;
-using System.Text;
-using System.Threading.Tasks;
-using UsuarioBiblioteca.Entidades;
+using Biblioteca.Core.Domain.Helper;
 
 namespace UsuarioBiblioteca.Data.Repositorios
 {
-    public class RepositorioBibliotecaria: Biblioteca.Core.Domain.Util.Dispose, Interfaces.IRepositorios.IRepositorioBibliotecaria
+    public class RepositorioBibliotecaria: Biblioteca.Core.Domain.Util.Dispose, Domain.Interfaces.IRepositorios.IRepositorioBibliotecaria
     {
-        private readonly Contexto.Contexto _contexto;
+      
+        private readonly Contexto.Contexto contexto;
+        private DbHelper helper = new DbHelper();
         public RepositorioBibliotecaria(Contexto.Contexto cont)
         {
-            _contexto = cont;
+            contexto = cont;
         }
         
-        public void Adicionar(Bibliotecaria bibliotecaria)
+        public void Adicionar(Domain.Entidades.Bibliotecaria bibliotecaria)
         {
-            
-            throw new NotImplementedException();
+
+            contexto.Bibliotecaria.Add(bibliotecaria);
         }
 
-        public bool CNPJUnico(Bibliotecaria bibliotecaria)
+        public bool CNPJUnico(Domain.Entidades.Bibliotecaria bibliotecaria)
         {
-            throw new NotImplementedException();
+            var obj = helper.ExecuteScalar($"SELECT Cnpj FROM Bibliotecaria WHERE Cnpj = '{bibliotecaria.Cnpj.Numero}' ", contexto.Database.Connection);
+            if (obj != null)
+                return true;
+            return false;
         }
-
         
-
-        public bool EmailUnico(Bibliotecaria bibliotecaria)
+        public bool EmailUnico(Domain.Entidades.Bibliotecaria bibliotecaria)
         {
-            throw new NotImplementedException();
+            var obj = helper.ExecuteScalar($"SELECT Email FROM Bibliotecaria WHERE Email = '{bibliotecaria.Email.Endereco}' ", contexto.Database.Connection);
+            if (obj != null)
+                return true;
+            return false;
+        }
+
+      
+
+        public bool LoginUnico(Domain.Entidades.Bibliotecaria bibliotecaria)
+        {
+            var obj = helper.ExecuteScalar($"SELECT Usuario FROM Bibliotecaria WHERE Usuario = '{bibliotecaria.Usuario}' ", contexto.Database.Connection);
+            if (obj != null)
+                return true;
+            return false;
         }
     }
 }

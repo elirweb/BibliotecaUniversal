@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UsuarioBiblioteca.Mapping
+namespace UsuarioBiblioteca.Domain.Mapping
 {
-    public class Administrador: EntityTypeConfiguration<Entidades.Administradores>
+    public class Administrador: EntityTypeConfiguration<Domain.Entidades.Administradores>
     {
         public Administrador()
         {

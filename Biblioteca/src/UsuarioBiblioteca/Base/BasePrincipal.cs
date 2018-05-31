@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UsuarioBiblioteca.Base
+namespace UsuarioBiblioteca.Domain.Base
 {
     public class BasePrincipal
     {

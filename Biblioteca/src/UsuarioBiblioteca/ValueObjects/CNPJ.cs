@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UsuarioBiblioteca.ValueObjects
+namespace UsuarioBiblioteca.Domain.ValueObjects
 {
     public class CNPJ
     {

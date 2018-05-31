@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace UsuarioBiblioteca.Enum
+﻿namespace UsuarioBiblioteca.Domain.Enum
 {
     public enum Categoria
     {
@@ -15,4 +9,6 @@ namespace UsuarioBiblioteca.Enum
         Geografia,
         Ingles
     }
+
+   
 }

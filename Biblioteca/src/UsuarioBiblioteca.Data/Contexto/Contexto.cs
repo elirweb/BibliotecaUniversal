@@ -14,11 +14,11 @@ namespace UsuarioBiblioteca.Data.Contexto
             Configuration.ProxyCreationEnabled = false;
         }
 
-        public DbSet<Entidades.Bibliotecaria> Bibliotecaria { get; set; }
-        public DbSet<Entidades.Endereco> Endereco { get; set; }
-        public DbSet<Entidades.Administradores> Administradores { get; set; }
-        public DbSet<Entidades.Grupos> Grupos { get; set; }
-        public DbSet<Entidades.Livro> Livro { get; set; }
+        public DbSet<Domain.Entidades.Bibliotecaria> Bibliotecaria { get; set; }
+        public DbSet<Domain.Entidades.Endereco> Endereco { get; set; }
+        public DbSet<Domain.Entidades.Administradores> Administradores { get; set; }
+        public DbSet<Domain.Entidades.Grupos> Grupos { get; set; }
+        public DbSet<Domain.Entidades.Livro> Livro { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -31,20 +31,20 @@ namespace UsuarioBiblioteca.Data.Contexto
 
             // Ignorando o confirma senha para não ser gerado no banco de dados 
 
-            modelBuilder.Configurations.Add(new Mapping.Bibliotecaria());
-            modelBuilder.Entity<Entidades.Bibliotecaria>().Ignore(c => c.ConfirmaSenha);
-            modelBuilder.Entity<Entidades.Bibliotecaria>().Ignore(c=>c.ValidacaoResultado);
-            modelBuilder.Configurations.Add(new Mapping.Endereco());
-            modelBuilder.Entity<Entidades.Endereco>().Ignore(c => c.ValidationResult);
-            modelBuilder.Entity<Entidades.Endereco>().Ignore(c => c.tipo);
+            modelBuilder.Configurations.Add(new Domain.Mapping.Bibliotecaria());
+            modelBuilder.Entity<Domain.Entidades.Bibliotecaria>().Ignore(c => c.ConfirmaSenha);
+            modelBuilder.Entity<Domain.Entidades.Bibliotecaria>().Ignore(c=>c.ValidacaoResultado);
+            modelBuilder.Configurations.Add(new Domain.Mapping.Endereco());
+            modelBuilder.Entity<Domain.Entidades.Endereco>().Ignore(c => c.ValidationResult);
+            modelBuilder.Entity<Domain.Entidades.Endereco>().Ignore(c => c.tipo);
 
-            modelBuilder.Configurations.Add(new Mapping.Administrador());
-            modelBuilder.Entity<Entidades.Administradores>().Ignore(c => c.ValidationResult);
-            modelBuilder.Entity<Entidades.Administradores>().Ignore(c => c.ConfirmaSenha);
+            modelBuilder.Configurations.Add(new Domain.Mapping.Administrador());
+            modelBuilder.Entity<Domain.Entidades.Administradores>().Ignore(c => c.ValidacaoResultado);
+            modelBuilder.Entity<Domain.Entidades.Administradores>().Ignore(c => c.ConfirmaSenha);
 
-            modelBuilder.Configurations.Add(new Mapping.Grupos());
-            modelBuilder.Configurations.Add(new Mapping.Livro());
-            modelBuilder.Entity<Entidades.Livro>().Ignore(c => c.ValidationResult);
+            modelBuilder.Configurations.Add(new Domain.Mapping.Grupos());
+            modelBuilder.Configurations.Add(new Domain.Mapping.Livro());
+            modelBuilder.Entity<Domain.Entidades.Livro>().Ignore(c => c.ValidacaoResultado);
 
 
 

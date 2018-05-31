@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 
-namespace UsuarioBiblioteca.Entidades
+namespace UsuarioBiblioteca.Domain.Entidades
 {
     public class Bibliotecaria:Base.BasePrincipal
     {
@@ -38,9 +38,9 @@ namespace UsuarioBiblioteca.Entidades
             Email = new Biblioteca.Core.Domain.ValueObjects.Email(email);
             MomentoCadastro(situacao); // no momento de eu criar o cadastro posso definir se deixo ativo ou não
             Imagem = imagem;
-            _lista = new List<Livro>();
+            //_lista = new List<Livro>();
             DtCadastro = DateTime.Now;
-            HoraCadastro = new TimeSpan(1);
+            HoraCadastro = TimeSpan.Parse(DateTime.Now.TimeOfDay.Hours + ":" + DateTime.Now.TimeOfDay.Minutes);
         }
 
         public void MomentoCadastro(bool situacao) {

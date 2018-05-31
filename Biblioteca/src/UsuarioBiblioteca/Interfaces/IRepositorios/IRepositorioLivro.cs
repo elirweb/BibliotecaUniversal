@@ -1,15 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using UsuarioBiblioteca.Domain.Entidades;
 
-namespace UsuarioBiblioteca.Interfaces.IRepositorios
+namespace UsuarioBiblioteca.Domain.Interfaces.IRepositorios
 {
     public interface IRepositorioLivro
     {
-        void Adicionar(Entidades.Livro lv);
+        void Adicionar(Livro lv);
 
-        bool EhLivroCadastrado(Entidades.Livro lv);
+     
+
+        bool TituloUnico(Livro lv);
+        bool EstaAtiva(Livro model);
     }
 }

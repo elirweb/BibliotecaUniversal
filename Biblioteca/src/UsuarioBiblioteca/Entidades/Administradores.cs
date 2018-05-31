@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace UsuarioBiblioteca.Entidades
+namespace UsuarioBiblioteca.Domain.Entidades
 {
     public class Administradores
     {
@@ -18,7 +18,7 @@ namespace UsuarioBiblioteca.Entidades
         public string ConfirmaSenha { get; private set; }
 
         [NotMapped]
-        public ValidacaoResultado ValidationResult { get; set; }
+        public ValidacaoResultado ValidacaoResultado { get; set; }
 
         public Administradores(string nome, string email, string login, string senha, string confirma)
         {

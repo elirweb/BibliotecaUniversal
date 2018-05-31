@@ -22,7 +22,7 @@ namespace Web.Controllers
         }
 
         public ActionResult Cadastro() {
-            //elirweb na maquina da pax
+            
             return View();
         }
 

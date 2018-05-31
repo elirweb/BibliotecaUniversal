@@ -2,7 +2,7 @@
 using System;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace UsuarioBiblioteca.Entidades
+namespace UsuarioBiblioteca.Domain.Entidades
 {
     public class Endereco
     {

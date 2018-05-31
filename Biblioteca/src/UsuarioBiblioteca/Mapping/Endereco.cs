@@ -1,9 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity.ModelConfiguration;
 
-namespace UsuarioBiblioteca.Mapping
+namespace UsuarioBiblioteca.Domain.Mapping
 {
-    public class Endereco: EntityTypeConfiguration<Entidades.Endereco>
+    public class Endereco: EntityTypeConfiguration<Domain.Entidades.Endereco>
     {
         public Endereco()
         {

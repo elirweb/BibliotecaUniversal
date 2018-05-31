@@ -20,10 +20,10 @@ namespace Biblioteca.Core.Infra.IoC
             container.Register<Log.Application.Interfaces.IRegistro, Log.Application.AppAction.RegistroApp>(Lifestyle.Singleton);
 
             //data
-            container.Register<UsuarioBiblioteca.Interfaces.IRepositorios.IRepositorioBibliotecaria, UsuarioBiblioteca.Data.Repositorios.RepositorioBibliotecaria>(Lifestyle.Singleton);
-            container.Register<UsuarioBiblioteca.Interfaces.IRepositorios.IRepositorioEndereco, UsuarioBiblioteca.Data.Repositorios.RepositorioEndereco>(Lifestyle.Singleton);
-            container.Register<UsuarioBiblioteca.Interfaces.IRepositorios.IRepositorioAdministrador, UsuarioBiblioteca.Data.Repositorios.RepositorioAdministrador>(Lifestyle.Singleton);
-            container.Register<UsuarioBiblioteca.Interfaces.IRepositorios.IRepositorioLivro, UsuarioBiblioteca.Data.Repositorios.RepositorioLivro>(Lifestyle.Singleton);
+            container.Register<UsuarioBiblioteca.Domain.Interfaces.IRepositorios.IRepositorioBibliotecaria, UsuarioBiblioteca.Data.Repositorios.RepositorioBibliotecaria>(Lifestyle.Singleton);
+            container.Register<UsuarioBiblioteca.Domain.Interfaces.IRepositorios.IRepositorioEndereco, UsuarioBiblioteca.Data.Repositorios.RepositorioEndereco>(Lifestyle.Singleton);
+            container.Register<UsuarioBiblioteca.Domain.Interfaces.IRepositorios.IRepositorioAdministrador, UsuarioBiblioteca.Data.Repositorios.RepositorioAdministrador>(Lifestyle.Singleton);
+            container.Register<UsuarioBiblioteca.Domain.Interfaces.IRepositorios.IRepositorioLivro, UsuarioBiblioteca.Data.Repositorios.RepositorioLivro>(Lifestyle.Singleton);
             container.Register<Usuario.Domain.Interfaces.Repositorios.IRepositorioUsuario, Usuario.Data.Repositorio.RepositorioUsuario>(Lifestyle.Singleton);
             container.Register<Usuario.Domain.Interfaces.Repositorios.IRepositorioEndereco, Usuario.Data.Repositorio.RepositorioEndereco>(Lifestyle.Singleton);
             container.Register<Emprestimo.Domain.Interfaces.Repositorio.IRepositorioPedido, Emprestimo.Data.Repositorio.RepositorioPedido>(Lifestyle.Singleton);
@@ -41,11 +41,18 @@ namespace Biblioteca.Core.Infra.IoC
             container.Register<Emprestimo.Data.UnitOfWork.IUnitOfWork, Emprestimo.Data.UnitOfWork.UnitOfWork>(Lifestyle.Singleton);
 
             //handler
-            container.Register<Domain.Validador.Interfaces.IHandler<Usuario.Domain.Especificacao.UsuarioDevePossuirUnicoCPF>, Biblioteca.Core.Domain.Validador.Validacao<Usuario.Domain.Especificacao.UsuarioDevePossuirUnicoCPF>>(Lifestyle.Singleton);
-            container.Register<Domain.Validador.Interfaces.IHandler<Usuario.Domain.Especificacao.UsuarioDevePossuirUnicoLogin>, Biblioteca.Core.Domain.Validador.Validacao<Usuario.Domain.Especificacao.UsuarioDevePossuirUnicoLogin>>(Lifestyle.Singleton);
+            container.Register<Domain.Validador.Interfaces.IHandler<Usuario.Domain.Especificacao.UsuarioDevePossuirUnicoCPF>, Domain.Validador.Validacao<Usuario.Domain.Especificacao.UsuarioDevePossuirUnicoCPF>>(Lifestyle.Singleton);
+            container.Register<Domain.Validador.Interfaces.IHandler<Usuario.Domain.Especificacao.UsuarioDevePossuirUnicoLogin>, Domain.Validador.Validacao<Usuario.Domain.Especificacao.UsuarioDevePossuirUnicoLogin>>(Lifestyle.Singleton);
+
+            container.Register<Domain.Validador.Interfaces.IHandler<UsuarioBiblioteca.Domain.Especificacao.BibliotecaDevePossuirUnicoEmail>, Domain.Validador.Validacao<UsuarioBiblioteca.Domain.Especificacao.BibliotecaDevePossuirUnicoEmail>>(Lifestyle.Singleton);
+            container.Register<Domain.Validador.Interfaces.IHandler<UsuarioBiblioteca.Domain.Especificacao.BibliotecaDevePossuiCNPJUnico>, Domain.Validador.Validacao<UsuarioBiblioteca.Domain.Especificacao.BibliotecaDevePossuiCNPJUnico>>(Lifestyle.Singleton);
+            container.Register<Domain.Validador.Interfaces.IHandler<UsuarioBiblioteca.Domain.Especificacao.BibliotecaDevePossuirUnicoLogin>, Domain.Validador.Validacao<UsuarioBiblioteca.Domain.Especificacao.BibliotecaDevePossuirUnicoLogin>>(Lifestyle.Singleton);
+            container.Register<Domain.Validador.Interfaces.IHandler<UsuarioBiblioteca.Domain.Especificacao.LivroDevePossuirUnicoTitulo>, Domain.Validador.Validacao<UsuarioBiblioteca.Domain.Especificacao.LivroDevePossuirUnicoTitulo>>(Lifestyle.Singleton);
+            container.Register<Domain.Validador.Interfaces.IHandler<UsuarioBiblioteca.Domain.Especificacao.AdministradorDevePossuirUnicoLogin>, Domain.Validador.Validacao<UsuarioBiblioteca.Domain.Especificacao.AdministradorDevePossuirUnicoLogin>>(Lifestyle.Singleton);
 
             container.Register<Email.Interfaces.IEnvioEmail, Email.EnvioEmail>(Lifestyle.Singleton);
             container.Register<Usuario.Application.Handler.UsuarioCadastroHandler>(Lifestyle.Singleton);
+            container.Register<UsuarioBiblioteca.Application.Handler.BibliotecaCadastroHandler>(Lifestyle.Singleton);
         }
     }
 }

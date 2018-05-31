@@ -1,9 +1,9 @@
 ﻿
 using System.Data.Entity.ModelConfiguration;
 
-namespace UsuarioBiblioteca.Mapping
+namespace UsuarioBiblioteca.Domain.Mapping
 {
-    public class Grupos: EntityTypeConfiguration<Entidades.Grupos>
+    public class Grupos: EntityTypeConfiguration<Domain.Entidades.Grupos>
     {
         public Grupos()
         {

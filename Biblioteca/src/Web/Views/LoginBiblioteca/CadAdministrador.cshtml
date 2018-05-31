@@ -1,0 +1,60 @@
+﻿
+@{
+    ViewBag.Title = "Cadastro de Administrador";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+@model UsuarioBiblioteca.Application.ViewModel.Administrador
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery/jquery-mask.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+
+<div class="container">
+    <div class="card card-login mx-auto mt-5">
+        <div class="card-header">Cadastro de Biblioteca</div>
+        <div class="card-body">
+
+            @using (Html.BeginForm("CadAdministrador", "LoginBiblioteca", FormMethod.Post, new { @id = "FormCadastro", @ng_controller = "authctrl" }))
+            {
+                <span style="text-align: center">@Html.ValidationSummary(false, "", new { @class = "text-danger" })</span>
+                @Html.AntiForgeryToken()
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Nome)
+                    @Html.TextBoxFor(c => c.Nome, new { @type = "text", @class = "form-control", @placeholder = "Seu nome" })
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Login)
+                    @Html.TextBoxFor(c => c.Login, new { @type = "text", @class = "form-control", @placeholder = "Seu Usuario" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Senha)
+                    @Html.TextBoxFor(c => c.Senha, new { @type = "password", @class = "form-control", @placeholder = "Sua senha" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.ConfirmaSenha)
+                    @Html.TextBoxFor(c => c.ConfirmaSenha, new { @type = "password", @class = "form-control", @placeholder = "Confirmar senha" })
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Email)
+                    @Html.TextBoxFor(c => c.Email, new { @type = "email", @class = "form-control", @placeholder = "Sua Email" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.ConfirmEmail)
+                    @Html.TextBoxFor(c => c.ConfirmEmail, new { @type = "email", @class = "form-control", @placeholder = "Confirmação do Email" })
+                </div>
+               
+             
+               
+                <div class="form-group">
+                    <input type="submit" value="Registra-se" class="btn-dark" />
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+
+

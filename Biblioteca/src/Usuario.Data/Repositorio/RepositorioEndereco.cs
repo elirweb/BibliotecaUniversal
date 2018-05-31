@@ -1,5 +1,4 @@
-﻿using System;
-using Usuario.Domain.Entidade;
+﻿using Usuario.Domain.Entidade;
 
 namespace Usuario.Data.Repositorio
 {

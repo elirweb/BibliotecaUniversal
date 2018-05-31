@@ -1,10 +1,8 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Data.Entity.ModelConfiguration;
+﻿using System.Data.Entity.ModelConfiguration;
 
-namespace UsuarioBiblioteca.Mapping
+namespace UsuarioBiblioteca.Domain.Mapping
 {
-    public class Bibliotecaria: EntityTypeConfiguration<Entidades.Bibliotecaria>
+    public class Bibliotecaria: EntityTypeConfiguration<Domain.Entidades.Bibliotecaria>
     {
         public Bibliotecaria()
         {

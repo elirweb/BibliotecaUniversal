@@ -1,36 +1,46 @@
-﻿using Biblioteca.Core.Domain.Validador;
+﻿using Biblioteca.Core.Domain.Validador.Interfaces;
 using System;
-using System.Linq;
-using UsuarioBiblioteca.Application.ViewModel;
+using UsuarioBiblioteca.Application.Handler;
 using UsuarioBiblioteca.Data.UnitOfWork;
 
 namespace UsuarioBiblioteca.Application.AppActions
 {
-    public class BibliotecariaApp : Service.ApplicationService ,Interfaces.IBibliotecaria
+    public class BibliotecariaApp : Service.ApplicationServiceBiblio ,Interfaces.IBibliotecaria
     {
-        private readonly UsuarioBiblioteca.Interfaces.IRepositorios.IRepositorioBibliotecaria reposi;
-        public BibliotecariaApp(UsuarioBiblioteca.Interfaces.IRepositorios.IRepositorioBibliotecaria repo, IUnitOfWork unitOfWork)
-            :base(unitOfWork)
+        private readonly Domain.Interfaces.IRepositorios.IRepositorioBibliotecaria repositorio;
+        private readonly Log.Application.Interfaces.IRegistro reg;
+        public BibliotecariaApp(Domain.Interfaces.IRepositorios.IRepositorioBibliotecaria repo, Log.Application.Interfaces.IRegistro log,
+            IUnitOfWork unitOfWork, IHandler<Domain.Especificacao.BibliotecaDevePossuiCNPJUnico> cnpjunico,
+            IHandler<Domain.Especificacao.BibliotecaDevePossuirUnicoEmail> emailunico, IHandler<Domain.Especificacao.BibliotecaDevePossuirUnicoLogin> loginunico,
+            BibliotecaCadastroHandler emailuser)
+            :base(unitOfWork, cnpjunico, emailunico, loginunico,emailuser) 
         {
-            reposi = repo;
-        }
-        public Bibliotecaria Adicionar(Bibliotecaria biblio)
-        {
-            //if (PossuiConformidade(new 
-              //  Validacao.BibliotecaAptoParaCadastro(reposi).Validate(Mapper.ViewModelToDomain.Biblioteca(biblio))));
-            reposi.Adicionar(Mapper.ViewModelToDomain.Biblioteca(biblio));
-            
-            return biblio;
+        
+            repositorio = repo;
+            reg = log;
         }
 
-        public bool PossuiConformidade(ValidacaoResultado validacao) {
-            if (validacao == null) return true;
-            /*
-            var notifications = validacao.Erros.Select(validationError => new DomainNotification(validationError.ToString(), validationError.Message)).ToList();
-            if (!notifications.Any()) return true;
-            notifications.ToList().ForEach(DomainEvent.Raise);
-            */        
-    return false;
+        public ViewModel.Bibliotecaria Adicionar(ViewModel.Bibliotecaria bibli)
+        {
+
+            if (PossuiConformidade(new Domain.Validacao.BibliotecaAptoParaCadastro(repositorio, reg)
+                .Validar(Mapper.ViewModelToDomain.Biblioteca(bibli))))
+            {
+                if (bibli.Id != Guid.Parse("00000000-0000-0000-0000-000000000000"))
+                {
+                    repositorio.Adicionar(Mapper.ViewModelToDomain.Biblioteca(bibli));
+                    Commit();
+                }
+            }
+
+            if (Notificacao != null)
+            {
+                foreach (var erro in Notificacao)
+                {
+                    bibli.ListaErros.Add(erro);
+                }
+            }
+            return bibli;
         }
     }
 }

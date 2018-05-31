@@ -1,19 +1,22 @@
 ﻿
 using System;
-using UsuarioBiblioteca.Entidades;
+using UsuarioBiblioteca.Domain.Entidades;
 
-namespace UsuarioBiblioteca.Especificacao
+namespace UsuarioBiblioteca.Domain.Especificacao
 {
-    public class BibliotecaDevePossuirUnicoEmail 
+    public class BibliotecaDevePossuirUnicoEmail: Biblioteca.Core.Domain.Interfaces.Especificacao.IEspecificacao<Bibliotecaria>
     {
-        private readonly Interfaces.IRepositorios.IRepositorioBibliotecaria repo;
-        public BibliotecaDevePossuirUnicoEmail(Interfaces.IRepositorios.IRepositorioBibliotecaria repositorio)
+        private readonly Domain.Interfaces.IRepositorios.IRepositorioBibliotecaria repo;
+        public BibliotecaDevePossuirUnicoEmail(Domain.Interfaces.IRepositorios.IRepositorioBibliotecaria repositorio)
         {
             repo = repositorio;
         }
-        public bool Satisfeito(Bibliotecaria model)
+
+        public bool InSatisfeito(Bibliotecaria model)
         {
-            return repo.CNPJUnico(model);
+            return repo.EmailUnico(model);
         }
+
+       
     }
 }

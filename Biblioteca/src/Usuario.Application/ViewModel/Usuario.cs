@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Usuario.Application.ViewModel
 {
@@ -17,6 +14,7 @@ namespace Usuario.Application.ViewModel
         public string Senha { get;  set; }
         [Required(ErrorMessage = "Favor informar Confirma Senha")]
         [Compare("Senha",ErrorMessage ="Senha informada não está correta")]
+        [Display(Name ="Confirmar Senha")]
         public string ConfirmaSenha { get;  set; }
 
         [Required(ErrorMessage ="Favor informar o E-mail eletronico")]
@@ -26,6 +24,7 @@ namespace Usuario.Application.ViewModel
         [Required(ErrorMessage ="Favor confirmar o Email")]
         [EmailAddress(ErrorMessage ="Email invalido")]
         [Compare("Email",ErrorMessage ="Email não está de acordo ao anterior")]
+        [Display(Name ="Confirmar Email")]
         public string ConfEmail { get; set; }
         [Required(ErrorMessage ="Favor informar o CPF")]
         public string Cpf { get;  set; }

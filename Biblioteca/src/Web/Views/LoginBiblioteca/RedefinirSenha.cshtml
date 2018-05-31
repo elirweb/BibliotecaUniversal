@@ -1,0 +1,43 @@
+﻿@{
+    ViewBag.Title = "Redefinir Senha";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+
+@model UsuarioBiblioteca.Application.ViewModel.Administrador
+
+<div class="container">
+    <div class="card card-login mx-auto mt-5">
+        <div class="card-header">Redefinição de Senha de Acesso</div>
+        <div class="card-body">
+
+            @using (Html.BeginForm("RedefinirSenha", "LoginBiblioteca", FormMethod.Post, new { @id = "FormCadastro", @ng_controller = "authctrl" }))
+            {
+                <span style="text-align: center">@Html.ValidationMessageFor(m => m.Error)</span>
+                @Html.AntiForgeryToken()
+                if (TempData["msgSucesso"] != null)
+                { <span style="text-align: center" class="text-danger">@TempData["msgSucesso"]</span>}
+
+                  <div class="form-group">
+                      @Html.LabelFor(model => model.Email)
+                      @Html.TextBoxFor(c => c.Email, new { @type = "email", @class = "form-control", @placeholder = "Sua Email" })
+                  </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model=>model.Senha)
+                @Html.TextBoxFor(c => c.Senha, new { @type = "password", @class = "form-control", @placeholder = "Sua senha" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.ConfirmaSenha)
+                @Html.TextBoxFor(c => c.ConfirmaSenha, new { @type = "password", @class = "form-control", @placeholder = "Confirma senha" })
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Redefinir" class="btn-dark" />
+            </div>
+        }
+        </div>
+    </div>
+</div>
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

@@ -24,33 +24,33 @@
                 <span style="text-align: center">@Html.ValidationSummary(false, "", new { @class = "text-danger" })</span>
                   @Html.AntiForgeryToken()
                   <div class="form-group">
-                    @Html.Label("Nome")
+                    @Html.LabelFor(model=>model.Nome)
                     @Html.TextBoxFor(c => c.Nome, new { @type = "text", @class = "form-control", @placeholder = "Seu Nome" })
                 </div>
 
                 <div class="form-group">
-                    @Html.Label("Login")
+                    @Html.LabelFor(model=>model.Login)
                     @Html.TextBoxFor(c => c.Login, new { @type = "text", @class = "form-control", @placeholder = "Seu Login" })
                 </div>
                 <div class="form-group">
-                    @Html.Label("Senha")
+                    @Html.LabelFor(model=>model.Senha)
                     @Html.TextBoxFor(c => c.Senha, new { @type = "password", @class = "form-control", @placeholder = "Sua senha" })
                 </div>
                 <div class="form-group">
-                    @Html.Label("Confirmar Senha")
+                    @Html.LabelFor(model=>model.ConfirmaSenha)
                     @Html.TextBoxFor(c => c.ConfirmaSenha, new { @type = "password", @class = "form-control", @placeholder = "Confirmar senha" })
                 </div>
 
                 <div class="form-group">
-                    @Html.Label("Email")
+                    @Html.LabelFor(model=>model.Email)
                     @Html.TextBoxFor(c => c.Email, new { @type = "email", @class = "form-control", @placeholder = "Sua Email" })
                 </div>
                 <div class="form-group">
-                    @Html.Label("Confirmar Email")
+                    @Html.LabelFor(model=>model.ConfEmail)
                     @Html.TextBoxFor(c => c.ConfEmail, new { @type = "email", @class = "form-control", @placeholder = "Confirmação do Email" })
                 </div>
                 <div class="form-group">
-                    @Html.Label("CPF")
+                    @Html.LabelFor(model=>model.Cpf)
                     @Html.TextBoxFor(c => c.Cpf, new { @type = "text", @id= "Cpf", @class = "form-control", @placeholder = "Seu CPF" })
                 </div>
                 <div class="form-group">

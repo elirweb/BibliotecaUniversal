@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UsuarioBiblioteca.Mapping
+namespace UsuarioBiblioteca.Domain.Mapping
 {
-    public class Livro: EntityTypeConfiguration<Entidades.Livro>
+    public class Livro: EntityTypeConfiguration<Domain.Entidades.Livro>
     {
         public Livro()
         {

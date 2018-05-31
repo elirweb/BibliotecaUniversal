@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UsuarioBiblioteca.Interfaces.IRepositorios
+namespace UsuarioBiblioteca.Domain.Interfaces.IRepositorios
 {
     public interface IRepositorioEndereco
     {

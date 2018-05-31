@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using UsuarioBiblioteca.Entidades;
+using UsuarioBiblioteca.Domain.Entidades;
 
-namespace UsuarioBiblioteca.Especificacao
+namespace UsuarioBiblioteca.Domain.Especificacao
 {
-    public class BibliotecaDevePossuiCNPJUnico
+    public class BibliotecaDevePossuiCNPJUnico: Biblioteca.Core.Domain.Interfaces.Especificacao.IEspecificacao<Bibliotecaria>
     {
         private readonly Interfaces.IRepositorios.IRepositorioBibliotecaria _repositorio;
 
@@ -15,7 +15,13 @@ namespace UsuarioBiblioteca.Especificacao
         {
             _repositorio = repo_;
 
-        } 
-    
+        }
+      
+
+        public bool InSatisfeito(Bibliotecaria model)
+        {
+            return _repositorio.CNPJUnico(model);
+            
+        }
     }
 }

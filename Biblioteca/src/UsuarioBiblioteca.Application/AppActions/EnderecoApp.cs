@@ -1,24 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using UsuarioBiblioteca.Application.Handler;
 using UsuarioBiblioteca.Application.ViewModel;
-using UsuarioBiblioteca.Interfaces.IRepositorios;
+using UsuarioBiblioteca.Data.UnitOfWork;
+using UsuarioBiblioteca.Domain.Interfaces.IRepositorios;
 
 namespace UsuarioBiblioteca.Application.AppActions
 {
-    public class EnderecoApp : Interfaces.IEndereco
+    public class EnderecoApp : Service.AplicationServiceEnd, Interfaces.IEndereco
     {
         private readonly IRepositorioEndereco repositorio;
-
-        public EnderecoApp(IRepositorioEndereco end)
+       
+        public EnderecoApp(IRepositorioEndereco end, IUnitOfWork unitOfWork, BibliotecaCadastroHandler emailuser) :base(unitOfWork, emailuser)
         {
             repositorio = end;
         }
         public void Adicionar(Endereco endereco)
         {
-            throw new NotImplementedException();
+            repositorio.Adicionar(Mapper.ViewModelToDomain.Endereco(endereco));
+            Commit();
+            emailuser.SejaBemVindo("elirweb@gmail.com", endereco.Id.ToString(), "Portal Biblioteca Universal", "Olá " + endereco.Id+ " Sejá bem vindo ao maior portal da américa latina");
+
         }
     }
 }

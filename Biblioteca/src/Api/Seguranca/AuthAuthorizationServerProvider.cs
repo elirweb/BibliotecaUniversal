@@ -1,11 +1,10 @@
 ﻿using Microsoft.Owin.Security.OAuth;
 using System;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 using System.Security.Claims;
 using System.Security.Principal;
 using System.Threading;
-using Usuario.Application.Interfaces;
+using System.Threading.Tasks;
 
 namespace Api.Seguranca
 {

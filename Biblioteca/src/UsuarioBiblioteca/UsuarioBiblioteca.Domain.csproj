@@ -41,6 +41,9 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Mvc">
+      <HintPath>C:\projetos\BackOffice.TKPP\BackOffice.TKPP\BackOffice.TKPP\bin\System.Web.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -59,8 +62,12 @@
     <Compile Include="Entidades\Grupos.cs" />
     <Compile Include="Entidades\Livro.cs" />
     <Compile Include="Enum\Categoria.cs" />
+    <Compile Include="Especificacao\AdministradorDevePossuirUnicoLogin.cs" />
     <Compile Include="Especificacao\BibliotecaDevePossuiCNPJUnico.cs" />
     <Compile Include="Especificacao\BibliotecaDevePossuirUnicoEmail.cs" />
+    <Compile Include="Especificacao\BibliotecaDevePossuirUnicoLogin.cs" />
+    <Compile Include="Especificacao\LivroDevePossuirUnicoTitulo.cs" />
+    <Compile Include="Especificacao\Livro_BibliotecaDeveEstarAtiva.cs" />
     <Compile Include="Interfaces\IRepositorios\IRepositorioAdministrador.cs" />
     <Compile Include="Interfaces\IRepositorios\IRepositorioBibliotecaria.cs" />
     <Compile Include="Interfaces\IRepositorios\IRepositorioEndereco.cs" />
@@ -70,7 +77,9 @@
     <Compile Include="Mapping\Endereco.cs" />
     <Compile Include="Mapping\Grupos.cs" />
     <Compile Include="Mapping\Livro.cs" />
+    <Compile Include="Validacao\AdministradorAptoParaCadastro.cs" />
     <Compile Include="Validacao\BibliotecaAptoParaCadastro.cs" />
+    <Compile Include="Validacao\LivroAptoParaCadastro.cs" />
     <Compile Include="ValueObjects\CNPJ.cs" />
     <Compile Include="ValueObjects\Contato.cs" />
   </ItemGroup>

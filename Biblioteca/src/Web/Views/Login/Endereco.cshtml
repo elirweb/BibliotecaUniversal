@@ -37,7 +37,7 @@
                 <div class="form-group">
                     @Html.Label("Uf")
                     <select  id="uf" name="uf" class="form-control" >
-                        @foreach (var s in Enum.GetValues(typeof(Usuario.Application.Enum.Ufs)))
+                        @foreach (var s in Enum.GetValues(typeof(Biblioteca.Core.Domain.Util.Ufs)))
                         {
                             <option value="@s">@s</option>
                         }

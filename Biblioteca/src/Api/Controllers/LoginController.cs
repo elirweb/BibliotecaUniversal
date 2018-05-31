@@ -1,20 +1,17 @@
 ﻿using Biblioteca.Core.Domain.Util;
-using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Text;
-using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Cors;
 using Usuario.Application.Interfaces;
 
 namespace Api.Controllers
 {
-    [RoutePrefix("biblioteca/Login")]
+    [RoutePrefix("Usuario/Login")]
     [EnableCors(origins: "*", headers: "*", methods: "*")] // definindo o cabecalho de origens para receber metodo get 
     
     public class LoginController : ApiController

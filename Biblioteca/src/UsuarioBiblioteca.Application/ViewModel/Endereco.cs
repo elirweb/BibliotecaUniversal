@@ -8,6 +8,7 @@ namespace UsuarioBiblioteca.Application.ViewModel
 {
     public class Endereco
     {
+        public string tipo { get; set; }
         public Guid Id { get; private set; }
         public string Bairro { get; private set; }
         public int Numero { get; private set; }

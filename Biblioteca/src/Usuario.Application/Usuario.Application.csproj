@@ -50,6 +50,7 @@
     <Compile Include="Mapper\DomainToViewModel.cs" />
     <Compile Include="Mapper\VewModelToDomain.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\AplicationServiceEnd.cs" />
     <Compile Include="Service\ApplicationService.cs" />
     <Compile Include="ViewModel\EnderecoUsuario.cs" />
     <Compile Include="ViewModel\Usuario.cs" />

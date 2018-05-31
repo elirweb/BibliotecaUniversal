@@ -1,0 +1,72 @@
+﻿
+@{
+    ViewBag.Title = "Cadastro de Biblioteca";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+
+@model UsuarioBiblioteca.Application.ViewModel.Bibliotecaria
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery/jquery-mask.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#Cnpj").mask("99.999.999/9999-99")
+    });
+</script>
+<div class="container">
+    <div class="card card-login mx-auto mt-5">
+        <div class="card-header">Cadastro de Biblioteca</div>
+        <div class="card-body">
+
+            @using (Html.BeginForm("Cadastro", "LoginBiblioteca", FormMethod.Post, new { @id = "FormCadastro", @ng_controller = "authctrl", enctype = "multipart/form-data" }))
+            {
+                <span style="text-align: center">@Html.ValidationSummary(false, "", new { @class = "text-danger" })</span>
+                @Html.AntiForgeryToken()
+                <div class="form-group">
+                    @Html.LabelFor(model => model.RazaoSocial)
+                    @Html.TextBoxFor(c => c.RazaoSocial, new { @type = "text", @class = "form-control", @placeholder = "Razão Social" })
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Usuario)
+                    @Html.TextBoxFor(c => c.Usuario, new { @type = "text", @class = "form-control", @placeholder = "Seu Usuario" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Senha)
+                    @Html.TextBoxFor(c => c.Senha, new { @type = "password", @class = "form-control", @placeholder = "Sua senha" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.ConfirmaSenha)
+                    @Html.TextBoxFor(c => c.ConfirmaSenha, new { @type = "password", @class = "form-control", @placeholder = "Confirmar senha" })
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Email)
+                    @Html.TextBoxFor(c => c.Email, new { @type = "email", @class = "form-control", @placeholder = "Sua Email" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.ConfirmEmail)
+                    @Html.TextBoxFor(c => c.ConfirmEmail, new { @type = "email", @class = "form-control", @placeholder = "Confirmação do Email" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Cnpj)
+                    @Html.TextBoxFor(c => c.Cnpj, new { @type = "text", @id = "Cnpj", @class = "form-control", @placeholder = "Seu Cnpj" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Situacao)
+                    @Html.DropDownListFor(model => model.Situacao, new SelectList(Model.ListStatus, "value", "text"), "Selecione", new { @class = "form-control " })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Imagem)
+                    <input type="file" name="imgfoto"  class="form-control" />
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Registra-se" class="btn-dark" />
+                </div>
+            }
+        </div>
+    </div>
+</div>
+

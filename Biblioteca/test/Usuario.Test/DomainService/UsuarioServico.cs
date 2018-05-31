@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Usuario.Test.Entidade;
+﻿using Usuario.Test.Entidade;
 using Usuario.Test.Interfaces;
 
 namespace Usuario.Test.DomainService

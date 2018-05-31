@@ -1,5 +1,5 @@
 ﻿
-namespace UsuarioBiblioteca.Entidades
+namespace UsuarioBiblioteca.Domain.Entidades
 {
     public class Grupos
     {

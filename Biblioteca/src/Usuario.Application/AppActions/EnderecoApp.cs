@@ -6,13 +6,13 @@ using Usuario.Domain.Interfaces.Repositorios;
 
 namespace Usuario.Application.AppActions
 {
-    public class EnderecoApp : Service.ApplicationService, Interfaces.IEndereco
+    public class EnderecoApp : Service.AplicationServiceEnd, Interfaces.IEndereco
     {
         private readonly IRepositorioEndereco repositorio;
 
         public EnderecoApp(IRepositorioEndereco end, IUnitOfWork unitOfWork,
-            IHandler<Usuario.Domain.Especificacao.UsuarioDevePossuirUnicoCPF> especificaousuario, UsuarioCadastroHandler usuhandler) 
-            : base(unitOfWork, especificaousuario, usuhandler)
+             UsuarioCadastroHandler usuhandler) 
+            : base(unitOfWork, usuhandler)
         {
             repositorio = end;
         }

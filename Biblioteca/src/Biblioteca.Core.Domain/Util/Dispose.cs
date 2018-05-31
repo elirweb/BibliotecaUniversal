@@ -1,16 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+using System.Data.Common;
 namespace Biblioteca.Core.Domain.Util
 {
     public class Dispose : IDisposable
     {
+        private DbConnection cn = null;
         void IDisposable.Dispose()
         {
             GC.SuppressFinalize(this);
+
+            if (cn != null) {
+                cn.Close();
+            }
+
         }
     }
 }

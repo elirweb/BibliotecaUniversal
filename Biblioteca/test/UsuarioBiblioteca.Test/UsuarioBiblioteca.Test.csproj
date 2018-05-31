@@ -66,9 +66,16 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
+    <Compile Include="DomainService\BibliotecaServico.cs" />
+    <Compile Include="DomainService\LivroService.cs" />
     <Compile Include="Entidades\Administrador.cs" />
     <Compile Include="Entidades\Bibliotecaria.cs" />
     <Compile Include="Entidades\Livro.cs" />
+    <Compile Include="Entidades\RetornoMsg.cs" />
+    <Compile Include="Interfaces\IBiblioteca.cs" />
+    <Compile Include="Interfaces\IBibliotecaRepositorio.cs" />
+    <Compile Include="Interfaces\ILivro.cs" />
+    <Compile Include="Interfaces\ILivroRepositorio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TesteUnidade.cs" />
   </ItemGroup>
@@ -78,6 +85,7 @@
   <ItemGroup>
     <Analyzer Include="..\..\packages\xunit.analyzers.0.7.0\analyzers\dotnet\cs\xunit.analyzers.dll" />
   </ItemGroup>
+  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
