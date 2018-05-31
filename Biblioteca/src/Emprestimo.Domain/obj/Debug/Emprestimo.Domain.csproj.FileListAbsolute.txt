@@ -8,3 +8,15 @@ D:\projetos\BibliotecaUniversal\Biblioteca\src\Emprestimo.Domain\bin\Debug\Entit
 D:\projetos\BibliotecaUniversal\Biblioteca\src\Emprestimo.Domain\obj\Debug\Emprestimo.Domain.dll
 D:\projetos\BibliotecaUniversal\Biblioteca\src\Emprestimo.Domain\obj\Debug\Emprestimo.Domain.pdb
 D:\projetos\BibliotecaUniversal\Biblioteca\src\Emprestimo.Domain\obj\Debug\Emprestimo.Domain.csprojResolveAssemblyReference.cache
+D:\projetos\Biblioteca\src\Emprestimo.Domain\bin\Debug\Emprestimo.Domain.dll.config
+D:\projetos\Biblioteca\src\Emprestimo.Domain\bin\Debug\Emprestimo.Domain.dll
+D:\projetos\Biblioteca\src\Emprestimo.Domain\bin\Debug\Emprestimo.Domain.pdb
+D:\projetos\Biblioteca\src\Emprestimo.Domain\bin\Debug\EntityFramework.dll
+D:\projetos\Biblioteca\src\Emprestimo.Domain\bin\Debug\EntityFramework.SqlServer.dll
+D:\projetos\Biblioteca\src\Emprestimo.Domain\bin\Debug\EntityFramework.xml
+D:\projetos\Biblioteca\src\Emprestimo.Domain\bin\Debug\EntityFramework.SqlServer.xml
+D:\projetos\Biblioteca\src\Emprestimo.Domain\obj\Debug\Emprestimo.Domain.csprojResolveAssemblyReference.cache
+D:\projetos\Biblioteca\src\Emprestimo.Domain\obj\Debug\Emprestimo.Domain.csproj.CoreCompileInputs.cache
+D:\projetos\Biblioteca\src\Emprestimo.Domain\obj\Debug\Emprestimo.Domain.csproj.CopyComplete
+D:\projetos\Biblioteca\src\Emprestimo.Domain\obj\Debug\Emprestimo.Domain.dll
+D:\projetos\Biblioteca\src\Emprestimo.Domain\obj\Debug\Emprestimo.Domain.pdb

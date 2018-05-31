@@ -13,7 +13,7 @@ namespace Biblioteca.Core.Domain.Erros
 
         public Critico(string descricao = "critico")
         {
-            Descricao = descricao;
+            Descricao = descricao; //elir
         }
 
         public override string ToString()
