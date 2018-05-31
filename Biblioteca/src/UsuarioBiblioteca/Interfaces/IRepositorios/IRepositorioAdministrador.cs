@@ -7,5 +7,6 @@ namespace UsuarioBiblioteca.Domain.Interfaces.IRepositorios
     {
         void Adicionar(Entidades.Administradores ad);
         bool LoginUnico(Administradores model);
+        bool Authenticar(Administradores model);
     }
 }

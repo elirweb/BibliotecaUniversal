@@ -13,6 +13,7 @@ namespace UsuarioBiblioteca.Domain.Interfaces.IRepositorios
         bool CNPJUnico(Entidades.Bibliotecaria bibliotecaria);
         bool EmailUnico(Entidades.Bibliotecaria bibliotecaria);
         bool LoginUnico(Bibliotecaria model);
-        
+        bool Authenticar(Bibliotecaria bi);
+
     }
 }

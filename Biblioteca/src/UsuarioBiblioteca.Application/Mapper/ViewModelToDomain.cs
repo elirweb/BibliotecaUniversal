@@ -68,6 +68,18 @@ namespace UsuarioBiblioteca.Application.Mapper
             }
         }
 
+        public static Administradores Authenticar(Administrador adm)
+        {
+            if (adm == null)
+                throw new Exception();
+            else
+            {
+                var a =
+                    new Administradores(adm.Login, adm.Senha);
+                return a;
+            }
+        }
+
         public static Domain.Entidades.Livro Livro(ViewModel.Livro lv)
         {
             if (lv == null)

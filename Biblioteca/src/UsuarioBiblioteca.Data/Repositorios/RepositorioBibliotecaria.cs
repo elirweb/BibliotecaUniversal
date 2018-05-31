@@ -1,5 +1,6 @@
 ﻿using System;
 using Biblioteca.Core.Domain.Helper;
+using UsuarioBiblioteca.Domain.Entidades;
 
 namespace UsuarioBiblioteca.Data.Repositorios
 {
@@ -17,6 +18,14 @@ namespace UsuarioBiblioteca.Data.Repositorios
         {
 
             contexto.Bibliotecaria.Add(bibliotecaria);
+        }
+
+        public bool Authenticar(Bibliotecaria bi)
+        {
+            var obj = helper.ExecuteScalar($"SELECT Usuario,Senha FROM Bibliotecaria WHERE Usuario = '{bi.Usuario}'  and  Senha = '{bi.Senha}'", contexto.Database.Connection);
+            if (obj != null)
+                return true;
+            return false;
         }
 
         public bool CNPJUnico(Domain.Entidades.Bibliotecaria bibliotecaria)

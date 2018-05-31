@@ -1,5 +1,6 @@
 ﻿using Biblioteca.Core.Domain.Helper;
 using System;
+using UsuarioBiblioteca.Domain.Entidades;
 
 namespace UsuarioBiblioteca.Data.Repositorios
 {
@@ -16,6 +17,14 @@ namespace UsuarioBiblioteca.Data.Repositorios
             contexto.Administradores.Add(ad);
         }
 
+        public bool Authenticar(Administradores model)
+        {
+            var obj = helper.ExecuteScalar($"SELECT Login,Senha FROM Administradores WHERE Login = '{model.Login}' and Senha='{model.Senha}' ", contexto.Database.Connection);
+            if (obj != null)
+                return true;
+            return false;
+        }
+
         public bool LoginUnico(Domain.Entidades.Administradores model)
         {
             var obj = helper.ExecuteScalar($"SELECT Login FROM Administradores WHERE Login = '{model.Login}' ", contexto.Database.Connection);
@@ -23,5 +32,7 @@ namespace UsuarioBiblioteca.Data.Repositorios
                 return true;
             return false;
         }
+
+
     }
 }

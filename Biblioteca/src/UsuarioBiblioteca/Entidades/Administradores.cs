@@ -1,4 +1,5 @@
 ﻿using Biblioteca.Core.Domain.Validador;
+using Biblioteca.Core.Domain.ValueObjects;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -30,5 +31,10 @@ namespace UsuarioBiblioteca.Domain.Entidades
             Grupo = "Biblioteca";
         }
 
+        public Administradores(string login, Senha senha)
+        {
+            Login = login;
+            Senha = senha;
+        }
     }
 }

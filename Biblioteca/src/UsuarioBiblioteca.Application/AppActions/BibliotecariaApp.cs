@@ -1,6 +1,7 @@
 ﻿using Biblioteca.Core.Domain.Validador.Interfaces;
 using System;
 using UsuarioBiblioteca.Application.Handler;
+using UsuarioBiblioteca.Application.ViewModel;
 using UsuarioBiblioteca.Data.UnitOfWork;
 
 namespace UsuarioBiblioteca.Application.AppActions
@@ -42,5 +43,7 @@ namespace UsuarioBiblioteca.Application.AppActions
             }
             return bibli;
         }
+
+       
     }
 }
