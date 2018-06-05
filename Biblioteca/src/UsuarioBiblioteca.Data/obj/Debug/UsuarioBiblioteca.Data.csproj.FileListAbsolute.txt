@@ -42,3 +42,5 @@ D:\projetos\Biblioteca\src\UsuarioBiblioteca.Data\obj\Debug\UsuarioBiblioteca.Da
 D:\projetos\Biblioteca\src\UsuarioBiblioteca.Data\obj\Debug\UsuarioBiblioteca.Data.csproj.CopyComplete
 D:\projetos\Biblioteca\src\UsuarioBiblioteca.Data\obj\Debug\UsuarioBiblioteca.Data.dll
 D:\projetos\Biblioteca\src\UsuarioBiblioteca.Data\obj\Debug\UsuarioBiblioteca.Data.pdb
+D:\projetos\Biblioteca\src\UsuarioBiblioteca.Data\bin\Debug\Dapper.dll
+D:\projetos\Biblioteca\src\UsuarioBiblioteca.Data\bin\Debug\Dapper.xml

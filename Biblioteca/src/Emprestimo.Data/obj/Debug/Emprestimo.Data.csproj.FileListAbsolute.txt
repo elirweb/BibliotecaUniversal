@@ -42,3 +42,5 @@ D:\projetos\Biblioteca\src\Emprestimo.Data\obj\Debug\Emprestimo.Data.csproj.Core
 D:\projetos\Biblioteca\src\Emprestimo.Data\obj\Debug\Emprestimo.Data.csproj.CopyComplete
 D:\projetos\Biblioteca\src\Emprestimo.Data\obj\Debug\Emprestimo.Data.dll
 D:\projetos\Biblioteca\src\Emprestimo.Data\obj\Debug\Emprestimo.Data.pdb
+D:\projetos\Biblioteca\src\Emprestimo.Data\bin\Debug\Dapper.dll
+D:\projetos\Biblioteca\src\Emprestimo.Data\bin\Debug\Dapper.xml

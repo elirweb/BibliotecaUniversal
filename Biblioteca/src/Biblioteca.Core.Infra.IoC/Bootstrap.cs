@@ -49,6 +49,7 @@ namespace Biblioteca.Core.Infra.IoC
             container.Register<Domain.Validador.Interfaces.IHandler<UsuarioBiblioteca.Domain.Especificacao.BibliotecaDevePossuirUnicoLogin>, Domain.Validador.Validacao<UsuarioBiblioteca.Domain.Especificacao.BibliotecaDevePossuirUnicoLogin>>(Lifestyle.Singleton);
             container.Register<Domain.Validador.Interfaces.IHandler<UsuarioBiblioteca.Domain.Especificacao.LivroDevePossuirUnicoTitulo>, Domain.Validador.Validacao<UsuarioBiblioteca.Domain.Especificacao.LivroDevePossuirUnicoTitulo>>(Lifestyle.Singleton);
             container.Register<Domain.Validador.Interfaces.IHandler<UsuarioBiblioteca.Domain.Especificacao.AdministradorDevePossuirUnicoLogin>, Domain.Validador.Validacao<UsuarioBiblioteca.Domain.Especificacao.AdministradorDevePossuirUnicoLogin>>(Lifestyle.Singleton);
+            container.Register<Domain.Validador.Interfaces.IHandler<UsuarioBiblioteca.Domain.Especificacao.Livro_BibliotecaDeveEstarAtiva>, Domain.Validador.Validacao<UsuarioBiblioteca.Domain.Especificacao.Livro_BibliotecaDeveEstarAtiva>>(Lifestyle.Singleton);
 
             container.Register<Email.Interfaces.IEnvioEmail, Email.EnvioEmail>(Lifestyle.Singleton);
             container.Register<Usuario.Application.Handler.UsuarioCadastroHandler>(Lifestyle.Singleton);
