@@ -1,4 +1,5 @@
 ﻿using Biblioteca.Core.Domain.Util;
+using Biblioteca.Core.Domain.ValueObjects;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -31,7 +32,7 @@ namespace Api.Controllers
             var b = new UsuarioBiblioteca.Application.ViewModel.Administrador()
             {
                 Login = login,
-                Senha  = new Biblioteca.Core.Domain.ValueObjects.Senha(senha)
+                Senha = senha
             };
             HttpClient client = null;
             HttpResponseMessage resp = new HttpResponseMessage();

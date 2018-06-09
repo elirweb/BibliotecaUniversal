@@ -27,14 +27,14 @@ namespace UsuarioBiblioteca.Domain.Entidades
             Nome = nome;
             Email = new Biblioteca.Core.Domain.ValueObjects.Email(email);
             Login = login;
-            Senha = new Biblioteca.Core.Domain.ValueObjects.Senha(senha,confirma);
+            Senha = new Senha(senha,confirma);
             Grupo = "Biblioteca";
         }
 
-        public Administradores(string login, Senha senha)
+        public Administradores(string login, string senha)
         {
             Login = login;
-            Senha = senha;
+            Senha = new Biblioteca.Core.Domain.ValueObjects.Senha(senha);
         }
     }
 }

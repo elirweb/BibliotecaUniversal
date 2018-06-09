@@ -37,7 +37,7 @@ namespace UsuarioBiblioteca.Application.Mapper
               adm.Nome,
               adm.Email,
               adm.Login,
-              adm.Senha.CodigoSenha,
+              adm.Senha,
               adm.ConfirmaSenha
                 );
 
@@ -68,16 +68,19 @@ namespace UsuarioBiblioteca.Application.Mapper
             }
         }
 
-        public static Administradores Authenticar(Administrador adm)
+        public static Domain.Entidades.Administradores Authenticar(Administrador adm)
         {
             if (adm == null)
                 throw new Exception();
             else
             {
                 var a =
-                    new Administradores(adm.Login, adm.Senha);
+                    new Domain.Entidades.Administradores(adm.Login, adm.Senha);
                 return a;
             }
+
+
+          
         }
 
         public static Domain.Entidades.Livro Livro(ViewModel.Livro lv)
