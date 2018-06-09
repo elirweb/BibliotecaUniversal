@@ -2,6 +2,7 @@
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Net;
 using System.Net.Http;
 using System.Text;
@@ -43,7 +44,7 @@ namespace Api.Controllers
                 if (client == null)
                 {
                     client = new HttpClient();
-                    client.BaseAddress = new Uri("http://localhost:10078/");
+                    client.BaseAddress = new Uri(ConfigurationManager.AppSettings["url_segura"]);
                     client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
                     resp = client.PostAsync("api/security/token", new StringContent("grant_type=password&username=" +b.Login + "&password=" + b.Senha, Encoding.UTF8, "application/json")).Result;
                     retorno = resp.Content.ReadAsStringAsync().Result;

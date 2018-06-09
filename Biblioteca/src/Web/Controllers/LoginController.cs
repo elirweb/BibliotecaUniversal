@@ -90,7 +90,7 @@ namespace Web.Controllers
             return View();
         }
 
-        [HttpPost]
+        [HttpPut]
         [ValidateAntiForgeryToken]
         public ActionResult RecuperarSenha(Usuario.Application.ViewModel.Usuario usu)
         {

@@ -21,7 +21,7 @@ namespace UsuarioBiblioteca.Application.AppActions
             reg = log;
         }
 
-        public ViewModel.Bibliotecaria Adicionar(ViewModel.Bibliotecaria bibli)
+        public Bibliotecaria Adicionar(Bibliotecaria bibli)
         {
 
             if (PossuiConformidade(new Domain.Validacao.BibliotecaAptoParaCadastro(repositorio, reg)

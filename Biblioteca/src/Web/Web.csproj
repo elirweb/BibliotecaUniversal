@@ -325,6 +325,7 @@
     <Content Include="Views\LoginBiblioteca\RedefinirSenha.cshtml" />
     <Content Include="Views\Biblioteca\Endereco.cshtml" />
     <Content Include="Views\Biblioteca\Livro.cshtml" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Biblioteca.Core.Domain\Biblioteca.Core.Domain.csproj">

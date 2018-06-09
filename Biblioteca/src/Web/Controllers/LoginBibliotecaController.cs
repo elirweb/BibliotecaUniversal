@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using System.Collections.Generic;
+using System.Web.Mvc;
 using UsuarioBiblioteca.Application.Interfaces;
 
 namespace Web.Controllers
@@ -27,10 +28,26 @@ namespace Web.Controllers
         [HttpPost]
         public ActionResult CadAdministrador(UsuarioBiblioteca.Application.ViewModel.Administrador adm)
         {
-            if (ModelState.IsValid) { }
-                return View();
-        }
+            if (ModelState.IsValid) {
 
+                var Listbibli = new List<UsuarioBiblioteca.Application.ViewModel.Administrador>();
+                Listbibli.Add(adm);
+                adm = admin.Adicionar(adm);
+                if (adm.ListaErros.Count > 0)
+                {
+                    foreach (var erro in adm.ListaErros)
+                        ModelState.AddModelError("Error", erro);
+                }
+                else
+                    return RedirectToAction("Index","Biblioteca");
+            }
+            else
+                ModelState.AddModelError("Error", "Erro no cadastro de dados do Administrador");
+
+            return View();
+        }
+                
+      
         public ActionResult RecuperarSenha()
         {
 

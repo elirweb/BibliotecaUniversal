@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Net;
 using System.Net.Http;
+using System.Threading.Tasks;
 using System.Web.Http.Cors;
 using System.Web.Mvc;
 using UsuarioBiblioteca.Application.Interfaces;
@@ -22,7 +23,7 @@ namespace Api.Controllers
         [Route("registrar")]
         public HttpResponseMessage Registrar(UsuarioBiblioteca.Application.ViewModel.Bibliotecaria biblio) {
             var resposta = new HttpResponseMessage();
-
+            
             if (biblio == null)
                 return resposta.RequestMessage.CreateResponse(HttpStatusCode.BadRequest,"Erro no acesso a Api ");
             else
@@ -40,6 +41,9 @@ namespace Api.Controllers
             }
             return resposta;
         }
+
+        
+
 
         // GET: Biblioteca
         public ActionResult Index()
