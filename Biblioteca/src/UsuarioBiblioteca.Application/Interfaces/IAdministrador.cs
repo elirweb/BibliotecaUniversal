@@ -12,5 +12,7 @@ namespace UsuarioBiblioteca.Application.Interfaces
         ViewModel.Administrador Adicionar(ViewModel.Administrador adm);
         bool Authenticar(Administrador adm);
       
+
+      
     }
 }

@@ -54,13 +54,7 @@ namespace Web.Controllers
             return View();
         }
 
-        [ValidateAntiForgeryToken]
-        [HttpPost]
-        public ActionResult RecuperarSenha(UsuarioBiblioteca.Application.ViewModel.Administrador adm)
-        {
-            if (ModelState.IsValid) { }
-            return View();
-        }
+       
 
         public ActionResult RedefinirSenha()
         {

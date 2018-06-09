@@ -46,5 +46,7 @@ namespace UsuarioBiblioteca.Application.AppActions
         {
             return repositorio.Authenticar(Mapper.ViewModelToDomain.Authenticar(adm));
         }
+
+       
     }
 }
