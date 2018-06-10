@@ -1,6 +1,3 @@
-D:\projetos\BibliotecaUniversal\Biblioteca\src\Usuario.Data\obj\Debug\Usuario.Data.Migrations.v1.resources
-D:\projetos\BibliotecaUniversal\Biblioteca\src\Usuario.Data\obj\Debug\Usuario.Data.Migrations.v2.resources
-D:\projetos\BibliotecaUniversal\Biblioteca\src\Usuario.Data\obj\Debug\Usuario.Data.csproj.GenerateResource.Cache
 D:\projetos\BibliotecaUniversal\Biblioteca\src\Usuario.Data\bin\Debug\Usuario.Data.dll.config
 D:\projetos\BibliotecaUniversal\Biblioteca\src\Usuario.Data\bin\Debug\Usuario.Data.dll
 D:\projetos\BibliotecaUniversal\Biblioteca\src\Usuario.Data\bin\Debug\Usuario.Data.pdb
@@ -48,3 +45,5 @@ D:\projetos\Biblioteca\src\Usuario.Data\obj\Debug\Usuario.Data.csproj.CoreCompil
 D:\projetos\Biblioteca\src\Usuario.Data\obj\Debug\Usuario.Data.csproj.CopyComplete
 D:\projetos\Biblioteca\src\Usuario.Data\obj\Debug\Usuario.Data.dll
 D:\projetos\Biblioteca\src\Usuario.Data\obj\Debug\Usuario.Data.pdb
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Usuario.Data\obj\Debug\Usuario.Data.Migrations.usuario.resources
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Usuario.Data\obj\Debug\Usuario.Data.csproj.GenerateResource.Cache

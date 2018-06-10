@@ -47,3 +47,5 @@ D:\projetos\Biblioteca\src\UsuarioBiblioteca\bin\Debug\System.Web.WebPages.Razor
 D:\projetos\Biblioteca\src\UsuarioBiblioteca\bin\Debug\System.Web.WebPages.xml
 D:\projetos\Biblioteca\src\UsuarioBiblioteca\bin\Debug\System.Web.WebPages.Deployment.xml
 D:\projetos\Biblioteca\src\UsuarioBiblioteca\bin\Debug\pt-br\System.Web.Mvc.resources.dll
+D:\projetos\BibliotecaUniversal\Biblioteca\src\UsuarioBiblioteca\bin\Debug\Dapper.dll
+D:\projetos\BibliotecaUniversal\Biblioteca\src\UsuarioBiblioteca\bin\Debug\Dapper.xml

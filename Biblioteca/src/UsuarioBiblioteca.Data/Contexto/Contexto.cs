@@ -38,7 +38,7 @@ namespace UsuarioBiblioteca.Data.Contexto
             modelBuilder.Entity<Domain.Entidades.Endereco>().Ignore(c => c.ValidationResult);
             modelBuilder.Entity<Domain.Entidades.Endereco>().Ignore(c => c.tipo);
 
-            modelBuilder.Configurations.Add(new Domain.Mapping.Administrador());
+            modelBuilder.Configurations.Add(new Domain.Mapping.Administradores());
             modelBuilder.Entity<Domain.Entidades.Administradores>().Ignore(c => c.ValidacaoResultado);
             modelBuilder.Entity<Domain.Entidades.Administradores>().Ignore(c => c.ConfirmaSenha);
 

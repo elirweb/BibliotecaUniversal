@@ -72,7 +72,7 @@
     <Compile Include="Interfaces\IRepositorios\IRepositorioBibliotecaria.cs" />
     <Compile Include="Interfaces\IRepositorios\IRepositorioEndereco.cs" />
     <Compile Include="Interfaces\IRepositorios\IRepositorioLivro.cs" />
-    <Compile Include="Mapping\Administrador.cs" />
+    <Compile Include="Mapping\Administradores.cs" />
     <Compile Include="Mapping\Bibliotecaria.cs" />
     <Compile Include="Mapping\Endereco.cs" />
     <Compile Include="Mapping\Grupos.cs" />

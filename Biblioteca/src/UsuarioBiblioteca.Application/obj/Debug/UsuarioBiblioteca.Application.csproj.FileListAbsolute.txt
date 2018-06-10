@@ -53,3 +53,8 @@ D:\projetos\Biblioteca\src\UsuarioBiblioteca.Application\bin\Debug\System.Web.We
 D:\projetos\Biblioteca\src\UsuarioBiblioteca.Application\bin\Debug\System.Web.WebPages.xml
 D:\projetos\Biblioteca\src\UsuarioBiblioteca.Application\bin\Debug\System.Web.WebPages.Deployment.xml
 D:\projetos\Biblioteca\src\UsuarioBiblioteca.Application\bin\Debug\pt-br\System.Web.Mvc.resources.dll
+D:\projetos\BibliotecaUniversal\Biblioteca\src\UsuarioBiblioteca.Application\bin\Debug\Biblioteca.Core.Infra.dll
+D:\projetos\BibliotecaUniversal\Biblioteca\src\UsuarioBiblioteca.Application\bin\Debug\System.Web.Mvc.dll
+D:\projetos\BibliotecaUniversal\Biblioteca\src\UsuarioBiblioteca.Application\bin\Debug\Dapper.dll
+D:\projetos\BibliotecaUniversal\Biblioteca\src\UsuarioBiblioteca.Application\bin\Debug\Biblioteca.Core.Infra.pdb
+D:\projetos\BibliotecaUniversal\Biblioteca\src\UsuarioBiblioteca.Application\bin\Debug\Dapper.xml

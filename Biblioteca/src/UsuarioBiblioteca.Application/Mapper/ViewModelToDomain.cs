@@ -34,6 +34,7 @@ namespace UsuarioBiblioteca.Application.Mapper
             {
 
                 var a = new Domain.Entidades.Administradores(
+                    adm.Id = Guid.NewGuid(),
               adm.Nome,
               adm.Email,
               adm.Login,

@@ -118,3 +118,4 @@ D:\projetos\Biblioteca\src\Biblioteca.Core.Infra.IoC\bin\Debug\System.Web.WebPag
 D:\projetos\Biblioteca\src\Biblioteca.Core.Infra.IoC\bin\Debug\System.Web.WebPages.xml
 D:\projetos\Biblioteca\src\Biblioteca.Core.Infra.IoC\bin\Debug\System.Web.WebPages.Deployment.xml
 D:\projetos\Biblioteca\src\Biblioteca.Core.Infra.IoC\bin\Debug\pt-br\System.Web.Mvc.resources.dll
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Biblioteca.Core.Infra.IoC\bin\Debug\System.Web.Mvc.dll

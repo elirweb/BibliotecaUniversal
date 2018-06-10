@@ -35,7 +35,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Mvc">
-      <HintPath>C:\projetos\BackOffice.TKPP\BackOffice.TKPP\BackOffice.TKPP\bin\System.Web.Mvc.dll</HintPath>
+      <HintPath>C:\Users\Elir\Desktop\System.Web.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />

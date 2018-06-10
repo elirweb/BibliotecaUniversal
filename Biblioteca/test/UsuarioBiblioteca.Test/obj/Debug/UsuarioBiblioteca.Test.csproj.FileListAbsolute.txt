@@ -39,3 +39,12 @@ D:\projetos\Biblioteca\test\UsuarioBiblioteca.Test\obj\Debug\UsuarioBiblioteca.T
 D:\projetos\Biblioteca\test\UsuarioBiblioteca.Test\obj\Debug\UsuarioBiblioteca.Test.csproj.CopyComplete
 D:\projetos\Biblioteca\test\UsuarioBiblioteca.Test\obj\Debug\UsuarioBiblioteca.Test.dll
 D:\projetos\Biblioteca\test\UsuarioBiblioteca.Test\obj\Debug\UsuarioBiblioteca.Test.pdb
+D:\projetos\BibliotecaUniversal\Biblioteca\test\UsuarioBiblioteca.Test\bin\Debug\Castle.Core.dll
+D:\projetos\BibliotecaUniversal\Biblioteca\test\UsuarioBiblioteca.Test\bin\Debug\Moq.dll
+D:\projetos\BibliotecaUniversal\Biblioteca\test\UsuarioBiblioteca.Test\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\projetos\BibliotecaUniversal\Biblioteca\test\UsuarioBiblioteca.Test\bin\Debug\System.ValueTuple.dll
+D:\projetos\BibliotecaUniversal\Biblioteca\test\UsuarioBiblioteca.Test\bin\Debug\Castle.Core.xml
+D:\projetos\BibliotecaUniversal\Biblioteca\test\UsuarioBiblioteca.Test\bin\Debug\Moq.pdb
+D:\projetos\BibliotecaUniversal\Biblioteca\test\UsuarioBiblioteca.Test\bin\Debug\Moq.xml
+D:\projetos\BibliotecaUniversal\Biblioteca\test\UsuarioBiblioteca.Test\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\projetos\BibliotecaUniversal\Biblioteca\test\UsuarioBiblioteca.Test\bin\Debug\System.ValueTuple.xml

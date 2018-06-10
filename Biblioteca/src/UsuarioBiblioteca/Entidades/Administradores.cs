@@ -21,9 +21,9 @@ namespace UsuarioBiblioteca.Domain.Entidades
         [NotMapped]
         public ValidacaoResultado ValidacaoResultado { get; set; }
 
-        public Administradores(string nome, string email, string login, string senha, string confirma)
+        public Administradores(Guid id, string nome, string email, string login, string senha, string confirma)
         {
-            Id = new Guid();
+            Id = id;
             Nome = nome;
             Email = new Biblioteca.Core.Domain.ValueObjects.Email(email);
             Login = login;

@@ -21,3 +21,5 @@ D:\projetos\Biblioteca\src\Biblioteca.Core.Domain\obj\Debug\Biblioteca.Core.Doma
 D:\projetos\Biblioteca\src\Biblioteca.Core.Domain\obj\Debug\Biblioteca.Core.Domain.pdb
 D:\projetos\Biblioteca\src\Biblioteca.Core.Domain\bin\Debug\Dapper.dll
 D:\projetos\Biblioteca\src\Biblioteca.Core.Domain\bin\Debug\Dapper.xml
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Biblioteca.Core.Domain\bin\Debug\Dapper.dll
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Biblioteca.Core.Domain\bin\Debug\Dapper.xml

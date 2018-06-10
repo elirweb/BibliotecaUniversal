@@ -1,5 +1,3 @@
-D:\projetos\BibliotecaUniversal\Biblioteca\src\UsuarioBiblioteca.Data\obj\Debug\UsuarioBiblioteca.Data.Migrations.v1.resources
-D:\projetos\BibliotecaUniversal\Biblioteca\src\UsuarioBiblioteca.Data\obj\Debug\UsuarioBiblioteca.Data.csproj.GenerateResource.Cache
 D:\projetos\BibliotecaUniversal\Biblioteca\src\UsuarioBiblioteca.Data\obj\Debug\UsuarioBiblioteca.Data.csprojResolveAssemblyReference.cache
 D:\projetos\BibliotecaUniversal\Biblioteca\src\UsuarioBiblioteca.Data\bin\Debug\UsuarioBiblioteca.Data.dll.config
 D:\projetos\BibliotecaUniversal\Biblioteca\src\UsuarioBiblioteca.Data\bin\Debug\UsuarioBiblioteca.Data.dll
@@ -44,3 +42,7 @@ D:\projetos\Biblioteca\src\UsuarioBiblioteca.Data\obj\Debug\UsuarioBiblioteca.Da
 D:\projetos\Biblioteca\src\UsuarioBiblioteca.Data\obj\Debug\UsuarioBiblioteca.Data.pdb
 D:\projetos\Biblioteca\src\UsuarioBiblioteca.Data\bin\Debug\Dapper.dll
 D:\projetos\Biblioteca\src\UsuarioBiblioteca.Data\bin\Debug\Dapper.xml
+D:\projetos\BibliotecaUniversal\Biblioteca\src\UsuarioBiblioteca.Data\bin\Debug\Dapper.dll
+D:\projetos\BibliotecaUniversal\Biblioteca\src\UsuarioBiblioteca.Data\bin\Debug\Dapper.xml
+D:\projetos\BibliotecaUniversal\Biblioteca\src\UsuarioBiblioteca.Data\obj\Debug\UsuarioBiblioteca.Data.Migrations.biblioteca.resources
+D:\projetos\BibliotecaUniversal\Biblioteca\src\UsuarioBiblioteca.Data\obj\Debug\UsuarioBiblioteca.Data.csproj.GenerateResource.Cache

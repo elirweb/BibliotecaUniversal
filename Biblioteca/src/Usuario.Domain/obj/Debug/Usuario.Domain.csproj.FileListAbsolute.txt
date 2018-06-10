@@ -35,3 +35,5 @@ D:\projetos\Biblioteca\src\Usuario.Domain\obj\Debug\Usuario.Domain.dll
 D:\projetos\Biblioteca\src\Usuario.Domain\obj\Debug\Usuario.Domain.pdb
 D:\projetos\Biblioteca\src\Usuario.Domain\bin\Debug\Dapper.dll
 D:\projetos\Biblioteca\src\Usuario.Domain\bin\Debug\Dapper.xml
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Usuario.Domain\bin\Debug\Dapper.dll
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Usuario.Domain\bin\Debug\Dapper.xml

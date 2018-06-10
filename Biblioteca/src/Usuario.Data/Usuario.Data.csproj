@@ -55,13 +55,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contexto\Contexto.cs" />
-    <Compile Include="Migrations\201803250108474_v1.cs" />
-    <Compile Include="Migrations\201803250108474_v1.Designer.cs">
-      <DependentUpon>201803250108474_v1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201803250115596_v2.cs" />
-    <Compile Include="Migrations\201803250115596_v2.Designer.cs">
-      <DependentUpon>201803250115596_v2.cs</DependentUpon>
+    <Compile Include="Migrations\201806101841265_usuario.cs" />
+    <Compile Include="Migrations\201806101841265_usuario.Designer.cs">
+      <DependentUpon>201806101841265_usuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -85,11 +81,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201803250108474_v1.resx">
-      <DependentUpon>201803250108474_v1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201803250115596_v2.resx">
-      <DependentUpon>201803250115596_v2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201806101841265_usuario.resx">
+      <DependentUpon>201806101841265_usuario.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -39,7 +39,7 @@ namespace Web.Controllers
                         ModelState.AddModelError("Error", erro);
                 }
                 else
-                    return RedirectToAction("Index","Biblioteca");
+                    return RedirectToAction("Index", "LoginBiblioteca");
             }
             else
                 ModelState.AddModelError("Error", "Erro no cadastro de dados do Administrador");
