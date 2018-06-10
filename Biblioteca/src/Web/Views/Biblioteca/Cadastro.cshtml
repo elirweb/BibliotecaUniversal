@@ -26,15 +26,15 @@
                 @Html.AntiForgeryToken()
                 <div class="form-group">
                     @Html.LabelFor(model => model.RazaoSocial)
-                    @Html.TextBoxFor(c => c.RazaoSocial, new { @type = "text", @class = "form-control", @name = "RazaoSocial", @placeholder = "Razão Social" })
+                    @Html.TextBoxFor(c => c.RazaoSocial, new { @type = "text", @class = "form-control", @name = "RazaoSocial", @ng_model= "RazaoSocial", @placeholder = "Razão Social" })
                 </div>
                 <div class="form-group">
                     @Html.LabelFor(model => model.Usuario)
-                    @Html.TextBoxFor(c => c.Usuario, new { @type = "text", @class = "form-control", @name= "Usuario", @placeholder = "Seu Usuario" })
+                    @Html.TextBoxFor(c => c.Usuario, new { @type = "text", @class = "form-control", @name= "Usuario", @ng_model = "Usuario", @placeholder = "Seu Usuario" })
                 </div>
                 <div class="form-group">
                     @Html.LabelFor(model => model.Senha)
-                    @Html.TextBoxFor(c => c.Senha, new { @type = "password", @class = "form-control", @name= "Senha", @placeholder = "Sua senha" })
+                    @Html.TextBoxFor(c => c.Senha, new { @type = "password", @class = "form-control", @name= "Senha", @ng_model= "Senha", @placeholder = "Sua senha" })
                 </div>
                 <div class="form-group">
                     @Html.LabelFor(model => model.ConfirmaSenha)
@@ -43,7 +43,7 @@
 
                 <div class="form-group">
                     @Html.LabelFor(model => model.Email)
-                    @Html.TextBoxFor(c => c.Email, new { @type = "email", @class = "form-control", @name = "Email", @placeholder = "Sua Email" })
+                    @Html.TextBoxFor(c => c.Email, new { @type = "email", @class = "form-control", @name = "Email", @ng_model = "Email", @placeholder = "Sua Email" })
                 </div>
                 <div class="form-group">
                     @Html.LabelFor(model => model.ConfirmEmail)
@@ -51,7 +51,7 @@
                 </div>
                 <div class="form-group">
                     @Html.LabelFor(model => model.Cnpj)
-                    @Html.TextBoxFor(c => c.Cnpj, new { @type = "text", @id = "Cnpj", @class = "form-control", @name = "Cnpj", @placeholder = "Seu Cnpj" })
+                    @Html.TextBoxFor(c => c.Cnpj, new { @type = "text", @id = "Cnpj", @class = "form-control", @name = "Cnpj", @ng_model = "Cnpj",  @placeholder = "Seu Cnpj" })
                 </div>
                 <div class="form-group">
                     @Html.LabelFor(model => model.Situacao)
