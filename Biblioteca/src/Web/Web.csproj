@@ -231,9 +231,11 @@
     <Content Include="Scripts\angular\config\servicos.js" />
     <Content Include="Scripts\angular\controller\AuthCtrl.js" />
     <Content Include="Scripts\angular\controller\AuthCtrlAdm.js" />
+    <Content Include="Scripts\angular\controller\biblioteca.js" />
     <Content Include="Scripts\angular\module\modulo.js" />
     <Content Include="Scripts\angular\service\AuthenticaService.js" />
     <Content Include="Scripts\angular\service\AuthenticaServiceAdm.js" />
+    <Content Include="Scripts\angular\service\biblioteca-service.js" />
     <Content Include="Scripts\jquery\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery\jquery-mask.js" />
     <Content Include="Scripts\jquery\jquery.validate.js" />

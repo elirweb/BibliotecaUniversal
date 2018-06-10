@@ -48,8 +48,12 @@ namespace Web
                  "~/Scripts/angular/config/servicos.js",
                 "~/Scripts/angular/service/AuthenticaService.js",
                 "~/Scripts/angular/service/AuthenticaServiceAdm.js",
+                "~/Scripts/angular/service/biblioteca-service.js",
+
                 "~/Scripts/angular/controller/AuthCtrl.js",
-                "~/Scripts/angular/controller/AuthCtrlAdm.js"));
+                "~/Scripts/angular/controller/AuthCtrlAdm.js",
+                 "~/Scripts/angular/controller/biblioteca.js"
+                ));
 
            
         }
