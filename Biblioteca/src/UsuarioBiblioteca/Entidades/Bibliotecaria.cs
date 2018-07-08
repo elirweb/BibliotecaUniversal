@@ -28,7 +28,7 @@ namespace UsuarioBiblioteca.Domain.Entidades
 
         [NotMapped]
         private IList<Livro> _lista;
-        public Bibliotecaria(string razaoSocial, string cnpj, string usuario, string senha, string confirmasenha, string email, bool situacao, string imagem)
+        public Bibliotecaria(string razaoSocial, string cnpj, string usuario, string senha, string confirmasenha, string email, bool situacao)
         {
             Id = Guid.NewGuid();
             RazaoSocial = razaoSocial;
@@ -37,7 +37,7 @@ namespace UsuarioBiblioteca.Domain.Entidades
             Senha = new Biblioteca.Core.Domain.ValueObjects.Senha(senha, confirmasenha);
             Email = new Biblioteca.Core.Domain.ValueObjects.Email(email);
             MomentoCadastro(situacao); // no momento de eu criar o cadastro posso definir se deixo ativo ou não
-            Imagem = imagem;
+            //Imagem = imagem;
             //_lista = new List<Livro>();
             DtCadastro = DateTime.Now;
             HoraCadastro = TimeSpan.Parse(DateTime.Now.TimeOfDay.Hours + ":" + DateTime.Now.TimeOfDay.Minutes);

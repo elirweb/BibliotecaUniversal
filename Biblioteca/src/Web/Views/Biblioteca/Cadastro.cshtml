@@ -63,10 +63,10 @@
                 </div>
                 <div class="form-group">
                     @Html.LabelFor(model => model.Imagem)
-                    <input type="file" name="imgfoto"  class="form-control"  />
-                </div> <!-- Registrar();ProcessarBotao('btn','Aguarde..')-->
+                    @Html.TextBoxFor(a=>a.Imagem, new { type = "file", name = "Imagem" })
+                </div>
                 <div class="form-group">
-                    <input type="button" value="Registra-se" id="btn" ng-click="Registrar()" class="btn-dark" />
+                    <input type="button" value="Registra-se" id="btn" ng-click="ProcessarBotao('btn','Aguarde....');Registrar()" class="btn-dark" />
                 </div>
                 
             }

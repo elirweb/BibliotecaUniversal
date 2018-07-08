@@ -18,8 +18,8 @@ namespace UsuarioBiblioteca.Application.Mapper
                 bi.Senha,
                 bi.ConfirmaSenha,
                 bi.Email, 
-                bi.Situacao,
-                bi.Imagem    
+                bi.Situacao
+                //bi.Imagem    
                 );
                
                 return b;

@@ -1,4 +1,4 @@
-﻿biblioteca.controller('biblioctrl', ['$scope', 'biblioservi', function ($scope, biblioservi) {
+﻿biblioteca.controller('biblioctrl', ['$scope', 'biblioservi', '$window', function ($scope, biblioservi,$window) {
    
     $scope.Registrar = function () {
         var dataobj ={
@@ -9,15 +9,19 @@
             cnpj: $scope.Cnpj,
             situacao: $scope.sit
         };
-        //alert(JSON.stringify(dataobj));
        
         biblioservi.Registrar(JSON.stringify(dataobj)).
-        then(function (data) {
-            alert(data);
+        then(function (response) {
+            if (response.Msg == "Dados enviados") {
+                $window.location.href = "/Biblioteca/Endereco/" + localStorage.getItem('token');
+            } else  {
+                alert(response.Msg); // definir na view como será mostrado o erro na tela
+            }
+
+
+        }).catch(function (response) {
+                alert(response.Msg);
         });
-        
-        
-        
         
        
     }

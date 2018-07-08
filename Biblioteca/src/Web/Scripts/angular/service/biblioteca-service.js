@@ -4,9 +4,10 @@
         return $http.post(
             'http://localhost:4372/Biblioteca/RespostaCadastro',
              model 
-           
         )
-            
+    }
+
+    this.EnderecoRegis = function (model) {
 
     }
 

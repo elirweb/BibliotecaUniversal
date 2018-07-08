@@ -1,1 +1,0 @@
-D:\projetos\BibliotecaUniversal\Biblioteca\src\Api\obj\Release\Api.csprojResolveAssemblyReference.cache

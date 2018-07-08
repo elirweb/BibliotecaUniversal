@@ -10,31 +10,45 @@
         <div class="card-header">Endereço-Biblioteca</div>
         <div class="card-body">
 
-            @using (Html.BeginForm("Endereco", "Biblioteca", FormMethod.Post, new { @id = "FormEndereco", @ng_controller = "authctrl" }))
+            @using (Html.BeginForm("Endereco", "Biblioteca", FormMethod.Post, new { @id = "FormEndereco" }))
             {
                 <span style="text-align: center">@Html.ValidationSummary(false, "", new { @class = "text-danger" })</span>
 
                 @Html.AntiForgeryToken()
+                @Html.Hidden("token",new {@value= @ViewBag.tk })
+                <div class="form-group">
+                    @Html.LabelFor(c => c.tipo)
+                    @Html.DropDownListFor(model => model.tipo, new SelectList(Model._listp, "Value", "Text"), "Selecione...", new { @class = "form-control" })
+
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(c => c.DDD)
+                    @Html.TextBoxFor(c => c.DDD, new { @type = "text", @class = "form-control", @placeholder = "Sua Localidade" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(c => c.Telefone)
+                    @Html.TextBoxFor(c => c.Telefone, new { @type = "text", @class = "form-control", @placeholder = "Sua Localidade" })
+                </div>
 
                 <div class="form-group">
-                    @Html.Label("Localidade")
+                    @Html.LabelFor(c => c.Localidade)
                     @Html.TextBoxFor(c => c.Localidade, new { @type = "text", @class = "form-control", @placeholder = "Sua Localidade" })
                 </div>
 
                 <div class="form-group">
-                    @Html.Label("Bairro")
+                    @Html.LabelFor(c => c.Bairro)
                     @Html.TextBoxFor(c => c.Bairro, new { @type = "text", @class = "form-control", @placeholder = "Seu Bairro" })
                 </div>
                 <div class="form-group">
-                    @Html.Label("Numero")
+                    @Html.LabelFor(c => c.Numero)
                     @Html.TextBoxFor(c => c.Numero, new { @type = "number", @class = "form-control", @placeholder = "Seu Numero" })
                 </div>
                 <div class="form-group">
-                    @Html.Label("Cidade")
+                    @Html.LabelFor(c => c.Cidade)
                     @Html.TextBoxFor(c => c.Cidade, new { @type = "text", @class = "form-control", @placeholder = "Sua Cidade" })
                 </div>
                 <div class="form-group">
-                    @Html.Label("Uf")
+                    @Html.LabelFor(c => c.Uf)
                     <select id="uf" name="uf" class="form-control">
                         @foreach (var s in Enum.GetValues(typeof(Biblioteca.Core.Domain.Util.Ufs)))
                         {
@@ -43,7 +57,7 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <input type="submit" value="Registra-se" class="btn-dark" />
+                    <input type="submit" value="Registra-se"  class="btn-dark" />
                 </div>
             }
         </div>
