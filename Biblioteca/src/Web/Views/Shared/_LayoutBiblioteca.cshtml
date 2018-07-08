@@ -18,12 +18,12 @@
 
 </head>
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
-   @Html.Partial("~/Views/usuario/_Usuario.cshtml")
+    @Html.Partial("~/Views/Shared/biblioteca/_Biblioteca.cshtml")
     <div class="content-wrapper">
         <div class="container-fluid">
             @RenderBody()
         </div>
-        
+
     </div>
     <div>
     </div>
@@ -41,7 +41,7 @@
     <!-- Logout Modal caixas do modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
-            <div class="modal-content" ng-controller="authctrl">
+            <div class="modal-content" ng-controller="authctrladm">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Pronto para partir?</h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
@@ -51,7 +51,7 @@
                 <div class="modal-body">Selecione "Sair" abaixo se você estiver pronto para terminar sua sessão atual.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-                    <a class="btn btn-primary" ng-click="Logout();" >Sair</a>
+                    <a class="btn btn-primary" ng-click="Logout();">Sair</a>
                 </div>
             </div>
         </div>

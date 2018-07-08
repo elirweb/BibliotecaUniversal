@@ -1,7 +1,7 @@
-﻿biblioteca.controller('authctrl', ['$scope', 'authServiceadm', function ($scope, authService) {
-    $scope.Logar = function () {
-
-        authService.Authenticar($scope.Login, $scope.Senha)
+﻿biblioteca.controller('authctrladm', ['$scope', 'authServiceadm', '$window', function ($scope, authServiceadm, $window) {
+    $scope.LogarAdm = function () {
+       
+        authServiceadm.Authenticar($scope.Usuario, $scope.Senha)
             .then(function (response) {
                 angular.forEach(response.data, function (value, key) {
                     if (value.token_type === "error") { alert(value.access_token); }
@@ -15,5 +15,11 @@
     $scope.ProcessarBotao = function (idbotao, texto) {
         document.getElementById(idbotao).innerHTML = texto;
     }
+
+    $scope.Logout = function () {
+        localStorage.removeItem('token');
+        localStorage.clear();
+        $window.location.href = "http://localhost:4372";
+    };
 
 }]);

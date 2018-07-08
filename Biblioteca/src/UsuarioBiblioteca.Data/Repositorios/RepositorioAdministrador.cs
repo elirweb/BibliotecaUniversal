@@ -19,7 +19,7 @@ namespace UsuarioBiblioteca.Data.Repositorios
 
         public bool Authenticar(Administradores model)
         {
-            var obj = helper.ExecuteScalar($"SELECT Login,Senha FROM Administradores WHERE Login = '{model.Login}' and Senha='{model.Senha}' ", contexto.Database.Connection);
+            var obj = helper.ExecuteScalar($"SELECT Login,Senha FROM Administradores WHERE Login = '{model.Login}' and Senha='{model.Senha.CodigoSenha}' ", contexto.Database.Connection);
             if (obj != null)
                 return true;
             return false;

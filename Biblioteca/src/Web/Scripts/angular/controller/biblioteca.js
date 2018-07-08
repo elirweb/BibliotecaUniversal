@@ -1,31 +1,25 @@
-﻿biblioteca.controller('authctrl', ['$scope', 'biblioservi', function ($scope, biblioservi) {
+﻿biblioteca.controller('biblioctrl', ['$scope', 'biblioservi', function ($scope, biblioservi) {
+   
     $scope.Registrar = function () {
-        var dataobj = {
-            RazaoSocial: $scope.RazaoSocial,
-            Usuario: $scope.Usuario,
-            Senha: $scope.Senha,
-            Email: $scope.Email,
-            Email: $scope.Email,
-            Cnpj: $scope.Cnpj,
-
-
+        var dataobj ={
+            razaosocial: $scope.RazaoSocial,
+            usuario: $scope.Usuario,
+            senha: $scope.Senha,
+            email: $scope.Email,
+            cnpj: $scope.Cnpj,
+            situacao: $scope.sit
         };
-        var res = this.biblioservi.Registrar(dataobj);
-        res.success(function (data, status, headers, config) {
-            alert("Cadastro feito com sucesso");
+        //alert(JSON.stringify(dataobj));
+       
+        biblioservi.Registrar(JSON.stringify(dataobj)).
+        then(function (data) {
+            alert(data);
         });
         
-        res.error(function (data, status, headers, config) {
-            alert("Erro no cadastro");
-        });
-
-        $scope.RazaoSocial = "";
-        $scope.Usuario = "";
-        $scope.Usuario = "",
-        $scope.Senha = "";
-        $scope.Email = "";
-        $scope.Email = "";
-        $scope.Cnpj = "";
+        
+        
+        
+       
     }
 
 

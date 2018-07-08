@@ -14,10 +14,12 @@ namespace Web.Controllers
 
         public ActionResult Cadastro()//cadastro de biblioteca 
         {
-            return View();
+            var model = new UsuarioBiblioteca.Application.ViewModel.Bibliotecaria();
+            model._liststatus = model.ListStatus();
+            return View(model);
         }
-
-        public JsonResult RespostaCadastro(UsuarioBiblioteca.Application.ViewModel.Bibliotecaria bi, string token) {
+        [HttpPost]
+        public JsonResult RespostaCadastro(UsuarioBiblioteca.Application.ViewModel.Bibliotecaria model) {
             //este cara responsavel por receber viewmodel e token para passar para api responsavel do cadastro
 
             return Json(new { Sucesso = true }, JsonRequestBehavior.AllowGet);

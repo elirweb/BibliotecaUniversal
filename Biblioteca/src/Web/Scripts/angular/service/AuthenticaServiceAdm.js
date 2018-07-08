@@ -1,8 +1,9 @@
-﻿
-biblioteca.service("authServiceadm", function ($http) {
-    this.Authenticar = function (login, senha) {
-        return $http.get(url_authenticaradm + login + "/" + senha);
+﻿var url_authenticaradm = "http://localhost:10078/Adm/Login/authenticar/";
 
+biblioteca.service("authServiceadm", function ($http) {
+    this.Authenticar = function (Usuario, senha) {
+       
+        return $http.get("http://localhost:10078/Adm/LoginAdm/authenticar/" + Usuario + "/" + senha);
     }
 
 })

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
 using System.Web.Mvc;
 
 namespace UsuarioBiblioteca.Application.ViewModel
@@ -33,8 +34,11 @@ namespace UsuarioBiblioteca.Application.ViewModel
 
         public string ConfirmEmail { get; set; }
         [Required(ErrorMessage ="Favor informar ativação do livro")]
+        
         public bool Situacao { get;  set; }
-
+        
+        [Display(Name ="Situacao")]
+       public string LabelSituacao { get; set; } 
         [Required(ErrorMessage ="Favor informar a imagem")]
         public string Imagem { get;  set; }
 
@@ -42,18 +46,20 @@ namespace UsuarioBiblioteca.Application.ViewModel
         public Bibliotecaria()
         {
             ListaErros = new List<string>();
-        }
-
-        public IEnumerable<SelectListItem> ListStatus
+         }
+        public List<SelectListItem> _liststatus { get; set; }
+        public List<SelectListItem> ListStatus()
         {
-            get
-            {
-                return new[]
-                {
-                     new SelectListItem { Value = "0", Text = "Inativo" },
-                     new SelectListItem { Value = "1", Text = "Ativo" }
-                };
-            }
+            
+            List<SelectListItem> myList = new List<SelectListItem>();
+                var data = new[]{
+                     new SelectListItem { Text = "Inativo", Value = "0" },
+                    new SelectListItem { Text = "Ativo", Value = "1" }
+
+        };
+        myList = data.ToList();
+            return myList;
+            
         }
     }
 }

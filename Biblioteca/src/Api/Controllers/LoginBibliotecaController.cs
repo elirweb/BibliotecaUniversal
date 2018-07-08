@@ -13,7 +13,7 @@ using System.Web.Http.Cors;
 
 namespace Api.Controllers
 {
-    [RoutePrefix("Adm/Login")]
+    [RoutePrefix("Adm/LoginAdm")]
     [EnableCors(origins: "*", headers: "*", methods: "*")] // definindo o cabecalho de origens para receber metodo get 
 
     public class LoginBibliotecaController : ApiController

@@ -1,11 +1,11 @@
-D:\projetos\BibliotecaUniversal\Biblioteca\src\Biblioteca.Core.Infra\bin\Debug\Biblioteca.Core.Infra.dll
-D:\projetos\BibliotecaUniversal\Biblioteca\src\Biblioteca.Core.Infra\bin\Debug\Biblioteca.Core.Infra.pdb
-D:\projetos\BibliotecaUniversal\Biblioteca\src\Biblioteca.Core.Infra\obj\Debug\Biblioteca.Core.Infra.dll
-D:\projetos\BibliotecaUniversal\Biblioteca\src\Biblioteca.Core.Infra\obj\Debug\Biblioteca.Core.Infra.pdb
-D:\projetos\BibliotecaUniversal\Biblioteca\src\Biblioteca.Core.Infra\obj\Debug\Biblioteca.Core.Infra.csprojResolveAssemblyReference.cache
 D:\projetos\Biblioteca\src\Biblioteca.Core.Infra\bin\Debug\Biblioteca.Core.Infra.dll
 D:\projetos\Biblioteca\src\Biblioteca.Core.Infra\bin\Debug\Biblioteca.Core.Infra.pdb
 D:\projetos\Biblioteca\src\Biblioteca.Core.Infra\obj\Debug\Biblioteca.Core.Infra.csprojResolveAssemblyReference.cache
 D:\projetos\Biblioteca\src\Biblioteca.Core.Infra\obj\Debug\Biblioteca.Core.Infra.csproj.CoreCompileInputs.cache
 D:\projetos\Biblioteca\src\Biblioteca.Core.Infra\obj\Debug\Biblioteca.Core.Infra.dll
 D:\projetos\Biblioteca\src\Biblioteca.Core.Infra\obj\Debug\Biblioteca.Core.Infra.pdb
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Biblioteca.Core.Infra\bin\Debug\Biblioteca.Core.Infra.dll
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Biblioteca.Core.Infra\bin\Debug\Biblioteca.Core.Infra.pdb
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Biblioteca.Core.Infra\obj\Debug\Biblioteca.Core.Infra.csprojResolveAssemblyReference.cache
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Biblioteca.Core.Infra\obj\Debug\Biblioteca.Core.Infra.dll
+D:\projetos\BibliotecaUniversal\Biblioteca\src\Biblioteca.Core.Infra\obj\Debug\Biblioteca.Core.Infra.pdb

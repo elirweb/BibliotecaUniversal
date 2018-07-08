@@ -1,8 +1,19 @@
 ﻿
 @{
-    ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_LayoutBiblioteca.cshtml";
 }
+<script language="javascript">
+            // verificando se possui token de authenticaçaõ
+            if (localStorage.getItem('token') == null) window.location.href = "http://localhost:4372/";
+</script>
+<ol class="breadcrumb">
+    <li class="breadcrumb-item">
+        Meu painel<br />
 
-<h2>Index</h2>
+
+    </li>
+
+</ol>
+
 

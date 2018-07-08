@@ -34,7 +34,7 @@ namespace UsuarioBiblioteca.Domain.Entidades
         public Administradores(string login, string senha)
         {
             Login = login;
-            Senha = new Biblioteca.Core.Domain.ValueObjects.Senha(senha);
+            Senha = new Senha(senha);
         }
     }
 }
