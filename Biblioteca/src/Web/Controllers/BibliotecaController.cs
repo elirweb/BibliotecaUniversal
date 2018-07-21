@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Web;
 using System.Web.Mvc;
 using UsuarioBiblioteca.Application.Interfaces;
 
@@ -10,14 +9,17 @@ namespace Web.Controllers
     {
         private readonly IBibliotecaria bibliotecaria;
         private readonly IEndereco endereco;
+        private readonly ILivro livro; 
         private List<string> erros = new List<string>();
         private Biblioteca.Core.Domain.Foto.HelperFoto foto = new Biblioteca.Core.Domain.Foto.HelperFoto();
+        private string retorno = string.Empty;
 
-
-        public BibliotecaController(IBibliotecaria bibli, IEndereco en)
+        public BibliotecaController(IBibliotecaria bibli, IEndereco en,ILivro lv)
         {
             bibliotecaria = bibli;
             endereco = en;
+            livro = lv;
+
         }
         // GET: Biblioteca
         public ActionResult Index()
@@ -50,7 +52,7 @@ namespace Web.Controllers
                 }
                 else if (!ret)
                 {
-                    erros.Add("Erro na extensão da imagem");
+                    erros.Add("Erro no envio da imagem");
                     return Json(new { Msg = erros }, JsonRequestBehavior.AllowGet);
                 }
                 else
@@ -95,21 +97,42 @@ namespace Web.Controllers
                         Imagem = _bi.Imagem
                         
                     };
-                    //bibliotecaria.Adicionar(b);
                     end.Bibliotecaria.Id = b.Id;
-                    endereco.Add(end,b, form["token"]);
-
-                    TempData.Remove("BiblioDados");
-                    TempData["msgSucesso"] = "Dados Gravado com sucesso";
+                    endereco.Add(end,b, form["token"], out retorno);
+                    if (retorno.Equals("erro"))
+                        ModelState.AddModelError("Error", retorno);
+                    else {
+                            TempData.Remove("BiblioDados");
+                            TempData["msgSucesso"] = "Dados Gravado com sucesso";
+                    }
                     return View();
                 }
             }
+            else
+                ModelState.AddModelError("Error", retorno);
+
             return View();
         }
 
-        public ActionResult Livro() {
-            return View();
+        public ActionResult Livro(string token) {
+            @ViewBag.tk = token;
+            var model = new UsuarioBiblioteca.Application.ViewModel.Livro();
+            model._listlv = model.ListCategoria();
+            return View(model);
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Livro(UsuarioBiblioteca.Application.ViewModel.Livro lv, FormCollection form) {
+            
+            if (ModelState.IsValid)
+                 livro.add(lv, form["token"], out retorno);
+            else
+                ModelState.AddModelError("Error", retorno);
+            return View();
+        } 
+
+        
     }       
 
 

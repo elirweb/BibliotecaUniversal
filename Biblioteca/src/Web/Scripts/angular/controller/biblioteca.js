@@ -31,4 +31,9 @@
         document.getElementById(idbotao).innerHTML = texto;
     }
 
+    $scope.LinkLv = function () {
+        $window.location.href = "/Biblioteca/Livro/" + localStorage.getItem('token');
+    }
+        
+
 }]);

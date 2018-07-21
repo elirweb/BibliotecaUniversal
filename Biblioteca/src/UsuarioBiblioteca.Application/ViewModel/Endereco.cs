@@ -52,6 +52,7 @@ namespace UsuarioBiblioteca.Application.ViewModel
         [Required(ErrorMessage ="Favor informar o Telefone")]
         public string Telefone { get;  set; }
         public Bibliotecaria Bibliotecaria { get; set; }
+        public string Error { get; set; }
         public Endereco()
         {
             Bibliotecaria = new Bibliotecaria();

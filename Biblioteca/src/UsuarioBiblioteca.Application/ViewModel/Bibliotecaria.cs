@@ -45,7 +45,7 @@ namespace UsuarioBiblioteca.Application.ViewModel
 
         [Display(Name ="Imagem")]
         public HttpPostedFileBase Imagem { get;  set; }
-
+        public string Error { get; set; }
         public List<string> ListaErros { get; set; }
         public Bibliotecaria()
         {

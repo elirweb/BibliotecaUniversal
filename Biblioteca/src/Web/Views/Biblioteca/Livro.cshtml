@@ -17,34 +17,34 @@
         <div class="card-body">
 
             @using (Html.BeginForm("Livro", "Biblioteca", FormMethod.Post, new { @id = "FormCadastro", @ng_controller = "authctrl" }))
-    {
-        <span style="text-align: center">@Html.ValidationSummary(false, "", new { @class = "text-danger" })</span>
-        @Html.AntiForgeryToken()
-        <div class="form-group">
-            @Html.LabelFor(model => model.Titulo)
-            @Html.TextBoxFor(c => c.Titulo, new { @type = "text", @class = "form-control", @placeholder = "Titulo do Livro" })
-        </div>
-        <div class="form-group">
-            @Html.LabelFor(model => model.Descricao)
-            @Html.TextBoxFor(c => c.Descricao, new { @type = "text", @class = "form-control", @placeholder = "Descrição" })
-        </div>
-        <div class="form-group">
-            @Html.LabelFor(model => model.Editora)
-            @Html.TextBoxFor(c => c.Editora, new { @type = "text", @class = "form-control", @placeholder = "Editora" })
-        </div>
-        <div class="form-group">
-            @Html.LabelFor(model => model.QtdPg)
-            @Html.TextBoxFor(c => c.QtdPg, new { @type = "text", @class = "form-control", @placeholder = "QtdPg" })
-        </div>
-        <div class="form-group">
-            @Html.LabelFor(model => model.DescCategoria)
-            @Html.DropDownListFor(model => model.DescCategoria, new SelectList(Model.ListCategoria, "value", "text"), "Selecione", new { @class = "form-control " })
-        </div>
-
-        <div class="form-group">
-            <input type="submit" value="Registra-se" class="btn-dark" />
-        </div>
-}
+            {
+                <span style="text-align: center">@Html.ValidationSummary(false, "", new { @class = "text-danger" })</span>
+                @Html.AntiForgeryToken()
+                @Html.Hidden("token", new { @value = @ViewBag.tk })
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Titulo)
+                    @Html.TextBoxFor(c => c.Titulo, new { @type = "text", @class = "form-control", @placeholder = "Titulo do Livro" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Descricao)
+                    @Html.TextBoxFor(c => c.Descricao, new { @type = "text", @class = "form-control", @placeholder = "Descrição" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Editora)
+                    @Html.TextBoxFor(c => c.Editora, new { @type = "text", @class = "form-control", @placeholder = "Editora" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.QtdPg)
+                    @Html.TextBoxFor(c => c.QtdPg, new { @type = "text", @class = "form-control", @placeholder = "QtdPg" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.DescCategoria)
+                    @Html.DropDownListFor(model => model.DescCategoria, new SelectList(Model._listlv, "Value", "Text"), "Selecione...", new { @class = "form-control " })
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Registra-se" class="btn-dark" />
+                </div>
+            }
         </div>
     </div>
 </div>

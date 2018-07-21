@@ -22,20 +22,26 @@ namespace UsuarioBiblioteca.Application.AppActions
             repositorio = end;
         }
 
-        public void Add(Endereco end, Bibliotecaria bi, string token)
+        public void Add(Endereco end, Bibliotecaria bi, string token,out string retorno)
         {
             var data = JsonConvert.SerializeObject(bi);
             var dta = JsonConvert.SerializeObject(end);
+            retorno = string.Empty;
+
             using (client = new HttpClient())
             {
-                client.BaseAddress = new Uri("");
+                client.BaseAddress = new Uri("http://localhost:10078/");
                 client.DefaultRequestHeaders.Add("Bearer ", token);
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-                response = client.PostAsync("", new StringContent(data, Encoding.UTF8, "application/json")).Result;
+                response = client.PostAsync("biblioteca/Cadastro/registrar-biblioteca/", new StringContent(data, Encoding.UTF8, "application/json")).Result;
                 var result = JsonConvert.SerializeObject(response.Content.ReadAsStringAsync().Result);
                 if (response.StatusCode.Equals(HttpStatusCode.OK)) 
-                    resp2 = client.PostAsync("", new StringContent(dta, Encoding.UTF8, "application/json")).Result;
+                    resp2 = client.PostAsync("biblioteca/Cadastro/registrar-endereco/", new StringContent(dta, Encoding.UTF8, "application/json")).Result;
 
+                if (resp2.StatusCode.Equals(HttpStatusCode.OK) && response.StatusCode.Equals(HttpStatusCode.OK))
+                    retorno = "ok";
+                else
+                    retorno = "erro";
             }
 
         }

@@ -1,6 +1,12 @@
 ﻿
 using Biblioteca.Core.Domain.Validador.Interfaces;
+using Newtonsoft.Json;
 using System;
+using System.Net;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Text;
+using UsuarioBiblioteca.Application.ViewModel;
 using UsuarioBiblioteca.Data.UnitOfWork;
 using UsuarioBiblioteca.Domain.Interfaces.IRepositorios;
 
@@ -10,7 +16,8 @@ namespace UsuarioBiblioteca.Application.AppActions
     {
         private readonly IRepositorioLivro repositorio;
         private readonly Log.Application.Interfaces.IRegistro reg;
-
+        private HttpClient client;
+        private HttpResponseMessage response;
         public LivroApp(IRepositorioLivro lv, IHandler<Domain.Especificacao.LivroDevePossuirUnicoTitulo> titulounico,
             IHandler<Domain.Especificacao.Livro_BibliotecaDeveEstarAtiva> bibliotecaativa, IUnitOfWork _unitOfWork,
             Log.Application.Interfaces.IRegistro log)
@@ -18,6 +25,27 @@ namespace UsuarioBiblioteca.Application.AppActions
         {
             repositorio = lv;
             reg = log;
+        }
+
+        public void add(Livro lv, string token, out string retorno)
+        {
+            var data = JsonConvert.SerializeObject(lv);
+      
+            retorno = string.Empty;
+
+            using (client = new HttpClient())
+            {
+                client.BaseAddress = new Uri("http://localhost:10078/");
+                client.DefaultRequestHeaders.Add("Bearer ", token);
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+                response = client.PostAsync("biblioteca/Cadastro/registrar-livro/", new StringContent(data, Encoding.UTF8, "application/json")).Result;
+                var result = JsonConvert.SerializeObject(response.Content.ReadAsStringAsync().Result);
+                if (response.StatusCode.Equals(HttpStatusCode.OK))
+                    retorno = "ok";
+                else
+                    retorno = "erro";
+            }
+
         }
 
         public ViewModel.Livro Adicionar(ViewModel.Livro lv)

@@ -1,9 +1,9 @@
-﻿<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+﻿<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav" ng-controller="biblioctrl">
     <a class="navbar-brand" href="#">Biblioteca Universal</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarResponsive">
+    <div class="collapse navbar-collapse" id="navbarResponsive" >
         <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
                 <a class="nav-link" href="/Biblioteca/Index">
@@ -18,13 +18,8 @@
                 </a>
             </li>
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
-                <a class="nav-link" href="/Biblioteca/Endereco">
-                    <i class="fa fa-fw fa-file"></i>
-                    <span class="nav-link-text">Endereco</span>
-                </a>
-            </li>
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
-                <a class="nav-link" href="/Biblioteca/Livro">
+                <a class="nav-link" href="#" ng-click="LinkLv()">
+                    <!-- localStorage.getItem('token') -->
                     <i class="fa fa-fw fa-file"></i>
                     <span class="nav-link-text">Livro</span>
                 </a>

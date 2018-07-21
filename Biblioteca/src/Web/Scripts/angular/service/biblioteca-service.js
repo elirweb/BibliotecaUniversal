@@ -7,8 +7,6 @@
         )
     }
 
-    this.EnderecoRegis = function (model) {
-
-    }
+   
 
 })

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
 using System.Web.Mvc;
 using UsuarioBiblioteca.Domain.Enum;
 
@@ -27,24 +28,31 @@ namespace UsuarioBiblioteca.Application.ViewModel
         [Display(Name ="Categoria")]
         public string DescCategoria { get; set; }
         public List<string> ListaErros { get; set; }
+
+        public List<SelectListItem> _listlv { get; set; }
+
         public Livro()
         {
             ListaErros = new List<string>();
         }
-
-        public IEnumerable<SelectListItem> ListCategoria
+        
+        public List<SelectListItem> ListCategoria()
         {
-            get
-            {
-                return new[]
-                {
-                        new SelectListItem { Value = "2", Text = Categoria.Ciencias.ToString() },
-                        new SelectListItem { Value = "2", Text = Categoria.Ciencias.ToString() },
-                        new SelectListItem { Value = "2", Text = Categoria.Ciencias.ToString() },
-                        new SelectListItem { Value = "2", Text = Categoria.Ciencias.ToString() },
 
-                };
-            }
+            List<SelectListItem> myCate = new List<SelectListItem>();
+            var data = new[]{
+                new SelectListItem { Text = Categoria.Matematica.ToString(), Value = Categoria.Matematica.ToString() },
+                new SelectListItem { Text = Categoria.Portugues.ToString(), Value = Categoria.Portugues.ToString() },
+                new SelectListItem { Text = Categoria.Ciencias.ToString(), Value = Categoria.Ciencias.ToString() },
+                new SelectListItem { Text = Categoria.Geografia.ToString(), Value = Categoria.Geografia.ToString() },
+                new SelectListItem { Text = Categoria.Ingles.ToString(), Value = Categoria.Ingles.ToString() },
+                new SelectListItem { Text = Categoria.Informatica.ToString(), Value = Categoria.Informatica.ToString() },
+
+
+            };
+            myCate = data.ToList();
+            return myCate;
+
         }
     }
 }
