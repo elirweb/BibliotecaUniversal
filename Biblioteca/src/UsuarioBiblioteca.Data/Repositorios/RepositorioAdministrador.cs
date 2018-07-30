@@ -4,7 +4,7 @@ using UsuarioBiblioteca.Domain.Entidades;
 
 namespace UsuarioBiblioteca.Data.Repositorios
 {
-    public class RepositorioAdministrador : Biblioteca.Core.Domain.Util.Dispose, Domain.Interfaces.IRepositorios.IRepositorioAdministrador
+    public class RepositorioAdministrador : Biblioteca.Core.Domain.Util.DisposeElement, Domain.Interfaces.IRepositorios.IRepositorioAdministrador
     {
         private readonly Contexto.Contexto contexto;
         private DbHelper helper = new DbHelper();

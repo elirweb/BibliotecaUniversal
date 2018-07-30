@@ -7,7 +7,7 @@ using UsuarioBiblioteca.Data.UnitOfWork;
 
 namespace UsuarioBiblioteca.Data.Repositorios
 {
-    public class RepositorioEndereco : Biblioteca.Core.Domain.Util.Dispose, Domain.Interfaces.IRepositorios.IRepositorioEndereco
+    public class RepositorioEndereco : Biblioteca.Core.Domain.Util.DisposeElement, Domain.Interfaces.IRepositorios.IRepositorioEndereco
     {
         private readonly Contexto.Contexto _contexto;
         public RepositorioEndereco(Contexto.Contexto context)

@@ -48,11 +48,10 @@ namespace Web
              bundles.Add(new ScriptBundle("~/Scripts/angular")
                  .Include("~/Scripts/angular/angular.min.js"
                  , "~/Scripts/angular/module/modulo.js",
-                  "~/Scripts/angular/config/servicos.js",
+                    "~/Scripts/angular/value/config.js",
                  "~/Scripts/angular/service/AuthenticaService.js",
                  "~/Scripts/angular/service/AuthenticaServiceAdm.js",
                  "~/Scripts/angular/service/biblioteca-service.js",
-
                  "~/Scripts/angular/controller/AuthCtrl.js",
                  "~/Scripts/angular/controller/AuthCtrlAdm.js",
                  "~/Scripts/angular/controller/biblioteca.js"

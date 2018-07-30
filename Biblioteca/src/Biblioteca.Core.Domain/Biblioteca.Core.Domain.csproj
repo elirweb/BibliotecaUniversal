@@ -72,7 +72,7 @@
     <Compile Include="Util\Authenticacao.cs" />
     <Compile Include="Util\Descriptografar.cs" />
     <Compile Include="Util\Criptografia.cs" />
-    <Compile Include="Util\Dispose.cs" />
+    <Compile Include="Util\DisposeElement.cs" />
     <Compile Include="Util\Ufs.cs" />
     <Compile Include="Validador\Interfaces\IHandler.cs" />
     <Compile Include="Validador\Validacao.cs" />

@@ -71,7 +71,7 @@ namespace Web.Controllers
 
         public ActionResult Endereco(string token)
         {
-            @ViewBag.tk = token;
+            ViewBag.tk = token;
             var model = new UsuarioBiblioteca.Application.ViewModel.Endereco();
             model._listp = model.ListTipos();
             return View(model);
@@ -115,7 +115,7 @@ namespace Web.Controllers
         }
 
         public ActionResult Livro(string token) {
-            @ViewBag.tk = token;
+            ViewBag.tk = token;
             var model = new UsuarioBiblioteca.Application.ViewModel.Livro();
             model._listlv = model.ListCategoria();
             return View(model);

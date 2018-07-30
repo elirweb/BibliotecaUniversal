@@ -28,9 +28,6 @@ namespace Biblioteca.Core.Domain.Foto
                     ret = true;
                 }
 
-            }else
-            {
-                ret = false;
             }
 
             return ret;

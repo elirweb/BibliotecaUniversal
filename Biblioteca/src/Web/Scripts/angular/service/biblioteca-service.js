@@ -1,8 +1,8 @@
-﻿biblioteca.service("biblioservi", function ($http) {
+﻿biblioteca.service("biblioservi", function ($http,url_api) {
     this.Registrar = function (model) {
         console.log(model);
         return $http.post(
-            'http://localhost:4372/Biblioteca/RespostaCadastro',
+            url_api.baseUrlSite+'Biblioteca/RespostaCadastro',
              model 
         )
     }

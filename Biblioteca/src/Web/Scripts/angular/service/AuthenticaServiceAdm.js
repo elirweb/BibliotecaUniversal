@@ -1,9 +1,8 @@
-﻿var url_authenticaradm = "http://localhost:10078/Adm/Login/authenticar/";
-
-biblioteca.service("authServiceadm", function ($http) {
+﻿
+biblioteca.service("authServiceadm", function ($http, url_api) {
     this.Authenticar = function (Usuario, senha) {
        
-        return $http.get("http://localhost:10078/Adm/LoginAdm/authenticar/" + Usuario + "/" + senha);
+        return $http.get(url_api.baseUrl+"Adm/LoginAdm/authenticar/" + Usuario + "/" + senha);
     }
 
 })

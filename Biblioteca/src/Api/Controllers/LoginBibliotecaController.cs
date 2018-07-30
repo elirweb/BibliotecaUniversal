@@ -42,12 +42,12 @@ namespace Api.Controllers
             if (admapp.Authenticar(b))
             {
 
-                if (client == null)
+                using (client = new HttpClient())
                 {
-                    client = new HttpClient();
+
                     client.BaseAddress = new Uri(ConfigurationManager.AppSettings["url_segura"]);
                     client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                    resp = client.PostAsync("api/security/token", new StringContent("grant_type=password&username=" +b.Login + "&password=" + b.Senha, Encoding.UTF8, "application/json")).Result;
+                    resp = client.PostAsync("api/security/token", new StringContent("grant_type=password&username=" + b.Login + "&password=" + b.Senha, Encoding.UTF8, "application/json")).Result;
                     retorno = resp.Content.ReadAsStringAsync().Result;
                     if (resp.StatusCode.Equals(HttpStatusCode.OK))
                     {
@@ -61,7 +61,6 @@ namespace Api.Controllers
                                 Login = login
                             });
                     }
-
                 }
             }
             else

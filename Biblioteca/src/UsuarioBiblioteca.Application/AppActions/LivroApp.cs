@@ -2,6 +2,7 @@
 using Biblioteca.Core.Domain.Validador.Interfaces;
 using Newtonsoft.Json;
 using System;
+using System.Configuration;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -35,7 +36,7 @@ namespace UsuarioBiblioteca.Application.AppActions
 
             using (client = new HttpClient())
             {
-                client.BaseAddress = new Uri("http://localhost:10078/");
+                client.BaseAddress = new Uri(ConfigurationManager.AppSettings["urlweb"]);
                 client.DefaultRequestHeaders.Add("Bearer ", token);
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
                 response = client.PostAsync("biblioteca/Cadastro/registrar-livro/", new StringContent(data, Encoding.UTF8, "application/json")).Result;

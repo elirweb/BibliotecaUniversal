@@ -6,7 +6,7 @@ using System.Data.SqlClient;
 
 namespace Biblioteca.Core.Domain.Helper
 {
-    public class DbHelper:Dispose
+    public class DbHelper:DisposeElement
     {
         public object ExecuteScalar(string sql, DbConnection cn)
         {
@@ -14,7 +14,7 @@ namespace Biblioteca.Core.Domain.Helper
             {
                 return cn.ExecuteScalar(sql);
             }
-            catch(SqlException f)
+            catch (SqlException f)
             {
 
                 throw new Exception(f.Message);
@@ -23,6 +23,9 @@ namespace Biblioteca.Core.Domain.Helper
             {
 
                 throw new Exception(ex.Message);
+            }
+            finally {
+                cn.Close();
             }
          
           
@@ -45,7 +48,10 @@ namespace Biblioteca.Core.Domain.Helper
                 throw new Exception(ex.Message);
             }
 
-            
+            finally
+            {
+                cn.Close();
+            }
         }
 
 

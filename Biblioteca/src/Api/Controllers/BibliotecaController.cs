@@ -32,21 +32,21 @@ namespace Api.Controllers
             var resposta = new HttpResponseMessage();
 
             if (biblio == null)
-                return resposta.RequestMessage.CreateResponse(HttpStatusCode.BadRequest, "Erro no acesso a Api ");
+                 resposta.RequestMessage.CreateResponse(HttpStatusCode.BadRequest, "Erro no acesso a Api ");
             else
             {
                 try
                 {
                     biblioteca.Adicionar(biblio);
-                    resposta.RequestMessage.CreateResponse(HttpStatusCode.OK, "Cadastro feito com sucesso");
+                     resposta.RequestMessage.CreateResponse(HttpStatusCode.OK, "Cadastro feito com sucesso");
                 }
                 catch (Exception ex)
                 {
+                     resposta.RequestMessage.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
 
-                    throw new Exception(ex.Message);
                 }
             }
-            return resposta;
+            return resposta;   
         }
 
         [HttpPost]
@@ -56,7 +56,7 @@ namespace Api.Controllers
             var resposta = new HttpResponseMessage();
 
             if (end == null)
-                return resposta.RequestMessage.CreateResponse(HttpStatusCode.BadRequest, "Erro no acesso a Api ");
+                 resposta.RequestMessage.CreateResponse(HttpStatusCode.BadRequest, "Erro no acesso a Api ");
             else
             {
                 try
@@ -67,7 +67,7 @@ namespace Api.Controllers
                 catch (Exception ex)
                 {
 
-                    throw new Exception(ex.Message);
+                    resposta.RequestMessage.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
                 }
             }
             return resposta;
@@ -79,7 +79,7 @@ namespace Api.Controllers
             var resposta = new HttpResponseMessage();
 
             if (lv == null)
-                return resposta.RequestMessage.CreateResponse(HttpStatusCode.BadRequest, "Erro no acesso a Api ");
+                 resposta.RequestMessage.CreateResponse(HttpStatusCode.BadRequest, "Erro no acesso a Api ");
             else
             {
                 try
@@ -89,8 +89,8 @@ namespace Api.Controllers
                 }
                 catch (Exception ex)
                 {
+                    resposta.RequestMessage.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
 
-                    throw new Exception(ex.Message);
                 }
             }
             return resposta;

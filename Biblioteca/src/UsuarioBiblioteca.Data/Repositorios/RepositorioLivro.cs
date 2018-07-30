@@ -3,7 +3,7 @@ using System;
 
 namespace UsuarioBiblioteca.Data.Repositorios
 {
-    public class RepositorioLivro : Biblioteca.Core.Domain.Util.Dispose, Domain.Interfaces.IRepositorios.IRepositorioLivro
+    public class RepositorioLivro : Biblioteca.Core.Domain.Util.DisposeElement, Domain.Interfaces.IRepositorios.IRepositorioLivro
     {
         private Contexto.Contexto contexto;
         private DbHelper helper = new DbHelper();

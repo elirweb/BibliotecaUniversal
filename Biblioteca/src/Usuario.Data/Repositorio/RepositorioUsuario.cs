@@ -2,7 +2,7 @@
 
 namespace Usuario.Data.Repositorio
 {
-    public class RepositorioUsuario : Biblioteca.Core.Domain.Util.Dispose, Domain.Interfaces.Repositorios.IRepositorioUsuario
+    public class RepositorioUsuario : Biblioteca.Core.Domain.Util.DisposeElement, Domain.Interfaces.Repositorios.IRepositorioUsuario
     {
         private DbHelper helper = new DbHelper();
         private readonly Contexto.Contexto contexto;

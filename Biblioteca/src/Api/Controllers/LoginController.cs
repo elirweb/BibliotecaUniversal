@@ -38,25 +38,29 @@ namespace Api.Controllers
             var _accesstoken = new List<Authenticacao>();
             if (usuarioapp.Authenticar(usu))
             {
-                
-                if (client == null)
-                {
-                    client = new HttpClient();
-                    client.BaseAddress = new Uri(ConfigurationManager.AppSettings["url_segura"]);
-                    client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                    resp = client.PostAsync("api/security/token", new StringContent("grant_type=password&username=" + usu.Login + "&password=" + usu.Senha, Encoding.UTF8, "application/json")).Result;
-                    retorno = resp.Content.ReadAsStringAsync().Result;
-                    if (resp.StatusCode.Equals(HttpStatusCode.OK))
-                    {
+
+               
+                using (client = new HttpClient()) {
+
+                        client.BaseAddress = new Uri(ConfigurationManager.AppSettings["url_segura"]);
+                        client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+                        resp = client.PostAsync("api/security/token", new StringContent("grant_type=password&username=" + usu.Login + "&password=" + usu.Senha, Encoding.UTF8, "application/json")).Result;
+                        retorno = resp.Content.ReadAsStringAsync().Result;
+                        if (resp.StatusCode.Equals(HttpStatusCode.OK))
+                        {
                         JArray token = JArray.Parse("[" + retorno + "]");
                         foreach (JObject obj in token.Children<JObject>())
-                            _accesstoken.Add(new Authenticacao { access_token = obj.SelectToken("access_token").ToString(),
+                            _accesstoken.Add(new Authenticacao
+                            {
+                                access_token = obj.SelectToken("access_token").ToString(),
                                 expires_in = obj.SelectToken("expires_in").ToString(),
                                 token_type = obj.SelectToken("token_type").ToString(),
-                                Login = login });
+                                Login = login
+                            });
                     }
-                    
                 }
+
+
             }
             else
                 _accesstoken.Add(new Authenticacao { access_token = "Usuário ou senha inválido", token_type = "error" });

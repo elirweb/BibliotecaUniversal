@@ -228,7 +228,7 @@
     <Content Include="Content\scss\navbar\_navbar_static.scss" />
     <Content Include="Content\scss\navbar\_navbar_toggle.scss" />
     <Content Include="Scripts\angular\angular.min.js" />
-    <Content Include="Scripts\angular\config\servicos.js" />
+    <Content Include="Scripts\angular\value\config.js" />
     <Content Include="Scripts\angular\controller\AuthCtrl.js" />
     <Content Include="Scripts\angular\controller\AuthCtrlAdm.js" />
     <Content Include="Scripts\angular\controller\biblioteca.js" />

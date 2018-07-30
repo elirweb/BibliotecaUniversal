@@ -2,7 +2,7 @@
 
 namespace Usuario.Data.Repositorio
 {
-    public class RepositorioEndereco : Biblioteca.Core.Domain.Util.Dispose, Domain.Interfaces.Repositorios.IRepositorioEndereco
+    public class RepositorioEndereco : Biblioteca.Core.Domain.Util.DisposeElement, Domain.Interfaces.Repositorios.IRepositorioEndereco
     {
         private Contexto.Contexto contexto;
         public RepositorioEndereco(Contexto.Contexto coc)

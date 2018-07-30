@@ -4,7 +4,7 @@ using UsuarioBiblioteca.Domain.Entidades;
 
 namespace UsuarioBiblioteca.Data.Repositorios
 {
-    public class RepositorioBibliotecaria: Biblioteca.Core.Domain.Util.Dispose, Domain.Interfaces.IRepositorios.IRepositorioBibliotecaria
+    public class RepositorioBibliotecaria: Biblioteca.Core.Domain.Util.DisposeElement, Domain.Interfaces.IRepositorios.IRepositorioBibliotecaria
     {
       
         private readonly Contexto.Contexto contexto;
