@@ -51,9 +51,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contexto\Contexto.cs" />
-    <Compile Include="Migrations\201806101845355_emprestimo.cs" />
-    <Compile Include="Migrations\201806101845355_emprestimo.Designer.cs">
-      <DependentUpon>201806101845355_emprestimo.cs</DependentUpon>
+    <Compile Include="Migrations\201808301945578_EmprestimoData.cs" />
+    <Compile Include="Migrations\201808301945578_EmprestimoData.Designer.cs">
+      <DependentUpon>201808301945578_EmprestimoData.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -76,8 +76,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201806101845355_emprestimo.resx">
-      <DependentUpon>201806101845355_emprestimo.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201808301945578_EmprestimoData.resx">
+      <DependentUpon>201808301945578_EmprestimoData.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

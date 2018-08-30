@@ -43,7 +43,6 @@ D:\projetos\Biblioteca\src\UsuarioBiblioteca\bin\Debug\System.Web.Razor.xml
 D:\projetos\Biblioteca\src\UsuarioBiblioteca\bin\Debug\System.Web.WebPages.Razor.xml
 D:\projetos\Biblioteca\src\UsuarioBiblioteca\bin\Debug\System.Web.WebPages.xml
 D:\projetos\Biblioteca\src\UsuarioBiblioteca\bin\Debug\System.Web.WebPages.Deployment.xml
-D:\projetos\Biblioteca\src\UsuarioBiblioteca\bin\Debug\pt-br\System.Web.Mvc.resources.dll
 D:\projetos\Biblioteca\src\UsuarioBiblioteca\obj\Debug\UsuarioBiblioteca.Domain.csprojAssemblyReference.cache
 D:\projetos\Biblioteca\src\UsuarioBiblioteca\obj\Debug\UsuarioBiblioteca.Domain.csproj.CoreCompileInputs.cache
 D:\projetos\Biblioteca\src\UsuarioBiblioteca\obj\Debug\UsuarioBiblioteca.Domain.csproj.CopyComplete

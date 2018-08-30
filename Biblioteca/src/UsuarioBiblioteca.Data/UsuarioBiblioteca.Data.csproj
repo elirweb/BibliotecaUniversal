@@ -54,9 +54,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contexto\Contexto.cs" />
-    <Compile Include="Migrations\201806101820081_biblioteca.cs" />
-    <Compile Include="Migrations\201806101820081_biblioteca.Designer.cs">
-      <DependentUpon>201806101820081_biblioteca.cs</DependentUpon>
+    <Compile Include="Migrations\201808301931500_UsuarioBibioteca.cs" />
+    <Compile Include="Migrations\201808301931500_UsuarioBibioteca.Designer.cs">
+      <DependentUpon>201808301931500_UsuarioBibioteca.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -82,8 +82,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201806101820081_biblioteca.resx">
-      <DependentUpon>201806101820081_biblioteca.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201808301931500_UsuarioBibioteca.resx">
+      <DependentUpon>201808301931500_UsuarioBibioteca.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

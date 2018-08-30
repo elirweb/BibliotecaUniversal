@@ -15,7 +15,6 @@
                 <span style="text-align: center">@Html.ValidationSummary(false, "", new { @class = "text-danger" })</span>
 
                 @Html.AntiForgeryToken()
-                @Html.Hidden("token",new {@value= @ViewBag.tk })
                 <div class="form-group">
                     @Html.LabelFor(c => c.tipo)
                     @Html.DropDownListFor(model => model.tipo, new SelectList(Model._listp, "Value", "Text"), "Selecione...", new { @class = "form-control" })
@@ -57,7 +56,7 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <input type="submit" value="Registra-se"  class="btn-dark" />
+                    <input type="submit" value="Registrar-se"  class="btn-dark" />
                 </div>
             }
         </div>

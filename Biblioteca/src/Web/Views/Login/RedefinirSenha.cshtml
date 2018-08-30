@@ -15,8 +15,8 @@
             {
                 <span style="text-align: center">@Html.ValidationMessageFor(m => m.Error)</span>
                 @Html.AntiForgeryToken()
-                if (TempData["msgSucesso"] != null)
-                {  <span style="text-align: center" class="text-danger">@TempData["msgSucesso"]</span>}
+                if (ViewBag.Msg != null)
+                {  <span style="text-align: center" class="text-danger">@ViewBag.Msg</span>}
 
                    <div class="form-group">
                     @Html.Label("Email")

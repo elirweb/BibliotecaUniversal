@@ -55,12 +55,9 @@ namespace Web.Controllers
                     erros.Add("Erro no envio da imagem");
                     return Json(new { Msg = erros }, JsonRequestBehavior.AllowGet);
                 }
-                else
-                {
-                    TempData["BiblioDados"] = bibli;
-                    return Json(new { Msg = "Dados enviados" }, JsonRequestBehavior.AllowGet);
-
-                }
+                TempData["BiblioDados"] = bibli;
+                return Json(new { Msg = "Dados enviados com sucesso" }, JsonRequestBehavior.AllowGet);
+         
             }
             catch (Exception f)
             {
@@ -69,9 +66,8 @@ namespace Web.Controllers
           
         }
 
-        public ActionResult Endereco(string token)
+        public ActionResult Endereco()
         {
-            ViewBag.tk = token;
             var model = new UsuarioBiblioteca.Application.ViewModel.Endereco();
             model._listp = model.ListTipos();
             return View(model);

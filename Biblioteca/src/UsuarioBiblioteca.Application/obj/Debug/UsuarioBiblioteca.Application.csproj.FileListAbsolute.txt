@@ -4,7 +4,6 @@ D:\projetos\Biblioteca\src\UsuarioBiblioteca.Application\bin\Debug\Biblioteca.Co
 D:\projetos\Biblioteca\src\UsuarioBiblioteca.Application\bin\Debug\Biblioteca.Core.Infra.dll
 D:\projetos\Biblioteca\src\UsuarioBiblioteca.Application\bin\Debug\Log.Application.dll
 D:\projetos\Biblioteca\src\UsuarioBiblioteca.Application\bin\Debug\Newtonsoft.Json.dll
-D:\projetos\Biblioteca\src\UsuarioBiblioteca.Application\bin\Debug\System.Web.Mvc.dll
 D:\projetos\Biblioteca\src\UsuarioBiblioteca.Application\bin\Debug\UsuarioBiblioteca.Data.dll
 D:\projetos\Biblioteca\src\UsuarioBiblioteca.Application\bin\Debug\UsuarioBiblioteca.dll
 D:\projetos\Biblioteca\src\UsuarioBiblioteca.Application\bin\Debug\Dapper.dll
@@ -27,3 +26,9 @@ D:\projetos\Biblioteca\src\UsuarioBiblioteca.Application\obj\Debug\UsuarioBiblio
 D:\projetos\Biblioteca\src\UsuarioBiblioteca.Application\obj\Debug\UsuarioBiblioteca.Application.csproj.CopyComplete
 D:\projetos\Biblioteca\src\UsuarioBiblioteca.Application\obj\Debug\UsuarioBiblioteca.Application.dll
 D:\projetos\Biblioteca\src\UsuarioBiblioteca.Application\obj\Debug\UsuarioBiblioteca.Application.pdb
+D:\projetos\Biblioteca\src\UsuarioBiblioteca.Application\bin\Debug\System.Web.Mvc.dll
+D:\projetos\Biblioteca\src\UsuarioBiblioteca.Application\bin\Debug\System.Web.Razor.dll
+D:\projetos\Biblioteca\src\UsuarioBiblioteca.Application\bin\Debug\System.Web.WebPages.Razor.dll
+D:\projetos\Biblioteca\src\UsuarioBiblioteca.Application\bin\Debug\System.Web.WebPages.dll
+D:\projetos\Biblioteca\src\UsuarioBiblioteca.Application\bin\Debug\Microsoft.Web.Infrastructure.dll
+D:\projetos\Biblioteca\src\UsuarioBiblioteca.Application\bin\Debug\System.Web.WebPages.Deployment.dll

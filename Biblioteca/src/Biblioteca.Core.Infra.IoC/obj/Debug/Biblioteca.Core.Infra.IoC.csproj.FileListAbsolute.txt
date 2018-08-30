@@ -110,3 +110,8 @@ D:\projetos\Biblioteca\src\Biblioteca.Core.Infra.IoC\obj\Debug\Biblioteca.Core.I
 D:\projetos\Biblioteca\src\Biblioteca.Core.Infra.IoC\obj\Debug\Biblioteca.Core.Infra.IoC.csproj.CopyComplete
 D:\projetos\Biblioteca\src\Biblioteca.Core.Infra.IoC\obj\Debug\Biblioteca.Core.Infra.IoC.dll
 D:\projetos\Biblioteca\src\Biblioteca.Core.Infra.IoC\obj\Debug\Biblioteca.Core.Infra.IoC.pdb
+D:\projetos\Biblioteca\src\Biblioteca.Core.Infra.IoC\bin\Debug\System.Web.Razor.dll
+D:\projetos\Biblioteca\src\Biblioteca.Core.Infra.IoC\bin\Debug\System.Web.WebPages.Razor.dll
+D:\projetos\Biblioteca\src\Biblioteca.Core.Infra.IoC\bin\Debug\System.Web.WebPages.dll
+D:\projetos\Biblioteca\src\Biblioteca.Core.Infra.IoC\bin\Debug\Microsoft.Web.Infrastructure.dll
+D:\projetos\Biblioteca\src\Biblioteca.Core.Infra.IoC\bin\Debug\System.Web.WebPages.Deployment.dll

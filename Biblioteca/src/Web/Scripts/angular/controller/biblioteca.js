@@ -14,8 +14,11 @@
         then(function (response) {
             if (response.Msg == "Dados enviados") {
                 $window.location.href = "/Biblioteca/Endereco/" + localStorage.getItem('token');
-            } else  {
-                alert(response.Msg); // definir na view como será mostrado o erro na tela
+            }
+            else {
+                angular.forEach(response.Msg, function (value, key) {
+                    $scope.Msgerro = value;
+                })
             }
 
 

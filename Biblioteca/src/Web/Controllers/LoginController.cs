@@ -97,7 +97,7 @@ namespace Web.Controllers
         {
             if (usu.Email != string.Empty) {
                 if (usuarioapp.RecuperarSenha(usu.Email))
-                    TempData["msgSucesso"] = "Olá foi enviado e-mail para redefir sua senha!";
+                    ViewBag.Msg = "Olá foi enviado e-mail para redefir sua senha de acesso!";
                 else
                     ModelState.AddModelError("Error", "E-mail não cadastrado em nosso banco de dados");
             }
@@ -113,7 +113,7 @@ namespace Web.Controllers
         public ActionResult RedefinirSenha(Usuario.Application.ViewModel.Usuario usu) {
 
             if (usuarioapp.Redefirsenha(usu.Email, usu.Senha)) 
-                TempData["msgSucesso"] = "Olá Senha alterada com sucesso";
+                ViewBag.Msg = "Olá Senha alterada com sucesso";
             else
                 ModelState.AddModelError("Error", "Erro na alteração de Senha");
             return View();

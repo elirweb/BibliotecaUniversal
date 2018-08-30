@@ -14,8 +14,8 @@
             @using (Html.BeginForm("RecuperarSenha", "Login", FormMethod.Post, new { @id = "FormRecuperar", @ng_controller = "authctrl" }))
             {
                 @Html.AntiForgeryToken()
-                if (TempData["msgSucesso"] != null)
-                {  <span style="text-align: center" class="text-danger">@TempData["msgSucesso"]</span>}
+                if (ViewBag.Msg != null)
+                {  <span style="text-align: center" class="text-danger">@ViewBag.Msg</span>}
 
                 <div class="form-group">
                     @Html.Label("Email")
