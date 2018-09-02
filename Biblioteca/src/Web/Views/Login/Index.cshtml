@@ -15,7 +15,8 @@
           @using (Html.BeginForm("Index", "Login", FormMethod.Post, new { @id = "FormLogin", ng_controller = "authctrl" }))
           {
             @Html.AntiForgeryToken()
-              if (TempData["msgSucesso"] != null){  <span style="text-align: center" class="text-danger">@TempData["msgSucesso"]</span>}
+              if (TempData["msgSucesso"] != null){  <span style="text-align: center" class="text-danger" >@TempData["msgSucesso"]</span>}
+                                                    <span style="text-align: center" class="text-danger">{{MsgRetorno}}</span><br />
               <div class="form-group">
                     @Html.Label("Login")
                     @Html.TextBoxFor(c => c.Login, new { @type = "text", ng_model= "Login", @class = "form-control", @placeholder = "Seu Email" })
@@ -25,7 +26,7 @@
                     @Html.TextBoxFor(c => c.Senha, new { @type = "password", ng_model = "Senha", @class = "form-control", @placeholder = "Sua senha" })
                 </div>
                 <div class="form-group">
-                    <button type="button" id="btnbotao" class="btn-dark" ng-click="ProcessarBotao('btnbotao','Aguarde a Verificação');Logar()"  >Acessar</button>
+                    <button type="button" id="btnbotao" class="btn-dark" ng-click="ProcessarBotao('btnbotao','Aguarde a Verificação');"  >Acessar</button>
                 </div>
           }
                 <div class="text-center">

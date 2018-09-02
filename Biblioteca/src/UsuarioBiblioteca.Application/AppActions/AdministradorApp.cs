@@ -29,6 +29,7 @@ namespace UsuarioBiblioteca.Application.AppActions
                 {
                     repositorio.Adicionar(Mapper.ViewModelToDomain.Administrador(adm));
                     Commit();
+                    Notificacao = null;
                 }
             }
 

@@ -12,13 +12,14 @@
 
 <div class="container">
     <div class="card card-login mx-auto mt-5">
-        <div class="card-header">Cadastro de Biblioteca</div>
+        <div class="card-header">Cadastro de Admin</div>
         <div class="card-body">
 
             @using (Html.BeginForm("CadAdministrador", "LoginBiblioteca", FormMethod.Post, new { @id = "FormCadastro", @ng_controller = "authctrl" }))
             {
-                <span style="text-align: center">@Html.ValidationSummary(false, "", new { @class = "text-danger" })</span>
+                <span style="text-align: center">@Html.ValidationSummary(false, "", new { @class = "text-danger" })@ViewBag.MsgRetorno</span>
                 @Html.AntiForgeryToken()
+                
                 <div class="form-group">
                     @Html.LabelFor(model => model.Nome)
                     @Html.TextBoxFor(c => c.Nome, new { @type = "text", @class = "form-control", @placeholder = "Seu nome" })

@@ -40,9 +40,9 @@ D:\projetos\Biblioteca\src\UsuarioBiblioteca.Data\bin\Debug\Log.Application.pdb
 D:\projetos\Biblioteca\src\UsuarioBiblioteca.Data\bin\Debug\Log.Domain.pdb
 D:\projetos\Biblioteca\src\UsuarioBiblioteca.Data\bin\Debug\Log.Domain.dll.config
 D:\projetos\Biblioteca\src\UsuarioBiblioteca.Data\obj\Debug\UsuarioBiblioteca.Data.csprojAssemblyReference.cache
+D:\projetos\Biblioteca\src\UsuarioBiblioteca.Data\obj\Debug\UsuarioBiblioteca.Data.Migrations.UsuarioBibioteca.resources
+D:\projetos\Biblioteca\src\UsuarioBiblioteca.Data\obj\Debug\UsuarioBiblioteca.Data.csproj.GenerateResource.cache
 D:\projetos\Biblioteca\src\UsuarioBiblioteca.Data\obj\Debug\UsuarioBiblioteca.Data.csproj.CoreCompileInputs.cache
 D:\projetos\Biblioteca\src\UsuarioBiblioteca.Data\obj\Debug\UsuarioBiblioteca.Data.csproj.CopyComplete
 D:\projetos\Biblioteca\src\UsuarioBiblioteca.Data\obj\Debug\UsuarioBiblioteca.Data.dll
 D:\projetos\Biblioteca\src\UsuarioBiblioteca.Data\obj\Debug\UsuarioBiblioteca.Data.pdb
-D:\projetos\Biblioteca\src\UsuarioBiblioteca.Data\obj\Debug\UsuarioBiblioteca.Data.Migrations.UsuarioBibioteca.resources
-D:\projetos\Biblioteca\src\UsuarioBiblioteca.Data\obj\Debug\UsuarioBiblioteca.Data.csproj.GenerateResource.cache

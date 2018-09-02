@@ -29,6 +29,7 @@ namespace Usuario.Application.AppActions
                 {
                     repousuario.Adicionar(Mapper.VewModelToDomain.Usuario(usuario));
                     Commit();
+                    Notificacao = null;
                 }
             }
 

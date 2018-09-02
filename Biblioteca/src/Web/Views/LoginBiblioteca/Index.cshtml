@@ -16,19 +16,20 @@
             {
                 @Html.AntiForgeryToken()
                 if (TempData["msgSucesso"] != null)
-                {  <span style="text-align: center" class="text-danger">@TempData["msgSucesso"]</span>}
-                <div class="form-group">
-                    @Html.Label("Usuario")
-                    @Html.TextBoxFor(c => c.Login, new { @type = "text", ng_model = "Usuario", @class = "form-control", @placeholder = "Seu Email" })
-                </div>
-                <div class="form-group">
-                    @Html.Label("Senha")
-                    @Html.TextBoxFor(c => c.Senha, new { @type = "password", ng_model = "Senha", @class = "form-control", @placeholder = "Sua senha" })
-                </div>
-                <div class="form-group">
-                    <button type="button" id="btnbotao" class="btn-dark" ng-click="ProcessarBotao('btnbotao','Aguarde a Verificação');LogarAdm()">Acessar</button>
-                </div>
-            }
+                { <span style="text-align: center" class="text-danger">@TempData["msgSucesso"]</span>}
+                  <span style="text-align: center" class="text-danger">{{MsgRetorno}}</span>
+            <div class="form-group">
+                @Html.Label("Usuario")
+                @Html.TextBoxFor(c => c.Login, new { @type = "text", ng_model = "Usuario", @class = "form-control", @placeholder = "Seu Email" })
+            </div>
+            <div class="form-group">
+                @Html.Label("Senha")
+                @Html.TextBoxFor(c => c.Senha, new { @type = "password", ng_model = "Senha", @class = "form-control", @placeholder = "Sua senha" })
+            </div>
+            <div class="form-group">
+                <button type="button" id="btnbotao" class="btn-dark" ng-click="ProcessarBotao('btnbotao','Aguarde a Verificação')">Acessar</button>
+            </div>
+        }
             <div class="text-center">
                 <a class="d-block small mt-3" href="/LoginBiblioteca/CadAdministrador">Criar sua Conta</a>
                 <a class="d-block small" href="/LoginBiblioteca/RecuperarSenha">Esqueçeu sua senha?</a>

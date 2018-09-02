@@ -19,8 +19,9 @@ namespace Biblioteca.Core.Domain.Util
                 if (!string.IsNullOrEmpty(conexao))
                 {
                     byte[] bKey = Convert.FromBase64String(cryptoKey);
+                 
                     byte[] bText = Convert.FromBase64String(conexao);
-
+                    
                     Rijndael rijndael = new RijndaelManaged();
 
                     rijndael.KeySize = 256;

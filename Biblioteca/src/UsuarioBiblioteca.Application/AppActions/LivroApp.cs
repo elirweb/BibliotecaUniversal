@@ -59,6 +59,7 @@ namespace UsuarioBiblioteca.Application.AppActions
                 {
                     repositorio.Adicionar(Mapper.ViewModelToDomain.Livro(lv));
                     Commit();
+                    Notificacao = null;
                 }
             }
 

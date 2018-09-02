@@ -28,7 +28,8 @@ namespace Web.Controllers
         [HttpPost]
         public ActionResult CadAdministrador(UsuarioBiblioteca.Application.ViewModel.Administrador adm)
         {
-            if (ModelState.IsValid) {
+            if (ModelState.IsValid)
+            {
 
                 var Listbibli = new List<UsuarioBiblioteca.Application.ViewModel.Administrador>();
                 Listbibli.Add(adm);
@@ -39,7 +40,10 @@ namespace Web.Controllers
                         ModelState.AddModelError("Error", erro);
                 }
                 else
+                {
+                    TempData["msgSucesso"] = "Dados cadastrado com sucesso";
                     return RedirectToAction("Index", "LoginBiblioteca");
+                }
             }
             else
                 ModelState.AddModelError("Error", "Erro no cadastro de dados do Administrador");

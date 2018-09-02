@@ -16,8 +16,7 @@ namespace Web
   
         protected void Application_Start()
         {
-            Bootstrapper.Inicializar();
-
+          
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
@@ -28,7 +27,7 @@ namespace Web
             ViewEngines.Engines.Clear();
             ViewEngines.Engines.Add(new RazorViewEngine());
 
-            if (WebConfigurationManager.ConnectionStrings["Contexto"].ToString().Equals("Data Source=DESKTOP-S6C9UFP;Initial Catalog=BibliotecaUniversal;User ID=sa;password=elirweb"))
+            if (WebConfigurationManager.ConnectionStrings["Contexto"].ToString().Equals("Data Source=PAX00101;Initial Catalog=BibliotecaUnirversal;User ID=sa;password=123"))
             {
                
                 var nova_string = Biblioteca.Core.Domain.Util.Criptografia.Encriptar(WebConfigurationManager.ConnectionStrings["Contexto"].ToString());
@@ -39,6 +38,7 @@ namespace Web
                 ConfigurationManager.RefreshSection("Contexto");
             }
 
+            Bootstrapper.Inicializar();
 
         }
     }

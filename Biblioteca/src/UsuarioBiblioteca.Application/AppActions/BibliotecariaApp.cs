@@ -33,6 +33,7 @@ namespace UsuarioBiblioteca.Application.AppActions
                     {
                         repositorio.Adicionar(Mapper.ViewModelToDomain.Biblioteca(bibli));
                         Commit();
+                        Notificacao = null;
                     }
                 }
 
