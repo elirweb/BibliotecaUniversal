@@ -178,9 +178,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\css\custom.css" />
+    <Content Include="Content\css\layout.css" />
+    <Content Include="Content\css\meuspedidos.css" />
+    <Content Include="Content\css\mp-theme.min.css" />
     <Content Include="Content\css\sb-admin.css" />
     <Content Include="Content\css\sb-admin.min.css" />
     <Content Include="Content\img\gif1.gif" />
+    <Content Include="Content\img\telainicial.jpg" />
     <Content Include="Content\vendor\bootstrap\css\bootstrap-grid.css" />
     <Content Include="Content\vendor\bootstrap\css\bootstrap-grid.min.css" />
     <Content Include="Content\vendor\bootstrap\css\bootstrap-reboot.css" />
@@ -228,14 +233,16 @@
     <Content Include="Content\scss\navbar\_navbar_static.scss" />
     <Content Include="Content\scss\navbar\_navbar_toggle.scss" />
     <Content Include="Scripts\angular\angular.min.js" />
+    <Content Include="Scripts\angular\controller\UsuarioCtrl.js" />
     <Content Include="Scripts\angular\value\config.js" />
     <Content Include="Scripts\angular\controller\AuthCtrl.js" />
-    <Content Include="Scripts\angular\controller\AuthCtrlAdm.js" />
-    <Content Include="Scripts\angular\controller\biblioteca.js" />
+    <Content Include="Scripts\angular\controller\AuthAdmCtrl.js" />
+    <Content Include="Scripts\angular\controller\BibliotecaCtrl.js" />
     <Content Include="Scripts\angular\module\modulo.js" />
     <Content Include="Scripts\angular\service\AuthenticaService.js" />
     <Content Include="Scripts\angular\service\AuthenticaServiceAdm.js" />
     <Content Include="Scripts\angular\service\biblioteca-service.js" />
+    <Content Include="Scripts\jquery\dimensoesimg.js" />
     <Content Include="Scripts\jquery\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery\jquery-mask.js" />
     <Content Include="Scripts\jquery\jquery.validate.js" />
@@ -248,6 +255,7 @@
     <Content Include="Scripts\js\sb-admin-datatables.min.js" />
     <Content Include="Scripts\js\sb-admin.js" />
     <Content Include="Scripts\js\sb-admin.min.js" />
+    <Content Include="Scripts\js\util.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

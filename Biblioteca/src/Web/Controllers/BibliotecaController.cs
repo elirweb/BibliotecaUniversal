@@ -34,37 +34,37 @@ namespace Web.Controllers
             return View(model);
         }
         [HttpPost]
-        public JsonResult RespostaCadastro(UsuarioBiblioteca.Application.ViewModel.Bibliotecaria model) {
+        public ActionResult RespostaCadastro(FormCollection model) {
 
-            try
-            {
-                bibliotecaria.Adicionar(model);
-                var ret = foto.ArquivarFoto(model.Imagem);
-                var bibli = new List<UsuarioBiblioteca.Application.ViewModel.Bibliotecaria>();
-                bibli.Add(model);
+            //try
+            //{
+            //    bibliotecaria.Adicionar(model);
+            //    var ret = foto.ArquivarFoto(model.Imagem);
+            //    var bibli = new List<UsuarioBiblioteca.Application.ViewModel.Bibliotecaria>();
+            //    bibli.Add(model);
 
-                if (model.ListaErros.Count > 0)
-                {
-                    foreach (var erro in model.ListaErros)
-                        erros.Add(erro);
+            //    if (model.ListaErros.Count > 0)
+            //    {
+            //        foreach (var erro in model.ListaErros)
+            //            erros.Add(erro);
 
-                    return Json(new { Msg = erros }, JsonRequestBehavior.AllowGet);
-                }
-                else if (!ret)
-                {
-                    erros.Add("Erro no envio da imagem");
-                    return Json(new { Msg = erros }, JsonRequestBehavior.AllowGet);
-                }
-                TempData["BiblioDados"] = bibli;
-                return Json(new { Msg = "Dados enviados com sucesso" }, JsonRequestBehavior.AllowGet);
-         
-            }
-            catch (Exception f)
-            {
-                return Json(new { Msg = f.InnerException }, JsonRequestBehavior.AllowGet);
-            }
-          
-        }
+            return Json(new { Msg = erros }, JsonRequestBehavior.AllowGet);
+        //}
+        //    else if (!ret)
+        //    {
+        //        erros.Add("Erro no envio da imagem");
+        //        return Json(new { Msg = erros }, JsonRequestBehavior.AllowGet);
+        //    }
+        //    TempData["BiblioDados"] = bibli;
+        //    return Json(new { Msg = "Dados enviados com sucesso" }, JsonRequestBehavior.AllowGet);
+
+        //}
+        //catch (Exception f)
+        //{
+        //    return Json(new { Msg = f.InnerException }, JsonRequestBehavior.AllowGet);
+        //}
+
+    }
 
         public ActionResult Endereco()
         {

@@ -8,69 +8,100 @@
 
 <script src="~/Scripts/jquery-1.10.2.min.js"></script>
 <script src="~/Scripts/jquery/jquery-mask.js"></script>
-<script src="~/Scripts/jquery.validate.min.js"></script>
-<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
 
 <script type="text/javascript">
     $(document).ready(function () {
-        $("#Cnpj").mask("99.999.999/9999-99")
+        $("#Cnpj").mask("99.999.999/9999-99");
     });
 </script>
 
-<div class="container">
-    <div class="card card-login mx-auto mt-5">
-        <div class="card-header">Cadastro de Biblioteca</div>
-        <div class="card-body">
+<div class="container text-center">
 
-            @using (Html.BeginForm("", "", FormMethod.Post, new { @id = "FormCadastro", @ng_controller = "biblioctrl", enctype = "multipart/form-data" }))
-            {
-               
-                <span style="text-align: center">@Html.ValidationSummary(false, "", new { @class = "text-danger" })</span>
-                @Html.AntiForgeryToken()
-                <div class="form-group">
-                    @Html.LabelFor(model => model.RazaoSocial)
-                    @Html.TextBoxFor(c => c.RazaoSocial, new { @type = "text", @class = "form-control", @ng_model= "RazaoSocial", @placeholder = "Razão Social" })
-                </div>
-                <div class="form-group">
-                    @Html.LabelFor(model => model.Usuario)
-                    @Html.TextBoxFor(c => c.Usuario, new { @type = "text", @class = "form-control", @ng_model = "Usuario", @placeholder = "Seu Usuario" })
-                </div>
-                <div class="form-group">
-                    @Html.LabelFor(model => model.Senha)
-                    @Html.TextBoxFor(c => c.Senha, new { @type = "password", @class = "form-control", @ng_model= "Senha", @placeholder = "Sua senha" })
-                </div>
-                <div class="form-group">
-                    @Html.LabelFor(model => model.ConfirmaSenha)
-                    @Html.TextBoxFor(c => c.ConfirmaSenha, new { @type = "password", @class = "form-control", @placeholder = "Confirmar senha" })
-                </div>
 
-                <div class="form-group">
-                    @Html.LabelFor(model => model.Email)
-                    @Html.TextBoxFor(c => c.Email, new { @type = "email", @class = "form-control", @ng_model = "Email", @placeholder = "Sua Email" })
-                </div>
-                <div class="form-group">
-                    @Html.LabelFor(model => model.ConfirmEmail)
-                    @Html.TextBoxFor(c => c.ConfirmEmail, new { @type = "email", @class = "form-control", @placeholder = "Confirmação do Email" })
-                </div>
-                <div class="form-group">
-                    @Html.LabelFor(model => model.Cnpj)
-                    @Html.TextBoxFor(c => c.Cnpj, new { @type = "text", @id = "Cnpj", @class = "form-control", @ng_model = "Cnpj",  @placeholder = "Seu Cnpj" })
-                </div>
-                <div class="form-group">
-                    @Html.LabelFor(model => model.LabelSituacao)
-                    @Html.DropDownListFor(model => model.LabelSituacao, new SelectList(Model._liststatus, "Value", "Text"), "Selecione...",new { @class = "form-control", @ng_model="sit" })
-
-                </div>
-                <div class="form-group">
-                    @Html.LabelFor(model => model.Imagem)
-                    @Html.TextBoxFor(a=>a.Imagem, new { type = "file", name = "Imagem" })
-                </div>
-                <div class="form-group">
-                    <input type="button" value="Registra-se" id="btn" ng-click="ProcessarBotao('btn','Aguarde....');Registrar()" class="btn-dark" />
-                </div>
-                
-            }
+    @using (Html.BeginForm("", "", FormMethod.Post, new { @name = "FormCadastro", @ng_model = "FormCadastro", @ng_controller = "biblioctrl", @enctype = "multipart/form-data", @class = "form-login", @novalidate = "novalidate" }))
+    {
+        <span style="text-align: center" class="text-danger">{{MsgRetorno}}</span>
+        @Html.AntiForgeryToken()
+        <div class="form-group">
+            @Html.TextBoxFor(model => model.RazaoSocial, new { @type = "text", @class = "form-control", @name = "RazaoSocial", @ng_model = "RazaoSocial", @placeholder = "Razão Social", @ng_required = "true" })
+            <span style="color:red" ng-show="FormCadastro.RazaoSocial.$dirty && FormCadastro.RazaoSocial.$invalid && FormCadastro.RazaoSocial.$error.required">
+                Razao Social é obrigatório.
+            </span>
         </div>
-    </div>
+        <div class="form-group">
+            @Html.TextBoxFor(model => model.Usuario, new { @type = "text", @class = "form-control", @name = "Usuario", @ng_model = "Usuario", @placeholder = "Usuario", @ng_required = "true" })
+            <span style="color:red" ng-show="FormCadastro.Usuario.$dirty && FormCadastro.Usuario.$invalid && FormCadastro.Usuario.$error.required">
+                Usuário é obrigatório.
+            </span>
+        </div>
+        <div class="form-group">
+            @Html.TextBoxFor(c => c.Senha, new { @type = "password", @class = "form-control", @placeholder = "Sua senha", @name = "Senha", @ng_model = "Senha", @ng_required = "true", @ng_maxlength = "6", @ng_minlength = "6" })
+            <span style="color:red" ng-show="FormCadastro.Senha.$dirty && FormCadastro.Senha.$invalid && FormCadastro.Senha.$error.required">
+                Senha é obrigatório.
+            </span>
+            <span style="color:red" ng-show="FormCadastro.Senha.$error.maxlength || FormCadastro.Senha.$error.minlength">
+                Senha deve ter 6 caracteres
+            </span>
+        </div>
+        <div class="form-group">
+            @Html.TextBoxFor(c => c.ConfirmaSenha, new { @type = "password", @class = "form-control", @placeholder = "Confirmar senha", @name = "ConfirmaSenha", @ng_model = "ConfirmaSenha", @ng_required = "true", @ng_maxlength = "6", @ng_minlength = "6" })
+            <span style="color:red" ng-show="FormCadastro.ConfirmaSenha.$dirty && FormCadastro.ConfirmaSenha.$invalid && FormCadastro.ConfirmaSenha.$error.required">
+                Confir.Senha é obrigatório.
+            </span>
+            <span style="color:red" ng-show="FormCadastro.ConfirmaSenha.$error.maxlength || FormCadastro.ConfirmaSenha.$error.minlength">
+                Senha deve ter 6 caracteres
+            </span><br />
+            <span style="color:red" ng-if="Senha != ConfirmaSenha">
+                Senha divergente
+            </span>
+        </div>
+
+        <div class="form-group">
+            @Html.TextBoxFor(c => c.Email, new { @type = "email", @class = "form-control", @placeholder = "Sua Email", @name = "Email", @ng_model = "Email", @ng_required = "true" })
+            <span style="color:red" ng-show="FormCadastro.Email.$dirty && FormCadastro.Email.$invalid && FormCadastro.Email.$error.required">
+                Email é obrigatório.
+            </span>
+            <span style="color:red" ng-show="FormCadastro.Email.$error.email">
+                Email inválido.
+            </span>
+        </div>
+        <div class="form-group">
+            @Html.TextBoxFor(c => c.ConfirmEmail, new { @type = "email", @class = "form-control", @placeholder = "Confirmação do Email", @name = "ConfirmEmail", @ng_model = "ConfirmEmail", @ng_required = "true" })
+            <span style="color:red" ng-show="FormCadastro.ConfirmEmail.$dirty && FormCadastro.ConfirmEmail.$invalid && FormCadastro.ConfirmEmail.$error.required">
+                Confir.Email é obrigatório.
+            </span>
+            <span style="color:red" ng-show="FormCadastro.ConfirmEmail.$error.email">
+                Email inválido.
+            </span>
+            <span style="color:red" ng-if="Email != ConfirmEmail">
+                E-mail divergente
+            </span>
+        </div>
+        <div class="form-group">
+            @Html.TextBoxFor(c => c.Cnpj, new { @type = "text", @class = "form-control", @name = "Cnpj", @ng_model = "Cnpj", @placeholder = "Seu Cnpj", @ng_required = "true" })
+            <span style="color:red" ng-show="FormCadastro.Cnpj.$dirty && FormCadastro.Cnpj.$invalid && FormCadastro.Cnpj.$error.required">
+                Cnpj é obrigatório.
+            </span>
+        </div>
+        <div class="form-group">
+            @Html.DropDownListFor(model => model.LabelSituacao, new SelectList(Model._liststatus, "Value", "Text"), "Selecione...", new { @class = "form-control", @name = "LabelSituacao", @ng_model = "LabelSituacao",@ng_required="true" })
+        </div>
+        <div class="form-group">
+            <input type="file" ng-model="arquivo" file-model="arquivo" />
+        </div>
+        <div class="form-group">
+            <button type="button" id="btnbotao" class="btn btn-xg btn_verde"
+                    ng-disabled="FormCadastro.RazaoSocial.$invalid ||
+                    FormCadastro.Usuario.$invalid || FormCadastro.Senha.$invalid ||
+                    FormCadastro.ConfirmaSenha.$invalid || FormCadastro.Email.$invalid ||
+                    FormCadastro.ConfirmEmail.$invalid || FormCadastro.Cnpj.$invalid
+                    || FormCadastro.LabelSituacao.$invalid 
+                  " ng-click="ProcessarBotao('btnbotao','Aguarde....')">
+                Salvar
+            </button>
+        </div>
+    }
+
+   
 </div>
 

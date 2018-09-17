@@ -6,56 +6,33 @@
     <title>@ViewBag.Title - Biblioteca Universal</title>
     @Styles.Render("~/Content/vendor")
     @Styles.Render("~/Content/css")
-
-    @Scripts.Render("~/Content/vendor/jquery")
-    @Scripts.Render("~/Content/vendor/bootstrap")
-    @Scripts.Render("~/Content/vendor/jquery-easing")
-    @Scripts.Render("~/Content/vendor/chart.js")
     @Scripts.Render("~/Scripts/js")
 
     @Scripts.Render("~/Scripts/angular")
 
 
 </head>
-<body class="fixed-nav sticky-footer bg-dark" id="page-top">
-    @Html.Partial("~/Views/Shared/biblioteca/_Biblioteca.cshtml")
-    <div class="content-wrapper">
-        <div class="container-fluid">
-            @RenderBody()
-        </div>
-
-    </div>
+<body class="bg-dark">
     <div>
-    </div>
-    <footer class="sticky-footer">
-        <div class="container">
-            <div class="text-center">
-                <small>@DateTime.Now.Date.ToString("dd/MM/yyyy") Elirweb</small>
-            </div>
-        </div>
-    </footer>
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fa fa-angle-up"></i>
-    </a>
-    <!-- Logout Modal caixas do modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content" ng-controller="authctrladm">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Pronto para partir?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
+        <nav class="navbar navbar-default mp-navbar mp-navbar-nomargin hidden-xs hidden-sm" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <img src="@Url.Content("~/Content/img/telainicial.jpg")" style="height:60px;width:60px;position:absolute;top:10px;" />
                 </div>
-                <div class="modal-body">Selecione "Sair" abaixo se você estiver pronto para terminar sua sessão atual.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-                    <a class="btn btn-primary" ng-click="Logout();">Sair</a>
-                </div>
-            </div>
-        </div>
-    </div>
 
+            </div>
+        </nav>
+        <nav class="navbar-mobile hidden-md hidden-lg">
+            <div class="hamburger">
+            </div>
+
+        </nav>
+        <div class="banner-login">
+            <h1>Sistema de Biblioteca</h1>
+        </div>
+
+        @RenderBody()
+
+    </div>
 </body>
 </html>

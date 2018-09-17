@@ -13,8 +13,25 @@
 </head>
 <body class="bg-dark">
     <div>
+        <nav class="navbar navbar-default mp-navbar mp-navbar-nomargin hidden-xs hidden-sm" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <img src="@Url.Content("~/Content/img/telainicial.jpg")" style="height:60px;width:60px;position:absolute;top:10px;" />
+                </div>
+
+            </div>
+        </nav>
+        <nav class="navbar-mobile hidden-md hidden-lg">
+            <div class="hamburger">
+            </div>
+
+        </nav>
+        <div class="banner-login">
+            <h1>Sistema de Biblioteca</h1>
+        </div>
+
         @RenderBody()
-        
+
     </div>
 </body>
 </html>

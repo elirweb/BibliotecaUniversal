@@ -19,4 +19,3 @@ D:\projetos\Biblioteca\src\Log.Domain\obj\Debug\Log.Domain.csproj.CoreCompileInp
 D:\projetos\Biblioteca\src\Log.Domain\obj\Debug\Log.Domain.csproj.CopyComplete
 D:\projetos\Biblioteca\src\Log.Domain\obj\Debug\Log.Domain.dll
 D:\projetos\Biblioteca\src\Log.Domain\obj\Debug\Log.Domain.pdb
-D:\projetos\Biblioteca\src\Log.Domain\obj\Debug\Log.Domain.csprojAssemblyReference.cache

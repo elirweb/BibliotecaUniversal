@@ -6,11 +6,11 @@ namespace Usuario.Application.ViewModel
 {
     public class Usuario
     {
-        [Required(ErrorMessage ="Favor informar Nome")]
+    
         public string Nome { get;  set; }
-        [Required(ErrorMessage = "Favor informar Login")]
+      
         public string Login { get;  set; }
-        [Required(ErrorMessage = "Favor informar Senha")]
+       
         public string Senha { get;  set; }
         [Required(ErrorMessage = "Favor informar Confirma Senha")]
         [Compare("Senha",ErrorMessage ="Senha informada não está correta")]

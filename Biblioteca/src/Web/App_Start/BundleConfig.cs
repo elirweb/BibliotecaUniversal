@@ -8,14 +8,14 @@ namespace Web
         // For more information on bundling, visit http://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
-            bundles.Add(new StyleBundle("~/Content/vendor").Include(
-                "~/Content/vendor/bootstrap/css/bootstrap.min.css",
-                "~/Content/vendor/font-awesome/css/font-awesome.min.css",
-                "~/Content/vendor/datatables/dataTables.bootstrap4.css"
-                ));
-
+           
             bundles.Add(new StyleBundle("~/Content/css").
-                Include("~/Content/css/sb-admin.css"));
+                Include("~/Content/css/mp-theme.min.css"
+                //"~/Content/css/custom.css",
+                //"~/Content/css/layout.css",
+                //"~/Content/css/meuspedidos.css"
+                //
+                ));
 
             bundles.Add(new ScriptBundle("~/Content/vendor/jquery").
                 Include("~/Content/vendor/jquery/jquery.min.js"
@@ -39,7 +39,9 @@ namespace Web
             bundles.Add(new ScriptBundle("~/Scripts/js").
                 Include("~/Scripts/js/sb-admin.min.js", 
                 "~/Scripts/js/sb-admin-datatables.min.js",
-                "~/Scripts/js/sb-admin-charts.min.js"));
+                "~/Scripts/js/sb-admin-charts.min.js",
+                "~/Scripts/js/util.js"
+                ));
 
             
            
@@ -53,8 +55,9 @@ namespace Web
                  "~/Scripts/angular/service/AuthenticaServiceAdm.js",
                  "~/Scripts/angular/service/biblioteca-service.js",
                  "~/Scripts/angular/controller/AuthCtrl.js",
-                 "~/Scripts/angular/controller/AuthCtrlAdm.js",
-                 "~/Scripts/angular/controller/biblioteca.js"
+                 "~/Scripts/angular/controller/AuthAdmCtrl.js",
+                 "~/Scripts/angular/controller/BibliotecaCtrl.js",
+                    "~/Scripts/angular/controller/UsuarioCtrl.js"
                  ));
 
               

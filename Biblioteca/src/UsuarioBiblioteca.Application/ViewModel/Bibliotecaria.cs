@@ -10,28 +10,29 @@ namespace UsuarioBiblioteca.Application.ViewModel
     public class Bibliotecaria
     {
         public Guid Id { get; set; }
-        
+
+        [Required(ErrorMessage = "Favor informar Razão Social")]
         [Display(Name ="Razão Social")]
-        [Required(ErrorMessage ="Favor informar Razão Social")]
         public string RazaoSocial { get;  set; }
+
+        [Required(ErrorMessage = "Favor informar Cnpj")]
         [Display(Name ="Cnpj")]
-        [Required(ErrorMessage ="Favor informar Cnpj")]
         public string Cnpj { get;  set; }
         [Required(ErrorMessage ="Favor informar o Usuário")]
         public string Usuario { get;  set; }
 
-        [Display(Name ="Senha")]
         [Required(ErrorMessage = "Favor informar Senha")]
+        [Display(Name ="Senha")]
         public string Senha { get;  set; }
         [Display(Name ="Confirmar Senha")]
         [Required(ErrorMessage = "Favor informar Confirma Senha")]
         [System.ComponentModel.DataAnnotations.Compare("Senha", ErrorMessage = "Senha informada não está correta")]
         public string ConfirmaSenha { get;  set; }
-        [Display(Name ="Email")]
         [EmailAddress(ErrorMessage = "Email inválido")]
+        [Display(Name ="Email")]
         public string Email { get;  set; }
-        [Display(Name ="Confirmar Email")]
         [Required(ErrorMessage = "Favor informar Confirmar Email")]
+        [Display(Name ="Confirmar Email")]
         [System.ComponentModel.DataAnnotations.Compare("Email", ErrorMessage = "Senha informada não está correta")]
 
         public string ConfirmEmail { get; set; }
@@ -41,10 +42,10 @@ namespace UsuarioBiblioteca.Application.ViewModel
         
         [Display(Name ="Situacao")]
        public string LabelSituacao { get; set; } 
-        [Required(ErrorMessage ="Favor informar a imagem")]
+      
 
         [Display(Name ="Imagem")]
-        public HttpPostedFileBase Imagem { get;  set; }
+        public string Imagem { get;  set; }
         public string Error { get; set; }
         public List<string> ListaErros { get; set; }
         public Bibliotecaria()
