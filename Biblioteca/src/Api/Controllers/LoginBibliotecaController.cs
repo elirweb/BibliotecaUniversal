@@ -18,7 +18,7 @@ namespace Api.Controllers
 
     public class LoginBibliotecaController : ApiController
     {
-
+        private Biblioteca.Core.Domain.Util.AuthenticarUsuario _util = new AuthenticarUsuario();
         private readonly UsuarioBiblioteca.Application.Interfaces.IAdministrador admapp;
         public LoginBibliotecaController(UsuarioBiblioteca.Application.Interfaces.IAdministrador a)
         {
@@ -34,15 +34,22 @@ namespace Api.Controllers
                 Login = login,
                 Senha = senha
             };
-            HttpClient client = null;
-            HttpResponseMessage resp = new HttpResponseMessage();
-            var retorno = string.Empty;
             var _accesstoken = new List<Authenticacao>();
-
             if (admapp.Authenticar(b))
-            {
+                _accesstoken = _util.Authenticar(ConfigurationManager.AppSettings["url_segura"], login, senha);
+            if (_accesstoken == null)
+                _accesstoken.Add(new Authenticacao { access_token = "Usuário ou senha inválido", token_type = "error" });
 
-                using (client = new HttpClient())
+            return _accesstoken;
+
+
+        }
+
+    }
+}
+
+    /*
+       using (client = new HttpClient())
                 {
 
                     client.BaseAddress = new Uri(ConfigurationManager.AppSettings["url_segura"]);
@@ -69,9 +76,5 @@ namespace Api.Controllers
             return _accesstoken;
 
         }
-
-
-
-
-    }
-}
+     */
+       

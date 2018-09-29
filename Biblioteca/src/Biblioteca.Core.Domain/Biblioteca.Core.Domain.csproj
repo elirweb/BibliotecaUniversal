@@ -71,6 +71,7 @@
     <Compile Include="obj\Release\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Util\Authenticacao.cs" />
+    <Compile Include="Util\AuthenticarUsuario.cs" />
     <Compile Include="Util\Descriptografar.cs" />
     <Compile Include="Util\Criptografia.cs" />
     <Compile Include="Util\DisposeElement.cs" />

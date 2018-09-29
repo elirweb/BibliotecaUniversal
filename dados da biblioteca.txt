@@ -1,0 +1,96 @@
+   @using (Html.BeginForm("", "", FormMethod.Post, new {@name= "FormCadastro",  @id = "FormCadastro", @ng_controller = "biblioctrl", enctype = "multipart/form-data" }))
+            {
+
+                <span style="text-align: center" class="text-danger">{{MsgRetorno}}</span>
+                @Html.AntiForgeryToken()
+                <div class="form-group">
+                    @Html.LabelFor(model => model.RazaoSocial)
+                    @Html.TextBoxFor(model => model.RazaoSocial, new { @type = "text", @class = "form-control", @ng_model = "RazaoSocial", @placeholder = "Razão Social", @ng_required = true })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Usuario)
+                    @Html.TextBoxFor(c => c.Usuario, new { @type = "text", @class = "form-control", @ng_model = "Usuario", @placeholder = "Seu Usuario" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Senha)
+                    @Html.TextBoxFor(c => c.Senha, new { @type = "password", @class = "form-control", @ng_model = "Senha", @placeholder = "Sua senha" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.ConfirmaSenha)
+                    @Html.TextBoxFor(c => c.ConfirmaSenha, new { @type = "password", @class = "form-control", @placeholder = "Confirmar senha" })
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Email)
+                    @Html.TextBoxFor(c => c.Email, new { @type = "email", @class = "form-control", @ng_model = "Email", @placeholder = "Sua Email" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.ConfirmEmail)
+                    @Html.TextBoxFor(c => c.ConfirmEmail, new { @type = "email", @class = "form-control", @placeholder = "Confirmação do Email" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Cnpj)
+                    @Html.TextBoxFor(c => c.Cnpj, new { @type = "text", @id = "Cnpj", @class = "form-control", @ng_model = "Cnpj", @placeholder = "Seu Cnpj" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.LabelSituacao)
+                    @Html.DropDownListFor(model => model.LabelSituacao, new SelectList(Model._liststatus, "Value", "Text"), "Selecione...", new { @class = "form-control", @ng_model = "sit" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Imagem)
+                    <input type="file" name="file" id="file" />
+                </div>
+                <div class="form-group">
+                    <button type="button" id="btnbotao" class="btn-dark" ng-disabled="FormCadastro.RazaoSocial.$invalid && FormCadastro.RazaoSocial.$dirty">Registrar-se</button>
+                    @*ng-click="ProcessarBotao('btnbotao','Aguarde....');" file-on-change="InputChange" *@
+                </div>
+
+            }
+
+
+
+
+=====================================
+layout biblioteca
+<body class="fixed-nav sticky-footer bg-dark" id="page-top">
+    @Html.Partial("~/Views/Shared/biblioteca/_Biblioteca.cshtml")
+    <div class="content-wrapper">
+        <div class="container-fluid">
+            @RenderBody()
+        </div>
+
+    </div>
+    <div>
+    </div>
+    <footer class="sticky-footer">
+        <div class="container">
+            <div class="text-center">
+                <small>@DateTime.Now.Date.ToString("dd/MM/yyyy") Elirweb</small>
+            </div>
+        </div>
+    </footer>
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fa fa-angle-up"></i>
+    </a>
+    <!-- Logout Modal caixas do modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content" ng-controller="authctrladm">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Pronto para partir?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Selecione "Sair" abaixo se você estiver pronto para terminar sua sessão atual.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+                    <a class="btn btn-primary" ng-click="Logout();">Sair</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

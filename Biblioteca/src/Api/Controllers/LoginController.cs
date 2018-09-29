@@ -17,7 +17,7 @@ namespace Api.Controllers
     
     public class LoginController : ApiController
     {
-
+        private Biblioteca.Core.Domain.Util.AuthenticarUsuario _util = new AuthenticarUsuario();
         private readonly IUsuario usuarioapp;
         public LoginController(IUsuario usu) 
         {
@@ -26,22 +26,33 @@ namespace Api.Controllers
 
         [AcceptVerbs("GET")]
         [Route("authenticar/{login}/{senha}")]
-        public List<Authenticacao> Authenticacacao([FromUri]string login,[FromUri]string senha)
+        public List<Authenticacao> Authenticacacao([FromUri]string login, [FromUri]string senha)
         {
-            var usu = new Usuario.Application.ViewModel.Usuario() {
+            var usu = new Usuario.Application.ViewModel.Usuario()
+            {
                 Login = login,
                 Senha = senha
             };
-            HttpClient client = null;
-            HttpResponseMessage resp = new HttpResponseMessage();
-            var retorno = string.Empty;
+
             var _accesstoken = new List<Authenticacao>();
             if (usuarioapp.Authenticar(usu))
-            {
+                _accesstoken = _util.Authenticar(ConfigurationManager.AppSettings["url_segura"], login, senha);
+            if (_accesstoken == null)
+                _accesstoken.Add(new Authenticacao { access_token = "Usuário ou senha inválido", token_type = "error" });
 
-               
+            return _accesstoken;
+        }
+
+
+
+
+    }
+}
+
+
+/*
+    
                 using (client = new HttpClient()) {
-
                         client.BaseAddress = new Uri(ConfigurationManager.AppSettings["url_segura"]);
                         client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
                         resp = client.PostAsync("api/security/token", new StringContent("grant_type=password&username=" + usu.Login + "&password=" + usu.Senha, Encoding.UTF8, "application/json")).Result;
@@ -65,12 +76,4 @@ namespace Api.Controllers
             else
                 _accesstoken.Add(new Authenticacao { access_token = "Usuário ou senha inválido", token_type = "error" });
 
-            return _accesstoken;
-
-        }
-
-      
-
-        
-    }
-}
+     */
