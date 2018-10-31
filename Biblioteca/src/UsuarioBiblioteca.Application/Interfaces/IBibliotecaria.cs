@@ -4,7 +4,8 @@ namespace UsuarioBiblioteca.Application.Interfaces
 {
     public interface IBibliotecaria
     {
-        ViewModel.Bibliotecaria Adicionar(Bibliotecaria biblio);
+        void Adicionar(Bibliotecaria biblio);
+        void UpdateBiblioteca(Bibliotecaria update);
        
     }
 }

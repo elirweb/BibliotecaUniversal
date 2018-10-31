@@ -9,5 +9,7 @@ namespace UsuarioBiblioteca.Domain.Interfaces.IRepositorios
     public interface IRepositorioEndereco
     {
         void Adicionar(Entidades.Endereco endereco);
+        void Atualizar(Entidades.Endereco endereco);
+         
     }
 }

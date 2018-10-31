@@ -39,6 +39,7 @@ namespace UsuarioBiblioteca.Application.AppActions
                 {
                     adm.ListaErros.Add(erro);
                 }
+                Notificacao = null;
             }
             return adm;
         }

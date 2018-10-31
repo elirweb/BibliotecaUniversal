@@ -1,40 +1,28 @@
-﻿using Biblioteca.Core.Domain.Helper;
+﻿using ELIR =  Biblioteca.Core.Domain.Helper;
 
 namespace Usuario.Data.Repositorio
 {
     public class RepositorioUsuario : Biblioteca.Core.Domain.Util.DisposeElement, Domain.Interfaces.Repositorios.IRepositorioUsuario
     {
-        private DbHelper helper = new DbHelper();
-        private readonly Contexto.Contexto contexto;
+        private ELIR.DbHelper _helper = new ELIR.DbHelper();
+        private readonly Contexto.Contexto _contexto;
         public RepositorioUsuario(Contexto.Contexto coc)
         {
-            contexto = coc;
+            _contexto = coc;
         }
         public void Adicionar(Domain.Entidade.Usuario usuario)
         {
-            contexto.Usuario.Add(usuario);
+            _contexto.Usuario.Add(usuario);
            
         }
 
         public bool AlteracaoSenha(string email,string senha)
         {
-            /*
-            var cn = contexto.Database.Connection;
-            var retorno = false;
-            var query = $"SELECT Senha FROM Usuario WHERE Email = '{email}'  ";
-            var obj = cn.ExecuteScalar(query);
-            if (obj != null)
-            {
-                var senha_nova = new Biblioteca.Core.Domain.ValueObjects.Senha(senha);
-
-                cn.Execute($"UPDATE USUARIO SET Senha= '{senha_nova.CodigoSenha}' WHERE Email = '{email}' ");
-                retorno = true;
-            }
-            */
-            var obj = helper.ExecuteScalar($"SELECT Senha FROM Usuario WHERE Email = '{email}'  ", contexto.Database.Connection);
+          
+            var obj = _helper.ExecuteScalar($"SELECT Senha FROM Usuario WHERE Email = '{email}'  ", _contexto.Database.Connection);
             if(obj != null) {
                 var senha_nova = new Biblioteca.Core.Domain.ValueObjects.Senha(senha);
-                helper.Execute($"UPDATE USUARIO SET Senha= '{senha_nova.CodigoSenha}' WHERE Email = '{email}' ", contexto.Database.Connection);
+                _helper.Execute($"UPDATE USUARIO SET Senha= '{senha_nova.CodigoSenha}' WHERE Email = '{email}' ", _contexto.Database.Connection);
                 return true;
             }
             return false;
@@ -42,15 +30,8 @@ namespace Usuario.Data.Repositorio
 
         public bool Authenticar(Domain.Entidade.Usuario usuario)
         {
-            /*
-            var cn = contexto.Database.Connection;
-            var query = $"SELECT Login,Senha FROM Usuario WHERE Login = '{usuario.Login}' and Senha= '{usuario.Senha.CodigoSenha }'  ";
-            var obj = cn.ExecuteScalar(query);
-            if (obj != null)
-                return true;
-            return false;
-            */
-            var obj = helper.ExecuteScalar($"SELECT Login,Senha FROM Usuario WHERE Login = '{usuario.Login}' and Senha= '{usuario.Senha.CodigoSenha }'  ", contexto.Database.Connection);
+           
+            var obj = _helper.ExecuteScalar($"SELECT Login,Senha FROM Usuario WHERE Login = '{usuario.Login}' and Senha= '{usuario.Senha.CodigoSenha }'  ", _contexto.Database.Connection);
             if (obj != null)
                 return true;
             return false;
@@ -58,15 +39,8 @@ namespace Usuario.Data.Repositorio
 
         public bool cpfunico(Domain.Entidade.Usuario usuario)
         {
-            /* 
-            var cn = contexto.Database.Connection;
-            var query = $"SELECT Cpf FROM Usuario WHERE Cpf = '{usuario.Cpf.Codigo}' ";
-             var obj = cn.ExecuteScalar(query);
-             if (obj != null)
-                 return true;
-             return false;
-             */
-            var obj = helper.ExecuteScalar($"SELECT Cpf FROM Usuario WHERE Cpf = '{usuario.Cpf.Codigo}' ", contexto.Database.Connection);
+            
+            var obj = _helper.ExecuteScalar($"SELECT Cpf FROM Usuario WHERE Cpf = '{usuario.Cpf.Codigo}' ", _contexto.Database.Connection);
             if (obj != null)
                 return true;
             return false;
@@ -74,15 +48,8 @@ namespace Usuario.Data.Repositorio
 
         public bool loginunico(Domain.Entidade.Usuario usuario)
         {
-            /*
-            var cn = contexto.Database.Connection;
-            var query = $"SELECT Login FROM Usuario WHERE Login = '{usuario.Login}' ";
-            var obj = cn.ExecuteScalar(query);
-            if (obj != null)
-                return true;
-            return false;
-            */
-            var obj = helper.ExecuteScalar($"SELECT Login FROM Usuario WHERE Login = '{usuario.Login}' ", contexto.Database.Connection);
+           
+            var obj = _helper.ExecuteScalar($"SELECT Login FROM Usuario WHERE Login = '{usuario.Login}' ", _contexto.Database.Connection);
             if (obj != null)
                 return true;
             return false;
@@ -90,15 +57,8 @@ namespace Usuario.Data.Repositorio
 
         public bool RecuperarSenha(string email)
         {
-            /*
-            var cn = contexto.Database.Connection;
-            var query = $"SELECT Email FROM Usuario WHERE Email = '{email}' ";
-            var obj = cn.ExecuteScalar(query);
-            if (obj != null)
-                return true;
-            return false;
-            */
-            var obj = helper.ExecuteScalar($"SELECT Email FROM Usuario WHERE Email = '{email}' ", contexto.Database.Connection);
+           
+            var obj = _helper.ExecuteScalar($"SELECT Email FROM Usuario WHERE Email = '{email}' ", _contexto.Database.Connection);
             if (obj != null)
                 return true;
             return false;

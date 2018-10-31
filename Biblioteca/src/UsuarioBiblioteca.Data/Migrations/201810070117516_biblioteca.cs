@@ -3,7 +3,7 @@ namespace UsuarioBiblioteca.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class UsuarioBibioteca : DbMigration
+    public partial class biblioteca : DbMigration
     {
         public override void Up()
         {

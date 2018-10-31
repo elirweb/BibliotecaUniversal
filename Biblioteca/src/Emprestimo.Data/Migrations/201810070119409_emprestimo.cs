@@ -3,7 +3,7 @@ namespace Emprestimo.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class EmprestimoData : DbMigration
+    public partial class emprestimo : DbMigration
     {
         public override void Up()
         {

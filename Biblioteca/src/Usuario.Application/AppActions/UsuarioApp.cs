@@ -38,6 +38,7 @@ namespace Usuario.Application.AppActions
                 {
                     usuario.ListaErros.Add(erro);
                 }
+                Notificacao = null;
             }
             return usuario;
         }

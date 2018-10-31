@@ -14,6 +14,8 @@ namespace UsuarioBiblioteca.Domain.Interfaces.IRepositorios
         bool EmailUnico(Entidades.Bibliotecaria bibliotecaria);
         bool LoginUnico(Bibliotecaria model);
         bool Authenticar(Bibliotecaria bi);
+        void Atualizar(Bibliotecaria bi);
 
+        object DadosBibliotecaria(string parameter);
     }
 }

@@ -28,28 +28,28 @@ namespace UsuarioBiblioteca.Application.AppActions
             reg = log;
         }
 
-        public void add(Livro lv, string token, out string retorno)
-        {
-            var data = JsonConvert.SerializeObject(lv);
+        //public void add(Livro lv, string token, out string retorno)
+        //{
+        //    var data = JsonConvert.SerializeObject(lv);
       
-            retorno = string.Empty;
+        //    retorno = string.Empty;
 
-            using (client = new HttpClient())
-            {
-                client.BaseAddress = new Uri(ConfigurationManager.AppSettings["urlweb"]);
-                client.DefaultRequestHeaders.Add("Bearer ", token);
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-                response = client.PostAsync("biblioteca/Cadastro/registrar-livro/", new StringContent(data, Encoding.UTF8, "application/json")).Result;
-                var result = JsonConvert.SerializeObject(response.Content.ReadAsStringAsync().Result);
-                if (response.StatusCode.Equals(HttpStatusCode.OK))
-                    retorno = "ok";
-                else
-                    retorno = "erro";
-            }
+        //    using (client = new HttpClient())
+        //    {
+        //        client.BaseAddress = new Uri(ConfigurationManager.AppSettings["urlweb"]);
+        //        client.DefaultRequestHeaders.Add("Bearer ", token);
+        //        client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+        //        response = client.PostAsync("biblioteca/Cadastro/registrar-livro/", new StringContent(data, Encoding.UTF8, "application/json")).Result;
+        //        var result = JsonConvert.SerializeObject(response.Content.ReadAsStringAsync().Result);
+        //        if (response.StatusCode.Equals(HttpStatusCode.OK))
+        //            retorno = "ok";
+        //        else
+        //            retorno = "erro";
+        //    }
 
-        }
+        //}
 
-        public ViewModel.Livro Adicionar(ViewModel.Livro lv)
+        public void Adicionar(ViewModel.Livro lv)
         {
 
             if (PossuiConformidade(new Domain.Validacao.LivroAptoParaCadastro(repositorio, reg)
@@ -70,7 +70,12 @@ namespace UsuarioBiblioteca.Application.AppActions
                     lv.ListaErros.Add(erro);
                 }
             }
-            return lv;
+           
+        }
+
+        public void UpdateLivro(Livro lv)
+        {
+            throw new NotImplementedException();
         }
     }
 }

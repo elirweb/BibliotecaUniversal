@@ -3,6 +3,7 @@
     var Soma;
     var Resto;
     Soma = 0;
+    strCPF = strCPF.replace(/[^\d]+/g, '');
 
     if (strCPF == "00000000000") return false;
 

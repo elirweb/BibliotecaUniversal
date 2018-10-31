@@ -23,29 +23,29 @@ namespace UsuarioBiblioteca.Application.AppActions
             repositorio = end;
         }
 
-        public void Add(Endereco end, Bibliotecaria bi, string token,out string retorno)
-        {
-            var data = JsonConvert.SerializeObject(bi);
-            var dta = JsonConvert.SerializeObject(end);
-            retorno = string.Empty;
+        //public void Add(Endereco end, Bibliotecaria bi, string token,out string retorno)
+        //{
+        //    var data = JsonConvert.SerializeObject(bi);
+        //    var dta = JsonConvert.SerializeObject(end);
+        //    retorno = string.Empty;
 
-            using (client = new HttpClient())
-            {
-                client.BaseAddress = new Uri(ConfigurationManager.AppSettings["urlweb"]);
-                client.DefaultRequestHeaders.Add("Bearer ", token);
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-                response = client.PostAsync("biblioteca/Cadastro/registrar-biblioteca/", new StringContent(data, Encoding.UTF8, "application/json")).Result;
-                var result = JsonConvert.SerializeObject(response.Content.ReadAsStringAsync().Result);
-                if (response.StatusCode.Equals(HttpStatusCode.OK)) 
-                    resp2 = client.PostAsync("biblioteca/Cadastro/registrar-endereco/", new StringContent(dta, Encoding.UTF8, "application/json")).Result;
+        //    using (client = new HttpClient())
+        //    {
+        //        client.BaseAddress = new Uri(ConfigurationManager.AppSettings["urlweb"]);
+        //        client.DefaultRequestHeaders.Add("Bearer ", token);
+        //        client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+        //        response = client.PostAsync("biblioteca/Cadastro/registrar-biblioteca/", new StringContent(data, Encoding.UTF8, "application/json")).Result;
+        //        var result = JsonConvert.SerializeObject(response.Content.ReadAsStringAsync().Result);
+        //        if (response.StatusCode.Equals(HttpStatusCode.OK)) 
+        //            resp2 = client.PostAsync("biblioteca/Cadastro/registrar-endereco/", new StringContent(dta, Encoding.UTF8, "application/json")).Result;
 
-                if (resp2.StatusCode.Equals(HttpStatusCode.OK) && response.StatusCode.Equals(HttpStatusCode.OK))
-                    retorno = "ok";
-                else
-                    retorno = "erro";
-            }
+        //        if (resp2.StatusCode.Equals(HttpStatusCode.OK) && response.StatusCode.Equals(HttpStatusCode.OK))
+        //            retorno = "ok";
+        //        else
+        //            retorno = "erro";
+        //    }
 
-        }
+        //}
 
         public void Adicionar(Endereco endereco)
         {
@@ -53,6 +53,11 @@ namespace UsuarioBiblioteca.Application.AppActions
             Commit();
             emailuser.SejaBemVindo("elirweb@gmail.com", endereco.Id.ToString(), "Portal Biblioteca Universal", "Olá " + endereco.Id+ " Sejá bem vindo ao maior portal da américa latina");
 
+        }
+
+        public void UpdateEndereco(Endereco endereco)
+        {
+            throw new NotImplementedException();
         }
     }
 }

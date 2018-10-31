@@ -1,5 +1,5 @@
 ﻿
-biblioteca.controller('authctrl', ['$scope', 'authService', '$window', function ($scope, authService, $window) {
+biblioteca.controller('authctrl', ['$scope', 'authService', '$window', '$rootScope', function ($scope, authService, $window, $rootScope) {
     $scope.Logar = function () {
        
         authService.Authenticar($scope.Login, $scope.Senha)
@@ -7,7 +7,7 @@ biblioteca.controller('authctrl', ['$scope', 'authService', '$window', function 
                 
                 angular.forEach(response.data, function (value, key) {
                     if (value.token_type === "error") { $scope.MsgRetorno = value.access_token; }
-                    else { localStorage.setItem('token', value.access_token); location.href = "../Home/Index"; }
+                    else { localStorage.setItem('token', value.access_token); $rootScope.Roles="Usuario" ;location.href = "../Home/Index"; }
                 })
                 document.getElementById("btnbotao").innerHTML = "Acessar";
             }).catch(function (response) {

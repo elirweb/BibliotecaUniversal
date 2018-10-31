@@ -1,8 +1,10 @@
 ﻿using Biblioteca.Core.Domain.Util;
 using Dapper;
 using System;
+using System.Collections.Generic;
 using System.Data.Common;
 using System.Data.SqlClient;
+using System.Linq;
 
 namespace Biblioteca.Core.Domain.Helper
 {
@@ -36,6 +38,7 @@ namespace Biblioteca.Core.Domain.Helper
             try
             {
                 cn.Execute(sql);
+                
             }
             catch (SqlException f)
             {
@@ -52,6 +55,12 @@ namespace Biblioteca.Core.Domain.Helper
             {
                 cn.Close();
             }
+        }
+
+        public IEnumerable<object> ExecuteList(string sql, string parameter, DbConnection cn)
+        {
+            yield return cn.Query<object>(sql, new { parameter }).AsQueryable();
+
         }
 
 

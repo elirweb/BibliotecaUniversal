@@ -7,18 +7,18 @@ namespace Web.Controllers
 {
     public class BibliotecaController : Controller
     {
-        private readonly IBibliotecaria bibliotecaria;
-        private readonly IEndereco endereco;
-        private readonly ILivro livro; 
+        private readonly IBibliotecaria _bibliotecaria;
+        private readonly IEndereco _endereco;
+        private readonly ILivro _livro; 
         private List<string> erros = new List<string>();
-        private Biblioteca.Core.Domain.Foto.HelperFoto foto = new Biblioteca.Core.Domain.Foto.HelperFoto();
+        private Biblioteca.Core.Domain.Foto.HelperFoto _foto = new Biblioteca.Core.Domain.Foto.HelperFoto();
         private string retorno = string.Empty;
 
         public BibliotecaController(IBibliotecaria bibli, IEndereco en,ILivro lv)
         {
-            bibliotecaria = bibli;
-            endereco = en;
-            livro = lv;
+            _bibliotecaria = bibli;
+            _endereco = en;
+            _livro = lv;
 
         }
         // GET: Biblioteca
@@ -35,35 +35,14 @@ namespace Web.Controllers
         }
         [HttpPost]
         public ActionResult RespostaCadastro(FormCollection model) {
+            //os dados vão vim e chamar a api 
+            // 1 gravar a foto
+            //gravar os dados em uma sessão 
 
-            //try
-            //{
-            //    bibliotecaria.Adicionar(model);
-            //    var ret = foto.ArquivarFoto(model.Imagem);
-            //    var bibli = new List<UsuarioBiblioteca.Application.ViewModel.Bibliotecaria>();
-            //    bibli.Add(model);
-
-            //    if (model.ListaErros.Count > 0)
-            //    {
-            //        foreach (var erro in model.ListaErros)
-            //            erros.Add(erro);
-
+            
             return Json(new { Msg = erros }, JsonRequestBehavior.AllowGet);
-        //}
-        //    else if (!ret)
-        //    {
-        //        erros.Add("Erro no envio da imagem");
-        //        return Json(new { Msg = erros }, JsonRequestBehavior.AllowGet);
-        //    }
-        //    TempData["BiblioDados"] = bibli;
-        //    return Json(new { Msg = "Dados enviados com sucesso" }, JsonRequestBehavior.AllowGet);
-
-        //}
-        //catch (Exception f)
-        //{
-        //    return Json(new { Msg = f.InnerException }, JsonRequestBehavior.AllowGet);
-        //}
-
+        
+        
     }
 
         public ActionResult Endereco()
@@ -94,13 +73,9 @@ namespace Web.Controllers
                         
                     };
                     end.Bibliotecaria.Id = b.Id;
-                    endereco.Add(end,b, form["token"], out retorno);
-                    if (retorno.Equals("erro"))
-                        ModelState.AddModelError("Error", retorno);
-                    else {
-                            TempData.Remove("BiblioDados");
-                            TempData["msgSucesso"] = "Dados Gravado com sucesso";
-                    }
+                    //gravar os dados na api passando o endereço e a biblioteca
+
+                    
                     return View();
                 }
             }
@@ -119,13 +94,9 @@ namespace Web.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Livro(UsuarioBiblioteca.Application.ViewModel.Livro lv, FormCollection form) {
-            
-            if (ModelState.IsValid)
-                 livro.add(lv, form["token"], out retorno);
-            else
-                ModelState.AddModelError("Error", retorno);
-            return View();
+        public ActionResult Livro( FormCollection form) {
+            //gravar os dados na api 
+             return View();
         } 
 
         

@@ -8,7 +8,7 @@ using UsuarioBiblioteca.Application.Interfaces;
 namespace Api.Controllers
 {
     [Authorize(Roles = "biblioteca")]
-    [RoutePrefix("biblioteca/Cadastro")]
+    [RoutePrefix("biblioteca/Gestao")]
     [EnableCors(origins: "*", headers: "*", methods: "*")] // definindo o cabecalho de origens para receber metodo get 
 
     public class BibliotecaController : ApiController
@@ -16,13 +16,12 @@ namespace Api.Controllers
 
         private readonly IBibliotecaria biblioteca;
         private readonly IEndereco endereco;
-        private readonly ILivro livro; 
-
-        public BibliotecaController(IBibliotecaria bibli, IEndereco end, ILivro lv)
+       
+        public BibliotecaController(IBibliotecaria bibli, IEndereco end)
         {
             biblioteca = bibli;
             endereco = end;
-            livro = lv;
+            
         }
 
         [HttpPost]
@@ -73,19 +72,22 @@ namespace Api.Controllers
             return resposta;
         }
 
-        [HttpPost]
-        [Route("registrar-livro")]
-        public HttpResponseMessage Livro(UsuarioBiblioteca.Application.ViewModel.Livro lv) {
+        
+        
+        [HttpPut]
+        [Route("update-biblioteca")]
+        public HttpResponseMessage UpdateBiblioteca(UsuarioBiblioteca.Application.ViewModel.Bibliotecaria b)
+        {
             var resposta = new HttpResponseMessage();
 
-            if (lv == null)
-                 resposta.RequestMessage.CreateResponse(HttpStatusCode.BadRequest, "Erro no acesso a Api ");
+            if (b == null)
+                resposta.RequestMessage.CreateResponse(HttpStatusCode.BadRequest, "Erro no acesso a Api ");
             else
             {
                 try
                 {
-                    livro.Adicionar(lv);
-                    resposta.RequestMessage.CreateResponse(HttpStatusCode.OK, "Cadastro feito com sucesso");
+                    biblioteca.UpdateBiblioteca(b);
+                    resposta.RequestMessage.CreateResponse(HttpStatusCode.OK, "Atualizacao feito com sucesso");
                 }
                 catch (Exception ex)
                 {
@@ -95,9 +97,30 @@ namespace Api.Controllers
             }
             return resposta;
         }
-        
-        
 
+        [HttpPut]
+        [Route("update-endereco")]
+        public HttpResponseMessage UpdateEndereco(UsuarioBiblioteca.Application.ViewModel.Endereco end)
+        {
+            var resposta = new HttpResponseMessage();
+
+            if (end == null)
+                resposta.RequestMessage.CreateResponse(HttpStatusCode.BadRequest, "Erro no acesso a Api ");
+            else
+            {
+                try
+                {
+                    endereco.UpdateEndereco(end);
+                    resposta.RequestMessage.CreateResponse(HttpStatusCode.OK, "Atualizacao feito com sucesso");
+                }
+                catch (Exception ex)
+                {
+                    resposta.RequestMessage.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
+
+                }
+            }
+            return resposta;
+        }
     }
 
 }

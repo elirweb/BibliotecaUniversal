@@ -1,6 +1,7 @@
 ﻿using Biblioteca.Core.Domain.Validador.Interfaces;
 using System;
 using UsuarioBiblioteca.Application.Handler;
+using UsuarioBiblioteca.Application.Interfaces;
 using UsuarioBiblioteca.Application.ViewModel;
 using UsuarioBiblioteca.Data.UnitOfWork;
 
@@ -22,7 +23,7 @@ namespace UsuarioBiblioteca.Application.AppActions
             reg = log;
         }
 
-        public Bibliotecaria Adicionar(Bibliotecaria bibli)
+        public void Adicionar(Bibliotecaria bibli)
         {
             try
             {
@@ -43,6 +44,7 @@ namespace UsuarioBiblioteca.Application.AppActions
                     {
                         bibli.ListaErros.Add(erro);
                     }
+                    Notificacao = null;
                 }
             }
             catch (Exception e)
@@ -54,9 +56,14 @@ namespace UsuarioBiblioteca.Application.AppActions
                 _disposed.Dispose();
             }
             
-            return bibli;
+            
         }
 
-       
+        public void UpdateBiblioteca(Bibliotecaria update)
+        {
+            throw new NotImplementedException();
+        }
+
+        
     }
 }

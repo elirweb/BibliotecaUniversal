@@ -67,5 +67,7 @@ namespace Biblioteca.Core.Domain.Util
         public string Nome { get; set; }
         public Ufs Uf { get; set; }
 
+       
+
     }
 }

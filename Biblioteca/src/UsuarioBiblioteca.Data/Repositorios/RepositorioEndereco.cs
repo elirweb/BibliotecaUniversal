@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UsuarioBiblioteca.Data.UnitOfWork;
+using UsuarioBiblioteca.Domain.Entidades;
 
 namespace UsuarioBiblioteca.Data.Repositorios
 {
@@ -17,6 +19,11 @@ namespace UsuarioBiblioteca.Data.Repositorios
         public void Adicionar(Domain.Entidades.Endereco endereco)
         {
             _contexto.Endereco.Add(endereco);
+        }
+
+        public void Atualizar(Endereco endereco)
+        {
+            _contexto.Entry(endereco).State = EntityState.Modified;
         }
     }
 }

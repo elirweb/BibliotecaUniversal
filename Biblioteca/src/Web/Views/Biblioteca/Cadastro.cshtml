@@ -1,13 +1,15 @@
 ﻿
 @{
     ViewBag.Title = "Cadastro de Biblioteca";
-    Layout = "~/Views/Shared/_LayoutBiblioteca.cshtml";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 @model UsuarioBiblioteca.Application.ViewModel.Bibliotecaria
 
 <script src="~/Scripts/jquery-1.10.2.min.js"></script>
 <script src="~/Scripts/jquery/jquery-mask.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
 
 <script type="text/javascript">
     $(document).ready(function () {
@@ -20,7 +22,7 @@
 
     @using (Html.BeginForm("", "", FormMethod.Post, new { @name = "FormCadastro", @ng_model = "FormCadastro", @ng_controller = "biblioctrl", @enctype = "multipart/form-data", @class = "form-login", @novalidate = "novalidate" }))
     {
-        <span style="text-align: center" class="text-danger">{{MsgRetorno}}</span>
+       
         @Html.AntiForgeryToken()
         <div class="form-group">
             @Html.TextBoxFor(model => model.RazaoSocial, new { @type = "text", @class = "form-control", @name = "RazaoSocial", @ng_model = "RazaoSocial", @placeholder = "Razão Social", @ng_required = "true" })
@@ -84,7 +86,7 @@
             </span>
         </div>
         <div class="form-group">
-            @Html.DropDownListFor(model => model.LabelSituacao, new SelectList(Model._liststatus, "Value", "Text"), "Selecione...", new { @class = "form-control", @name = "LabelSituacao", @ng_model = "LabelSituacao",@ng_required="true" })
+            @Html.DropDownListFor(model => model.LabelSituacao, new SelectList(Model._liststatus, "Value", "Text"), "Selecione...", new { @class = "form-control", @name = "LabelSituacao", @ng_model = "LabelSituacao", @ng_required = "true" })
         </div>
         <div class="form-group">
             <input type="file" ng-model="arquivo" file-model="arquivo" />
@@ -95,13 +97,13 @@
                     FormCadastro.Usuario.$invalid || FormCadastro.Senha.$invalid ||
                     FormCadastro.ConfirmaSenha.$invalid || FormCadastro.Email.$invalid ||
                     FormCadastro.ConfirmEmail.$invalid || FormCadastro.Cnpj.$invalid
-                    || FormCadastro.LabelSituacao.$invalid 
+                    || FormCadastro.LabelSituacao.$invalid
                   " ng-click="ProcessarBotao('btnbotao','Aguarde....')">
                 Salvar
             </button>
         </div>
     }
 
-   
+
 </div>
 

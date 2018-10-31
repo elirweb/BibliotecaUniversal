@@ -1,7 +1,7 @@
 ﻿
 @{
     ViewBag.Title = "Adm  - Biblioteca";
-    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+    Layout = "~/Views/Shared/_LayoutBiblioteca.cshtml";
 }
 @model UsuarioBiblioteca.Application.ViewModel.Administrador
 
@@ -11,8 +11,8 @@
     @using (Html.BeginForm("Index", "Biblioteca", FormMethod.Post, new { @id = "FormLogin", ng_controller = "authctrladm", @class = "form-login" }))
     {
         @Html.AntiForgeryToken()
-        if (string.IsNullOrEmpty(TempData["msgSucesso"].ToString()))
-        { <span style="text-align: center" class="text-danger">@TempData["msgSucesso"]</span>}  
+        @*if (string.IsNullOrEmpty(TempData["msgSucesso"].ToString()))
+        { <span style="text-align: center" class="text-danger">@TempData["msgSucesso"]</span>}*@  
     <span style="text-align: center" class="text-danger">{{MsgRetorno}}</span><br />
     <div class="form-group">
         @Html.TextBoxFor(c => c.Login, new { @type = "text", ng_model = "Login", @class = "form-control", @placeholder = "Seu Email" })
@@ -25,8 +25,8 @@
     </div>
 }
     <div class="text-center">
-        <a class="d-block small mt-3" href="@Url.Action("Cadastro","Biblioteca")">Criar sua Conta</a>
-        <a class="d-block small" href="@Url.Action("RecuperarSenha","Cadastro")">Esqueçeu sua senha?</a>
+        <a class="d-block small mt-3" href="@Url.Action("CadAdministrador","LoginBiblioteca")">Criar sua Conta</a>
+        <a class="d-block small" href="@Url.Action("RecuperarSenha","LoginBiblioteca")">Esqueçeu sua senha?</a>
     </div>
 </div>
 

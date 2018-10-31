@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Web.Mvc;
 using UsuarioBiblioteca.Application.Interfaces;
 
@@ -7,10 +8,11 @@ namespace Web.Controllers
     public class LoginBibliotecaController : Controller
     {
      
-        private readonly IAdministrador admin;
+        private readonly IAdministrador _admin;
+        private List<string> erros = new List<string>();
         public LoginBibliotecaController(IAdministrador adm)
         {
-            admin = adm;
+            _admin = adm;
         }
         // GET: LoginBiblioteca
         public ActionResult Index()
@@ -24,34 +26,36 @@ namespace Web.Controllers
 
         }
 
-        [ValidateAntiForgeryToken]
-        [HttpPost]
-        public ActionResult CadAdministrador(UsuarioBiblioteca.Application.ViewModel.Administrador adm)
+      
+        public ActionResult RespostaAdm(FormCollection model)
         {
-            if (ModelState.IsValid)
+            try
             {
+                var adm = new UsuarioBiblioteca.Application.ViewModel.Administrador()
+                {
+                    Nome = model["Nome"],
+                    Email = model["Email"],
+                    Senha = model["Senha"],
+                    Login = model["Login"]
+                };
+                _admin.Adicionar(adm);
 
-                var Listbibli = new List<UsuarioBiblioteca.Application.ViewModel.Administrador>();
-                Listbibli.Add(adm);
-                adm = admin.Adicionar(adm);
                 if (adm.ListaErros.Count > 0)
                 {
                     foreach (var erro in adm.ListaErros)
-                        ModelState.AddModelError("Error", erro);
+                        erros.Add(erro);
+                    return Json(new { Msg = erros }, JsonRequestBehavior.AllowGet);
                 }
-                else
-                {
-                    TempData["msgSucesso"] = "Dados cadastrado com sucesso";
-                    return RedirectToAction("Index", "LoginBiblioteca");
-                }
+                return Json(new { Msg = "Dados Cadastrado com sucesso" }, JsonRequestBehavior.AllowGet);
             }
-            else
-                ModelState.AddModelError("Error", "Erro no cadastro de dados do Administrador");
+            catch (Exception f)
+            {
 
-            return View();
+                return Json(new { Msg = f.Message }, JsonRequestBehavior.AllowGet);
+            }
         }
-                
-      
+
+
         public ActionResult RecuperarSenha()
         {
 

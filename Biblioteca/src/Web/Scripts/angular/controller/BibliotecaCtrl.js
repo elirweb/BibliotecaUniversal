@@ -1,8 +1,8 @@
 ﻿
 biblioteca.controller('biblioctrl', ['$scope', 'biblioservi', '$window', function ($scope, biblioservi, $window) {
-    $scope.Registrar = function () {
+    $scope.TokenBiblioteca = localStorage.getItem("token");
 
-        var form = $scope.FormCadastro;
+    $scope.Registrar = function () {
         var fd = new FormData();
         var validCnpj = validarCNPJ($scope.Cnpj);
        
@@ -17,7 +17,7 @@ biblioteca.controller('biblioctrl', ['$scope', 'biblioservi', '$window', functio
             biblioservi.Registrar(fd).
                 then(function (response) {
                     if (response.Msg == "Dados enviados") {
-                        $window.location.href = "/Biblioteca/Endereco/" + localStorage.getItem('token');
+                        $window.location.href = "/Biblioteca/Endereco/";
                     }
                     else {
                         angular.forEach(response.Msg, function (value, key) {
@@ -43,7 +43,7 @@ biblioteca.controller('biblioctrl', ['$scope', 'biblioservi', '$window', functio
     }
 
     $scope.LinkLv = function () {
-        $window.location.href = "/Biblioteca/Livro/" + localStorage.getItem('token');
+        $window.location.href = "/Biblioteca/Livro/";
     }
 
     
@@ -59,6 +59,9 @@ biblioteca.controller('biblioctrl', ['$scope', 'biblioservi', '$window', functio
 
         $scope.FormCadastro.$setPristine();
     }
+
+
+    
 
 }]);
 

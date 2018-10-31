@@ -7,13 +7,13 @@ namespace Emprestimo.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class EmprestimoData : IMigrationMetadata
+    public sealed partial class emprestimo : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(EmprestimoData));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(emprestimo));
         
         string IMigrationMetadata.Id
         {
-            get { return "201808301945578_EmprestimoData"; }
+            get { return "201810070119409_emprestimo"; }
         }
         
         string IMigrationMetadata.Source

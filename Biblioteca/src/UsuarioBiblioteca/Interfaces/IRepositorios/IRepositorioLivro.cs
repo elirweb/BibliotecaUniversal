@@ -1,4 +1,6 @@
-﻿using UsuarioBiblioteca.Domain.Entidades;
+﻿using System;
+using System.Collections.Generic;
+using UsuarioBiblioteca.Domain.Entidades;
 
 namespace UsuarioBiblioteca.Domain.Interfaces.IRepositorios
 {
@@ -10,5 +12,8 @@ namespace UsuarioBiblioteca.Domain.Interfaces.IRepositorios
 
         bool TituloUnico(Livro lv);
         bool EstaAtiva(Livro model);
+        void Atualizar(Livro model);
+        void Excluir(Livro model);
+        IEnumerable<object> DadosLivro(string cnpj);
     }
 }

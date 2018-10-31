@@ -27,7 +27,7 @@ namespace Web
             ViewEngines.Engines.Clear();
             ViewEngines.Engines.Add(new RazorViewEngine());
 
-            if (WebConfigurationManager.ConnectionStrings["Contexto"].ToString().Equals("Data Source=PAX00101;Initial Catalog=BibliotecaUnirversal;User ID=sa;password=123"))
+            if (WebConfigurationManager.ConnectionStrings["Contexto"].ToString().Equals(@"Data Source=LAPTOP-IGEISN1L\SQLEXPRESS;Initial Catalog=BibliotecaUnirversal;User ID=sa;password=elirweb"))
             {
                
                 var nova_string = Biblioteca.Core.Domain.Util.Criptografia.Encriptar(WebConfigurationManager.ConnectionStrings["Contexto"].ToString());

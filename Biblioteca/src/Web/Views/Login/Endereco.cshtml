@@ -8,43 +8,42 @@
 
 <div class="container">
     <div class="card card-login mx-auto mt-5">
-        <div class="card-header">Seu Endereço</div>
+        
         <div class="card-body">
 
-            @using (Html.BeginForm("Endereco", "Login", FormMethod.Post, new { @id = "FormEndereco", @ng_controller = "authctrl" }))
+            @using (Html.BeginForm("Endereco", "Login", FormMethod.Post, new { @id = "FormEndereco", @ng_controller = "authctrl", @class = "form-login" }))
             {
                 <span style="text-align: center">@Html.ValidationSummary(false, "", new { @class = "text-danger" })</span>
                 
                 @Html.AntiForgeryToken()
           
                 <div class="form-group">
-                    @Html.Label("Localidade")
+                
                     @Html.TextBoxFor(c => c.Localidade, new { @type = "text", @class = "form-control", @placeholder = "Sua Localidade" })
                 </div>
 
                 <div class="form-group">
-                    @Html.Label("Bairro")
+                 
                     @Html.TextBoxFor(c => c.Bairro, new { @type = "text", @class = "form-control", @placeholder = "Seu Bairro" })
                 </div>
                 <div class="form-group">
-                    @Html.Label("Numero")
+              
                     @Html.TextBoxFor(c => c.Numero, new { @type = "number", @class = "form-control", @placeholder = "Seu Numero" })
                 </div>
                 <div class="form-group">
-                    @Html.Label("Cidade")
+                 
                     @Html.TextBoxFor(c => c.Cidade, new { @type = "text", @class = "form-control", @placeholder = "Sua Cidade" })
                 </div>
                 <div class="form-group">
-                    @Html.Label("Uf")
+                   
                     <select  id="uf" name="uf" class="form-control" >
                         @foreach (var s in Enum.GetValues(typeof(Biblioteca.Core.Domain.Util.Ufs)))
                         {
-                            <option value="@s">@s</option>
+                            <option value="@s">@s</option>                      
                         }
-                    </select>
-                      </div>
+                    </select></div>
                 <div class="form-group">
-                    <input type="submit" value="Registra-se" class="btn-dark" />
+                    <input  type="submit" id="btnbotao" class="btn btn-xg btn_verde" value="Registrar" />
                 </div>
             }
         </div>

@@ -19,3 +19,15 @@ D:\projetos\Biblioteca\src\Emprestimo.Application\obj\Debug\Emprestimo.Applicati
 D:\projetos\Biblioteca\src\Emprestimo.Application\obj\Debug\Emprestimo.Application.csproj.CopyComplete
 D:\projetos\Biblioteca\src\Emprestimo.Application\obj\Debug\Emprestimo.Application.dll
 D:\projetos\Biblioteca\src\Emprestimo.Application\obj\Debug\Emprestimo.Application.pdb
+C:\projetos\Biblioteca\src\Emprestimo.Application\bin\Debug\Emprestimo.Application.dll
+C:\projetos\Biblioteca\src\Emprestimo.Application\bin\Debug\Emprestimo.Application.pdb
+C:\projetos\Biblioteca\src\Emprestimo.Application\bin\Debug\Emprestimo.Domain.dll
+C:\projetos\Biblioteca\src\Emprestimo.Application\bin\Debug\EntityFramework.dll
+C:\projetos\Biblioteca\src\Emprestimo.Application\bin\Debug\Emprestimo.Domain.pdb
+C:\projetos\Biblioteca\src\Emprestimo.Application\bin\Debug\Emprestimo.Domain.dll.config
+C:\projetos\Biblioteca\src\Emprestimo.Application\bin\Debug\EntityFramework.xml
+C:\projetos\Biblioteca\src\Emprestimo.Application\obj\Debug\Emprestimo.Application.csprojAssemblyReference.cache
+C:\projetos\Biblioteca\src\Emprestimo.Application\obj\Debug\Emprestimo.Application.csproj.CoreCompileInputs.cache
+C:\projetos\Biblioteca\src\Emprestimo.Application\obj\Debug\Emprestimo.Application.csproj.CopyComplete
+C:\projetos\Biblioteca\src\Emprestimo.Application\obj\Debug\Emprestimo.Application.dll
+C:\projetos\Biblioteca\src\Emprestimo.Application\obj\Debug\Emprestimo.Application.pdb

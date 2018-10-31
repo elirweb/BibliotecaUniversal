@@ -55,9 +55,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contexto\Contexto.cs" />
-    <Compile Include="Migrations\201808301944259_UsuarioData.cs" />
-    <Compile Include="Migrations\201808301944259_UsuarioData.Designer.cs">
-      <DependentUpon>201808301944259_UsuarioData.cs</DependentUpon>
+    <Compile Include="Migrations\201810070121142_usuario.cs" />
+    <Compile Include="Migrations\201810070121142_usuario.Designer.cs">
+      <DependentUpon>201810070121142_usuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -81,8 +81,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201808301944259_UsuarioData.resx">
-      <DependentUpon>201808301944259_UsuarioData.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201810070121142_usuario.resx">
+      <DependentUpon>201810070121142_usuario.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

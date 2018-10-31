@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.Entity;
 using Biblioteca.Core.Domain.Helper;
 using UsuarioBiblioteca.Domain.Entidades;
 
@@ -7,22 +8,27 @@ namespace UsuarioBiblioteca.Data.Repositorios
     public class RepositorioBibliotecaria: Biblioteca.Core.Domain.Util.DisposeElement, Domain.Interfaces.IRepositorios.IRepositorioBibliotecaria
     {
       
-        private readonly Contexto.Contexto contexto;
-        private DbHelper helper = new DbHelper();
+        private readonly Contexto.Contexto _contexto;
+        private DbHelper _helper = new DbHelper();
         public RepositorioBibliotecaria(Contexto.Contexto cont)
         {
-            contexto = cont;
+            _contexto = cont;
         }
         
         public void Adicionar(Domain.Entidades.Bibliotecaria bibliotecaria)
         {
 
-            contexto.Bibliotecaria.Add(bibliotecaria);
+            _contexto.Bibliotecaria.Add(bibliotecaria);
+        }
+
+        public void Atualizar(Bibliotecaria bi)
+        {
+            _contexto.Entry(bi).State = EntityState.Modified;
         }
 
         public bool Authenticar(Bibliotecaria bi)
         {
-            var obj = helper.ExecuteScalar($"SELECT Usuario,Senha FROM Bibliotecaria WHERE Usuario = '{bi.Usuario}'  and  Senha = '{bi.Senha}'", contexto.Database.Connection);
+            var obj = _helper.ExecuteScalar($"SELECT Usuario,Senha FROM Bibliotecaria WHERE Usuario = '{bi.Usuario}'  and  Senha = '{bi.Senha}'", _contexto.Database.Connection);
             if (obj != null)
                 return true;
             return false;
@@ -30,15 +36,26 @@ namespace UsuarioBiblioteca.Data.Repositorios
 
         public bool CNPJUnico(Domain.Entidades.Bibliotecaria bibliotecaria)
         {
-            var obj = helper.ExecuteScalar($"SELECT Cnpj FROM Bibliotecaria WHERE Cnpj = '{bibliotecaria.Cnpj.Numero}' ", contexto.Database.Connection);
+            var obj = _helper.ExecuteScalar($"SELECT Cnpj FROM Bibliotecaria WHERE Cnpj = '{bibliotecaria.Cnpj.Numero}' ", _contexto.Database.Connection);
             if (obj != null)
                 return true;
             return false;
         }
-        
+
+        public object DadosBibliotecaria(string parameter)
+        {
+            var query = @"SELECT RazaoSocial,Cnpj,Senha,Email,Situacao,Imagem,Bairro,Numero,
+                        Complemento,Localidade,Uf,DDD,Contato,TipoContat
+                            FROM Bibliotecaria
+                        INNER JOIN Endereco ON Endereco.IdBlioteca = Bibliotecaria.IdBiblioteca
+                        WHERE Cnpj = @parameter";
+
+            return _helper.ExecuteList(query, parameter, _contexto.Database.Connection);
+        }
+
         public bool EmailUnico(Domain.Entidades.Bibliotecaria bibliotecaria)
         {
-            var obj = helper.ExecuteScalar($"SELECT Email FROM Bibliotecaria WHERE Email = '{bibliotecaria.Email.Endereco}' ", contexto.Database.Connection);
+            var obj = _helper.ExecuteScalar($"SELECT Email FROM Bibliotecaria WHERE Email = '{bibliotecaria.Email.Endereco}' ", _contexto.Database.Connection);
             if (obj != null)
                 return true;
             return false;
@@ -48,7 +65,7 @@ namespace UsuarioBiblioteca.Data.Repositorios
 
         public bool LoginUnico(Domain.Entidades.Bibliotecaria bibliotecaria)
         {
-            var obj = helper.ExecuteScalar($"SELECT Usuario FROM Bibliotecaria WHERE Usuario = '{bibliotecaria.Usuario}' ", contexto.Database.Connection);
+            var obj = _helper.ExecuteScalar($"SELECT Usuario FROM Bibliotecaria WHERE Usuario = '{bibliotecaria.Usuario}' ", _contexto.Database.Connection);
             if (obj != null)
                 return true;
             return false;
