@@ -49,7 +49,7 @@ namespace UsuarioBiblioteca.Data.Repositorios
                             FROM Bibliotecaria
                         INNER JOIN Endereco ON Endereco.IdBlioteca = Bibliotecaria.IdBiblioteca
                         WHERE Cnpj = @parameter";
-
+            
             return _helper.ExecuteList(query, parameter, _contexto.Database.Connection);
         }
 
