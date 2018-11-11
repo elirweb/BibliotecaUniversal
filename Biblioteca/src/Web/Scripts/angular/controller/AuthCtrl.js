@@ -7,7 +7,10 @@ biblioteca.controller('authctrl', ['$scope', 'authService', '$window', '$rootSco
                 
                 angular.forEach(response.data, function (value, key) {
                     if (value.token_type === "error") { $scope.MsgRetorno = value.access_token; }
-                    else { localStorage.setItem('token', value.access_token); $rootScope.Roles="Usuario" ;location.href = "../Home/Index"; }
+                    else {
+                        localStorage.setItem('token', value.access_token); localStorage.setItem('modulo', "Usuario");
+                        location.href = "../Usuario/Index";
+                    }
                 })
                 document.getElementById("btnbotao").innerHTML = "Acessar";
             }).catch(function (response) {

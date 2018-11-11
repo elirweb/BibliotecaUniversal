@@ -1,7 +1,7 @@
 ﻿
 @{
     ViewBag.Title = "Cadastro de Biblioteca";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = null;
 }
 
 @model UsuarioBiblioteca.Application.ViewModel.Bibliotecaria
@@ -20,7 +20,7 @@
 <div class="container text-center">
 
 
-    @using (Html.BeginForm("", "", FormMethod.Post, new { @name = "FormCadastro", @ng_model = "FormCadastro", @ng_controller = "biblioctrl", @enctype = "multipart/form-data", @class = "form-login", @novalidate = "novalidate" }))
+    @using (Html.BeginForm("", "", FormMethod.Post, new { @name = "FormCadastro", @ng_model = "FormCadastro", @enctype = "multipart/form-data", @class = "form-login", @novalidate = "novalidate" }))
     {
        
         @Html.AntiForgeryToken()

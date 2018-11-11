@@ -25,7 +25,7 @@ namespace Usuario.Application.AppActions
             
             if (PossuiConformidade(new Domain.Validacao.UsuarioAptoParaCadastro(repousuario, reg)
                 .Validar(Mapper.VewModelToDomain.Usuario(usuario)))) {
-                if (usuario.Id != Guid.Parse("00000000-0000-0000-0000-000000000000"))
+                if (usuario.Id != Guid.Parse(Biblioteca.Core.Domain.Util.UtilObject.guidobject))
                 {
                     repousuario.Adicionar(Mapper.VewModelToDomain.Usuario(usuario));
                     Commit();

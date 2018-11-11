@@ -17,6 +17,8 @@ namespace Web
                 //
                 ));
 
+            bundles.Add(new StyleBundle("~/Content/css/main").Include("~/Content/css/layout.css"));
+
             bundles.Add(new ScriptBundle("~/Content/vendor/jquery").
                 Include("~/Content/vendor/jquery/jquery.min.js"
                 ));
@@ -48,9 +50,11 @@ namespace Web
 
             
              bundles.Add(new ScriptBundle("~/Scripts/angular")
-                 .Include("~/Scripts/angular/angular.min.js"
+                 .Include("~/Scripts/angular/angular.min.js",
+                 "~/Scripts/angular/angular-route.js"
                  , "~/Scripts/angular/module/modulo.js",
                     "~/Scripts/angular/value/config.js",
+                    "~/Scripts/angular/value/route.js",
                  "~/Scripts/angular/service/AuthenticaService.js",
                  "~/Scripts/angular/service/AuthenticaServiceAdm.js",
                  "~/Scripts/angular/service/biblioteca-service.js",

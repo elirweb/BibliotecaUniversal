@@ -1,6 +1,6 @@
 ﻿
 biblioteca.controller('biblioctrl', ['$scope', 'biblioservi', '$window', function ($scope, biblioservi, $window) {
-    $scope.TokenBiblioteca = localStorage.getItem("token");
+    //$scope.TokenBiblioteca = localStorage.getItem("token");
 
     $scope.Registrar = function () {
         var fd = new FormData();

@@ -1,2 +1,3 @@
 ﻿
-var biblioteca = angular.module('biblioteca', []);
+var biblioteca = angular.module('biblioteca', ['ngRoute']);
+

@@ -30,3 +30,4 @@ C:\projetos\Biblioteca\src\Log.Domain\obj\Debug\Log.Domain.csproj.CoreCompileInp
 C:\projetos\Biblioteca\src\Log.Domain\obj\Debug\Log.Domain.csproj.CopyComplete
 C:\projetos\Biblioteca\src\Log.Domain\obj\Debug\Log.Domain.dll
 C:\projetos\Biblioteca\src\Log.Domain\obj\Debug\Log.Domain.pdb
+C:\projetos\Biblioteca\src\Log.Domain\obj\Debug\Log.Domain.csprojAssemblyReference.cache

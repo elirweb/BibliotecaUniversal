@@ -25,7 +25,7 @@ namespace UsuarioBiblioteca.Application.AppActions
             if (PossuiConformidade(new Domain.Validacao.AdministradorAptoParaCadastro(repositorio, reg)
                 .Validar(Mapper.ViewModelToDomain.Administrador(adm))))
             {
-                if (adm.Id != Guid.Parse("00000000-0000-0000-0000-000000000000"))
+                if (adm.Id != Guid.Parse(Biblioteca.Core.Domain.Util.UtilObject.guidobject))
                 {
                     repositorio.Adicionar(Mapper.ViewModelToDomain.Administrador(adm));
                     Commit();

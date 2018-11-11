@@ -30,7 +30,7 @@ namespace UsuarioBiblioteca.Application.AppActions
                 if (PossuiConformidade(new Domain.Validacao.BibliotecaAptoParaCadastro(repositorio, reg)
                 .Validar(Mapper.ViewModelToDomain.Biblioteca(bibli))))
                 {
-                    if (bibli.Id != Guid.Parse("00000000-0000-0000-0000-000000000000"))
+                    if (bibli.Id != Guid.Parse(Biblioteca.Core.Domain.Util.UtilObject.guidobject))
                     {
                         repositorio.Adicionar(Mapper.ViewModelToDomain.Biblioteca(bibli));
                         Commit();

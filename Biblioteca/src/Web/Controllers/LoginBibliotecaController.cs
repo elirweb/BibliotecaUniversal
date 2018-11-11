@@ -17,11 +17,13 @@ namespace Web.Controllers
         // GET: LoginBiblioteca
         public ActionResult Index()
         {
+            ViewBag.TitlePag = "Administrador";
             return View();
         }
 
         public ActionResult CadAdministrador()
         {
+            ViewBag.TitlePag = "Administrador";
             return View();
 
         }
@@ -36,6 +38,7 @@ namespace Web.Controllers
                     Nome = model["Nome"],
                     Email = model["Email"],
                     Senha = model["Senha"],
+                    ConfirmaSenha = model["ConfirmaSenha"],
                     Login = model["Login"]
                 };
                 _admin.Adicionar(adm);
@@ -58,7 +61,7 @@ namespace Web.Controllers
 
         public ActionResult RecuperarSenha()
         {
-
+            ViewBag.TitlePag = "Administrador";
             return View();
         }
 
@@ -66,7 +69,7 @@ namespace Web.Controllers
 
         public ActionResult RedefinirSenha()
         {
-
+            ViewBag.TitlePag = "Administrador";
             return View();
         }
 

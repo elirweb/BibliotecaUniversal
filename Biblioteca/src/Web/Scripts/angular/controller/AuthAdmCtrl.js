@@ -1,7 +1,7 @@
 ﻿biblioteca.controller('authctrladm', ['$scope', 'authServiceadm', '$window', function ($scope, authServiceadm, $window) {
     $scope.LogarAdm = function () {
        
-        authServiceadm.Authenticar($scope.Usuario, $scope.Senha)
+        authServiceadm.Authenticar($scope.Login, $scope.Senha)
             .then(function (response) {
                 angular.forEach(response.data, function (value, key) {
                     if (value.token_type === "error") { $scope.MsgRetorno = value.access_token; }
@@ -42,14 +42,25 @@
         form.append('Nome', $scope.Nome);
         form.append('Login', $scope.Login);
         form.append('Senha', $scope.Senha);
+        form.append('ConfirmaSenha', $scope.ConfirmaSenha);
         form.append('Email', $scope.Email);
 
         
         authServiceadm.RegistrarAdm(form).
         then(function (response) {
-            $scope.Msgerro = response;
+            $scope.MsgRetorno = response.data.Msg;
+
+            if (response.data.Msg == "Dados Cadastrado com sucesso") {
+                $scope.MsgRetorno = "Dados Cadastrado com sucesso";
+            }
+            else {
+                angular.forEach(response.data.Msg, function (value, key) {
+                    $scope.MsgRetorno = value;
+                })
+            }
+
         }).catch(function (response) {
-            $scope.Msgerro = response;
+            $scope.MsgRetorno = response.data.Msg;
             })
 
     };

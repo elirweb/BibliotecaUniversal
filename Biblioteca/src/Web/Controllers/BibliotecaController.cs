@@ -85,8 +85,8 @@ namespace Web.Controllers
             return View();
         }
 
-        public ActionResult Livro(string token) {
-            ViewBag.tk = token;
+        public ActionResult Livro() {
+           
             var model = new UsuarioBiblioteca.Application.ViewModel.Livro();
             model._listlv = model.ListCategoria();
             return View(model);
@@ -97,7 +97,15 @@ namespace Web.Controllers
         public ActionResult Livro( FormCollection form) {
             //gravar os dados na api 
              return View();
-        } 
+        }
+
+        public ActionResult Lista() {
+            return View();
+        }
+
+        public ActionResult DadosBilioteca() {
+            return View();
+        }
 
         
     }       
