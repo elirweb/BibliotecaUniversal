@@ -73,5 +73,7 @@ namespace UsuarioBiblioteca.Test
             Assert.True(retorno.TransacaoId == b.Id);
             _idusuario = retorno.TransacaoId;
         }
+
+       
     }
 }

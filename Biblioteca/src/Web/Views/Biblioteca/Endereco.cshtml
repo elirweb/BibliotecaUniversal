@@ -1,71 +1,66 @@
 ﻿@{
     ViewBag.Title = "Endereco";
-    //Layout = "~/Views/Shared/_Layout.cshtml";
-    Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
 }
 
 @model UsuarioBiblioteca.Application.ViewModel.Endereco
 
-<div class="container">
-    <div class="card card-login mx-auto mt-5">
-        <div class="card-header">Endereço-Biblioteca</div>
-        <div class="card-body">
+<div class="container text-center">
 
-            @using (Html.BeginForm("Endereco", "Biblioteca", FormMethod.Post, new { @id = "FormEndereco" }))
+    @using (Html.BeginForm("Endereco", "Biblioteca", FormMethod.Post, new { @id = "FormEndereco", @class = "form-login" }))
+    {
+        if (ViewBag.Msg != null)
+        {
+            foreach (var erro in ViewBag.Msg)
             {
-                <span style="text-align: center">@Html.ValidationSummary(false, "", new { @class = "text-danger" })</span>
+                <span style="text-align: center"  class = "text-danger" >@erro</span>
 
-                @Html.AntiForgeryToken()
-                <div class="form-group">
-                    @Html.LabelFor(c => c.tipo)
-                    @Html.DropDownListFor(model => model.tipo, new SelectList(Model._listp, "Value", "Text"), "Selecione...", new { @class = "form-control" })
-
-                </div>
-                <div class="form-group">
-                    @Html.LabelFor(c => c.DDD)
-                    @Html.TextBoxFor(c => c.DDD, new { @type = "text", @class = "form-control", @placeholder = "Sua Localidade" })
-                </div>
-                <div class="form-group">
-                    @Html.LabelFor(c => c.Telefone)
-                    @Html.TextBoxFor(c => c.Telefone, new { @type = "text", @class = "form-control", @placeholder = "Sua Localidade" })
-                </div>
-
-                <div class="form-group">
-                    @Html.LabelFor(c => c.Localidade)
-                    @Html.TextBoxFor(c => c.Localidade, new { @type = "text", @class = "form-control", @placeholder = "Sua Localidade" })
-                </div>
-
-                <div class="form-group">
-                    @Html.LabelFor(c => c.Bairro)
-                    @Html.TextBoxFor(c => c.Bairro, new { @type = "text", @class = "form-control", @placeholder = "Seu Bairro" })
-                </div>
-                <div class="form-group">
-                    @Html.LabelFor(c => c.Numero)
-                    @Html.TextBoxFor(c => c.Numero, new { @type = "number", @class = "form-control", @placeholder = "Seu Numero" })
-                </div>
-                <div class="form-group">
-                    @Html.LabelFor(c => c.Cidade)
-                    @Html.TextBoxFor(c => c.Cidade, new { @type = "text", @class = "form-control", @placeholder = "Sua Cidade" })
-                </div>
-                <div class="form-group">
-                    @Html.LabelFor(c => c.Uf)
-                    <select id="uf" name="uf" class="form-control">
-                        @foreach (var s in Enum.GetValues(typeof(Biblioteca.Core.Domain.Util.Ufs)))
-                        {
-                            <option value="@s">@s</option>
-                        }
-                    </select>
-                </div>
-                <div class="form-group">
-                    <input type="submit" value="Registrar-se"  class="btn-dark" />
-                </div>
             }
+        }
+        <span style="text-align: center">@Html.ValidationSummary(false, "", new { @class = "text-danger" })</span>
+
+        @Html.AntiForgeryToken()
+
+        <div class="form-group">
+            @Html.DropDownListFor(model => model.tipo, new SelectList(Model._listp, "Value", "Text"), "Selecione...", new { @class = "form-control" })
+
+            <div id="t" style="display:none;"></div>
         </div>
-    </div>
+        <div class="form-group">
+            @Html.TextBoxFor(c => c.DDD, new { @type = "text", @class = "form-control", @placeholder = "DDD" })
+        </div>
+        <div class="form-group">
+            @Html.TextBoxFor(c => c.Telefone, new { @type = "text", @class = "form-control", @placeholder = "Telefone" })
+        </div>
+
+        <div class="form-group">
+            @Html.TextBoxFor(c => c.Localidade, new { @type = "text", @class = "form-control", @placeholder = "Sua Localidade" })
+        </div>
+
+        <div class="form-group">
+            @Html.TextBoxFor(c => c.Bairro, new { @type = "text", @class = "form-control", @placeholder = "Seu Bairro" })
+        </div>
+        <div class="form-group">
+            @Html.TextBoxFor(c => c.Numero, new { @type = "number", @class = "form-control", @placeholder = "Seu Numero" })
+        </div>
+        <div class="form-group">
+            @Html.TextBoxFor(c => c.Cidade, new { @type = "text", @class = "form-control", @placeholder = "Sua Cidade" })
+        </div>
+        <div class="form-group">
+            <select id="uf" name="uf" class="form-control">
+                @foreach (var s in Enum.GetValues(typeof(Biblioteca.Core.Domain.Util.Ufs)))
+                {
+                    <option value="@s">@s</option>
+                }
+            </select>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Registrar-se" class="btn btn-xg btn_verde" />
+        </div>
+    }
 </div>
 
 <script src="~/Scripts/jquery-1.10.2.min.js"></script>
 <script src="~/Scripts/jquery.validate.min.js"></script>
 <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
-
-

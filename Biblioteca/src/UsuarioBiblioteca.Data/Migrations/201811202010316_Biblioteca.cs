@@ -3,7 +3,7 @@ namespace UsuarioBiblioteca.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class biblioteca : DbMigration
+    public partial class Biblioteca : DbMigration
     {
         public override void Up()
         {
@@ -26,7 +26,7 @@ namespace UsuarioBiblioteca.Data.Migrations
                     {
                         IdBiblioteca = c.Guid(nullable: false),
                         RazaoSocial = c.String(maxLength: 50, unicode: false),
-                        Cnpj = c.Int(nullable: false),
+                        Cnpj = c.String(),
                         Usuario = c.String(maxLength: 8000, unicode: false),
                         Senha = c.String(maxLength: 8000, unicode: false),
                         Email = c.String(maxLength: 8000, unicode: false),

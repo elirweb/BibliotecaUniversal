@@ -73,3 +73,4 @@ C:\projetos\Biblioteca\test\UsuarioBiblioteca.Test\obj\Debug\UsuarioBiblioteca.T
 C:\projetos\Biblioteca\test\UsuarioBiblioteca.Test\obj\Debug\UsuarioBiblioteca.Test.csproj.CopyComplete
 C:\projetos\Biblioteca\test\UsuarioBiblioteca.Test\obj\Debug\UsuarioBiblioteca.Test.dll
 C:\projetos\Biblioteca\test\UsuarioBiblioteca.Test\obj\Debug\UsuarioBiblioteca.Test.pdb
+C:\projetos\Biblioteca\test\UsuarioBiblioteca.Test\obj\Debug\UsuarioBiblioteca.Test.csprojAssemblyReference.cache

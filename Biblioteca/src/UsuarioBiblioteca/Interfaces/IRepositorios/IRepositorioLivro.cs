@@ -15,5 +15,6 @@ namespace UsuarioBiblioteca.Domain.Interfaces.IRepositorios
         void Atualizar(Livro model);
         void Excluir(Livro model);
         IEnumerable<object> DadosLivro(string cnpj);
+        IEnumerable<object> Biblioteca();
     }
 }

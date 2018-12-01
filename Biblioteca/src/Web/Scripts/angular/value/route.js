@@ -13,10 +13,7 @@
                     templateUrl: '/Biblioteca/Lista',
                     controller: 'biblioctrl'
                 })
-                .when('/biblioteca-dados', {
-                    templateUrl: '/Biblioteca/DadosBilioteca',
-                    controller: 'biblioctrl'
-                })
+                
                 .when('/usuario-dados', {
                     templateUrl: '/Usuario/DadosUsuario',
                     controller: 'biblioctrl'

@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Data.Entity;
 using UsuarioBiblioteca.Domain.Entidades;
+using UsuarioBiblioteca.Domain.Interfaces.IRepositorios;
 
 namespace UsuarioBiblioteca.Data.Repositorios
 {
@@ -25,10 +26,12 @@ namespace UsuarioBiblioteca.Data.Repositorios
             _contexto.Entry(model).State = EntityState.Modified;
         }
 
+        
+
         public IEnumerable<object> DadosLivro(string parameter)
         {
             var query = "SELECT Titulo,QtdPg,Editora,Ativo,Descricao,Categoria  FROM Livro INNER JOIN Bibliotecaria ON Bibliotecaria.IdBiblioteca = Livro.IdBiblioteca WHERE Bibliotecaria.Cnpj = @parameter";
-            return _helper.ExecuteList(query, parameter, _contexto.Database.Connection);
+            return _helper.ExecuteList(query, _contexto.Database.Connection,parameter);
         }
 
         public bool EstaAtiva(Domain.Entidades.Livro model)
@@ -50,6 +53,17 @@ namespace UsuarioBiblioteca.Data.Repositorios
             if (obj != null)
                 return true;
             return false;
+        }
+
+        IEnumerable<object> IRepositorioLivro.Biblioteca()
+        {
+           
+            var query = @"SELECT Bibliotecaria.IdBiblioteca,Bibliotecaria.RazaoSocial
+                            FROM Bibliotecaria
+                        INNER JOIN Endereco ON Endereco.IdBlioteca = Bibliotecaria.IdBiblioteca";
+           return _helper.ExecuteList(query, _contexto.Database.Connection);
+
+           
         }
     }
 }

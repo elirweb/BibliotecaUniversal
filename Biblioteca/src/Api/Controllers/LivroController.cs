@@ -26,48 +26,48 @@ namespace Api.Controllers
         [Route("registrar-livro")]
         public HttpResponseMessage Livro(UsuarioBiblioteca.Application.ViewModel.Livro lv)
         {
-            var resposta = new HttpResponseMessage();
+           
 
             if (lv == null)
-                resposta.RequestMessage.CreateResponse(HttpStatusCode.BadRequest, "Erro no acesso a Api ");
+                return Request.CreateResponse(HttpStatusCode.BadRequest, "Erro no acesso a Api ");
             else
             {
                 try
                 {
                     _livro.Adicionar(lv);
-                    resposta.RequestMessage.CreateResponse(HttpStatusCode.OK, "Cadastro feito com sucesso");
+                    return Request.CreateResponse<UsuarioBiblioteca.Application.ViewModel.Livro>(HttpStatusCode.OK, lv);
                 }
                 catch (Exception ex)
                 {
-                    resposta.RequestMessage.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
+                  return  Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
 
                 }
             }
-            return resposta;
+          
         }
 
         [HttpPut]
         [Route("update-livro")]
         public HttpResponseMessage UpdateLivro(UsuarioBiblioteca.Application.ViewModel.Livro lv)
         {
-            var resposta = new HttpResponseMessage();
+           
 
             if (lv == null)
-                resposta.RequestMessage.CreateResponse(HttpStatusCode.BadRequest, "Erro no acesso a Api ");
+                return Request.CreateResponse(HttpStatusCode.BadRequest, "Erro no acesso a Api ");
             else
             {
                 try
                 {
                     _livro.UpdateLivro(lv);
-                    resposta.RequestMessage.CreateResponse(HttpStatusCode.OK, "Atualização feito com sucesso");
+                    return Request.CreateResponse(HttpStatusCode.OK, "Atualização feito com sucesso", lv.Titulo);
                 }
                 catch (Exception ex)
                 {
-                    resposta.RequestMessage.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
+                    return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
 
                 }
             }
-            return resposta;
+           
         }
     }
 }

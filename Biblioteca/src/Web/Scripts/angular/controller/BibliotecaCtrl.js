@@ -1,7 +1,6 @@
 ﻿
 biblioteca.controller('biblioctrl', ['$scope', 'biblioservi', '$window', function ($scope, biblioservi, $window) {
-    //$scope.TokenBiblioteca = localStorage.getItem("token");
-
+    
     $scope.Registrar = function () {
         var fd = new FormData();
         var validCnpj = validarCNPJ($scope.Cnpj);
@@ -12,16 +11,18 @@ biblioteca.controller('biblioctrl', ['$scope', 'biblioservi', '$window', functio
         fd.append('cnpj',$scope.Cnpj);
         fd.append('LabelSituacao', $scope.LabelSituacao);
         fd.append('Imagem', $scope.arquivo);
-        
+        fd.append('Senha', $scope.Senha);
+        fd.append('token', localStorage.getItem("token"));
+        fd.append('ConfirmaSenha', $scope.ConfirmaSenha);
         if (validCnpj) {
             biblioservi.Registrar(fd).
                 then(function (response) {
-                    if (response.Msg == "Dados enviados") {
+                    if (response.data.Msg === "Dados enviados") {
                         $window.location.href = "/Biblioteca/Endereco/";
                     }
                     else {
-                        angular.forEach(response.Msg, function (value, key) {
-                            $scope.Msgerro = value;
+                        angular.forEach(response.data.Msg, function (value, key) {
+                            $scope.MsgRetorno = value;
                         })
                     }
 

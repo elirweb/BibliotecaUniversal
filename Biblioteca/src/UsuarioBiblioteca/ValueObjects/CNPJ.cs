@@ -8,12 +8,12 @@ namespace UsuarioBiblioteca.Domain.ValueObjects
 {
     public class CNPJ
     {
-        public int Numero { get; private set; }
+        public string _cnpj { get;  set; }
 
         public CNPJ(string n)
         {
             if(validarCNPJ(n))
-                Numero = Convert.ToInt32(n);
+                _cnpj = n;
         }
 
 

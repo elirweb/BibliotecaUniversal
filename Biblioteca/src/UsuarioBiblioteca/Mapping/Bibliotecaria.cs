@@ -10,7 +10,7 @@ namespace UsuarioBiblioteca.Domain.Mapping
             HasKey(c => c.Id);
             Property(c => c.Id).HasColumnName("IdBiblioteca");
             Property(c => c.RazaoSocial).HasColumnType("varchar").HasMaxLength(50);
-            Property(c => c.Cnpj.Numero).HasColumnType("int").HasColumnName("Cnpj");
+            Property(c => c.Cnpj._cnpj).HasColumnName("Cnpj");
             Property(c => c.Usuario).HasColumnType("varchar");
             Property(c => c.Senha.CodigoSenha).HasColumnType("varchar").HasColumnName("Senha");
             Property(c => c.Email.Endereco).HasColumnType("varchar").HasColumnName("Email");

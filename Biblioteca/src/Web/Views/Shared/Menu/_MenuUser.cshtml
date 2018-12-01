@@ -1,5 +1,4 @@
-﻿<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
-
+﻿
 <div class="left" ng-controller="menuctrl">
     <div class="item">
         <i class="fas fa-fw fa-bars"></i>
@@ -16,19 +15,13 @@
         <i class="fas fa-fw fa-user-circle"></i>
         <a ng-href="#/biblioteca-lista">Lista de Livro</a>
     </div>
-    <div class="item" ng-if="adm">
-        <i class="fas fa-fw fa-user-circle"></i>
-        <a ng-href="#/biblioteca-dados">Dados da Biblioteca</a>
-    </div>
+    
 
     <div class="item" ng-if="user">
         <i class="fas fa-fw fa-columns"></i> 
         <a ng-href="#/usuario-emprestimo">Emprestimo</a>
     </div>
-    <div class="item" ng-if="user">
-        <i class="fas fa-fw fa-th"></i> 
-        <a ng-href="#/usuario-dados">Alteração de Dados</a>
-    </div>
+   
 
 </div>
 

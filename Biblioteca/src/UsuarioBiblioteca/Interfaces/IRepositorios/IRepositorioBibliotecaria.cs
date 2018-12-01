@@ -16,6 +16,5 @@ namespace UsuarioBiblioteca.Domain.Interfaces.IRepositorios
         bool Authenticar(Bibliotecaria bi);
         void Atualizar(Bibliotecaria bi);
 
-        object DadosBibliotecaria(string parameter);
     }
 }

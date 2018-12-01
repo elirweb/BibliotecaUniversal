@@ -28,15 +28,15 @@ namespace UsuarioBiblioteca.Domain.Validacao
 
             }
 
-            if (biblioteca.Cnpj.Numero.Equals(null)) {
-                Falhou(biblioteca.Cnpj.Numero.Equals(null), new ErroDescricao("Ops! Cnpj inválido", new Critico(), "{}"), biblioteca.RazaoSocial);
+            if (biblioteca.Cnpj._cnpj.Equals(null)) {
+                Falhou(biblioteca.Cnpj._cnpj.Equals(null), new ErroDescricao("Ops! Cnpj inválido", new Critico(), "{}"), biblioteca.RazaoSocial);
                 biblioteca.ValidacaoResultado.Erros.Add(new ErroValidacao("Ops! Cnpj inválido", "Biblioteca"));
 
             }
 
             if (emailunico.InSatisfeito(biblioteca)) {
-                Falhou(biblioteca.Email.Endereco.Equals(null), new ErroDescricao("Ops! Cnpj inválido", new Critico(), "{}"), biblioteca.RazaoSocial);
-                biblioteca.ValidacaoResultado.Erros.Add(new ErroValidacao("Ops! Cnpj inválido", "Biblioteca"));
+                Falhou(biblioteca.Email.Endereco.Equals(null), new ErroDescricao("Ops! Email se encontra cadastrado em nosso sistema inválido", new Critico(), "{}"), biblioteca.RazaoSocial);
+                biblioteca.ValidacaoResultado.Erros.Add(new ErroValidacao("Ops! Email se encontra cadastrado em nosso sistema", "Biblioteca"));
 
             }
 

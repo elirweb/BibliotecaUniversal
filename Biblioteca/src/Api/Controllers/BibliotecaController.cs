@@ -28,48 +28,49 @@ namespace Api.Controllers
         [Route("registrar-biblioteca")]
         public HttpResponseMessage Registrar(UsuarioBiblioteca.Application.ViewModel.Bibliotecaria biblio)
         {
-            var resposta = new HttpResponseMessage();
+           
 
             if (biblio == null)
-                 resposta.RequestMessage.CreateResponse(HttpStatusCode.BadRequest, "Erro no acesso a Api ");
+                return Request.CreateResponse(HttpStatusCode.BadRequest, "Erro no acesso a Api ");
             else
             {
                 try
                 {
                     biblioteca.Adicionar(biblio);
-                     resposta.RequestMessage.CreateResponse(HttpStatusCode.OK, "Cadastro feito com sucesso");
+                     return Request.CreateResponse<UsuarioBiblioteca.Application.ViewModel.Bibliotecaria>(HttpStatusCode.OK, biblio);
+                   
                 }
                 catch (Exception ex)
                 {
-                     resposta.RequestMessage.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
+                    return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
 
                 }
             }
-            return resposta;   
+              
         }
 
         [HttpPost]
         [Route("registrar-endereco")]
         public HttpResponseMessage Endereco(UsuarioBiblioteca.Application.ViewModel.Endereco end)
         {
-            var resposta = new HttpResponseMessage();
+          
 
             if (end == null)
-                 resposta.RequestMessage.CreateResponse(HttpStatusCode.BadRequest, "Erro no acesso a Api ");
+                return Request.CreateResponse(HttpStatusCode.BadRequest, "Erro no acesso a Api ");
             else
             {
                 try
                 {
                     endereco.Adicionar(end);
-                    resposta.RequestMessage.CreateResponse(HttpStatusCode.OK, "Cadastro feito com sucesso");
+                    return Request.CreateResponse<UsuarioBiblioteca.Application.ViewModel.Endereco>(HttpStatusCode.OK, end);
                 }
                 catch (Exception ex)
                 {
 
-                    resposta.RequestMessage.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
+                    return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
                 }
             }
-            return resposta;
+           
         }
 
         
@@ -81,21 +82,21 @@ namespace Api.Controllers
             var resposta = new HttpResponseMessage();
 
             if (b == null)
-                resposta.RequestMessage.CreateResponse(HttpStatusCode.BadRequest, "Erro no acesso a Api ");
+                return Request.CreateResponse(HttpStatusCode.BadRequest, "Erro no acesso a Api ");
             else
             {
                 try
                 {
                     biblioteca.UpdateBiblioteca(b);
-                    resposta.RequestMessage.CreateResponse(HttpStatusCode.OK, "Atualizacao feito com sucesso");
+                    return Request.CreateResponse(HttpStatusCode.OK, "Atualizacao feito com sucesso");
                 }
                 catch (Exception ex)
                 {
-                    resposta.RequestMessage.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
+                    return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
 
                 }
             }
-            return resposta;
+           
         }
 
         [HttpPut]

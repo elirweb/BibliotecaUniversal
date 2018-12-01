@@ -14,9 +14,7 @@ namespace Web.Controllers
             return View();
         }
 
-        public ActionResult DadosUsuario() {
-            return View();
-        }
+       
         public ActionResult EmprestimoLivro() {
             return View();
         }

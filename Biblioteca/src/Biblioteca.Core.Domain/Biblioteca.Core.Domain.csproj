@@ -75,6 +75,8 @@
     <Compile Include="Util\Descriptografar.cs" />
     <Compile Include="Util\Criptografia.cs" />
     <Compile Include="Util\DisposeElement.cs" />
+    <Compile Include="Util\RegistrarDados.cs" />
+    <Compile Include="Util\RetornarDados.cs" />
     <Compile Include="Util\Ufs.cs" />
     <Compile Include="Util\UtilObject.cs" />
     <Compile Include="Validador\Interfaces\IHandler.cs" />

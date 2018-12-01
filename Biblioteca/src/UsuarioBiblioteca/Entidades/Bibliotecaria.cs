@@ -24,21 +24,25 @@ namespace UsuarioBiblioteca.Domain.Entidades
         [NotMapped]
         public ValidacaoResultado ValidacaoResultado { get; set; }
 
-        public ICollection<Livro> Livro { get { return _lista.ToArray(); }   }
-
         [NotMapped]
         private IList<Livro> _lista;
-        public Bibliotecaria(string razaoSocial, string cnpj, string usuario, string senha, string confirmasenha, string email, bool situacao)
+        public ICollection<Livro> Livro {
+            get {
+                
+                    return _lista?.ToArray();
+            } }
+
+      
+        public Bibliotecaria(string razaoSocial, string cnpj, string usuario, string senha, string confirmasenha, string email, bool situacao,string imagem, Guid id)
         {
-            Id = Guid.NewGuid();
+            Id = id;
             RazaoSocial = razaoSocial;
-            Cnpj = new ValueObjects.CNPJ(Convert.ToString(cnpj));
+            Cnpj = new ValueObjects.CNPJ(cnpj);
             Usuario = usuario;
             Senha = new Biblioteca.Core.Domain.ValueObjects.Senha(senha, confirmasenha);
             Email = new Biblioteca.Core.Domain.ValueObjects.Email(email);
             MomentoCadastro(situacao); // no momento de eu criar o cadastro posso definir se deixo ativo ou não
-            //Imagem = imagem;
-            //_lista = new List<Livro>();
+           Imagem = imagem;
             DtCadastro = DateTime.Now;
             HoraCadastro = TimeSpan.Parse(DateTime.Now.TimeOfDay.Hours + ":" + DateTime.Now.TimeOfDay.Minutes);
         }
@@ -46,10 +50,11 @@ namespace UsuarioBiblioteca.Domain.Entidades
         public void MomentoCadastro(bool situacao) {
             Situacao = situacao;
         }
-        public void AdicionarLivro(Livro lv) {
+        public void AdicionarLivro(Livro lv)
+        {
             _lista.Add(lv);
         }
 
-        
+
     }
 }

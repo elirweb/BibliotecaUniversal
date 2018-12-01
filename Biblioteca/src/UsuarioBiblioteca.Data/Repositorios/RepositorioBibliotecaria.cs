@@ -36,22 +36,13 @@ namespace UsuarioBiblioteca.Data.Repositorios
 
         public bool CNPJUnico(Domain.Entidades.Bibliotecaria bibliotecaria)
         {
-            var obj = _helper.ExecuteScalar($"SELECT Cnpj FROM Bibliotecaria WHERE Cnpj = '{bibliotecaria.Cnpj.Numero}' ", _contexto.Database.Connection);
+            var obj = _helper.ExecuteScalar($"SELECT Cnpj FROM Bibliotecaria WHERE Cnpj = '{bibliotecaria.Cnpj._cnpj}' ", _contexto.Database.Connection);
             if (obj != null)
                 return true;
             return false;
         }
 
-        public object DadosBibliotecaria(string parameter)
-        {
-            var query = @"SELECT RazaoSocial,Cnpj,Senha,Email,Situacao,Imagem,Bairro,Numero,
-                        Complemento,Localidade,Uf,DDD,Contato,TipoContat
-                            FROM Bibliotecaria
-                        INNER JOIN Endereco ON Endereco.IdBlioteca = Bibliotecaria.IdBiblioteca
-                        WHERE Cnpj = @parameter";
-            
-            return _helper.ExecuteList(query, parameter, _contexto.Database.Connection);
-        }
+        
 
         public bool EmailUnico(Domain.Entidades.Bibliotecaria bibliotecaria)
         {

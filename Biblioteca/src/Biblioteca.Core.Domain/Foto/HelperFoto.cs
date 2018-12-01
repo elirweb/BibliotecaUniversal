@@ -20,16 +20,16 @@ namespace Biblioteca.Core.Domain.Foto
                    var diretorio = HttpContext.Current.Server.MapPath("~/") + "Fotos/";
                     if (Directory.Exists(diretorio))
                     {
-                        if (redimensiona_imagem(arquivo.FileName.ToLower(), 200, 200))
+                        //if (redimensiona_imagem(arquivo.FileName.ToLower(), 200, 200))
                             arquivo.SaveAs(diretorio + Path.GetFileName(arquivo.FileName.ToLower()));
                     }
                     else
                     {
-                        if (redimensiona_imagem(arquivo.FileName.ToLower(), 200, 200))
-                        {
+                        //if (redimensiona_imagem(arquivo.FileName.ToLower(), 200, 200))
+                        //{
                             Directory.CreateDirectory(diretorio);
                             arquivo.SaveAs(diretorio + Path.GetFileName(arquivo.FileName.ToLower()));
-                        }
+                        //}
                     }
 
                     ret = true;

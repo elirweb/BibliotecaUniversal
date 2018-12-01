@@ -18,8 +18,9 @@ namespace UsuarioBiblioteca.Application.Mapper
                 bi.Senha,
                 bi.ConfirmaSenha,
                 bi.Email, 
-                bi.Situacao
-                //bi.Imagem    
+                bi.Situacao,
+                bi.Imagem,
+                bi.Id
                 );
                
                 return b;
@@ -62,7 +63,7 @@ namespace UsuarioBiblioteca.Application.Mapper
           Convert.ToInt32(endereco.Telefone),
             endereco.tipo,
             endereco.DDD,
-            endereco.Id
+            endereco.Bibliotecaria.Id
                 );
 
                 return e;

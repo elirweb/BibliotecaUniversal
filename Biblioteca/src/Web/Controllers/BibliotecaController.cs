@@ -10,9 +10,12 @@ namespace Web.Controllers
         private readonly IBibliotecaria _bibliotecaria;
         private readonly IEndereco _endereco;
         private readonly ILivro _livro; 
-        private List<string> erros = new List<string>();
-        private Biblioteca.Core.Domain.Foto.HelperFoto _foto = new Biblioteca.Core.Domain.Foto.HelperFoto();
-        private string retorno = string.Empty;
+        private readonly List<string> erros = new List<string>();
+        private readonly Biblioteca.Core.Domain.Foto.HelperFoto _foto = new Biblioteca.Core.Domain.Foto.HelperFoto();
+        private readonly Biblioteca.Core.Domain.Util.RegistrarDados _registrar = new Biblioteca.Core.Domain.Util.RegistrarDados();
+        private readonly Biblioteca.Core.Domain.Util.RetornarDados _retornar = new Biblioteca.Core.Domain.Util.RetornarDados();
+
+        private readonly string retorno = string.Empty;
 
         public BibliotecaController(IBibliotecaria bibli, IEndereco en,ILivro lv)
         {
@@ -35,12 +38,23 @@ namespace Web.Controllers
         }
         [HttpPost]
         public ActionResult RespostaCadastro(FormCollection model) {
-            //os dados vão vim e chamar a api 
-            // 1 gravar a foto
-            //gravar os dados em uma sessão 
-
-            
-            return Json(new { Msg = erros }, JsonRequestBehavior.AllowGet);
+            var _biblio = new UsuarioBiblioteca.Application.ViewModel.Bibliotecaria() {
+                RazaoSocial = model["RazaoSocial"],
+                Cnpj = model["cnpj"],
+                Email = model["email"],
+                Usuario = model["Usuario"],
+                Imagem = Request.Files["Imagem"].FileName,
+                Senha = model["Senha"],
+                ConfirmaSenha = model["ConfirmaSenha"]
+            };
+            List<UsuarioBiblioteca.Application.ViewModel.Bibliotecaria> b = new List<UsuarioBiblioteca.Application.ViewModel.Bibliotecaria>
+            {
+                _biblio
+            };
+            _foto.ArquivarFoto(Request.Files["Imagem"]);
+            TempData["BiblioDados"] = b;
+            TempData["token"] = model["token"];
+            return Json(new { Msg = "Dados enviados" }, JsonRequestBehavior.AllowGet);
         
         
     }
@@ -54,10 +68,11 @@ namespace Web.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Endereco(UsuarioBiblioteca.Application.ViewModel.Endereco end,FormCollection form) {
-            if (ModelState.IsValid)
-            {
+        public ActionResult Endereco(UsuarioBiblioteca.Application.ViewModel.Endereco end) {
+            if (ModelState.IsValid) {
                 TempData.Keep("BiblioDados");
+                TempData.Keep("token");
+                string token = TempData["token"].ToString();
                 var biblioteca = (List<UsuarioBiblioteca.Application.ViewModel.Bibliotecaria>)TempData["BiblioDados"];
                 foreach (var _bi in biblioteca)
                 {
@@ -66,28 +81,53 @@ namespace Web.Controllers
                         Id = Guid.NewGuid(),
                         Cnpj = _bi.Cnpj,
                         Senha = _bi.Senha,
+                        ConfirmaSenha = _bi.ConfirmaSenha,
                         Email = _bi.Email,
                         RazaoSocial = _bi.RazaoSocial,
                         Situacao = _bi.Situacao,
-                        Imagem = _bi.Imagem
-                        
+                        Imagem = _bi.Imagem,
+                        Usuario = _bi.Usuario
+
                     };
-                    end.Bibliotecaria.Id = b.Id;
-                    //gravar os dados na api passando o endereço e a biblioteca
+                  
+                    try
+                    {
+                        var retorno = _registrar.PostDados<UsuarioBiblioteca.Application.ViewModel.Bibliotecaria>(System.Configuration.ConfigurationManager.AppSettings["urlweb"] + "biblioteca/Gestao/registrar-biblioteca", token, b);
+                        if (retorno.Result.ListaErros.Count > 0)
+                        {
+                            foreach (var erro in retorno.Result.ListaErros)
+                                erros.Add(erro);
+                            ViewBag.Msg = erros;
+                        }
+                        else
+                        {
+                            end.Bibliotecaria.Id = retorno.Result.Id;
+                            var x = _registrar.PostDados<UsuarioBiblioteca.Application.ViewModel.Endereco>(System.Configuration.ConfigurationManager.AppSettings["urlweb"] + "biblioteca/Gestao/registrar-endereco", token, end);
+                            erros.Add("Dados enviados com sucesso");
+                            ViewBag.Msg = erros;
 
-                    
-                    return View();
+                        }
+                        var model = new UsuarioBiblioteca.Application.ViewModel.Endereco();
+                        model._listp = model.ListTipos();
+                         
+                        return View(model);
+
+                    }
+                    catch (Exception e)
+                    {
+
+                        throw new Exception(e.Message);
+                    }
                 }
-            }
-            else
-                ModelState.AddModelError("Error", retorno);
 
-            return View();
+            }
+                return View();
         }
 
         public ActionResult Livro() {
-           
+           //chamar a api de
             var model = new UsuarioBiblioteca.Application.ViewModel.Livro();
+            
             model._listlv = model.ListCategoria();
             return View(model);
         }
@@ -95,15 +135,37 @@ namespace Web.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Livro( FormCollection form) {
-            //gravar os dados na api 
-             return View();
+            try
+            {
+                var retorno = _registrar.PostDados<UsuarioBiblioteca.Application.ViewModel.Livro>(System.Configuration.ConfigurationManager.AppSettings["urlweb"] + "biblioteca/Gestao/registrar-livro", form["token"], "view model do livro");
+                if (retorno.Result.ListaErros.Count > 0)
+                {
+                    foreach (var erro in retorno.Result.ListaErros)
+                        erros.Add(erro);
+                    ViewBag.Msg = erros;
+                }
+
+                var model = new UsuarioBiblioteca.Application.ViewModel.Livro();
+
+                model._listlv = model.ListCategoria();
+                return View(model);
+
+            }
+            catch (Exception e)
+            {
+
+                throw new Exception(e.Message);
+            }
+           
         }
 
         public ActionResult Lista() {
-            return View();
+            var retorno = _retornar.GetDados<UsuarioBiblioteca.Application.ViewModel.Livro>(System.Configuration.ConfigurationManager.AppSettings["urlweb"] + "biblioteca/Gestao/registrar-biblioteca", "token ", "viewmodel");
+
+            return View(retorno);
         }
 
-        public ActionResult DadosBilioteca() {
+        public ActionResult EditarLivro(Guid idlivro) {
             return View();
         }
 

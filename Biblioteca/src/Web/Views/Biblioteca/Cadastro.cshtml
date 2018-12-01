@@ -22,8 +22,10 @@
 
     @using (Html.BeginForm("", "", FormMethod.Post, new { @name = "FormCadastro", @ng_model = "FormCadastro", @enctype = "multipart/form-data", @class = "form-login", @novalidate = "novalidate" }))
     {
-       
+
         @Html.AntiForgeryToken()
+        <span style="text-align: center" class="text-danger">{{MsgRetorno}}</span>
+
         <div class="form-group">
             @Html.TextBoxFor(model => model.RazaoSocial, new { @type = "text", @class = "form-control", @name = "RazaoSocial", @ng_model = "RazaoSocial", @placeholder = "Razão Social", @ng_required = "true" })
             <span style="color:red" ng-show="FormCadastro.RazaoSocial.$dirty && FormCadastro.RazaoSocial.$invalid && FormCadastro.RazaoSocial.$error.required">

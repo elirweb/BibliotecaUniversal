@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Data.Common;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Runtime.InteropServices;
 
 namespace Biblioteca.Core.Domain.Helper
 {
@@ -57,7 +58,7 @@ namespace Biblioteca.Core.Domain.Helper
             }
         }
 
-        public IEnumerable<object> ExecuteList(string sql, string parameter, DbConnection cn)
+        public IEnumerable<object> ExecuteList(string sql, DbConnection cn, [Optional]string parameter)
         {
             yield return cn.Query<object>(sql, new { parameter }).AsQueryable();
 

@@ -54,5 +54,8 @@ namespace UsuarioBiblioteca.Application.ViewModel
             return myCate;
 
         }
+
+        public List<ViewModel.Bibliotecaria> ListBiblioteca { get; set; }
+
     }
 }

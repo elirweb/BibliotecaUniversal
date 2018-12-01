@@ -343,9 +343,8 @@
     <Content Include="Views\Shared\Menu\_MenuUser.cshtml" />
     <Content Include="Views\Biblioteca\Lista.cshtml" />
     <Content Include="Views\Usuario\Index.cshtml" />
-    <Content Include="Views\Usuario\DadosUsuario.cshtml" />
     <Content Include="Views\Usuario\EmprestimoLivro.cshtml" />
-    <Content Include="Views\Biblioteca\DadosBilioteca.cshtml" />
+    <Content Include="Views\Biblioteca\EditarLivro.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Biblioteca.Core.Domain\Biblioteca.Core.Domain.csproj">

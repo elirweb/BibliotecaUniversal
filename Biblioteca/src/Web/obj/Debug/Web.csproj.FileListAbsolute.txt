@@ -187,6 +187,7 @@ C:\projetos\Biblioteca\src\Web\bin\Microsoft.AI.Web.xml
 C:\projetos\Biblioteca\src\Web\bin\Microsoft.AI.WindowsServer.xml
 C:\projetos\Biblioteca\src\Web\bin\Microsoft.ApplicationInsights.xml
 C:\projetos\Biblioteca\src\Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\projetos\Biblioteca\src\Web\bin\Newtonsoft.Json.xml
 C:\projetos\Biblioteca\src\Web\bin\SimpleInjector.xml
 C:\projetos\Biblioteca\src\Web\bin\SimpleInjector.Integration.Web.xml
 C:\projetos\Biblioteca\src\Web\bin\SimpleInjector.Integration.Web.Mvc.xml
@@ -198,7 +199,6 @@ C:\projetos\Biblioteca\src\Web\bin\System.Web.WebPages.xml
 C:\projetos\Biblioteca\src\Web\bin\System.Web.WebPages.Deployment.xml
 C:\projetos\Biblioteca\src\Web\bin\System.Web.WebPages.Razor.xml
 C:\projetos\Biblioteca\src\Web\bin\Antlr3.Runtime.pdb
-C:\projetos\Biblioteca\src\Web\bin\Newtonsoft.Json.xml
 C:\projetos\Biblioteca\src\Web\bin\EntityFramework.xml
 C:\projetos\Biblioteca\src\Web\bin\EntityFramework.SqlServer.xml
 C:\projetos\Biblioteca\src\Web\bin\Log.Application.pdb
