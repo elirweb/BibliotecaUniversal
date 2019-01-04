@@ -13,7 +13,7 @@
 
 <div class="container text-center">
 
-    @using (Html.BeginForm("Livro", "Biblioteca", FormMethod.Post, new { @id = "FormCadastro", @class = "form-login", @novalidate = "novalidate" }))
+    @using (Html.BeginForm("Livro", "Biblioteca", FormMethod.Post, new { @id = "FormCadastro", @class = "form-login", @novalidate = "novalidate", @ng_controller= "biblioctrl" }))
     {
         if (ViewBag.Msg != null)
         {
@@ -25,6 +25,13 @@
         }
         <span style="text-align: center">@Html.ValidationSummary(false, "", new { @class = "text-danger" })</span>
         @Html.AntiForgeryToken()
+        <div class="">
+            @Html.Hidden("tokenlivro", new { @id= "tokenlivro" })
+
+        </div>
+        <div class="form-group">
+           @Html.DropDownListFor(model => model.IdBiblioteca, new SelectList(Model.ListBiblioteca, "key", "Value"), "Selecione", new { @class = "form-control " })     
+        </div>
 
         <div class="form-group">
             @Html.TextBoxFor(c => c.Titulo, new { @type = "text", @class = "form-control", @placeholder = "Titulo do Livro" })
@@ -46,5 +53,6 @@
         </div>
     }
 </div>
+
 
 

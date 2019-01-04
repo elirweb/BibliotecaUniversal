@@ -129,25 +129,39 @@ namespace Web.Controllers
             var model = new UsuarioBiblioteca.Application.ViewModel.Livro();
             
             model._listlv = model.ListCategoria();
+            model.ListBiblioteca = _livro.DropBiblioteca(); 
             return View(model);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Livro( FormCollection form) {
+        public ActionResult Livro(FormCollection form) {
             try
             {
-                var retorno = _registrar.PostDados<UsuarioBiblioteca.Application.ViewModel.Livro>(System.Configuration.ConfigurationManager.AppSettings["urlweb"] + "biblioteca/Gestao/registrar-livro", form["token"], "view model do livro");
+                var livro = new UsuarioBiblioteca.Application.ViewModel.Livro() {
+                    Ativo = true,
+                    IdBiblioteca = Guid.Parse(form["IdBiblioteca"]),
+                    Titulo = form["Titulo"],
+                    Descricao = form["Descricao"],
+                    Editora = form["Editora"],
+                    QtdPg = Convert.ToInt32(form["QtdPg"]),
+                    DescCategoria = form["DescCategoria"],
+                    Id = Guid.NewGuid()
+
+
+                };
+                var retorno = _registrar.PostDados<UsuarioBiblioteca.Application.ViewModel.Livro>(System.Configuration.ConfigurationManager.AppSettings["urlweb"] + "Livro/Gestao/registrar-livro", form["tokenlivro"], livro);
                 if (retorno.Result.ListaErros.Count > 0)
                 {
+                    
                     foreach (var erro in retorno.Result.ListaErros)
                         erros.Add(erro);
                     ViewBag.Msg = erros;
                 }
 
                 var model = new UsuarioBiblioteca.Application.ViewModel.Livro();
-
                 model._listlv = model.ListCategoria();
+                model.ListBiblioteca = _livro.DropBiblioteca();
                 return View(model);
 
             }
@@ -160,9 +174,8 @@ namespace Web.Controllers
         }
 
         public ActionResult Lista() {
-            var retorno = _retornar.GetDados<UsuarioBiblioteca.Application.ViewModel.Livro>(System.Configuration.ConfigurationManager.AppSettings["urlweb"] + "biblioteca/Gestao/registrar-biblioteca", "token ", "viewmodel");
-
-            return View(retorno);
+            //var retorno = _retornar.GetDados<UsuarioBiblioteca.Application.ViewModel.Livro>(System.Configuration.ConfigurationManager.AppSettings["urlweb"] + "biblioteca/Gestao/registrar-biblioteca", "token");
+            return View();
         }
 
         public ActionResult EditarLivro(Guid idlivro) {

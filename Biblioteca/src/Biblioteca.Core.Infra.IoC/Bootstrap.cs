@@ -28,8 +28,8 @@ namespace Biblioteca.Core.Infra.IoC
             container.Register<Usuario.Domain.Interfaces.Repositorios.IRepositorioEndereco, Usuario.Data.Repositorio.RepositorioEndereco>(Lifestyle.Singleton);
             container.Register<Emprestimo.Domain.Interfaces.Repositorio.IRepositorioPedido, Emprestimo.Data.Repositorio.RepositorioPedido>(Lifestyle.Singleton);
             container.Register<Log.Domain.Interfaces.Repositorio.IRegistro<Log.Domain.Entidade.Registro>, Log.Data.Repositorio.RepositorioRegistro>(Lifestyle.Singleton);
-            
 
+           
             //contexto
             container.Register<UsuarioBiblioteca.Data.Contexto.Contexto>(Lifestyle.Singleton);
            container.Register<Usuario.Data.Contexto.Contexto>(Lifestyle.Singleton);
@@ -40,6 +40,7 @@ namespace Biblioteca.Core.Infra.IoC
             container.Register<Usuario.Data.UnitOfWork.IUnitOfWork, Usuario.Data.UnitOfWork.UnitOfWork>(Lifestyle.Singleton);
             container.Register<Emprestimo.Data.UnitOfWork.IUnitOfWork, Emprestimo.Data.UnitOfWork.UnitOfWork>(Lifestyle.Singleton);
 
+        
             //handler
             container.Register<Domain.Validador.Interfaces.IHandler<Usuario.Domain.Especificacao.UsuarioDevePossuirUnicoCPF>, Domain.Validador.Validacao<Usuario.Domain.Especificacao.UsuarioDevePossuirUnicoCPF>>(Lifestyle.Singleton);
             container.Register<Domain.Validador.Interfaces.IHandler<Usuario.Domain.Especificacao.UsuarioDevePossuirUnicoLogin>, Domain.Validador.Validacao<Usuario.Domain.Especificacao.UsuarioDevePossuirUnicoLogin>>(Lifestyle.Singleton);

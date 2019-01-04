@@ -15,21 +15,25 @@ namespace UsuarioBiblioteca.Domain.Entidades
         public string Descricao { get; private set; }
         public Guid IdBiblioteca { get;  set; }
         public virtual Bibliotecaria Biblioteca { get; set; }
+        public int Categoria { get; private set; }
 
-        public Enum.Categoria Categoria { get; private set; }
+        public Livro()
+        {
+
+        }
 
         [NotMapped]
         public ValidacaoResultado ValidacaoResultado { get; set; }
 
-        public Livro(string titulo, int qtd,string editora, bool ativ, string descricao, Guid id, Enum.Categoria cat)
+        public Livro(Guid id, string titulo, int qtd,string editora, bool ativ, string descricao, Guid idbiblio, int cat)
         {
-            Id = new Guid();
+            Id = id;
             Titulo = titulo;
             QtdPg = qtd;
             Editora = editora;
             Ativo = ativ;
             Descricao = descricao;
-            IdBiblioteca = id;
+            IdBiblioteca = idbiblio;
             Categoria = cat;
         }
     }

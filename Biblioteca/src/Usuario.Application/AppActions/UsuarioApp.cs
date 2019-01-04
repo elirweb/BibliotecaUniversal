@@ -3,6 +3,7 @@ using System;
 using Usuario.Data.UnitOfWork;
 using Usuario.Domain.Interfaces.Repositorios;
 using Usuario.Application.Handler;
+using System.Collections.Generic;
 
 namespace Usuario.Application.AppActions
 {
@@ -35,9 +36,8 @@ namespace Usuario.Application.AppActions
 
             if (Notificacao != null) {
                 foreach (var erro in Notificacao)
-                {
                     usuario.ListaErros.Add(erro);
-                }
+                
                 Notificacao = null;
             }
             return usuario;

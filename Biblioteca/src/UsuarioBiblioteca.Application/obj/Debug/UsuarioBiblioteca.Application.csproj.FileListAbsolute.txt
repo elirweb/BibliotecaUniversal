@@ -43,9 +43,9 @@ C:\projetos\Biblioteca\src\UsuarioBiblioteca.Application\bin\Debug\Newtonsoft.Js
 C:\projetos\Biblioteca\src\UsuarioBiblioteca.Application\bin\Debug\System.Web.Mvc.dll
 C:\projetos\Biblioteca\src\UsuarioBiblioteca.Application\bin\Debug\UsuarioBiblioteca.Data.dll
 C:\projetos\Biblioteca\src\UsuarioBiblioteca.Application\bin\Debug\UsuarioBiblioteca.dll
-C:\projetos\Biblioteca\src\UsuarioBiblioteca.Application\bin\Debug\Dapper.dll
 C:\projetos\Biblioteca\src\UsuarioBiblioteca.Application\bin\Debug\Log.Domain.dll
 C:\projetos\Biblioteca\src\UsuarioBiblioteca.Application\bin\Debug\EntityFramework.dll
+C:\projetos\Biblioteca\src\UsuarioBiblioteca.Application\bin\Debug\Dapper.dll
 C:\projetos\Biblioteca\src\UsuarioBiblioteca.Application\bin\Debug\Biblioteca.Core.Domain.pdb
 C:\projetos\Biblioteca\src\UsuarioBiblioteca.Application\bin\Debug\Biblioteca.Core.Infra.pdb
 C:\projetos\Biblioteca\src\UsuarioBiblioteca.Application\bin\Debug\Log.Application.pdb
@@ -54,10 +54,10 @@ C:\projetos\Biblioteca\src\UsuarioBiblioteca.Application\bin\Debug\UsuarioBiblio
 C:\projetos\Biblioteca\src\UsuarioBiblioteca.Application\bin\Debug\UsuarioBiblioteca.pdb
 C:\projetos\Biblioteca\src\UsuarioBiblioteca.Application\bin\Debug\UsuarioBiblioteca.dll.config
 C:\projetos\Biblioteca\src\UsuarioBiblioteca.Application\bin\Debug\Newtonsoft.Json.xml
-C:\projetos\Biblioteca\src\UsuarioBiblioteca.Application\bin\Debug\Dapper.xml
 C:\projetos\Biblioteca\src\UsuarioBiblioteca.Application\bin\Debug\Log.Domain.pdb
 C:\projetos\Biblioteca\src\UsuarioBiblioteca.Application\bin\Debug\Log.Domain.dll.config
 C:\projetos\Biblioteca\src\UsuarioBiblioteca.Application\bin\Debug\EntityFramework.xml
+C:\projetos\Biblioteca\src\UsuarioBiblioteca.Application\bin\Debug\Dapper.xml
 C:\projetos\Biblioteca\src\UsuarioBiblioteca.Application\obj\Debug\UsuarioBiblioteca.Application.csproj.CopyComplete
 C:\projetos\Biblioteca\src\UsuarioBiblioteca.Application\obj\Debug\UsuarioBiblioteca.Application.dll
 C:\projetos\Biblioteca\src\UsuarioBiblioteca.Application\obj\Debug\UsuarioBiblioteca.Application.pdb

@@ -45,8 +45,8 @@ namespace Web.Controllers
 
                 if (adm.ListaErros.Count > 0)
                 {
-                    foreach (var erro in adm.ListaErros)
-                        erros.Add(erro);
+                    adm.ListaErros.ForEach(x => erros.Add(x));
+                  
                     return Json(new { Msg = erros }, JsonRequestBehavior.AllowGet);
                 }
                 return Json(new { Msg = "Dados Cadastrado com sucesso" }, JsonRequestBehavior.AllowGet);

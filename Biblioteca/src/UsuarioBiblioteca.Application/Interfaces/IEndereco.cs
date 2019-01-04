@@ -9,6 +9,5 @@ namespace UsuarioBiblioteca.Application.Interfaces
     public interface IEndereco
     {
         void Adicionar(ViewModel.Endereco endereco);
-        void UpdateEndereco(ViewModel.Endereco endereco);
     }
 }

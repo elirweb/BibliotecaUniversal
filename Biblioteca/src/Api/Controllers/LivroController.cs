@@ -50,8 +50,6 @@ namespace Api.Controllers
         [Route("update-livro")]
         public HttpResponseMessage UpdateLivro(UsuarioBiblioteca.Application.ViewModel.Livro lv)
         {
-           
-
             if (lv == null)
                 return Request.CreateResponse(HttpStatusCode.BadRequest, "Erro no acesso a Api ");
             else
@@ -69,5 +67,18 @@ namespace Api.Controllers
             }
            
         }
+
+        [AcceptVerbs("GET")]
+        [Route("ObterLivro")]
+        public IEnumerable<UsuarioBiblioteca.Application.ViewModel.Livro> ObterLivro()
+        {
+            return _livro.Obter().AsQueryable();
+
+
+        }
+
+
+
+
     }
 }

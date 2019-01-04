@@ -93,13 +93,15 @@ namespace UsuarioBiblioteca.Application.Mapper
             {
 
                 var l = new Domain.Entidades.Livro(
+           lv.Id,
              lv.Titulo,
              lv.QtdPg,
              lv.Editora,
              lv.Ativo,
              lv.Descricao,
-             lv.Id,
-             lv.Categoria
+             lv.IdBiblioteca,
+             4
+           
                 );
 
                 return l;

@@ -15,9 +15,6 @@ namespace UsuarioBiblioteca.Application.AppActions
     public class EnderecoApp : Service.AplicationServiceEnd, Interfaces.IEndereco
     {
         private readonly IRepositorioEndereco repositorio;
-        private HttpClient client = null;
-        private HttpResponseMessage response = null;
-        private HttpResponseMessage resp2 = null;
         public EnderecoApp(IRepositorioEndereco end, IUnitOfWork unitOfWork, BibliotecaCadastroHandler emailuser) :base(unitOfWork, emailuser)
         {
             repositorio = end;
@@ -33,9 +30,6 @@ namespace UsuarioBiblioteca.Application.AppActions
 
         }
 
-        public void UpdateEndereco(Endereco endereco)
-        {
-            throw new NotImplementedException();
-        }
+    
     }
 }

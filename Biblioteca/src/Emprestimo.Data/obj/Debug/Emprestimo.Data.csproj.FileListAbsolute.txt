@@ -55,7 +55,6 @@ C:\projetos\Biblioteca\src\Emprestimo.Data\bin\Debug\EntityFramework.dll
 C:\projetos\Biblioteca\src\Emprestimo.Data\bin\Debug\EntityFramework.SqlServer.dll
 C:\projetos\Biblioteca\src\Emprestimo.Data\bin\Debug\Log.Application.dll
 C:\projetos\Biblioteca\src\Emprestimo.Data\bin\Debug\Newtonsoft.Json.dll
-C:\projetos\Biblioteca\src\Emprestimo.Data\bin\Debug\Dapper.dll
 C:\projetos\Biblioteca\src\Emprestimo.Data\bin\Debug\Log.Domain.dll
 C:\projetos\Biblioteca\src\Emprestimo.Data\bin\Debug\Biblioteca.Core.Domain.pdb
 C:\projetos\Biblioteca\src\Emprestimo.Data\bin\Debug\Emprestimo.Domain.pdb
@@ -64,7 +63,6 @@ C:\projetos\Biblioteca\src\Emprestimo.Data\bin\Debug\EntityFramework.xml
 C:\projetos\Biblioteca\src\Emprestimo.Data\bin\Debug\EntityFramework.SqlServer.xml
 C:\projetos\Biblioteca\src\Emprestimo.Data\bin\Debug\Log.Application.pdb
 C:\projetos\Biblioteca\src\Emprestimo.Data\bin\Debug\Newtonsoft.Json.xml
-C:\projetos\Biblioteca\src\Emprestimo.Data\bin\Debug\Dapper.xml
 C:\projetos\Biblioteca\src\Emprestimo.Data\bin\Debug\Log.Domain.pdb
 C:\projetos\Biblioteca\src\Emprestimo.Data\bin\Debug\Log.Domain.dll.config
 C:\projetos\Biblioteca\src\Emprestimo.Data\obj\Debug\Emprestimo.Data.csprojAssemblyReference.cache

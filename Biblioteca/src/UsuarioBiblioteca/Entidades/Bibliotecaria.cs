@@ -32,7 +32,10 @@ namespace UsuarioBiblioteca.Domain.Entidades
                     return _lista?.ToArray();
             } }
 
-      
+        public Bibliotecaria()
+        {
+
+        }
         public Bibliotecaria(string razaoSocial, string cnpj, string usuario, string senha, string confirmasenha, string email, bool situacao,string imagem, Guid id)
         {
             Id = id;
@@ -45,6 +48,12 @@ namespace UsuarioBiblioteca.Domain.Entidades
            Imagem = imagem;
             DtCadastro = DateTime.Now;
             HoraCadastro = TimeSpan.Parse(DateTime.Now.TimeOfDay.Hours + ":" + DateTime.Now.TimeOfDay.Minutes);
+        }
+
+        public Bibliotecaria(Guid id, string razaoSocial)
+        {
+            Id = id;
+            RazaoSocial = razaoSocial;
         }
 
         public void MomentoCadastro(bool situacao) {

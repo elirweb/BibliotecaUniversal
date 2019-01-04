@@ -160,7 +160,6 @@ C:\projetos\Biblioteca\src\Web\bin\Usuario.Application.dll
 C:\projetos\Biblioteca\src\Web\bin\UsuarioBiblioteca.Application.dll
 C:\projetos\Biblioteca\src\Web\bin\WebGrease.dll
 C:\projetos\Biblioteca\src\Web\bin\Log.Application.dll
-C:\projetos\Biblioteca\src\Web\bin\Dapper.dll
 C:\projetos\Biblioteca\src\Web\bin\Emprestimo.Application.dll
 C:\projetos\Biblioteca\src\Web\bin\UsuarioBiblioteca.dll
 C:\projetos\Biblioteca\src\Web\bin\UsuarioBiblioteca.Data.dll
@@ -171,6 +170,7 @@ C:\projetos\Biblioteca\src\Web\bin\Emprestimo.Data.dll
 C:\projetos\Biblioteca\src\Web\bin\Log.Domain.dll
 C:\projetos\Biblioteca\src\Web\bin\Log.Data.dll
 C:\projetos\Biblioteca\src\Web\bin\Biblioteca.Core.Infra.dll
+C:\projetos\Biblioteca\src\Web\bin\Dapper.dll
 C:\projetos\Biblioteca\src\Web\bin\MongoDB.Driver.dll
 C:\projetos\Biblioteca\src\Web\bin\MongoDB.Driver.Core.dll
 C:\projetos\Biblioteca\src\Web\bin\MongoDB.Bson.dll
@@ -202,7 +202,6 @@ C:\projetos\Biblioteca\src\Web\bin\Antlr3.Runtime.pdb
 C:\projetos\Biblioteca\src\Web\bin\EntityFramework.xml
 C:\projetos\Biblioteca\src\Web\bin\EntityFramework.SqlServer.xml
 C:\projetos\Biblioteca\src\Web\bin\Log.Application.pdb
-C:\projetos\Biblioteca\src\Web\bin\Dapper.xml
 C:\projetos\Biblioteca\src\Web\bin\Emprestimo.Application.pdb
 C:\projetos\Biblioteca\src\Web\bin\UsuarioBiblioteca.pdb
 C:\projetos\Biblioteca\src\Web\bin\UsuarioBiblioteca.dll.config
@@ -221,6 +220,7 @@ C:\projetos\Biblioteca\src\Web\bin\Log.Domain.dll.config
 C:\projetos\Biblioteca\src\Web\bin\Log.Data.pdb
 C:\projetos\Biblioteca\src\Web\bin\Log.Data.dll.config
 C:\projetos\Biblioteca\src\Web\bin\Biblioteca.Core.Infra.pdb
+C:\projetos\Biblioteca\src\Web\bin\Dapper.xml
 C:\projetos\Biblioteca\src\Web\bin\MongoDB.Driver.xml
 C:\projetos\Biblioteca\src\Web\bin\MongoDB.Driver.Core.xml
 C:\projetos\Biblioteca\src\Web\bin\MongoDB.Bson.xml

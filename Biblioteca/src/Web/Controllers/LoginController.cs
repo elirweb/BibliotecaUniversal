@@ -54,8 +54,8 @@ namespace Web.Controllers
                 usu = _usuarioapp.Adicionar(usu);
                 if (usu.ListaErros.Count > 0)
                 {
-                    foreach (var erro in usu.ListaErros)
-                        erros.Add(erro);
+                    
+                    usu.ListaErros.ForEach(x => erros.Add(x));
                     return Json(new { Msg = erros }, JsonRequestBehavior.AllowGet);
                 }
                 else

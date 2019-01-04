@@ -18,10 +18,10 @@ C:\projetos\Biblioteca\src\Biblioteca.Core.Infra.IoC\bin\Debug\UsuarioBiblioteca
 C:\projetos\Biblioteca\src\Biblioteca.Core.Infra.IoC\bin\Debug\UsuarioBiblioteca.Data.dll
 C:\projetos\Biblioteca\src\Biblioteca.Core.Infra.IoC\bin\Debug\UsuarioBiblioteca.dll
 C:\projetos\Biblioteca\src\Biblioteca.Core.Infra.IoC\bin\Debug\Newtonsoft.Json.dll
-C:\projetos\Biblioteca\src\Biblioteca.Core.Infra.IoC\bin\Debug\Dapper.dll
 C:\projetos\Biblioteca\src\Biblioteca.Core.Infra.IoC\bin\Debug\EntityFramework.dll
 C:\projetos\Biblioteca\src\Biblioteca.Core.Infra.IoC\bin\Debug\MongoDB.Driver.dll
 C:\projetos\Biblioteca\src\Biblioteca.Core.Infra.IoC\bin\Debug\System.Web.Mvc.dll
+C:\projetos\Biblioteca\src\Biblioteca.Core.Infra.IoC\bin\Debug\Dapper.dll
 C:\projetos\Biblioteca\src\Biblioteca.Core.Infra.IoC\bin\Debug\MongoDB.Driver.Core.dll
 C:\projetos\Biblioteca\src\Biblioteca.Core.Infra.IoC\bin\Debug\MongoDB.Bson.dll
 C:\projetos\Biblioteca\src\Biblioteca.Core.Infra.IoC\bin\Debug\DnsClient.dll
@@ -51,9 +51,9 @@ C:\projetos\Biblioteca\src\Biblioteca.Core.Infra.IoC\bin\Debug\UsuarioBiblioteca
 C:\projetos\Biblioteca\src\Biblioteca.Core.Infra.IoC\bin\Debug\UsuarioBiblioteca.dll.config
 C:\projetos\Biblioteca\src\Biblioteca.Core.Infra.IoC\bin\Debug\SimpleInjector.xml
 C:\projetos\Biblioteca\src\Biblioteca.Core.Infra.IoC\bin\Debug\Newtonsoft.Json.xml
-C:\projetos\Biblioteca\src\Biblioteca.Core.Infra.IoC\bin\Debug\Dapper.xml
 C:\projetos\Biblioteca\src\Biblioteca.Core.Infra.IoC\bin\Debug\EntityFramework.xml
 C:\projetos\Biblioteca\src\Biblioteca.Core.Infra.IoC\bin\Debug\MongoDB.Driver.xml
+C:\projetos\Biblioteca\src\Biblioteca.Core.Infra.IoC\bin\Debug\Dapper.xml
 C:\projetos\Biblioteca\src\Biblioteca.Core.Infra.IoC\bin\Debug\MongoDB.Driver.Core.xml
 C:\projetos\Biblioteca\src\Biblioteca.Core.Infra.IoC\bin\Debug\MongoDB.Bson.xml
 C:\projetos\Biblioteca\src\Biblioteca.Core.Infra.IoC\bin\Debug\DnsClient.xml

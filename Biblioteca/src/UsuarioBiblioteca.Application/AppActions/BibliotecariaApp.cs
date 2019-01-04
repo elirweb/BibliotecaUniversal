@@ -59,10 +59,7 @@ namespace UsuarioBiblioteca.Application.AppActions
             
         }
 
-        public void UpdateBiblioteca(Bibliotecaria update)
-        {
-            throw new NotImplementedException();
-        }
+        
 
         
     }

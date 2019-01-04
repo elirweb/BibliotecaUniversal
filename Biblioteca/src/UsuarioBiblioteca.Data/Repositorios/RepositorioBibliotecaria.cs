@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Data.Entity;
-using Biblioteca.Core.Domain.Helper;
+using System.Data.SqlClient;
+using System.Linq;
+
+using Dapper;
 using UsuarioBiblioteca.Domain.Entidades;
 
 namespace UsuarioBiblioteca.Data.Repositorios
@@ -9,10 +12,10 @@ namespace UsuarioBiblioteca.Data.Repositorios
     {
       
         private readonly Contexto.Contexto _contexto;
-        private DbHelper _helper = new DbHelper();
-        public RepositorioBibliotecaria(Contexto.Contexto cont)
-        {
+        private  string sql = string.Empty;
+        public RepositorioBibliotecaria(Contexto.Contexto cont) { 
             _contexto = cont;
+          
         }
         
         public void Adicionar(Domain.Entidades.Bibliotecaria bibliotecaria)
@@ -28,38 +31,118 @@ namespace UsuarioBiblioteca.Data.Repositorios
 
         public bool Authenticar(Bibliotecaria bi)
         {
-            var obj = _helper.ExecuteScalar($"SELECT Usuario,Senha FROM Bibliotecaria WHERE Usuario = '{bi.Usuario}'  and  Senha = '{bi.Senha}'", _contexto.Database.Connection);
-            if (obj != null)
-                return true;
-            return false;
+             sql = $"SELECT Usuario,Senha FROM Bibliotecaria WHERE Usuario = '{bi.Usuario}'  and  Senha = '{bi.Senha}'";
+            bool retorno = false;
+            try
+            {
+
+                if (_contexto.Database.Connection.Query<Domain.Entidades.Bibliotecaria>(sql).AsParallel().Count() > 0)
+                    retorno = true;
+            }
+            catch (SqlException f)
+            {
+
+                throw new Exception(f.Message);
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                _contexto.Database.Connection.Close();
+            }
+            return retorno;
         }
 
         public bool CNPJUnico(Domain.Entidades.Bibliotecaria bibliotecaria)
         {
-            var obj = _helper.ExecuteScalar($"SELECT Cnpj FROM Bibliotecaria WHERE Cnpj = '{bibliotecaria.Cnpj._cnpj}' ", _contexto.Database.Connection);
-            if (obj != null)
-                return true;
-            return false;
+             sql = $"SELECT Cnpj FROM Bibliotecaria WHERE Cnpj = '{bibliotecaria.Cnpj._cnpj}' ";
+
+            bool retorno = false;
+            try
+            {
+
+                if (_contexto.Database.Connection.Query<Domain.Entidades.Bibliotecaria>(sql).AsParallel().Count() > 0)
+                    retorno = true;
+            }
+            catch (SqlException f)
+            {
+
+                throw new Exception(f.Message);
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                _contexto.Database.Connection.Close();
+            }
+            return retorno;
+
         }
 
         
 
         public bool EmailUnico(Domain.Entidades.Bibliotecaria bibliotecaria)
         {
-            var obj = _helper.ExecuteScalar($"SELECT Email FROM Bibliotecaria WHERE Email = '{bibliotecaria.Email.Endereco}' ", _contexto.Database.Connection);
-            if (obj != null)
-                return true;
-            return false;
+             sql = $"SELECT Email FROM Bibliotecaria WHERE Email = '{bibliotecaria.Email.Endereco}' ";
+            bool retorno = false;
+            try
+            {
+
+                if (_contexto.Database.Connection.Query<Domain.Entidades.Bibliotecaria>(sql).AsParallel().Count() > 0)
+                    retorno = true;
+            }
+            catch (SqlException f)
+            {
+
+                throw new Exception(f.Message);
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                _contexto.Database.Connection.Close();
+            }
+            return retorno;
         }
 
       
 
         public bool LoginUnico(Domain.Entidades.Bibliotecaria bibliotecaria)
         {
-            var obj = _helper.ExecuteScalar($"SELECT Usuario FROM Bibliotecaria WHERE Usuario = '{bibliotecaria.Usuario}' ", _contexto.Database.Connection);
-            if (obj != null)
-                return true;
-            return false;
+             sql = $"SELECT Usuario FROM Bibliotecaria WHERE Usuario = '{bibliotecaria.Usuario}' ";
+            bool retorno = false;
+            try
+            {
+
+                if (_contexto.Database.Connection.Query<Domain.Entidades.Bibliotecaria>(sql).AsParallel().Count() > 0)
+                    retorno = true;
+            }
+            catch (SqlException f)
+            {
+
+                throw new Exception(f.Message);
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                _contexto.Database.Connection.Close();
+            }
+            return retorno;
+
+
         }
     }
 }

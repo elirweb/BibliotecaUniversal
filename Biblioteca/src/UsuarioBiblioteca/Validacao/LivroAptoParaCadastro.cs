@@ -31,7 +31,7 @@ namespace UsuarioBiblioteca.Domain.Validacao
             if (!bibliotecaativa.InSatisfeito(lv))
             {
 
-                Falhou(titulounico.InSatisfeito(lv), new ErroDescricao("Ops! Biblioteca não está ativa em nosso sistema", new Critico(), "{}"), lv.Biblioteca.RazaoSocial);
+                Falhou(bibliotecaativa.InSatisfeito(lv), new ErroDescricao("Ops! Biblioteca não está ativa em nosso sistema", new Critico(), "{}"), lv.Biblioteca.RazaoSocial);
                 lv.ValidacaoResultado.Erros.Add(new ErroValidacao("Ops! Biblioteca não está ativa em nosso sistema", "Livro"));
 
             }

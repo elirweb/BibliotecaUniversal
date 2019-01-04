@@ -22,12 +22,9 @@ namespace UsuarioBiblioteca.Application.Service
         }
         public bool Commit()
         {
-            if (titulounico.EhValido() && !bibliotecaativa.EhValido())
-            {
-                _unitOfWork.Commit();
-                return true;
-            }
-            return false;
+         _unitOfWork.Commit();
+         return true;
+            
         }
 
         public static bool PossuiConformidade(Domain.Entidades.Livro lv)

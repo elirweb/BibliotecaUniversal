@@ -14,11 +14,10 @@ namespace Biblioteca.Core.Domain.Util
         private HttpClient client = null;
         private HttpResponseMessage resp = new HttpResponseMessage();
         private string retorno = string.Empty;
-        public async Task<T> GetDados<T>(string url, string token, object dados) where T : class, new()
+        public async Task<T> GetDados<T>(string url, string token) where T : class, new()
         {
             try
             {
-                string conteudo = JsonConvert.SerializeObject(dados);
                 using (client = new HttpClient())
                 {
 

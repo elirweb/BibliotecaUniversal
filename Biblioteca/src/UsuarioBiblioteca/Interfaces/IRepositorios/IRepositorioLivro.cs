@@ -14,7 +14,9 @@ namespace UsuarioBiblioteca.Domain.Interfaces.IRepositorios
         bool EstaAtiva(Livro model);
         void Atualizar(Livro model);
         void Excluir(Livro model);
-        IEnumerable<object> DadosLivro(string cnpj);
-        IEnumerable<object> Biblioteca();
+        IEnumerable<Domain.Entidades.Livro> DadosLivro(string cnpj);
+        IEnumerable<UsuarioBiblioteca.Domain.Entidades.Bibliotecaria> DropBiblioteca();
+        IEnumerable<Domain.Entidades.Livro> ObterLivro();
+
     }
 }

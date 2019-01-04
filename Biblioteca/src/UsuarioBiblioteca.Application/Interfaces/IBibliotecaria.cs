@@ -5,7 +5,6 @@ namespace UsuarioBiblioteca.Application.Interfaces
     public interface IBibliotecaria
     {
         void Adicionar(Bibliotecaria biblio);
-        void UpdateBiblioteca(Bibliotecaria update);
-       
+        
     }
 }

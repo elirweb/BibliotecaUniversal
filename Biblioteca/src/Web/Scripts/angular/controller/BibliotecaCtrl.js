@@ -1,6 +1,10 @@
 ﻿
 biblioteca.controller('biblioctrl', ['$scope', 'biblioservi', '$window', function ($scope, biblioservi, $window) {
-    
+
+    //tem que pensar em outro jeito de colocar este token
+    document.getElementById("tokenlivro").value = localStorage.getItem("token");
+   
+
     $scope.Registrar = function () {
         var fd = new FormData();
         var validCnpj = validarCNPJ($scope.Cnpj);
@@ -34,7 +38,9 @@ biblioteca.controller('biblioctrl', ['$scope', 'biblioservi', '$window', functio
         } else {
             $scope.MsgRetorno = "Ops! Cnpj inválido";
         }
-        
+
+
+       
     }
 
 
@@ -45,7 +51,7 @@ biblioteca.controller('biblioctrl', ['$scope', 'biblioservi', '$window', functio
 
     $scope.LinkLv = function () {
         $window.location.href = "/Biblioteca/Livro/";
-    }
+    };
 
     
 
@@ -59,10 +65,18 @@ biblioteca.controller('biblioctrl', ['$scope', 'biblioservi', '$window', functio
         delete $scope.Cnpj;
 
         $scope.FormCadastro.$setPristine();
-    }
+    };
 
+    $scope.RetornoDadosLivro = function (token) {
+        biblioservi.RetornarDados(token).
+            then(function (response) {
+                alert(response);
 
-    
+            }).catch(function (response) {
+                alert("erro na consulta de dados");
+            });
+    };
+    $scope.RetornoDadosLivro(localStorage.getItem("token"));
 
 }]);
 

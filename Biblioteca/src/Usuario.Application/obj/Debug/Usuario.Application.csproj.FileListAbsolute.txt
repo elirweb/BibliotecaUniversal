@@ -53,8 +53,8 @@ C:\projetos\Biblioteca\src\Usuario.Application\bin\Debug\Log.Application.dll
 C:\projetos\Biblioteca\src\Usuario.Application\bin\Debug\Usuario.Data.dll
 C:\projetos\Biblioteca\src\Usuario.Application\bin\Debug\Usuario.Domain.dll
 C:\projetos\Biblioteca\src\Usuario.Application\bin\Debug\Newtonsoft.Json.dll
-C:\projetos\Biblioteca\src\Usuario.Application\bin\Debug\Dapper.dll
 C:\projetos\Biblioteca\src\Usuario.Application\bin\Debug\Log.Domain.dll
+C:\projetos\Biblioteca\src\Usuario.Application\bin\Debug\Dapper.dll
 C:\projetos\Biblioteca\src\Usuario.Application\bin\Debug\EntityFramework.dll
 C:\projetos\Biblioteca\src\Usuario.Application\bin\Debug\Biblioteca.Core.Domain.pdb
 C:\projetos\Biblioteca\src\Usuario.Application\bin\Debug\Biblioteca.Core.Infra.pdb
@@ -64,9 +64,9 @@ C:\projetos\Biblioteca\src\Usuario.Application\bin\Debug\Usuario.Data.dll.config
 C:\projetos\Biblioteca\src\Usuario.Application\bin\Debug\Usuario.Domain.pdb
 C:\projetos\Biblioteca\src\Usuario.Application\bin\Debug\Usuario.Domain.dll.config
 C:\projetos\Biblioteca\src\Usuario.Application\bin\Debug\Newtonsoft.Json.xml
-C:\projetos\Biblioteca\src\Usuario.Application\bin\Debug\Dapper.xml
 C:\projetos\Biblioteca\src\Usuario.Application\bin\Debug\Log.Domain.pdb
 C:\projetos\Biblioteca\src\Usuario.Application\bin\Debug\Log.Domain.dll.config
+C:\projetos\Biblioteca\src\Usuario.Application\bin\Debug\Dapper.xml
 C:\projetos\Biblioteca\src\Usuario.Application\bin\Debug\EntityFramework.xml
 C:\projetos\Biblioteca\src\Usuario.Application\obj\Debug\Usuario.Application.csprojAssemblyReference.cache
 C:\projetos\Biblioteca\src\Usuario.Application\obj\Debug\Usuario.Application.csproj.CoreCompileInputs.cache

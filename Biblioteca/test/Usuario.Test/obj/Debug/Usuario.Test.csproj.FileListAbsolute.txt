@@ -74,8 +74,8 @@ C:\projetos\Biblioteca\test\Usuario.Test\bin\Debug\System.ValueTuple.xml
 C:\projetos\Biblioteca\test\Usuario.Test\bin\Debug\xunit.assert.xml
 C:\projetos\Biblioteca\test\Usuario.Test\bin\Debug\xunit.core.xml
 C:\projetos\Biblioteca\test\Usuario.Test\bin\Debug\xunit.execution.desktop.xml
-C:\projetos\Biblioteca\test\Usuario.Test\obj\Debug\Usuario.Test.csprojAssemblyReference.cache
 C:\projetos\Biblioteca\test\Usuario.Test\obj\Debug\Usuario.Test.csproj.CoreCompileInputs.cache
 C:\projetos\Biblioteca\test\Usuario.Test\obj\Debug\Usuario.Test.csproj.CopyComplete
 C:\projetos\Biblioteca\test\Usuario.Test\obj\Debug\Usuario.Test.dll
 C:\projetos\Biblioteca\test\Usuario.Test\obj\Debug\Usuario.Test.pdb
+C:\projetos\Biblioteca\test\Usuario.Test\obj\Debug\Usuario.Test.csprojAssemblyReference.cache

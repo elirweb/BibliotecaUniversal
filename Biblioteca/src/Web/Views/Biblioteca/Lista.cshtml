@@ -1,11 +1,12 @@
-﻿@using Newtonsoft.Json.Linq 
-@model System.Threading.Tasks.Task<UsuarioBiblioteca.Application.ViewModel.Livro>
+﻿
 @{
     ViewBag.Title = "Lista de Livro";
     Layout = null;
 }
 
-<div class="container text-center">
+<div class="container text-center" ng-controller="biblioctrl">
+  
+  
     <table cellpadding="3" cellspacing="3">
         <thead>
             <tr>
@@ -17,27 +18,9 @@
 
             </tr>
         </thead>
-        @if (Model.Result != null)
-        {
-
-            JArray usuarioarrray = JArray.Parse("[" + Model.Result + "]");
-            foreach (JObject obj in usuarioarrray.Children<JObject>())
-            {
-                <tbody>
-                    <tr>
-                        <td><input type="checkbox" /></td>
-                        <td>@obj.SelectToken("Titulo")</td>
-                        <td>@obj.SelectToken("Biblioteca")</td>
-                        <td>@obj.SelectToken("Editora")</td>
-                        <td><input type="button" value="Editar" /></td>
+       
 
 
-                    </tr>
-                </tbody>
-
-            }
-
-
-        }
+     
     </table>
     </div>

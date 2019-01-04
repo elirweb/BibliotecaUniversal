@@ -55,7 +55,8 @@ namespace UsuarioBiblioteca.Application.ViewModel
 
         }
 
-        public List<ViewModel.Bibliotecaria> ListBiblioteca { get; set; }
+        public Dictionary<Guid,string> ListBiblioteca { get; set; }
+      
 
     }
 }

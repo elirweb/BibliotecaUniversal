@@ -56,7 +56,6 @@
     <Compile Include="Erros\Erros.cs" />
     <Compile Include="Erros\ErroValidacao.cs" />
     <Compile Include="Foto\HelperFoto.cs" />
-    <Compile Include="Helper\DbHelper.cs" />
     <Compile Include="Interfaces\Erros\INivel.cs" />
     <Compile Include="Interfaces\Especificacao\IEspecificacao.cs" />
     <Compile Include="Interfaces\Notificacao\IDescricao.cs" />
