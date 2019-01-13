@@ -64,6 +64,7 @@ namespace Web
                  "~/Scripts/angular/controller/AuthAdmCtrl.js",
                  "~/Scripts/angular/controller/MenuCtrl.js",
                  "~/Scripts/angular/controller/BibliotecaCtrl.js",
+                 "~/Scripts/angular/controller/Livroctrl.js",
                     "~/Scripts/angular/controller/UsuarioCtrl.js"
                  ));
 

@@ -31,7 +31,6 @@ namespace Web.Controllers
         }
 
         [HttpPost]
-       
         public ActionResult Cadastro(FormCollection model) {
 
             try
@@ -59,7 +58,7 @@ namespace Web.Controllers
                     return Json(new { Msg = erros }, JsonRequestBehavior.AllowGet);
                 }
                 else
-                    return Json(new { Msg = "Dados enviado com sucesso" }, JsonRequestBehavior.AllowGet);
+                    return Json(new { Msg = "sucesso" }, JsonRequestBehavior.AllowGet);
             }
             catch (Exception f)
             {

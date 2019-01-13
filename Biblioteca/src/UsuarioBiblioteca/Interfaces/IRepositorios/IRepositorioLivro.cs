@@ -4,7 +4,7 @@ using UsuarioBiblioteca.Domain.Entidades;
 
 namespace UsuarioBiblioteca.Domain.Interfaces.IRepositorios
 {
-    public interface IRepositorioLivro
+    public interface IRepositorioLivro:IDisposable
     {
         void Adicionar(Livro lv);
 
@@ -16,7 +16,7 @@ namespace UsuarioBiblioteca.Domain.Interfaces.IRepositorios
         void Excluir(Livro model);
         IEnumerable<Domain.Entidades.Livro> DadosLivro(string cnpj);
         IEnumerable<UsuarioBiblioteca.Domain.Entidades.Bibliotecaria> DropBiblioteca();
-        IEnumerable<Domain.Entidades.Livro> ObterLivro();
+        List<Domain.Entidades.Livro> ObterLivro();
 
     }
 }

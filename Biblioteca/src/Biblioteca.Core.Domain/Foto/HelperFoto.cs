@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Drawing;
+using System.Drawing.Drawing2D;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Web;
 
@@ -20,16 +23,18 @@ namespace Biblioteca.Core.Domain.Foto
                    var diretorio = HttpContext.Current.Server.MapPath("~/") + "Fotos/";
                     if (Directory.Exists(diretorio))
                     {
-                        //if (redimensiona_imagem(arquivo.FileName.ToLower(), 200, 200))
-                            arquivo.SaveAs(diretorio + Path.GetFileName(arquivo.FileName.ToLower()));
+                        var imagem = Image.FromStream(arquivo.InputStream);
+                        
+                        ResizeImage(imagem, 200, 200);
+                        arquivo.SaveAs(diretorio + Path.GetFileName(arquivo.FileName.ToLower()));
                     }
                     else
                     {
-                        //if (redimensiona_imagem(arquivo.FileName.ToLower(), 200, 200))
-                        //{
-                            Directory.CreateDirectory(diretorio);
-                            arquivo.SaveAs(diretorio + Path.GetFileName(arquivo.FileName.ToLower()));
-                        //}
+                        var imagem = Image.FromStream(arquivo.InputStream);
+                        ResizeImage(imagem, 200, 200);
+                        Directory.CreateDirectory(diretorio);
+                        arquivo.SaveAs(diretorio + Path.GetFileName(arquivo.FileName.ToLower()));
+                        
                     }
 
                     ret = true;
@@ -41,38 +46,54 @@ namespace Biblioteca.Core.Domain.Foto
         }
 
 
-        public  static bool redimensiona_imagem(string xOrigem, int xLargura, int xAltura)
+        public Bitmap ResizeImage(Image image, int width, int height)
+
         {
-            System.Drawing.Image original;
-            System.Drawing.Image nova;
-            Int32 altura = 0;
-            var ret = false;
 
-            original = System.Drawing.Image.FromFile(xOrigem);
+            var destRect = new Rectangle(0, 0, width, height);
 
-            // Define a altura
-            if (xAltura == 0)
-            { altura = (original.Height * xLargura) / original.Width; }
-            else
-            { altura = xAltura; }
+            var destImage = new Bitmap(width, height);
 
-            // Cria a nova imagem, redimensionada se necessario
-            try
+
+
+            destImage.SetResolution(image.HorizontalResolution, image.VerticalResolution);
+
+
+
+            using (var graphics = Graphics.FromImage(destImage))
+
             {
-                if (original.Width > xLargura)
-                { nova = original.GetThumbnailImage(xLargura, altura, null, IntPtr.Zero); }
-                else
-                { nova = original; }
-                nova.Save(xOrigem);
-                original.Dispose();
-                ret = true;
+
+                graphics.CompositingMode = CompositingMode.SourceCopy;
+
+                graphics.CompositingQuality = CompositingQuality.HighQuality;
+
+                graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
+
+                graphics.SmoothingMode = SmoothingMode.HighQuality;
+
+                graphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
+
+
+
+                using (var wrapMode = new ImageAttributes())
+
+                {
+
+                    wrapMode.SetWrapMode(WrapMode.TileFlipXY);
+
+
+
+                    graphics.DrawImage(image, destRect, 0, 0, image.Width, image.Height, GraphicsUnit.Pixel, wrapMode);
+
+                }
+
             }
-            catch (Exception ex)
-            {
-                ret = false;
-                throw new Exception(ex.Message);
-            }
-            return ret;
+
+
+
+            return destImage;
+
         }
     }
 }

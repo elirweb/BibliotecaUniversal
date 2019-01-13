@@ -11,7 +11,7 @@ namespace UsuarioBiblioteca.Application.Interfaces
         void UpdateLivro(ViewModel.Livro lv);
 
         Dictionary<Guid,string> DropBiblioteca();
-        IEnumerable<ViewModel.Livro>Obter();
+        IEnumerable<ViewModel.Livro>ObterLivro();
 
 
     }

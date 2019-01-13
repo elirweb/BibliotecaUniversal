@@ -13,7 +13,7 @@ biblioteca.controller('usuarioctrl', ['$scope', 'Ususervi', '$window', function 
         if (validCpf) {
             Ususervi.Registrar(fd).
                 then(function (response) {
-                    if (response.data.Msg == "Dados enviado com sucesso") {
+                    if (response.data.Msg === "sucesso") {
                         $window.location.href = "/Login/Endereco/";
                     }
                     else {

@@ -1,9 +1,10 @@
 ﻿
-biblioteca.controller('biblioctrl', ['$scope', 'biblioservi', '$window', function ($scope, biblioservi, $window) {
+biblioteca.controller('biblioctrl', ['$scope', 'biblioservi', '$window', 'TokenServ', function ($scope, biblioservi, $window, TokenServ) {
 
     //tem que pensar em outro jeito de colocar este token
-    document.getElementById("tokenlivro").value = localStorage.getItem("token");
-   
+    var tokendados = TokenServ.RetornoToken(localStorage.getItem('token'), localStorage.getItem("modulo"));
+    $scope.tokenlv = tokendados.getToken();
+
 
     $scope.Registrar = function () {
         var fd = new FormData();
@@ -67,16 +68,6 @@ biblioteca.controller('biblioctrl', ['$scope', 'biblioservi', '$window', functio
         $scope.FormCadastro.$setPristine();
     };
 
-    $scope.RetornoDadosLivro = function (token) {
-        biblioservi.RetornarDados(token).
-            then(function (response) {
-                alert(response);
-
-            }).catch(function (response) {
-                alert("erro na consulta de dados");
-            });
-    };
-    $scope.RetornoDadosLivro(localStorage.getItem("token"));
 
 }]);
 

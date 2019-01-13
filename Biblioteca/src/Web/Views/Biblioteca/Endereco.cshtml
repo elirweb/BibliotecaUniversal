@@ -49,7 +49,7 @@
         </div>
         <div class="form-group">
             <select id="uf" name="uf" class="form-control">
-                @foreach (var s in Enum.GetValues(typeof(Biblioteca.Core.Domain.Util.Ufs)))
+                @foreach (var s in Enum.GetNames(typeof(Biblioteca.Core.Domain.Util.Ufs)))
                 {
                     <option value="@s">@s</option>
                 }

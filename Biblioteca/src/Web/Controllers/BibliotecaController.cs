@@ -127,7 +127,8 @@ namespace Web.Controllers
         public ActionResult Livro() {
            //chamar a api de
             var model = new UsuarioBiblioteca.Application.ViewModel.Livro();
-            
+            ViewBag.tokenlivro = string.Empty;
+
             model._listlv = model.ListCategoria();
             model.ListBiblioteca = _livro.DropBiblioteca(); 
             return View(model);
@@ -136,32 +137,40 @@ namespace Web.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Livro(FormCollection form) {
+
             try
             {
-                var livro = new UsuarioBiblioteca.Application.ViewModel.Livro() {
-                    Ativo = true,
-                    IdBiblioteca = Guid.Parse(form["IdBiblioteca"]),
-                    Titulo = form["Titulo"],
-                    Descricao = form["Descricao"],
-                    Editora = form["Editora"],
-                    QtdPg = Convert.ToInt32(form["QtdPg"]),
-                    DescCategoria = form["DescCategoria"],
-                    Id = Guid.NewGuid()
+                UsuarioBiblioteca.Application.ViewModel.Livro model = null;
 
-
-                };
-                var retorno = _registrar.PostDados<UsuarioBiblioteca.Application.ViewModel.Livro>(System.Configuration.ConfigurationManager.AppSettings["urlweb"] + "Livro/Gestao/registrar-livro", form["tokenlivro"], livro);
-                if (retorno.Result.ListaErros.Count > 0)
+                if (ModelState.IsValid)
                 {
-                    
-                    foreach (var erro in retorno.Result.ListaErros)
-                        erros.Add(erro);
-                    ViewBag.Msg = erros;
-                }
+                    var livro = new UsuarioBiblioteca.Application.ViewModel.Livro()
+                    {
+                        Ativo = true,
+                        IdBiblioteca = Guid.Parse(form["IdBiblioteca"]),
+                        Titulo = form["Titulo"],
+                        Descricao = form["Descricao"],
+                        Editora = form["Editora"],
+                        QtdPg = Convert.ToInt32(form["QtdPg"]),
+                        DescCategoria = form["DescCategoria"],
+                        Id = Guid.NewGuid()
 
-                var model = new UsuarioBiblioteca.Application.ViewModel.Livro();
-                model._listlv = model.ListCategoria();
-                model.ListBiblioteca = _livro.DropBiblioteca();
+
+                    };
+                    var retorno = _registrar.PostDados<UsuarioBiblioteca.Application.ViewModel.Livro>(System.Configuration.ConfigurationManager.AppSettings["urlweb"] + "Livro/Gestao/registrar-livro", form["tokenlivro"], livro);
+                    if (retorno.Result.ListaErros.Count > 0)
+                    {
+
+                        foreach (var erro in retorno.Result.ListaErros)
+                            erros.Add(erro);
+                        ViewBag.Msg = erros;
+                    }
+
+                    model = new UsuarioBiblioteca.Application.ViewModel.Livro();
+                    model._listlv = model.ListCategoria();
+                    model.ListBiblioteca = _livro.DropBiblioteca();
+               
+                }
                 return View(model);
 
             }
@@ -174,7 +183,6 @@ namespace Web.Controllers
         }
 
         public ActionResult Lista() {
-            //var retorno = _retornar.GetDados<UsuarioBiblioteca.Application.ViewModel.Livro>(System.Configuration.ConfigurationManager.AppSettings["urlweb"] + "biblioteca/Gestao/registrar-biblioteca", "token");
             return View();
         }
 

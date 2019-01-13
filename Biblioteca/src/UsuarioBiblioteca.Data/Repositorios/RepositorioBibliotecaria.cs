@@ -8,7 +8,7 @@ using UsuarioBiblioteca.Domain.Entidades;
 
 namespace UsuarioBiblioteca.Data.Repositorios
 {
-    public class RepositorioBibliotecaria: Biblioteca.Core.Domain.Util.DisposeElement, Domain.Interfaces.IRepositorios.IRepositorioBibliotecaria
+    public class RepositorioBibliotecaria: Domain.Interfaces.IRepositorios.IRepositorioBibliotecaria
     {
       
         private readonly Contexto.Contexto _contexto;
@@ -85,7 +85,11 @@ namespace UsuarioBiblioteca.Data.Repositorios
 
         }
 
-        
+        public void Dispose()
+        {
+            _contexto.Database.Connection?.Dispose();
+            GC.SuppressFinalize(this);
+        }
 
         public bool EmailUnico(Domain.Entidades.Bibliotecaria bibliotecaria)
         {

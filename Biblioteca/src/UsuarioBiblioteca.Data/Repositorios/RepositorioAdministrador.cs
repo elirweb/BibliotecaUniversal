@@ -7,7 +7,7 @@ using UsuarioBiblioteca.Domain.Entidades;
 
 namespace UsuarioBiblioteca.Data.Repositorios
 {
-    public class RepositorioAdministrador : Biblioteca.Core.Domain.Util.DisposeElement, Domain.Interfaces.IRepositorios.IRepositorioAdministrador
+    public class RepositorioAdministrador : Domain.Interfaces.IRepositorios.IRepositorioAdministrador
     {
         private readonly Contexto.Contexto _contexto;
         private string sql = string.Empty;
@@ -48,6 +48,12 @@ namespace UsuarioBiblioteca.Data.Repositorios
             return retorno;
 
           
+        }
+
+        public void Dispose()
+        {
+            _contexto.Database.Connection?.Dispose();
+            GC.SuppressFinalize(this);
         }
 
         public bool LoginUnico(Domain.Entidades.Administradores model)

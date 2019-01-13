@@ -65,8 +65,8 @@ C:\projetos\Biblioteca\src\Log.Data\bin\Debug\EntityFramework.SqlServer.xml
 C:\projetos\Biblioteca\src\Log.Data\bin\Debug\MongoDB.Bson.xml
 C:\projetos\Biblioteca\src\Log.Data\bin\Debug\MongoDB.Driver.xml
 C:\projetos\Biblioteca\src\Log.Data\bin\Debug\MongoDB.Driver.Core.xml
+C:\projetos\Biblioteca\src\Log.Data\obj\Debug\Log.Data.csprojAssemblyReference.cache
 C:\projetos\Biblioteca\src\Log.Data\obj\Debug\Log.Data.csproj.CoreCompileInputs.cache
 C:\projetos\Biblioteca\src\Log.Data\obj\Debug\Log.Data.csproj.CopyComplete
 C:\projetos\Biblioteca\src\Log.Data\obj\Debug\Log.Data.dll
 C:\projetos\Biblioteca\src\Log.Data\obj\Debug\Log.Data.pdb
-C:\projetos\Biblioteca\src\Log.Data\obj\Debug\Log.Data.csprojAssemblyReference.cache

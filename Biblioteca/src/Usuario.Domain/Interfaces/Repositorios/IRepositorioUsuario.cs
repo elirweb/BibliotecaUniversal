@@ -1,7 +1,9 @@
 ﻿
+using System;
+
 namespace Usuario.Domain.Interfaces.Repositorios
 {
-    public interface IRepositorioUsuario
+    public interface IRepositorioUsuario: IDisposable
     {
         void Adicionar(Entidade.Usuario usuario);
         bool cpfunico(Entidade.Usuario usuario);

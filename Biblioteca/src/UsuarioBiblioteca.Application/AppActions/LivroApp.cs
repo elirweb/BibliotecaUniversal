@@ -57,11 +57,16 @@ namespace UsuarioBiblioteca.Application.AppActions
             return _listb;
         }
 
-        public IEnumerable<Livro> Obter() {
+        public IEnumerable<Livro> ObterLivro() {
             List<Application.ViewModel.Livro> _livro = new List<Livro>();
-            foreach (var l in _repositorio.ObterLivro())
-                _livro.Add(new Livro() { Ativo = l.Ativo, Descricao = l.Descricao, Editora = l.Editora,
-                    Titulo = l.Titulo, QtdPg = l.QtdPg });
+            _repositorio.ObterLivro().ForEach(item => _livro.Add(new Livro()
+            {
+                Ativo = item.Ativo,
+                Descricao = item.Descricao,
+                Editora = item.Editora,
+                Titulo = item.Titulo,
+                QtdPg = item.QtdPg
+            }));
 
             return _livro;
         }

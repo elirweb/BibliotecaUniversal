@@ -20,8 +20,8 @@ C:\projetos\Biblioteca\src\Log.Application\bin\Debug\Log.Application.pdb
 C:\projetos\Biblioteca\src\Log.Application\bin\Debug\Log.Domain.dll
 C:\projetos\Biblioteca\src\Log.Application\bin\Debug\Log.Domain.pdb
 C:\projetos\Biblioteca\src\Log.Application\bin\Debug\Log.Domain.dll.config
-C:\projetos\Biblioteca\src\Log.Application\obj\Debug\Log.Application.csprojAssemblyReference.cache
 C:\projetos\Biblioteca\src\Log.Application\obj\Debug\Log.Application.csproj.CoreCompileInputs.cache
 C:\projetos\Biblioteca\src\Log.Application\obj\Debug\Log.Application.csproj.CopyComplete
 C:\projetos\Biblioteca\src\Log.Application\obj\Debug\Log.Application.dll
 C:\projetos\Biblioteca\src\Log.Application\obj\Debug\Log.Application.pdb
+C:\projetos\Biblioteca\src\Log.Application\obj\Debug\Log.Application.csprojAssemblyReference.cache

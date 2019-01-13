@@ -13,3 +13,4 @@ C:\projetos\Biblioteca\src\Biblioteca.Core.Infra\bin\Debug\Biblioteca.Core.Infra
 C:\projetos\Biblioteca\src\Biblioteca.Core.Infra\obj\Debug\Biblioteca.Core.Infra.csproj.CoreCompileInputs.cache
 C:\projetos\Biblioteca\src\Biblioteca.Core.Infra\obj\Debug\Biblioteca.Core.Infra.dll
 C:\projetos\Biblioteca\src\Biblioteca.Core.Infra\obj\Debug\Biblioteca.Core.Infra.pdb
+C:\projetos\Biblioteca\src\Biblioteca.Core.Infra\obj\Debug\Biblioteca.Core.Infra.csprojAssemblyReference.cache

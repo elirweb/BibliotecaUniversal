@@ -185,6 +185,8 @@
     <Content Include="Content\css\sb-admin.css" />
     <Content Include="Content\css\sb-admin.min.css" />
     <Content Include="Content\img\gif1.gif" />
+    <Content Include="Content\img\editar.png" />
+    <Content Include="Content\img\excluir.png" />
     <Content Include="Content\img\telainicial.jpg" />
     <Content Include="Content\vendor\bootstrap\css\bootstrap-grid.css" />
     <Content Include="Content\vendor\bootstrap\css\bootstrap-grid.min.css" />
@@ -234,6 +236,7 @@
     <Content Include="Content\scss\navbar\_navbar_toggle.scss" />
     <Content Include="Scripts\angular\angular.min.js" />
     <Content Include="Scripts\angular\angular-route.js" />
+    <Content Include="Scripts\angular\controller\Livroctrl.js" />
     <Content Include="Scripts\angular\controller\MenuCtrl.js" />
     <Content Include="Scripts\angular\controller\UsuarioCtrl.js" />
     <Content Include="Scripts\angular\service\TokenService.js" />

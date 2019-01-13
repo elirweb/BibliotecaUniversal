@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace UsuarioBiblioteca.Domain.Interfaces.IRepositorios
 {
-    public interface IRepositorioEndereco
+    public interface IRepositorioEndereco:IDisposable
     {
         void Adicionar(Entidades.Endereco endereco);
         void Atualizar(Entidades.Endereco endereco);

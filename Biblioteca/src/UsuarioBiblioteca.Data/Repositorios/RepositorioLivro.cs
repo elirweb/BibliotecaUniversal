@@ -1,18 +1,15 @@
 ﻿
 using Dapper;
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Data.Common;
 using System.Data.Entity;
-using System.Data.SqlClient;
 using System.Linq;
 using UsuarioBiblioteca.Domain.Entidades;
 using UsuarioBiblioteca.Domain.Interfaces.IRepositorios;
 
 namespace UsuarioBiblioteca.Data.Repositorios
 {
-    public class RepositorioLivro : Biblioteca.Core.Domain.Util.DisposeElement, IRepositorioLivro
+    public class RepositorioLivro : IRepositorioLivro
     {
         private Contexto.Contexto _contexto;
         private string sql = string.Empty;
@@ -36,51 +33,26 @@ namespace UsuarioBiblioteca.Data.Repositorios
         public IEnumerable<Domain.Entidades.Livro> DadosLivro(string parameter)
         {
              sql = "SELECT Titulo,QtdPg,Editora,Ativo,Descricao,Categoria  FROM Livro INNER JOIN Bibliotecaria ON Bibliotecaria.IdBiblioteca = Livro.IdBiblioteca WHERE Bibliotecaria.Cnpj = @parameter";
-            try
-            {
-                return _contexto.Database.Connection.Query<Domain.Entidades.Livro>(sql, new { parameter }).AsParallel();
-            }
-            catch (SqlException f)
-            {
+          return _contexto.Database.Connection.Query<Domain.Entidades.Livro>(sql, new { parameter }).AsParallel();
+            
+        }
+           
+          
 
-                throw new Exception(f.Message);
-            }
-            catch (Exception ex)
-            {
-
-                throw new Exception(ex.Message);
-            }
-            finally
-            {
-                _contexto.Database.Connection.Close();
-            }
-
+        public void Dispose()
+        {
+            _contexto.Database.Connection.Dispose();
+            GC.SuppressFinalize(this);
         }
 
         public bool EstaAtiva(Domain.Entidades.Livro model)
         {
              sql = $"SELECT Situacao FROM Bibliotecaria WHERE Situacao = 1 and IdBiblioteca ='{model.IdBiblioteca}'  ";
             bool retorno = false;
-            try
-            {
-                
+           
                 if (_contexto.Database.Connection.Query<Domain.Entidades.Bibliotecaria>(sql.ToUpper()).AsParallel().Count() > 0)
                     retorno = true;
-            }
-            catch (SqlException f)
-            {
-
-                throw new Exception(f.Message);
-            }
-            catch (Exception ex)
-            {
-
-                throw new Exception(ex.Message);
-            }
-            finally
-            {
-                _contexto.Database.Connection.Close();
-            }
+        
             return retorno;
 
 
@@ -91,24 +63,12 @@ namespace UsuarioBiblioteca.Data.Repositorios
             _contexto.Entry(model).State = EntityState.Deleted;
         }
 
-        public IEnumerable<Livro> ObterLivro()
+        public List<Livro> ObterLivro()
         {
-            sql = $"SELECT * FROM Livro ";
-           
-            try
-            {
-                return _contexto.Database.Connection.Query<Domain.Entidades.Livro>(sql).AsParallel();
+               sql = "SELECT Titulo,QtdPg,Editora,Descricao FROM Livro";
+             return _contexto.Database.Connection.Query<Domain.Entidades.Livro>(sql).ToList();
                  
-            }
-            catch (Exception h)
-            {
-
-                throw new Exception(h.Message);
-            }
-            finally
-            {
-                _contexto.Database.Connection.Close();
-            }
+           
             
         }
 
@@ -116,47 +76,23 @@ namespace UsuarioBiblioteca.Data.Repositorios
         {
              sql = $"SELECT * FROM Livro WHERE Titulo = '{lv.Titulo}' ";
             bool retorno = true;
-            try
-            {
+          
                 if (_contexto.Database.Connection.Query<Domain.Entidades.Livro>(sql).AsParallel() != null && _contexto.Database.Connection.Query<Domain.Entidades.Livro>(sql).AsParallel().Count() == 0 )
                     retorno = false;
-            }
-            catch (Exception h)
-            {
-
-                throw new Exception(h.Message);
-            }
-            finally {
-                _contexto.Database.Connection.Close();
-            }
+   
             return retorno;
         }
 
         
 
-        IEnumerable<UsuarioBiblioteca.Domain.Entidades.Bibliotecaria> IRepositorioLivro.DropBiblioteca()
+        IEnumerable<Bibliotecaria> IRepositorioLivro.DropBiblioteca()
         {
              sql = @"SELECT  Bibliotecaria.IdBiblioteca Id ,Bibliotecaria.RazaoSocial
                             FROM Bibliotecaria
                         INNER JOIN Endereco ON Endereco.IdBlioteca = Bibliotecaria.IdBiblioteca";
-            try
-            {
+           
                  return _contexto.Database.Connection.Query<Domain.Entidades.Bibliotecaria>(sql).ToList();
-            }
-            catch (SqlException f)
-            {
-
-                throw new Exception(f.Message);
-            }
-            catch (Exception ex)
-            {
-
-                throw new Exception(ex.Message);
-            }
-            finally
-            {
-                _contexto.Database.Connection.Close();
-            }
+           
             
         }
     }

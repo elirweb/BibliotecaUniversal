@@ -7,7 +7,7 @@ using UsuarioBiblioteca.Domain.Entidades;
 
 namespace UsuarioBiblioteca.Domain.Interfaces.IRepositorios
 {
-    public interface IRepositorioBibliotecaria
+    public interface IRepositorioBibliotecaria:IDisposable
     {
         void Adicionar(Entidades.Bibliotecaria bibliotecaria);
         bool CNPJUnico(Entidades.Bibliotecaria bibliotecaria);

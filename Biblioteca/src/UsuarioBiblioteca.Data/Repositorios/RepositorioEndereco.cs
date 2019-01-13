@@ -9,7 +9,7 @@ using UsuarioBiblioteca.Domain.Entidades;
 
 namespace UsuarioBiblioteca.Data.Repositorios
 {
-    public class RepositorioEndereco : Biblioteca.Core.Domain.Util.DisposeElement, Domain.Interfaces.IRepositorios.IRepositorioEndereco
+    public class RepositorioEndereco :  Domain.Interfaces.IRepositorios.IRepositorioEndereco
     {
         private readonly Contexto.Contexto _contexto;
         public RepositorioEndereco(Contexto.Contexto context)
@@ -24,6 +24,11 @@ namespace UsuarioBiblioteca.Data.Repositorios
         public void Atualizar(Endereco endereco)
         {
             _contexto.Entry(endereco).State = EntityState.Modified;
+        }
+
+        public void Dispose()
+        {
+            _contexto.Database.Connection?.Dispose();
         }
     }
 }

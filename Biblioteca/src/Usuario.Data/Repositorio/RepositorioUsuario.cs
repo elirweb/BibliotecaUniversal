@@ -2,12 +2,13 @@
 
 using Dapper;
 using System;
+using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 
 namespace Usuario.Data.Repositorio
 {
-    public class RepositorioUsuario : Biblioteca.Core.Domain.Util.DisposeElement, Domain.Interfaces.Repositorios.IRepositorioUsuario
+    public class RepositorioUsuario : Domain.Interfaces.Repositorios.IRepositorioUsuario
     {
         private readonly Contexto.Contexto _contexto;
         private string sql = string.Empty;
@@ -54,6 +55,7 @@ namespace Usuario.Data.Repositorio
             finally
             {
                 _contexto.Database.Connection.Close();
+                _contexto.Database.Connection.Dispose();
             }
             return retorno;
 
@@ -63,29 +65,19 @@ namespace Usuario.Data.Repositorio
 
         public bool Authenticar(Domain.Entidade.Usuario usuario)
         {
+
            
-           sql = $"SELECT Login,Senha FROM Usuario WHERE Login = '{usuario.Login}' and Senha= '{usuario.Senha.CodigoSenha }'  ";
+            sql = "SELECT Login,Senha FROM Usuario WHERE Login = '"+usuario.Login+ "' and Senha='" + usuario.Senha.CodigoSenha + "'  ";
+            DynamicParameters p = new DynamicParameters();
+            p.Add("@login", usuario.Login);
+            p.Add("@senha", usuario.Senha.CodigoSenha);
+           
             bool retorno = false;
-            try
-            {
+         
 
-                if (_contexto.Database.Connection.Query<Domain.Entidade.Usuario>(sql).AsParallel().Count() > 0)
+                if (_contexto.Database.Connection.Query<Domain.Entidade.Usuario>(sql).Count() > 0)
                     retorno = true;
-            }
-            catch (SqlException f)
-            {
-
-                throw new Exception(f.Message);
-            }
-            catch (Exception ex)
-            {
-
-                throw new Exception(ex.Message);
-            }
-            finally
-            {
-                _contexto.Database.Connection.Close();
-            }
+         
             return retorno;
         }
 
@@ -94,27 +86,17 @@ namespace Usuario.Data.Repositorio
             
             sql = $"SELECT Cpf FROM Usuario WHERE Cpf = '{usuario.Cpf.Codigo}' ";
             bool retorno = false;
-            try
-            {
+        
 
                 if (_contexto.Database.Connection.Query<Domain.Entidade.Usuario>(sql).AsParallel().Count() > 0)
                     retorno = true;
-            }
-            catch (SqlException f)
-            {
-
-                throw new Exception(f.Message);
-            }
-            catch (Exception ex)
-            {
-
-                throw new Exception(ex.Message);
-            }
-            finally
-            {
-                _contexto.Database.Connection.Close();
-            }
+        
             return retorno;
+        }
+
+        public void Dispose()
+        {
+            _contexto.Database.Connection?.Dispose();
         }
 
         public bool loginunico(Domain.Entidade.Usuario usuario)
@@ -122,26 +104,11 @@ namespace Usuario.Data.Repositorio
            
             sql = $"SELECT Login FROM Usuario WHERE Login = '{usuario.Login}' ";
             bool retorno = false;
-            try
-            {
+         
 
                 if (_contexto.Database.Connection.Query<Domain.Entidade.Usuario>(sql).AsParallel().Count() > 0)
                     retorno = true;
-            }
-            catch (SqlException f)
-            {
-
-                throw new Exception(f.Message);
-            }
-            catch (Exception ex)
-            {
-
-                throw new Exception(ex.Message);
-            }
-            finally
-            {
-                _contexto.Database.Connection.Close();
-            }
+         
             return retorno;
         }
 
@@ -150,26 +117,11 @@ namespace Usuario.Data.Repositorio
            
            sql = $"SELECT Email FROM Usuario WHERE Email = '{email}' ";
             bool retorno = false;
-            try
-            {
+           
 
                 if (_contexto.Database.Connection.Query<Domain.Entidade.Usuario>(sql).AsParallel().Count() > 0)
                     retorno = true;
-            }
-            catch (SqlException f)
-            {
-
-                throw new Exception(f.Message);
-            }
-            catch (Exception ex)
-            {
-
-                throw new Exception(ex.Message);
-            }
-            finally
-            {
-                _contexto.Database.Connection.Close();
-            }
+           
             return retorno;
 
         }

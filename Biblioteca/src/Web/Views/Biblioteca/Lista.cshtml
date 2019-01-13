@@ -4,21 +4,32 @@
     Layout = null;
 }
 
-<div class="container text-center" ng-controller="biblioctrl">
+<div class="container text-center">
   
-  
-    <table cellpadding="3" cellspacing="3">
+  <label>Pesquisa:</label><input type="text" ng-model="txtpesq" /><br /><br />
+    <table cellpadding="3" cellspacing="3" class="table">
         <thead>
             <tr>
-                <th><input type="checkbox" /></th>
-                <th>Titulo</th>
-                <th>Biblioteca</th>
-                <th>Editora</th>
-                <th>Editar</th>
+                <th style="text-align:center">Editar</th>
+                <th style="text-align:center">Excuir</th>
+                <th style="text-align:center">Titulo</th>
+                <th style="text-align:center">Editora</th>
+                <th style="text-align:center">Descricao</th>
+                <th style="text-align:center">QtdPg</th>
 
             </tr>
         </thead>
-       
+       <tbody >
+           <tr ng-repeat="dados in resultado | filter:txtpesq">
+               <td style="text-align:center"><img src="~/Content/img/editar.png" width="32" height="32"></td>
+               <td style="text-align:center"><img src="~/Content/img/excluir.png" width="32" height="32"></td>
+               <td style="text-align:center">{{dados.Titulo}}</td>
+               <td style="text-align:center">{{dados.Editora}}</td>
+               <td style="text-align:center">{{dados.Descricao}}</td>
+               <td style="text-align:center">{{dados.QtdPg}}</td>
+
+           </tr>
+       </tbody>
 
 
      

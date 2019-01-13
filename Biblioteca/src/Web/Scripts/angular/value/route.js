@@ -11,7 +11,7 @@
                 })
                 .when('/biblioteca-lista', {
                     templateUrl: '/Biblioteca/Lista',
-                    controller: 'biblioctrl'
+                    controller: 'livroctrl'
                 })
                 
                 .when('/usuario-dados', {
