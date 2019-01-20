@@ -78,8 +78,14 @@ namespace Api.Controllers
       
         }
 
+        [AcceptVerbs("GET")]
+        [Route("ObterLivroPorID{Guid:id}")]
+        public IEnumerable<UsuarioBiblioteca.Application.ViewModel.Livro> ObterLivroPorID(Guid id)
+        {
+            return _livro.ObterLivro().ToList();
 
-        //_livro.Obter().ToList()
+        }
+
 
     }
 }

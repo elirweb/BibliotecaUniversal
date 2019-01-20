@@ -36,8 +36,13 @@ namespace UsuarioBiblioteca.Data.Repositorios
           return _contexto.Database.Connection.Query<Domain.Entidades.Livro>(sql, new { parameter }).AsParallel();
             
         }
-           
-          
+
+        public List<Livro> DeleteLivro(Guid id)
+        {
+            sql = "DELETE LIVRO WHERE Id = @id ";
+            return _contexto.Database.Connection.Query<Domain.Entidades.Livro>(sql, new { id }).ToList();
+
+        }
 
         public void Dispose()
         {
@@ -65,11 +70,18 @@ namespace UsuarioBiblioteca.Data.Repositorios
 
         public List<Livro> ObterLivro()
         {
-               sql = "SELECT Titulo,QtdPg,Editora,Descricao FROM Livro";
+               sql = "SELECT Id, Titulo,QtdPg,Editora,Descricao,IdBiblioteca FROM Livro";
              return _contexto.Database.Connection.Query<Domain.Entidades.Livro>(sql).ToList();
                  
            
             
+        }
+
+        public List<Livro> ObterLivroPorId(Guid id)
+        {
+            sql = "SELECT Id, Titulo,QtdPg,Editora,Ativo,Descricao,Categoria,IdBiblioteca  FROM Livro  WHERE Id = @id";
+            return _contexto.Database.Connection.Query<Domain.Entidades.Livro>(sql, new { id }).ToList();
+
         }
 
         public bool TituloUnico(Domain.Entidades.Livro lv)

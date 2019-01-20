@@ -18,5 +18,9 @@ namespace UsuarioBiblioteca.Domain.Interfaces.IRepositorios
         IEnumerable<UsuarioBiblioteca.Domain.Entidades.Bibliotecaria> DropBiblioteca();
         List<Domain.Entidades.Livro> ObterLivro();
 
+        List<Domain.Entidades.Livro> ObterLivroPorId(Guid id);
+
+        List<Domain.Entidades.Livro> DeleteLivro(Guid id);
+
     }
 }

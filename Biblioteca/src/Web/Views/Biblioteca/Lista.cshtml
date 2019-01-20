@@ -21,8 +21,8 @@
         </thead>
        <tbody >
            <tr ng-repeat="dados in resultado | filter:txtpesq">
-               <td style="text-align:center"><img src="~/Content/img/editar.png" width="32" height="32"></td>
-               <td style="text-align:center"><img src="~/Content/img/excluir.png" width="32" height="32"></td>
+               <td style="text-align:center"><img src="~/Content/img/editar.png" width="32" height="32" style="cursor:pointer" ng-click="EdicaoLivro({{dados.id}})"></td>
+               <td style="text-align:center"><img src="~/Content/img/excluir.png" width="32" height="32" style="cursor:pointer" ng-click="ExcluirLivro({{dados.id}})"></td>
                <td style="text-align:center">{{dados.Titulo}}</td>
                <td style="text-align:center">{{dados.Editora}}</td>
                <td style="text-align:center">{{dados.Descricao}}</td>

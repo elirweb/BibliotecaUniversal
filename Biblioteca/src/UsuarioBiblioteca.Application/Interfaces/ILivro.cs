@@ -12,6 +12,9 @@ namespace UsuarioBiblioteca.Application.Interfaces
 
         Dictionary<Guid,string> DropBiblioteca();
         IEnumerable<ViewModel.Livro>ObterLivro();
+        List<ViewModel.Livro> ObterLivroPorId(Guid id);
+
+        List<ViewModel.Livro> DeleteLivro(Guid id);
 
 
     }

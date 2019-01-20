@@ -4,5 +4,33 @@
 Layout=  null;
 }
 
-<h2>EmprestimoLivro</h2>
+<div class="container text-center">
+
+    <label>Pesquisa:</label><input type="text" ng-model="txtpesq" /><br /><br />
+    <table cellpadding="3" cellspacing="3" class="table">
+        <thead>
+            <tr>
+                <th style="text-align:center">Emprestimo</th>
+                <th style="text-align:center">Titulo</th>
+                <th style="text-align:center">Editora</th>
+                <th style="text-align:center">Descricao</th>
+                <th style="text-align:center">QtdPg</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="dados in resultado | filter:txtpesq">
+                <td style="text-align:center"><button ng-click="EmprestimoLivro({{'dados.id','dados.IdBiblioteca'}})">Emprestimo</button></td>
+                <td style="text-align:center">{{dados.Titulo}}</td>
+                <td style="text-align:center">{{dados.Editora}}</td>
+                <td style="text-align:center">{{dados.Descricao}}</td>
+                <td style="text-align:center">{{dados.QtdPg}}</td>
+
+            </tr>
+        </tbody>
+
+
+
+    </table>
+</div>
 

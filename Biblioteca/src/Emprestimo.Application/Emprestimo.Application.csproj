@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="AppAction\Pedido.cs" />
     <Compile Include="Interfaces\IPedido.cs" />
+    <Compile Include="Mapper\ViewModelToDomain.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel\PedidoViewModel.cs" />
   </ItemGroup>

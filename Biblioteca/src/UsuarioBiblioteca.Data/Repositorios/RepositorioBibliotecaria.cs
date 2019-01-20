@@ -31,7 +31,7 @@ namespace UsuarioBiblioteca.Data.Repositorios
 
         public bool Authenticar(Bibliotecaria bi)
         {
-             sql = $"SELECT Usuario,Senha FROM Bibliotecaria WHERE Usuario = '{bi.Usuario}'  and  Senha = '{bi.Senha}'";
+             sql = $"SELECT Usuario,Senha,IdBiblioteca FROM Bibliotecaria WHERE Usuario = '{bi.Usuario}'  and  Senha = '{bi.Senha}'";
             bool retorno = false;
             try
             {

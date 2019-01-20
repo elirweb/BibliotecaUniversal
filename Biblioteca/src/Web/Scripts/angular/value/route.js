@@ -20,7 +20,7 @@
                 })
                 .when('/usuario-emprestimo', {
                     templateUrl: '/Usuario/EmprestimoLivro',
-                    controller: 'biblioctrl'
+                    controller: 'usuarioctrl'
                 }).otherwise({ redirectTo: '/elir' });
             
         });

@@ -6,94 +6,87 @@ namespace UsuarioBiblioteca.Application.Mapper
 {
     public static class ViewModelToDomain
     {
-        public static Domain.Entidades.Bibliotecaria Biblioteca(ViewModel.Bibliotecaria bi) {
+        public static Domain.Entidades.Bibliotecaria Biblioteca(ViewModel.Bibliotecaria bi)
+        {
             if (bi == null)
                 throw new Exception();
-            else {
 
-                var b = new Domain.Entidades.Bibliotecaria(
-                bi.RazaoSocial,
-                bi.Cnpj,
-                bi.Usuario,
-                bi.Senha,
-                bi.ConfirmaSenha,
-                bi.Email, 
-                bi.Situacao,
-                bi.Imagem,
-                bi.Id
-                );
-               
-                return b;
-            }
+            return new Domain.Entidades.Bibliotecaria(
+            bi.RazaoSocial,
+            bi.Cnpj,
+            bi.Usuario,
+            bi.Senha,
+            bi.ConfirmaSenha,
+            bi.Email,
+            bi.Situacao,
+            bi.Imagem,
+            bi.Id
+            );
+
+
         }
 
         public static Domain.Entidades.Administradores Administrador(ViewModel.Administrador adm)
         {
             if (adm == null)
                 throw new Exception();
-            else
-            {
 
-                var a = new Domain.Entidades.Administradores(
-                    adm.Id = Guid.NewGuid(),
-              adm.Nome,
-              adm.Email,
-              adm.Login,
-              adm.Senha,
-              adm.ConfirmaSenha
-                );
 
-                return a;
-            }
+            return new Domain.Entidades.Administradores(
+                adm.Id = Guid.NewGuid(),
+          adm.Nome,
+          adm.Email,
+          adm.Login,
+          adm.Senha,
+          adm.ConfirmaSenha
+            );
+
+
+
         }
 
         public static Domain.Entidades.Endereco Endereco(ViewModel.Endereco endereco)
         {
             if (endereco == null)
                 throw new Exception();
-            else
-            {
 
-                var e = new Domain.Entidades.Endereco(
-            endereco.Bairro,
-            endereco.Numero,
-            endereco.Complemento,
-            endereco.Localidade,
-            endereco.Uf,
-          Convert.ToInt32(endereco.Telefone),
-            endereco.tipo,
-            endereco.DDD,
-            endereco.Bibliotecaria.Id
-                );
 
-                return e;
-            }
+            return new Domain.Entidades.Endereco(
+         endereco.Bairro,
+         endereco.Numero,
+         endereco.Complemento,
+         endereco.Localidade,
+         endereco.Uf,
+       Convert.ToInt32(endereco.Telefone),
+         endereco.tipo,
+         endereco.DDD,
+         endereco.Bibliotecaria.Id
+             );
+
+
         }
 
         public static Domain.Entidades.Administradores Authenticar(Administrador adm)
         {
             if (adm == null)
                 throw new Exception();
-            else
-            {
-                var a =
-                    new Domain.Entidades.Administradores(adm.Login, adm.Senha);
-                return a;
-            }
 
+            return
+          new Administradores(adm.Login, adm.Senha);
 
-          
         }
+
+    
+          
+      
 
         public static Domain.Entidades.Livro Livro(ViewModel.Livro lv)
         {
             if (lv == null)
-                throw new Exception();
-            else
-            {
-
-                var l = new Domain.Entidades.Livro(
-           lv.Id,
+                throw new ArgumentException("livro não passado");
+         
+               return new Domain.Entidades.Livro(
+                lv.Id,
              lv.Titulo,
              lv.QtdPg,
              lv.Editora,
@@ -104,8 +97,8 @@ namespace UsuarioBiblioteca.Application.Mapper
            
                 );
 
-                return l;
-            }
+               
+          
         }
 
     }

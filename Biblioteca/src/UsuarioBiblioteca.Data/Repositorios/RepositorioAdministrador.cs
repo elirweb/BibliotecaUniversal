@@ -23,7 +23,7 @@ namespace UsuarioBiblioteca.Data.Repositorios
 
         public bool Authenticar(Administradores model)
         {
-             sql = $"SELECT Login,Senha FROM Administradores WHERE Login = '{model.Login}' and Senha='{model.Senha.CodigoSenha}' ";
+             sql = $"SELECT Login,Senha,Id FROM Administradores WHERE Login = '{model.Login}' and Senha='{model.Senha.CodigoSenha}' ";
             bool retorno = false;
             try
             {

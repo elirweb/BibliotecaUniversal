@@ -17,6 +17,25 @@
         );
     };
 
-   
 
+    this.EdicaoLivro = function (idlivro,token) {
+        return $http.get(
+            url_api.baseUrl + 'Livro/Gestao/ObterLivroPorID', idlivro, //criar este servico na api
+            { headers: { 'Authorization': 'Bearer ' + token } }
+        );
+    };
+   
+    this.AtualizarLivro = function (model,token) {
+        return $http.post(
+            url_api.baseUrl + 'Livro/Gestao/update-livro', model,
+            { headers: { 'Authorization': 'Bearer ' + token } }
+        );
+    };
+
+    this.ExcluirLivro = function (idlivro, token) {
+        return $http.post(
+            url_api.baseUrl + 'Livro/Gestao/delete-livro', idlivro,  //criar este serviço na api
+            { headers: { 'Authorization': 'Bearer ' + token } }
+        );
+    };
 })

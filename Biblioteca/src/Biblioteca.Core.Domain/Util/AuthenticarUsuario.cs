@@ -35,6 +35,7 @@ namespace Biblioteca.Core.Domain.Util
                             expires_in = obj.SelectToken("expires_in").ToString(),
                             token_type = obj.SelectToken("token_type").ToString(),
                             Login = login
+                            
                         });
                 }
             }

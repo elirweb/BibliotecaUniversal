@@ -67,7 +67,7 @@ namespace Usuario.Data.Repositorio
         {
 
            
-            sql = "SELECT Login,Senha FROM Usuario WHERE Login = '"+usuario.Login+ "' and Senha='" + usuario.Senha.CodigoSenha + "'  ";
+            sql = "SELECT Login,Senha,IdUsuario FROM Usuario WHERE Login = '" + usuario.Login+ "' and Senha='" + Guid.Parse(usuario.Senha.CodigoSenha) + "'  ";
             DynamicParameters p = new DynamicParameters();
             p.Add("@login", usuario.Login);
             p.Add("@senha", usuario.Senha.CodigoSenha);

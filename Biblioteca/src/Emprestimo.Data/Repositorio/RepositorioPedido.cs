@@ -9,14 +9,14 @@ namespace Emprestimo.Data.Repositorio
 {
     public class RepositorioPedido : Biblioteca.Core.Domain.Util.DisposeElement, Domain.Interfaces.Repositorio.IRepositorioPedido
     {
-        private Contexto.Contexto contexto;
+        private Contexto.Contexto _contexto;
         public RepositorioPedido(Contexto.Contexto coc)
         {
-            contexto = coc;
+            _contexto = coc;
         }
         public void Adicionar(Pedido pe)
         {
-            throw new NotImplementedException();
+            _contexto.Pedido.Add(pe);
         }
     }
 }

@@ -12,5 +12,6 @@ namespace Biblioteca.Core.Domain.Util
         public string expires_in { get; set; }
         public string token_type { get; set; }
         public string Login { get; set; }
+        public Guid idusuario { get; set; }
     }
 }

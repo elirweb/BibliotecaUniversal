@@ -1,6 +1,7 @@
 ﻿
-biblioteca.controller('usuarioctrl', ['$scope', 'Ususervi', '$window', function ($scope, Ususervi, $window) {
-    
+biblioteca.controller('usuarioctrl', ['$scope', 'Ususervi', 'TokenServ', '$window', function ($scope, Ususervi, $window, TokenServ) {
+    var tokendados = TokenServ.RetornoToken(localStorage.getItem('token'), localStorage.getItem("modulo"));
+   
 
     $scope.Registrar = function () {
         var fd = new FormData();
@@ -45,6 +46,17 @@ biblioteca.controller('usuarioctrl', ['$scope', 'Ususervi', '$window', function 
 
         $scope.FormCadastro.$setPristine();
     }
+
+    $scope.RetornoDadosLivro = function (token) {
+        Ususervi.RetornarDados(token).
+            then(function (response) {
+                $scope.resultado = response.data;
+
+            }).catch(function (response) {
+                alert("Erro na aplicação: " + response.data);
+            });
+    };
+    $scope.RetornoDadosLivro(tokendados.getToken());
 
 }]);
 

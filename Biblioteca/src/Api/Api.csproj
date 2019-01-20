@@ -288,6 +288,10 @@
       <Project>{f58271fb-833d-43b4-8c89-f6603c19f015}</Project>
       <Name>Biblioteca.Core.Infra.IoC</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Emprestimo.Application\Emprestimo.Application.csproj">
+      <Project>{532bd025-7b33-4fe9-81e8-3b9d32e3d6c5}</Project>
+      <Name>Emprestimo.Application</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Usuario.Application\Usuario.Application.csproj">
       <Project>{4100F9A2-F65F-4B54-89D6-6F4AD865190C}</Project>
       <Name>Usuario.Application</Name>

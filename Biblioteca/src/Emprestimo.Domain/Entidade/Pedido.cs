@@ -15,9 +15,9 @@ namespace Emprestimo.Domain.Entidade
         public DateTime DtPedido { get; private set; }
         public TimeSpan HoraPedido { get; private set; }
 
-        public Pedido(Guid  idusuario,Guid biliotecaid, Guid livroid)
+        public Pedido(Guid id, Guid  idusuario,Guid biliotecaid, Guid livroid)
         {
-            Id = new Guid();
+            Id = id;
             UsuarioId = idusuario;
             BibliotecaId = BibliotecaId;
             LivroId = livroid;

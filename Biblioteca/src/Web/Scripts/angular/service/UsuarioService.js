@@ -10,6 +10,13 @@
         )
     }
 
+    this.RetornarDados = function (token) {
+        return $http.get(
+            url_api.baseUrl + 'Livro/Gestao/ObterLivro',
+            { headers: { 'Authorization': 'Bearer ' + token } }
+        );
+    };
+
 
 
 })

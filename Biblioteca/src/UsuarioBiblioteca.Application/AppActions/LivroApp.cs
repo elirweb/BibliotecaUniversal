@@ -48,6 +48,21 @@ namespace UsuarioBiblioteca.Application.AppActions
            
         }
 
+        public List<Livro> DeleteLivro(Guid id)
+        {
+            List<Application.ViewModel.Livro> _livro = new List<Livro>();
+            _repositorio.DeleteLivro(id).ForEach(item => _livro.Add(new Livro()
+            {
+                Ativo = item.Ativo,
+                Descricao = item.Descricao,
+                Editora = item.Editora,
+                Titulo = item.Titulo,
+                QtdPg = item.QtdPg
+            }));
+
+            return _livro;
+        }
+
         public Dictionary<Guid,string> DropBiblioteca()
         {
            Dictionary<Guid, string> _listb = new Dictionary<Guid, string>();
@@ -70,11 +85,25 @@ namespace UsuarioBiblioteca.Application.AppActions
 
             return _livro;
         }
-        
+
+        public List<Livro> ObterLivroPorId(Guid id)
+        {
+            List<Application.ViewModel.Livro> _livro = new List<Livro>();
+            _repositorio.ObterLivroPorId(id).ForEach(item => _livro.Add(new Livro()
+            {
+                Ativo = item.Ativo,
+                Descricao = item.Descricao,
+                Editora = item.Editora,
+                Titulo = item.Titulo,
+                QtdPg = item.QtdPg
+            }));
+
+            return _livro;
+        }
 
         public void UpdateLivro(Livro lv)
         {
-            throw new NotImplementedException();
+            _repositorio.Atualizar(Mapper.ViewModelToDomain.Livro(lv));
         }
     }
 }
