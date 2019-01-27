@@ -1,10 +1,11 @@
 ﻿biblioteca.service("Ususervi", function ($http, url_api) {
-    this.Registrar = function (model) {
+    this.Registrar = function (pedido, token) {
+        alert(pedido);
         return $http.post(
-            url_api.baseUrlSite + 'Login/Cadastro',
-            model, {
+            url_api.baseUrl + 'pedido/Gestao/registrar-emprestimo/',
+            pedido, {
                 transformRequest: angular.identity,
-                headers: { 'Content-Type': undefined }
+                headers: { 'Authorization': 'Bearer ' + token }
             }
 
         )

@@ -8,7 +8,7 @@ using System.Web.Http.Cors;
 
 namespace Api.Controllers
 {
-    [Authorize(Roles = "pedido")]
+    [Authorize(Roles = "usuario")]
     [RoutePrefix("pedido/Gestao")]
     [EnableCors(origins: "*", headers: "*", methods: "*")] // definindo o cabecalho de origens para receber metodo get 
 
@@ -30,6 +30,8 @@ namespace Api.Controllers
             {
                 try
                 {
+                   
+
                     _repositorio.Adicionar(pedido);
                     return Request.CreateResponse<PedidoViewModel>(HttpStatusCode.OK, pedido);
 

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Emprestimo.Domain.Entidade;
+﻿using Emprestimo.Domain.Entidade;
 
 namespace Emprestimo.Data.Repositorio
 {
@@ -17,6 +12,7 @@ namespace Emprestimo.Data.Repositorio
         public void Adicionar(Pedido pe)
         {
             _contexto.Pedido.Add(pe);
+            _contexto.SaveChanges();
         }
     }
 }

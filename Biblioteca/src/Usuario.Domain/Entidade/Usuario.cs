@@ -1,5 +1,6 @@
 ﻿
 using Biblioteca.Core.Domain.Validador;
+using Biblioteca.Core.Domain.ValueObjects;
 using System;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -34,7 +35,7 @@ namespace Usuario.Domain.Entidade
         public Usuario(){ }
         // para authenticação de usuário, foi por este motivo que foi criado este construtor
         public Usuario(string login,string senha) {
-            Senha = new Biblioteca.Core.Domain.ValueObjects.Senha(senha);
+            Senha = new Senha(senha);
             Login = login;
         }
    

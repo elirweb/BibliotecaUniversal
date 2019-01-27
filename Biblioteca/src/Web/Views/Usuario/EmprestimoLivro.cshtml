@@ -20,7 +20,7 @@ Layout=  null;
         </thead>
         <tbody>
             <tr ng-repeat="dados in resultado | filter:txtpesq">
-                <td style="text-align:center"><button ng-click="EmprestimoLivro({{'dados.id','dados.IdBiblioteca'}})">Emprestimo</button></td>
+                <td style="text-align:center"><button ng-click="EmprestimoLivro(dados.Id,dados.IdBiblioteca)">Emprestimo</button></td>
                 <td style="text-align:center">{{dados.Titulo}}</td>
                 <td style="text-align:center">{{dados.Editora}}</td>
                 <td style="text-align:center">{{dados.Descricao}}</td>

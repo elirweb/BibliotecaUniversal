@@ -67,10 +67,10 @@ namespace Usuario.Data.Repositorio
         {
 
            
-            sql = "SELECT Login,Senha FROM Usuario WHERE Login=login and Senha=senha";
+            sql = "SELECT Login FROM Usuario WHERE Login=login";
             DynamicParameters p = new DynamicParameters();
             p.Add("login", usuario.Login);
-            p.Add("senha",usuario.Senha.CodigoSenha);
+            //p.Add("senha",usuario.Senha.CodigoSenha);
 
 
 

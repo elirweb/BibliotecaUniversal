@@ -8,12 +8,12 @@ namespace Emprestimo.Application.ViewModel
 {
     public class PedidoViewModel
     {
-        public Guid Id { get; private set; }
-        public Guid UsuarioId { get; private set; }
-        public Guid BibliotecaId { get; private set; }
-        public Guid LivroId { get; private set; }
-        public DateTime DtPedido { get; private set; }
-        public TimeSpan HoraPedido { get; private set; }
+        public Guid Id { get;  set; }
+        public Guid UsuarioId { get;  set; }
+        public Guid BibliotecaId { get;  set; }
+        public Guid LivroId { get;  set; }
+        public DateTime DtPedido { get;  set; }
+        public TimeSpan HoraPedido { get;  set; }
 
     }
 }

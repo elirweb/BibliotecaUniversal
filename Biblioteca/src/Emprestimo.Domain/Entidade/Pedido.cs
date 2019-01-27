@@ -15,13 +15,13 @@ namespace Emprestimo.Domain.Entidade
         public DateTime DtPedido { get; private set; }
         public TimeSpan HoraPedido { get; private set; }
 
-        public Pedido(Guid id, Guid  idusuario,Guid biliotecaid, Guid livroid)
+        public Pedido( Guid livroid,Guid  idusuario,Guid biliotecaid)
         {
-            Id = id;
-            UsuarioId = idusuario;
-            BibliotecaId = BibliotecaId;
+            Id = Guid.NewGuid();
             LivroId = livroid;
-            DtPedido = DateTime.Now.Date;
+            UsuarioId = idusuario;
+            BibliotecaId = biliotecaid;
+            DtPedido = DateTime.Now;
             HoraPedido = TimeSpan.FromHours(1);
         }
 
