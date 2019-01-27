@@ -51,3 +51,4 @@ C:\projetos\Biblioteca\test\Emprestimo.Test\obj\Debug\Emprestimo.Test.csproj.Cor
 C:\projetos\Biblioteca\test\Emprestimo.Test\obj\Debug\Emprestimo.Test.csproj.CopyComplete
 C:\projetos\Biblioteca\test\Emprestimo.Test\obj\Debug\Emprestimo.Test.dll
 C:\projetos\Biblioteca\test\Emprestimo.Test\obj\Debug\Emprestimo.Test.pdb
+C:\projetos\Biblioteca\test\Emprestimo.Test\obj\Debug\Emprestimo.Test.csprojAssemblyReference.cache

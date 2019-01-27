@@ -23,12 +23,16 @@ namespace UsuarioBiblioteca.Data.Repositorios
 
         public bool Authenticar(Administradores model)
         {
-             sql = $"SELECT Login,Senha,Id FROM Administradores WHERE Login = '{model.Login}' and Senha='{model.Senha.CodigoSenha}' ";
+            DynamicParameters p = new DynamicParameters();
+             sql = "SELECT Login,Senha FROM Administradores WHERE Login=login and Senha=senha";
+            p.Add("login", model.Login);
+            p.Add("senha", model.Senha.CodigoSenha);
+
             bool retorno = false;
             try
             {
 
-                if (_contexto.Database.Connection.Query<Domain.Entidades.Administradores>(sql).AsParallel().Count() > 0)
+                if (_contexto.Database.Connection.Query<Domain.Entidades.Administradores>(sql,new {p}).ToList().Count() > 0)
                     retorno = true;
             }
             catch (SqlException f)

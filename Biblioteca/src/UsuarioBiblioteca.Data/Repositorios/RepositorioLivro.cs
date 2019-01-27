@@ -26,6 +26,7 @@ namespace UsuarioBiblioteca.Data.Repositorios
         public void Atualizar(Livro model)
         {
             _contexto.Entry(model).State = EntityState.Modified;
+            _contexto.SaveChanges();
         }
 
         
@@ -79,7 +80,7 @@ namespace UsuarioBiblioteca.Data.Repositorios
 
         public List<Livro> ObterLivroPorId(Guid id)
         {
-            sql = "SELECT Id, Titulo,QtdPg,Editora,Ativo,Descricao,Categoria,IdBiblioteca  FROM Livro  WHERE Id = @id";
+            sql = "SELECT Livro.Id, Livro.Titulo,Livro.QtdPg,Livro.Editora,Livro.Ativo,Livro.Descricao,Livro.Categoria,Livro.IdBiblioteca,Bibliotecaria.RazaoSocial  FROM  Livro INNER JOIN Bibliotecaria ON Bibliotecaria.IdBiblioteca = Livro.IdBiblioteca  WHERE Id = @id";
             return _contexto.Database.Connection.Query<Domain.Entidades.Livro>(sql, new { id }).ToList();
 
         }

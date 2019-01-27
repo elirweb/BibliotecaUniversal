@@ -13,29 +13,43 @@
     this.RetornarDados = function (token) {
         return $http.get(
             url_api.baseUrl + 'Livro/Gestao/ObterLivro',
-            { headers: { 'Authorization': 'Bearer ' + token } }
+            {
+                transformRequest: angular.identity,
+                headers: { 'Authorization': 'Bearer ' + token }
+            }
         );
     };
 
 
-    this.EdicaoLivro = function (idlivro,token) {
+    this.EdicaoLivro = function (registro, token) {
+        
         return $http.get(
-            url_api.baseUrl + 'Livro/Gestao/ObterLivroPorID', idlivro, //criar este servico na api
-            { headers: { 'Authorization': 'Bearer ' + token } }
+            url_api.baseUrl + 'Livro/Gestao/obterlivroid/'+registro, //criar este servico na api
+            {
+                transformRequest: angular.identity,
+                headers: { 'Authorization': 'Bearer ' + token}
+            }
         );
     };
    
-    this.AtualizarLivro = function (model,token) {
+    this.AtualizarLivro = function (lv, token) {
+       
         return $http.post(
-            url_api.baseUrl + 'Livro/Gestao/update-livro', model,
-            { headers: { 'Authorization': 'Bearer ' + token } }
+            url_api.baseUrl + 'Livro/Gestao/update-livro/',lv,
+            {
+                transformRequest: angular.identity,
+                headers: { 'Authorization': 'Bearer ' + token }
+            }
         );
     };
 
     this.ExcluirLivro = function (idlivro, token) {
-        return $http.post(
-            url_api.baseUrl + 'Livro/Gestao/delete-livro', idlivro,  //criar este serviço na api
-            { headers: { 'Authorization': 'Bearer ' + token } }
+        return $http.get(
+            url_api.baseUrl + 'Livro/Gestao/delete-livro/'+idlivro, 
+            {
+                transformRequest: angular.identity,
+                headers: { 'Authorization': 'Bearer ' + token }
+            }
         );
     };
 })

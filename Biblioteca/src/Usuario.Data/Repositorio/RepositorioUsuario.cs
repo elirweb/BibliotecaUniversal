@@ -67,15 +67,17 @@ namespace Usuario.Data.Repositorio
         {
 
            
-            sql = "SELECT Login,Senha,IdUsuario FROM Usuario WHERE Login = '" + usuario.Login+ "' and Senha='" + Guid.Parse(usuario.Senha.CodigoSenha) + "'  ";
+            sql = "SELECT Login,Senha FROM Usuario WHERE Login=login and Senha=senha";
             DynamicParameters p = new DynamicParameters();
-            p.Add("@login", usuario.Login);
-            p.Add("@senha", usuario.Senha.CodigoSenha);
-           
+            p.Add("login", usuario.Login);
+            p.Add("senha",usuario.Senha.CodigoSenha);
+
+
+
             bool retorno = false;
          
 
-                if (_contexto.Database.Connection.Query<Domain.Entidade.Usuario>(sql).Count() > 0)
+                if (_contexto.Database.Connection.Query<Domain.Entidade.Usuario>(sql,new {p}).ToList().Count() > 0)
                     retorno = true;
          
             return retorno;

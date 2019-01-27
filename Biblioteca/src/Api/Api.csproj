@@ -235,6 +235,7 @@
     <Compile Include="Controllers\LivroController.cs" />
     <Compile Include="Controllers\LoginBibliotecaController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\PedidoController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">

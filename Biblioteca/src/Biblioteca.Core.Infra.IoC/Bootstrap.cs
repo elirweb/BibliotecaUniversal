@@ -28,7 +28,6 @@ namespace Biblioteca.Core.Infra.IoC
             container.Register<Usuario.Domain.Interfaces.Repositorios.IRepositorioEndereco, Usuario.Data.Repositorio.RepositorioEndereco>(Lifestyle.Singleton);
             container.Register<Emprestimo.Domain.Interfaces.Repositorio.IRepositorioPedido, Emprestimo.Data.Repositorio.RepositorioPedido>(Lifestyle.Singleton);
             container.Register<Log.Domain.Interfaces.Repositorio.IRegistro<Log.Domain.Entidade.Registro>, Log.Data.Repositorio.RepositorioRegistro>(Lifestyle.Singleton);
-
            
             //contexto
             container.Register<UsuarioBiblioteca.Data.Contexto.Contexto>(Lifestyle.Singleton);

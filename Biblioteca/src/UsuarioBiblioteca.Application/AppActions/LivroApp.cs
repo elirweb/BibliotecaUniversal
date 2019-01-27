@@ -76,6 +76,7 @@ namespace UsuarioBiblioteca.Application.AppActions
             List<Application.ViewModel.Livro> _livro = new List<Livro>();
             _repositorio.ObterLivro().ForEach(item => _livro.Add(new Livro()
             {
+                Id = item.Id,
                 Ativo = item.Ativo,
                 Descricao = item.Descricao,
                 Editora = item.Editora,
@@ -91,11 +92,15 @@ namespace UsuarioBiblioteca.Application.AppActions
             List<Application.ViewModel.Livro> _livro = new List<Livro>();
             _repositorio.ObterLivroPorId(id).ForEach(item => _livro.Add(new Livro()
             {
+                Id = item.Id,
                 Ativo = item.Ativo,
                 Descricao = item.Descricao,
                 Editora = item.Editora,
                 Titulo = item.Titulo,
-                QtdPg = item.QtdPg
+                QtdPg = item.QtdPg,
+                IdBiblioteca = item.IdBiblioteca,
+                
+                DescCategoria = "matematica"
             }));
 
             return _livro;

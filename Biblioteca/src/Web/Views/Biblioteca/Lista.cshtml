@@ -3,10 +3,11 @@
     ViewBag.Title = "Lista de Livro";
     Layout = null;
 }
-
-<div class="container text-center">
+@model UsuarioBiblioteca.Application.ViewModel.Livro
   
-  <label>Pesquisa:</label><input type="text" ng-model="txtpesq" /><br /><br />
+<div class="container text-center">
+
+    <label>Pesquisa:</label><input type="text" ng-model="txtpesq" /><br /><br />
     <table cellpadding="3" cellspacing="3" class="table">
         <thead>
             <tr>
@@ -19,19 +20,48 @@
 
             </tr>
         </thead>
-       <tbody >
-           <tr ng-repeat="dados in resultado | filter:txtpesq">
-               <td style="text-align:center"><img src="~/Content/img/editar.png" width="32" height="32" style="cursor:pointer" ng-click="EdicaoLivro({{dados.id}})"></td>
-               <td style="text-align:center"><img src="~/Content/img/excluir.png" width="32" height="32" style="cursor:pointer" ng-click="ExcluirLivro({{dados.id}})"></td>
-               <td style="text-align:center">{{dados.Titulo}}</td>
-               <td style="text-align:center">{{dados.Editora}}</td>
-               <td style="text-align:center">{{dados.Descricao}}</td>
-               <td style="text-align:center">{{dados.QtdPg}}</td>
+        <tbody>
+            <tr ng-repeat="dados in resultado | filter:txtpesq">
+                <td style="text-align:center"><img src="~/Content/img/editar.png" width="32" height="32" style="cursor:pointer" ng-click="EdicaoLivro(dados.Id)"></td>
+                <td style="text-align:center"><img src="~/Content/img/excluir.png" width="32" height="32" style="cursor:pointer" ng-click="ExcluirLivro(dados.Id)"></td>
+                <td style="text-align:center">{{dados.Titulo}}</td>
+                <td style="text-align:center">{{dados.Editora}}</td>
+                <td style="text-align:center">{{dados.Descricao}}</td>
+                <td style="text-align:center">{{dados.QtdPg}}</td>
 
-           </tr>
-       </tbody>
+            </tr>
+        </tbody>
 
-
-     
     </table>
-    </div>
+    <br />
+    @using (Html.BeginForm("", "", FormMethod.Post, new { @class = "form-login" }))
+    {
+
+        <span style="text-align: center">@Html.ValidationSummary(false, "", new { @class = "text-danger" })</span>
+        <input type="hidden" name="idlivro" ng-model="idlivro" value="{{Idlivro}}" />
+       <input type="hidden" name="idbiblioteca" ng-model="idbiblioteca" value="{{IdBiblioteca}}">
+        <div class="form-group">
+            @Html.TextBoxFor(c => c.Titulo, new { @type = "text", @class = "form-control", @name = "Titulo", @ng_model = "Titulo", @ng_value = "Titulo" })
+
+        </div>
+        <div class="form-group">
+            @Html.TextBoxFor(c => c.Descricao, new { @type = "text", @class = "form-control", @name = "Descricao", @ng_model = "Descricao", @ng_value = "Descricao" })
+        </div>
+        <div class="form-group">
+            @Html.TextBoxFor(c => c.Editora, new { @type = "text", @class = "form-control", @name = "Editora", @ng_model = "Editora", @ng_value = "Editora" })
+        </div>
+        <div class="form-group">
+            @Html.TextBoxFor(c => c.QtdPg, new { @type = "text", @class = "form-control", @name = "QtdPg", @ng_model = "QtdPg", @ng_value = "QtdPg" })
+        </div>
+        <div class="form-group">
+            <select name="IdBiblioteca" ng-model="DescCategoria" id="DescCategoria">
+                <option value="{{DescCategoria}}">{{DescCategoria}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+        </div>
+        <div class="form-group">
+            <input type="button" value="Atualizar" class="btn btn-xg btn_verde" ng-click="AtualizarLivro(Idlivro)" />
+        </div>
+    }
+</div>

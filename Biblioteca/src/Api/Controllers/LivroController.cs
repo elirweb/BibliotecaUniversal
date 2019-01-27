@@ -7,6 +7,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Cors;
+
 using UsuarioBiblioteca.Application.Interfaces;
 
 namespace Api.Controllers
@@ -48,7 +49,7 @@ namespace Api.Controllers
           
         }
 
-        [HttpPut]
+        [HttpPost]
         [Route("update-livro")]
         public HttpResponseMessage UpdateLivro(UsuarioBiblioteca.Application.ViewModel.Livro lv)
         {
@@ -58,8 +59,9 @@ namespace Api.Controllers
             {
                 try
                 {
+                   
                     _livro.UpdateLivro(lv);
-                    return Request.CreateResponse(HttpStatusCode.OK, "Atualização feito com sucesso", lv.Titulo);
+                    return Request.CreateResponse(HttpStatusCode.OK, "Atualização feito com sucesso");
                 }
                 catch (Exception ex)
                 {
@@ -79,13 +81,19 @@ namespace Api.Controllers
         }
 
         [AcceptVerbs("GET")]
-        [Route("ObterLivroPorID{Guid:id}")]
-        public IEnumerable<UsuarioBiblioteca.Application.ViewModel.Livro> ObterLivroPorID(Guid id)
+        [Route("obterlivroid/{registro}")]
+        public IEnumerable<UsuarioBiblioteca.Application.ViewModel.Livro> ObterLivroPorID(string registro)
         {
-            return _livro.ObterLivro().ToList();
+            return _livro.ObterLivroPorId(Guid.Parse(registro)).ToList();
 
         }
+        [AcceptVerbs("GET")]
+        [Route("delete-livro/{registro}")]
+        public IEnumerable<UsuarioBiblioteca.Application.ViewModel.Livro> DeleteLivro(string registro)
+        {
+            return _livro.DeleteLivro(Guid.Parse(registro)).ToList();
 
+        }
 
     }
 }

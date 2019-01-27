@@ -10,47 +10,57 @@ biblioteca.controller('livroctrl', ['$scope', 'biblioservi', '$window', 'TokenSe
         biblioservi.RetornarDados(token).
             then(function (response) {
                 $scope.resultado = response.data;
-
+           
             }).catch(function (response) {
                 alert("Erro na aplicação: "+ response.data);
             });
     };
     $scope.RetornoDadosLivro(tokendados.getToken());
 
-    $scope.EdicaoLivro = function (idlivro) {
-        biblioservi.EdicaoLivro(idlivro, $scope.tokenlv).then(function (response) {
-            angular.forEach(response.data, function (value, key) {
-                $scope.Titulo = response.data.Titulo;
-                $scope.Descricao = response.data.Descricao;
-                $scope.Editora = response.data.Editora;
-                $scope.QtdPg = response.data.QtdPg;
-                $scope.DescCategoria = response.data.DescCategoria;
+    $scope.EdicaoLivro = function (registro) {
+       
 
+        biblioservi.EdicaoLivro(registro, $scope.tokenlv).then(function (response) {
+            angular.forEach(response.data, function (value, key) {
+                $scope.Titulo = value.Titulo;
+                $scope.Descricao = value.Descricao;
+                $scope.Editora = value.Editora;
+                $scope.QtdPg = value.QtdPg;
+                $scope.DescCategoria = value.DescCategoria;
+                $scope.Idlivro = registro;
+                $scope.idbiblioteca = value.IdBiblioteca;
+               
             });
-            $window.location.href = "/Usuario/Emprestimo/";
+          
         }).catch(function (response) {
             alert('Erro no acesso ao dados');
         });
     };
 
-    $scope.AtualizarLivro = function () {
-        //criar as variaveis para receber os dados
-        var fd = new FormData();
-        fd.append('Titulo', $scope.Titulo);
-        fd.append('Descricao', $scope.Descricao);
-        fd.append('Editora', $scope.Editora);
-        fd.append('QtdPg', $scope.QtdPg);
-        fd.append('DescCategoria', $scope.DescCategoria);
+    $scope.AtualizarLivro = function (idlivro) {
+      
 
-        biblioservi.AtualizarLivro(fd, $scope.tokenlv).then(function (response) {
-            alert(response);
+        var l = new Livro();
+        l.Descricao = $scope.Descricao;
+        l.DescCategoria = $scope.DescCategoria;
+        l.Editora = $scope.Editora;
+        l.Titulo = $scope.Titulo;
+        l.IdBiblioteca = $scope.idbiblioteca;
+        l.Ativo = 1;
+        l.QtdPg = $scope.QtdPg;
+        l.Id = idlivro;
+       
+
+        biblioservi.AtualizarLivro(JSON.stringify(l.getLivro()), $scope.tokenlv).then(function (response) {
+            alert(response.data);
         }).catch(function (response) {
-            alert('Erro no acesso ao dados');
-        });
+            alert(response.data);
+            });
+        
     };
 
     $scope.ExcluirLivro = function (idlivro) {
-     
+       
         biblioservi.ExcluirLivro(idlivro, $scope.tokenlv).then(function (response) {
 
         }).catch(function (response) {
@@ -60,3 +70,20 @@ biblioteca.controller('livroctrl', ['$scope', 'biblioservi', '$window', 'TokenSe
 
 }]);
 
+class Livro {
+    constructor(Titulo, Descricao, Editora, QtdPg, DescCategoria, Id, IdBiblioteca) {
+        this.Titulo = Titulo;
+        this.Descricao = Descricao;
+        this.Editora = Editora;
+        this.QtdPg = QtdPg;
+        this.DescCategoria = DescCategoria;
+        this.Id = Id;
+        this.IdBiblioteca = IdBiblioteca;
+    }
+
+    getLivro() {
+        var l = new Livro(this.Titulo, this.Descricao, this.Editora, this.QtdPg, this.DescCategoria, this.Id, this.IdBiblioteca);
+        return l;
+
+    }
+}

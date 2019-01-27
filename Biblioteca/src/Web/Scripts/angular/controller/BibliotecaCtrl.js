@@ -17,7 +17,7 @@ biblioteca.controller('biblioctrl', ['$scope', 'biblioservi', '$window', 'TokenS
         fd.append('LabelSituacao', $scope.LabelSituacao);
         fd.append('Imagem', $scope.arquivo);
         fd.append('Senha', $scope.Senha);
-        fd.append('token', localStorage.getItem("token"));
+        fd.append('token', localStorage.getItem("token")); //pra que eu pego o token?
         fd.append('ConfirmaSenha', $scope.ConfirmaSenha);
         if (validCnpj) {
             biblioservi.Registrar(fd).

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -24,13 +25,14 @@ namespace UsuarioBiblioteca.Application.ViewModel
         public string Descricao { get;  set; }
         public Guid IdBiblioteca { get; set; }
         public virtual Bibliotecaria Biblioteca { get; set; }
+        [JsonIgnore]
         public Categoria Categoria { get;  set; }
         [Display(Name ="Categoria")]
         public string DescCategoria { get; set; }
         public List<string> ListaErros { get; set; }
 
         public List<SelectListItem> _listlv { get; set; }
-
+       
         public Livro()
         {
             ListaErros = new List<string>();

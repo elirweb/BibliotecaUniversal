@@ -31,3 +31,4 @@ C:\projetos\Biblioteca\src\Emprestimo.Domain\obj\Debug\Emprestimo.Domain.csproj.
 C:\projetos\Biblioteca\src\Emprestimo.Domain\obj\Debug\Emprestimo.Domain.csproj.CopyComplete
 C:\projetos\Biblioteca\src\Emprestimo.Domain\obj\Debug\Emprestimo.Domain.dll
 C:\projetos\Biblioteca\src\Emprestimo.Domain\obj\Debug\Emprestimo.Domain.pdb
+C:\projetos\Biblioteca\src\Emprestimo.Domain\obj\Debug\Emprestimo.Domain.csprojAssemblyReference.cache
